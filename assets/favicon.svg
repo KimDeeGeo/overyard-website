@@ -1,0 +1,6 @@
+<!-- Overyard favicon (browser tab icon). Slightly bolder strokes for small sizes. Green = #3D5A45 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#3D5A45"/>
+  <path d="M6.5 25.5 A19 19 0 0 1 25.5 6.5" fill="none" stroke="#F7F7F5" stroke-width="3.6" stroke-linecap="round"/>
+  <circle cx="23" cy="23" r="4" fill="#F7F7F5"/>
+</svg>
