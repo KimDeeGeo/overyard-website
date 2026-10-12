@@ -333,11 +333,12 @@ a:hover { color: var(--color-accent); }
 }
 .gallery-item figcaption strong { color: var(--color-text); font-weight: 600; }
 
-.more-title {
-  margin: clamp(64px, 9vw, 112px) 0 24px;
-  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+/* space and a thin divider between projects */
+.project + .project {
+  margin-top: clamp(64px, 9vw, 112px);
+  padding-top: clamp(40px, 6vw, 64px);
+  border-top: 1px solid var(--color-line);
 }
-.gallery-more { grid-template-columns: 1fr; gap: 28px; }
 
 /* "Want to see more?" box */
 .portfolio-cta {
@@ -354,7 +355,6 @@ a:hover { color: var(--color-accent); }
 
 @media (min-width: 760px) {
   .gallery { gap: 16px; }
-  .gallery-more { grid-template-columns: 1fr 1fr; gap: 40px 16px; }
   .project-info {
     grid-template-columns: 1fr 1.3fr; gap: 32px; align-items: baseline;
     margin-bottom: 28px;

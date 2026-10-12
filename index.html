@@ -90,14 +90,15 @@
 
       <!-- Hero image: images/hero-01.webp (16:9, at least 2000px wide) -->
       <figure class="media hero-media reveal" style="--ratio: 16 / 9" data-label="hero-01.webp · 16:9">
-        <img src="images/hero-01.webp" alt="3D render of a backyard with a pool, pergola lounge with fire pit, and an outdoor kitchen bar" width="2000" height="1125" fetchpriority="high">
+        <img src="images/hero-01.webp" alt="3D render of a modern backyard pool with a slatted pergola fire lounge, lounge deck and a row of cypress trees" width="2000" height="1125" fetchpriority="high">
       </figure>
     </section>
 
     <!-- =========================================================
          3. WORK (portfolio)
-         - Featured project: one large image + a grid of more views.
-         - "More projects": one image per project.
+         Each project = one <article class="project">: a title, a short
+         description, then a gallery. The first image is shown large;
+         the rest sit in a 2-column grid (an even number looks tidiest).
          To swap an image, replace the file in /images with the same name.
          To add one, copy a <figure class="gallery-item"> block and change
          the filename (in both href and src), alt text and caption.
@@ -107,13 +108,160 @@
       <div class="container">
         <header class="section-head reveal">
           <h2>Selected work</h2>
-          <p>A small selection of recent projects. Every design is drawn to be sold and built.</p>
+          <p>Five recent projects, from pools and outdoor living to hillside terracing. Every design is drawn to be sold and built.</p>
         </header>
 
-        <!-- ---------- Featured project ---------- -->
+        <!-- ---------- Modern pool and front yard ---------- -->
         <article class="project reveal">
           <div class="project-info">
-            <h3>Lakeside hillside property</h3>
+            <h3>Modern pool and front yard</h3>
+            <p>Pool and spa, slatted pergola fire lounge, outdoor kitchen, floating stairs with a water wall, and a low-water front yard. Full landscape lighting front and back. [City, State]</p>
+          </div>
+
+          <div class="gallery">
+            <figure class="gallery-item gallery-lead">
+              <a class="media" style="--ratio: 3 / 2" data-label="modern-01.webp · 3:2" href="images/modern-01.webp" data-lightbox>
+                <img src="images/modern-01.webp" alt="Render of a modern pool and spa with an outdoor kitchen bar in front and a slatted pergola lounge behind" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Pool, spa and outdoor kitchen</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="modern-02.webp · 3:2" href="images/modern-02.webp" data-lightbox>
+                <img src="images/modern-02.webp" alt="Night render of the pool, spa and pergola fire lounge with landscape lighting" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Pool and pergola lounge, night</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="modern-03.webp · 3:2" href="images/modern-03.webp" data-lightbox>
+                <img src="images/modern-03.webp" alt="Render of a slatted pergola with a fire table and lounge seating" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Pergola fire lounge</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="modern-04.webp · 3:2" href="images/modern-04.webp" data-lightbox>
+                <img src="images/modern-04.webp" alt="Night render of floating concrete stairs on a grass slope beside a lit water wall" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Floating stairs and water wall, night</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="modern-05.webp · 3:2" href="images/modern-05.webp" data-lightbox>
+                <img src="images/modern-05.webp" alt="Render of a modern front yard with salvia, boulders, river rock and path lights" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Front yard planting</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="modern-06.webp · 3:2" href="images/modern-06.webp" data-lightbox>
+                <img src="images/modern-06.webp" alt="Night render of the front yard with path lights and uplit shrubs" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Front yard lighting, night</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="modern-07.webp · 3:2" href="images/modern-07.webp" data-lightbox>
+                <img src="images/modern-07.webp" alt="Top-down render of the property showing the pool, pergola, kitchen, side yards and front yard" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Plan view</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ---------- Pool courtyard and citrus grove ---------- -->
+        <article class="project reveal">
+          <div class="project-info">
+            <h3>Pool courtyard and citrus grove</h3>
+            <p>Pool and spa, pergola dining with an outdoor kitchen, a fire pit lounge under lemon trees, a fountain and stepping pads set in lawn. [City, State]</p>
+          </div>
+
+          <div class="gallery">
+            <figure class="gallery-item gallery-lead">
+              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-01.webp · 3:2" href="images/courtyard-01.webp" data-lightbox>
+                <img src="images/courtyard-01.webp" alt="Render of a backyard with a fountain, stepping pads in lawn, a pool and spa, and a fire pit lounge under lemon trees" width="1920" height="1080" loading="lazy">
+              </a>
+              <figcaption>Courtyard overview</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-02.webp · 3:2" href="images/courtyard-02.webp" data-lightbox>
+                <img src="images/courtyard-02.webp" alt="Night render of the fountain, stepping pads, lit pool and uplit lemon trees" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Courtyard overview, night</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-03.webp · 3:2" href="images/courtyard-03.webp" data-lightbox>
+                <img src="images/courtyard-03.webp" alt="Render of a fire pit lounge on a stamped concrete pad framed by lemon trees" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Fire pit under the lemon trees</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-04.webp · 3:2" href="images/courtyard-04.webp" data-lightbox>
+                <img src="images/courtyard-04.webp" alt="Night render of the fire pit lounge with uplit lemon trees and in-ground lights" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Fire pit, night</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-05.webp · 3:2" href="images/courtyard-05.webp" data-lightbox>
+                <img src="images/courtyard-05.webp" alt="Render of a pergola dining area with an outdoor kitchen, with the tiled spa and pool in front" width="1920" height="1080" loading="lazy">
+              </a>
+              <figcaption>Pergola dining and outdoor kitchen</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-06.webp · 3:2" href="images/courtyard-06.webp" data-lightbox>
+                <img src="images/courtyard-06.webp" alt="Render looking from the fire pit across the lawn and stepping pads to the pool and house" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>View from the fire pit</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-07.webp · 3:2" href="images/courtyard-07.webp" data-lightbox>
+                <img src="images/courtyard-07.webp" alt="Top-down render of the pool, spa, pergola, lawn and stepping pads" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Plan view</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ---------- Terraced hillside ---------- -->
+        <article class="project reveal">
+          <div class="project-info">
+            <h3>Terraced hillside</h3>
+            <p>Three tiers of retaining walls, wide stairs with lit treads, a sunken fire lounge, a lawn terrace and layered slope planting. [City, State]</p>
+          </div>
+
+          <div class="gallery">
+            <figure class="gallery-item gallery-lead">
+              <a class="media" style="--ratio: 3 / 2" data-label="terraced-01.webp · 3:2" href="images/terraced-01.webp" data-lightbox>
+                <img src="images/terraced-01.webp" alt="Render of a terraced hillside backyard with tiered retaining walls, wide stairs, a sunken fire lounge and a lawn terrace" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Hillside overview</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="terraced-02.webp · 3:2" href="images/terraced-02.webp" data-lightbox>
+                <img src="images/terraced-02.webp" alt="Render of a sunken fire lounge with stairs and planted terraces behind" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Sunken fire lounge</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="terraced-03.webp · 3:2" href="images/terraced-03.webp" data-lightbox>
+                <img src="images/terraced-03.webp" alt="Render of the main stairs climbing between planted terraces" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Main stairs and terraces</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="terraced-04.webp · 3:2" href="images/terraced-04.webp" data-lightbox>
+                <img src="images/terraced-04.webp" alt="Night render looking up the lit stairs past wall-washed retaining walls to the house" width="1440" height="959" loading="lazy">
+              </a>
+              <figcaption>Stair and wall lighting, night</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="terraced-05.webp · 3:2" href="images/terraced-05.webp" data-lightbox>
+                <img src="images/terraced-05.webp" alt="Top-down render of the retaining walls, stairs, lawn terrace and fire lounge" width="2000" height="1125" loading="lazy">
+              </a>
+              <figcaption>Plan view</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ---------- Lakeside hillside ---------- -->
+        <article class="project reveal">
+          <div class="project-info">
+            <h3>Lakeside hillside</h3>
             <p>Under-deck patio with seat wall, curved retaining walls, a lakeside paver terrace with boathouse access, layered planting and full landscape lighting. [City, State]</p>
           </div>
 
@@ -151,40 +299,53 @@
           </div>
         </article>
 
-        <!-- ---------- More projects ---------- -->
-        <h3 class="more-title reveal">More projects</h3>
-        <div class="gallery gallery-more reveal">
-          <figure class="gallery-item">
-            <a class="media" style="--ratio: 3 / 2" data-label="pool-01.webp · 3:2" href="images/pool-01.webp" data-lightbox>
-              <img src="images/pool-01.webp" alt="Render of a backyard pool and pergola dining area, viewed from a fire pit lounge" width="2000" height="1125" loading="lazy">
-            </a>
-            <figcaption><strong>Pool, pergola and fire pit.</strong> Pool and spa, covered dining, grill station and perimeter planting.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <a class="media" style="--ratio: 3 / 2" data-label="pool-02.webp · 3:2" href="images/pool-02.webp" data-lightbox>
-              <img src="images/pool-02.webp" alt="Night render of a tiled spa beside a pergola dining area and pool" width="2000" height="1125" loading="lazy">
-            </a>
-            <figcaption><strong>Same project, at night.</strong> Spa, pergola and landscape lighting.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <a class="media" style="--ratio: 3 / 2" data-label="terraced-01.webp · 3:2" href="images/terraced-01.webp" data-lightbox>
-              <img src="images/terraced-01.webp" alt="Render of a terraced hillside backyard with retaining walls, stairs, a fire lounge and planting" width="2000" height="1125" loading="lazy">
-            </a>
-            <figcaption><strong>Terraced hillside.</strong> Tiered retaining walls, wide stairs, fire lounge and slope planting.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <a class="media" style="--ratio: 3 / 2" data-label="woodland-01.webp · 3:2" href="images/woodland-01.webp" data-lightbox>
-              <img src="images/woodland-01.webp" alt="Render of a wooded rear yard with a planting bed, boulder and stepping-stone path" width="1439" height="959" loading="lazy">
-            </a>
-            <figcaption><strong>Woodland rear garden.</strong> Naturalistic planting, boulders and a stepping-stone path.</figcaption>
-          </figure>
-        </div>
+
+        <!-- ---------- Wooded lakefront ---------- -->
+        <article class="project reveal">
+          <div class="project-info">
+            <h3>Wooded lakefront</h3>
+            <p>Flagstone fire pit and patios, a raised hot tub, stepping-stone paths and naturalistic planting that works with the existing trees, down to the dock. [City, State]</p>
+          </div>
+
+          <div class="gallery">
+            <figure class="gallery-item gallery-lead">
+              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-01.webp · 3:2" href="images/lakefront-01.webp" data-lightbox>
+                <img src="images/lakefront-01.webp" alt="Render of a flagstone fire pit facing the lake with a stepping-stone path and planting bed" width="1439" height="959" loading="lazy">
+              </a>
+              <figcaption>Fire pit facing the lake</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-02.webp · 3:2" href="images/lakefront-02.webp" data-lightbox>
+                <img src="images/lakefront-02.webp" alt="Render of a flagstone fire pit with redbuds and perennial beds, with the lake and dock behind" width="1125" height="750" loading="lazy">
+              </a>
+              <figcaption>Fire pit with redbuds and perennials</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-03.webp · 3:2" href="images/lakefront-03.webp" data-lightbox>
+                <img src="images/lakefront-03.webp" alt="Render of a flagstone patio with a raised hot tub and layered planting" width="1439" height="959" loading="lazy">
+              </a>
+              <figcaption>Hot tub patio</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-04.webp · 3:2" href="images/lakefront-04.webp" data-lightbox>
+                <img src="images/lakefront-04.webp" alt="Render of a flagstone lounge looking back toward the house along a stepping-stone path" width="1439" height="959" loading="lazy">
+              </a>
+              <figcaption>Flagstone lounge and path</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-05.webp · 3:2" href="images/lakefront-05.webp" data-lightbox>
+                <img src="images/lakefront-05.webp" alt="Top-down aerial render of the property with the dock, fire pit area, driveway and shoreline" width="1439" height="959" loading="lazy">
+              </a>
+              <figcaption>Plan view</figcaption>
+            </figure>
+          </div>
+        </article>
 
         <!-- ---------- Full portfolio request ---------- -->
         <div class="portfolio-cta reveal">
           <div>
             <h3>Want to see more?</h3>
-            <p>We only show a few projects publicly. Book a call and we'll walk you through the full portfolio, or ask for the link and we'll send it privately.</p>
+            <p>These are a few of the projects we can show publicly. Book a call and we'll walk you through the full portfolio, or ask for the link and we'll send it privately.</p>
           </div>
           <div class="portfolio-cta-actions">
             <a href="#contact" class="btn btn-primary" data-booking-link>Book a call</a>

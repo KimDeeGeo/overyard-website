@@ -79,7 +79,7 @@ Every image points to a fixed filename in `/images`. **To add or replace an imag
 - Keep images under about 500 KB each (2000px wide is plenty). [squoosh.app](https://squoosh.app) is a free tool for compressing them.
 - Update the `alt="..."` text next to each image so it describes the picture.
 
-**Work section (portfolio):** each image is a `<figure class="gallery-item">` block. To add a render, save it into `/images` (e.g. `lakeside-06.webp`), then copy any `gallery-item` block in `index.html` and change the filename (in both `href` and `src`), the `alt` text and the caption. Clicking an image on the site opens it full size. The featured project shows one large image plus a 2-column grid, so an even number of extra images looks tidiest.
+**Work section (portfolio):** each image is a `<figure class="gallery-item">` block. To add a render, save it into `/images` (e.g. `modern-08.webp`), then copy any `gallery-item` block in `index.html` and change the filename (in both `href` and `src`), the `alt` text and the caption. Clicking an image on the site opens it full size. Each project shows its first image large, then the rest in a 2-column grid, so an even number of extra images looks tidiest.
 
 **Showing only a few projects:** the "Want to see more?" box under the gallery invites visitors to book a call or request the full portfolio. "Request the portfolio" pre-selects that option in the contact form, so you'll know to send the private link.
 
@@ -102,14 +102,14 @@ const FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/abcdwxyz"
 - [ ] `founder-edmond.jpg` (4:5 portrait)
 - [ ] `founder-kim.jpg` (4:5 portrait)
 
-Already in place: `hero-01.webp`, `lakeside-01` to `lakeside-05`, `pool-01`, `pool-02`, `terraced-01`, `woodland-01` (all `.webp`).
+Already in place: `hero-01.webp` plus five projects in the Work section: `modern-01`–`07`, `courtyard-01`–`07`, `terraced-01`–`05`, `lakeside-01`–`05`, `lakefront-01`–`05` (all `.webp`).
 
 ### Text placeholders (search `index.html` for `[`)
 - [ ] `[X days]`: turnaround (Offer, How it works, each package, FAQ)
 - [ ] `[X]`: number of renders and revision rounds (How it works, packages, FAQ)
 - [ ] `[$___]`: package prices, takeoff add-on price, extra revision price
 - [ ] `[available / $___]`: rush delivery (FAQ)
-- [ ] `[City, State]`: location of the featured project
+- [ ] `[City, State]`: location of each of the 5 projects (Work section)
 - [ ] `[X business hours]`: reply time (Contact)
 - [ ] `[XX]-minute`: call length (Contact)
 - [ ] `[hello@overyard.com]`: real email, in 2 places (Contact + Footer). Update both the visible text and the `mailto:` link.
