@@ -56,7 +56,7 @@ const FORM_ENDPOINT = "";
 
   // ---- Catch images that failed before this script loaded ----
   document.querySelectorAll(".media img").forEach(function (img) {
-    if (img.complete && img.naturalWidth === 0) img.parentNode.classList.add("is-missing");
+    if (img.complete && img.naturalWidth === 0) img.closest(".media").classList.add("is-missing");
   });
 
   // ---- Fade-in on scroll ----
@@ -119,6 +119,39 @@ const FORM_ENDPOINT = "";
       })
       .finally(function () { button.disabled = false; });
   });
+
+  // ---- "Request the portfolio" buttons pre-select the form topic ----
+  var topic = document.getElementById("f-topic");
+  document.querySelectorAll("[data-topic]").forEach(function (link) {
+    link.addEventListener("click", function () { topic.value = link.dataset.topic; });
+  });
+
+  // ---- Full-size image viewer (Work section) ----
+  var box = document.getElementById("lightbox");
+  if (box && typeof box.showModal === "function") {
+    var boxImg = box.querySelector("img");
+    var boxCaption = box.querySelector(".lightbox-caption");
+
+    document.querySelectorAll("[data-lightbox]").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        if (link.classList.contains("is-missing")) { e.preventDefault(); return; }
+        e.preventDefault();
+        var img = link.querySelector("img");
+        var caption = link.parentNode.querySelector("figcaption");
+        boxImg.src = link.getAttribute("href");
+        boxImg.alt = img ? img.alt : "";
+        boxCaption.textContent = caption ? caption.textContent : "";
+        box.showModal();
+      });
+    });
+
+    function closeBox() { box.close(); }
+    box.querySelector(".lightbox-close").addEventListener("click", closeBox);
+    // click anywhere outside the image closes it
+    box.addEventListener("click", function (e) { if (e.target !== boxImg) closeBox(); });
+    box.addEventListener("close", function () { boxImg.src = ""; });
+  }
+  // (Browsers without <dialog> support simply open the image file directly.)
 
   // ---- Footer year ----
   document.getElementById("year").textContent = new Date().getFullYear();
