@@ -504,7 +504,8 @@ const CONFIG = {
       if (form.querySelector("[name=botcheck]").checked) return;
 
       if (!CONFIG.web3formsKey) {
-        setStatus("error", "The form isn't connected yet." + (CONFIG.email ? " Please email " + CONFIG.email + " instead." : " Please book a call instead."));
+        setStatus("error", "The form isn't connected yet." +
+          (CONFIG.email ? " Please email " + CONFIG.email + " instead." : CONFIG.bookingUrl ? " Please book a call instead." : ""));
         return;
       }
 
