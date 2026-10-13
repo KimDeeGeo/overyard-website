@@ -19,7 +19,7 @@ A busy US or Australian landscape contractor should understand the offer in 10 s
 
 ## Business facts (do not change or exaggerate)
 - White-label and co-branded landscape design for landscape, hardscape, pool and outdoor-living contractors in the US and Australia.
-- **Edmond De Claro**, co-founder and design lead: has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist. Tools: Realtime Landscaping Architect and Lumion.
+- **Edmond De Claro**, co-founder and design lead: has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist. Tools: Realtime Landscaping Architect, SketchUp and Lumion.
 - **Kim Daryl Geolagon**, co-founder, sales and client accounts: licensed civil engineer, 5+ years in construction, current remote estimator for a US general contractor. Single point of contact. Handles material takeoffs.
 - Two founders, based in the Philippines. **Edmond is the only designer right now.**
 
