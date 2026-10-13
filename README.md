@@ -1,151 +1,96 @@
-# Overyard website (v1)
+# Overyard website
 
-A one-page site built with plain HTML, CSS and a little JavaScript. There is no build step and nothing to install.
+A one-page lead-generation site: plain HTML, CSS and a little JavaScript. There is no build step and nothing to install.
+Live at **https://kimdeegeo.github.io/overyard-website/**
 
 ```
-index.html          The whole page. Each section is marked with a big comment banner.
-css/style.css       All styling. Colors, font and spacing are variables at the top.
-js/main.js          Booking link, form connection, mobile menu, fade-in effects.
-images/             Renders, before photos, plans, founder photos.
-assets/             Logo, mark and favicons.
-favicon.ico         Fallback icon for older browsers.
-serve.ps1           Local preview server (Windows, no installs needed).
+index.html        The whole page. Each section is marked with a numbered comment banner.
+css/style.css     Styling. Colors, font and spacing are variables at the top.
+js/main.js        SITE SETTINGS block at the top (prices, links, IDs), then the site's scripts.
+images/           Renders and photos.
+assets/           Logo, mark and favicons.
+CLAUDE.md         Brand, honesty and copy rules (read by Claude in future sessions).
+serve.ps1         Local preview server for Windows.
 ```
 
 ---
 
 ## 1. Preview locally
 
-**Windows (no installs needed):** open PowerShell in this folder and run:
+Open PowerShell in this folder and run:
 
 ```
 powershell -ExecutionPolicy Bypass -File serve.ps1
 ```
 
-Then open **http://localhost:8080**. Press `Ctrl+C` to stop.
-
-**If you have Python or Node installed**, either of these also works:
-
-```
-python -m http.server 8080
-npx serve .
-```
-
-Double-clicking `index.html` also works for a quick look, but a local server is closer to the live site.
+Then open **http://localhost:8080**. Press `Ctrl+C` to stop. If you have Python, `python -m http.server 8080` also works.
 
 ---
 
-## 2. Where to edit things
+## 2. Edit the settings (prices, links, numbers)
 
-### Text
-All text lives in `index.html`. Search for the section banners:
+Open `js/main.js`. Everything you're likely to change is in the **SITE SETTINGS** block at the top:
 
-| Section | Search for |
+| Setting | What it controls |
 |---|---|
-| Header / nav | `1. HEADER` |
-| Hero headline | `2. HERO` |
-| Work / portfolio | `3. WORK` |
-| The offer (what you get, why Overyard) | `4. THE OFFER` |
-| How it works | `5. HOW IT WORKS` |
-| Packages / prices | `6. PACKAGES` |
-| Founders | `7. ABOUT` |
-| FAQ | `8. FAQ` |
-| Contact form | `9. CONTACT` |
-| Footer | `10. FOOTER` |
+| `email` | Email links in the FAQ, contact section and footer |
+| `bookingUrl` | Your Calendly link. Every "Book a call" button and the inline calendar use it |
+| `web3formsKey` | Turns the contact form on (see section 4) |
+| `ga4Id`, `clarityId` | Google Analytics 4 and Microsoft Clarity. Scripts only load when set |
+| `social` | LinkedIn / Instagram / Facebook links |
+| `foundingSpots`, `rateLockMonths` | "Only 5 founding spots… locked for 6 months" |
+| `guarantee` | Guarantee text (pricing and FAQ) |
+| `sample` | Free sample render turnaround and terms |
+| `packages` | Founding price, regular price, renders, video, revision rounds, takeoff, turnaround per package |
+| `takeoffAddon`, `extraRevision`, `rush` | Add-on prices |
+| `currencyNote` | "All prices in USD." |
+| `walkthroughVideo`, `walkthroughPoster` | Optional looping video in the Work section |
+| `founderPhotos` | Founder photo paths (initials show until set) |
+| `beforePhotos` | Before photos for the before/after slider |
 
-The page title and search-engine description are at the top of `index.html`.
+**Rule:** leave a value empty (`""`) or `0` and whatever uses it is hidden. Placeholder text never shows on the live site.
 
-### Colors
-Open `css/style.css`. The first block (`:root`) holds every color:
+Turnaround and revision ranges in "How it works", the FAQ and the comparison table are worked out from the packages automatically.
 
-```css
---color-accent: #3D5A45;       /* the green */
---color-accent-hover: #2E4636; /* button hover */
+## 3. Text, colors and images
+
+- **Text:** in `index.html`. Search for the section banners (`2. HERO`, `3. PROBLEM`, `4. WORK`, `5. HOW IT WORKS`, `6. PRICING`, `7. COMPARISON`, `8. ABOUT`, `9. FAQ`, `10. CONTACT`, `11. FOOTER`).
+- **Colors:** `--color-accent` and `--color-accent-hover` at the top of `css/style.css`. The logo SVGs in `/assets` contain `#3D5A45` too.
+- **Swap an image:** save the new file into `/images` with the **same filename**.
+- **Work section:** each project is an `<article class="work-card">`. The cover image is the first `<img>`. The full gallery is the list inside `<template class="work-images">`. To add an image to a gallery, copy one `<img data-src=…>` line and change the file, `alt` and `data-caption`. Keep the plan view last.
+- **Before/after slider:**
+  1. Save a site photo as `images/project-01-before.webp` (any project number; same framing as the project's first gallery image works best).
+  2. In `js/main.js`, set `beforePhotos: { "project-01": "images/project-01-before.webp" }`.
+  3. That project's gallery then opens on a drag-to-compare slider.
+
+  For the hero, use `hero-01-before.webp` and the `hero` key. Project numbers: 01 modern pool, 02 pool courtyard, 03 terraced hillside, 04 lakeside hillside, 05 wooded lakefront.
+- **Founder photos:** save `images/founder-edmond.jpg` and `images/founder-kim.jpg` (4:5 portrait), then set the paths in `founderPhotos`.
+- **Walkthrough video:** save `videos/walkthrough-01.mp4` (muted, under ~10 MB), then set `walkthroughVideo`. A poster image is optional.
+- Keep images under about 500 KB, 2000px wide at most. [squoosh.app](https://squoosh.app) compresses them for free.
+
+## 4. Connect the contact form (Web3Forms, free)
+
+1. Go to [web3forms.com](https://web3forms.com), enter the email address that should receive leads, and copy the **access key** they send you.
+2. Paste it into `web3formsKey` in `js/main.js`.
+3. Commit and push. Submit a test from the live site and check your inbox (and spam folder the first time).
+
+The key is safe to have in public code because it only lets people send to your inbox. A hidden "botcheck" field filters basic spam bots. Until a key is set, the form shows a "not connected yet" message and sends nothing.
+
+## 5. Connect Calendly
+
+1. In Calendly, create a 15 to 30 minute event and copy its link (e.g. `https://calendly.com/overyard/intro-call`).
+2. Paste it into `bookingUrl` in `js/main.js`.
+
+The calendar appears under the contact form and only loads when a visitor scrolls near it. All "Book a call" buttons jump to it.
+
+## 6. Deploy (GitHub Pages)
+
+The site deploys automatically from the `main` branch. To publish changes:
+
+```
+git add -A
+git commit -m "Describe the change"
+git push
 ```
 
-Change those two lines to re-color the whole site. Other green options:
-- **Deep Forest** `#2E4636` (hover `#22352A`)
-- **Sage** `#7C9479`. Too light for white button text, so only use it for small accents.
-
-The logo files in `/assets` have the green written inside them too. Open each `.svg` in a text editor and replace `#3D5A45`.
-
-### Font
-The site uses Manrope. To change it, swap the Google Fonts `<link>` in `index.html` and update `--font` in `css/style.css`.
-
-### Images
-Every image points to a fixed filename in `/images`. **To add or replace an image, save it into `/images` with exactly the same filename.** No code changes needed. Until a file exists, the page shows a gray box labeled with the filename and recommended ratio.
-
-- Use the **same extension** as listed (`.jpg` or `.webp`). If your file is a `.png`, either convert it or change the filename in `index.html`.
-- Keep images under about 500 KB each (2000px wide is plenty). [squoosh.app](https://squoosh.app) is a free tool for compressing them.
-- Update the `alt="..."` text next to each image so it describes the picture.
-
-**Work section (portfolio):** each image is a `<figure class="gallery-item">` block. To add a render, save it into `/images` (e.g. `modern-08.webp`), then copy any `gallery-item` block in `index.html` and change the filename (in both `href` and `src`), the `alt` text and the caption. Clicking an image on the site opens it full size. Each project shows its first image large, then the rest in a 2-column grid, so an even number of extra images looks tidiest.
-
-**Showing only a few projects:** the "Want to see more?" box under the gallery invites visitors to book a call or request the full portfolio. "Request the portfolio" pre-selects that option in the contact form, so you'll know to send the private link.
-
-### Booking link and contact form
-Both are set at the top of `js/main.js`:
-
-```js
-const BOOKING_URL = "";   // e.g. "https://calendly.com/overyard/intro-call"
-const FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/abcdwxyz"
-```
-
-- **BOOKING_URL:** every "Book a call" button opens this link. While it's empty, the buttons scroll to the contact section.
-- **FORM_ENDPOINT:** where form submissions are sent. While it's empty, the form only shows a thank-you message and **nothing is sent**. Simplest route: create a free form at [Formspree](https://formspree.io) (or [Basin](https://usebasin.com)), copy its endpoint URL, and paste it here. Submissions then arrive in your email. This works on any host.
-
----
-
-## 3. Placeholder checklist
-
-### Images still needed (drop into `/images`)
-- [ ] `founder-edmond.jpg` (4:5 portrait)
-- [ ] `founder-kim.jpg` (4:5 portrait)
-
-Already in place: `hero-01.webp` plus five projects in the Work section: `modern-01`–`07`, `courtyard-01`–`07`, `terraced-01`–`05`, `lakeside-01`–`05`, `lakefront-01`–`05` (all `.webp`).
-
-### Text placeholders (search `index.html` for `[`)
-- [ ] `[X days]`: turnaround (Offer, How it works, each package, FAQ)
-- [ ] `[X]`: number of renders and revision rounds (How it works, packages, FAQ)
-- [ ] `[$___]`: package prices, takeoff add-on price, extra revision price
-- [ ] `[available / $___]`: rush delivery (FAQ)
-- [ ] `[City, State]`: location of each of the 5 projects (Work section)
-- [ ] `[X business hours]`: reply time (Contact)
-- [ ] `[XX]-minute`: call length (Contact)
-- [ ] `[hello@overyard.com]`: real email, in 2 places (Contact + Footer). Update both the visible text and the `mailto:` link.
-
-### Links and settings
-- [ ] `BOOKING_URL` in `js/main.js`
-- [ ] `FORM_ENDPOINT` in `js/main.js`
-- [ ] Social links in the footer (replace each `href="#"`, and remove any you don't use)
-- [ ] After going live: change `og:image` in `index.html` to the full URL (e.g. `https://overyard.com/images/hero-01.webp`) so link previews show the render
-
-### Review before launch
-- [ ] Project titles, captions and descriptions in the Work section match the real projects
-- [ ] Founder bios
-- [ ] FAQ answers (time zones, file formats)
-
----
-
-## 4. Deploy for free
-
-### Option A: Netlify (easiest, no account setup beyond sign-up)
-1. Go to [app.netlify.com/drop](https://app.netlify.com/drop) and sign up (free).
-2. Drag this whole folder onto the page.
-3. You get a live URL in seconds. To update the site later, drag the folder again (Site → Deploys).
-4. Custom domain: Site settings → Domain management → Add domain.
-
-### Option B: Vercel
-1. Sign up at [vercel.com](https://vercel.com) (free).
-2. Install the CLI (`npm i -g vercel`, needs Node.js), or connect a GitHub repo (see Option C, step 1–3).
-3. In this folder run `vercel` and accept the defaults. There is no framework and no build command.
-4. Add a custom domain under Project → Settings → Domains.
-
-### Option C: GitHub Pages
-1. Create a free account at [github.com](https://github.com) and a new **public** repository (e.g. `overyard-website`).
-2. Upload the files: on the repo page, choose **Add file → Upload files**, drag in everything in this folder, and commit. (Or push with git.)
-3. Go to **Settings → Pages**, set Source to **Deploy from a branch**, choose `main` and `/ (root)`, then Save.
-4. After about a minute the site is live at `https://<your-username>.github.io/overyard-website/`.
-5. Custom domain: enter it on the same Pages settings screen and follow GitHub's DNS instructions.
-
-All paths in the site are relative, so it works in a subfolder (like GitHub Pages) without changes.
+The live site updates within a minute or two. Pages is set up under **Settings → Pages → Deploy from a branch → main / (root)**.
