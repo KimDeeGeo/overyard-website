@@ -424,6 +424,7 @@ const CONFIG = {
       img.width = 400; img.height = 500;
       fig.innerHTML = "";
       fig.appendChild(img);
+      fig.removeAttribute("aria-hidden");
       fig.classList.add("has-photo");
     });
   }

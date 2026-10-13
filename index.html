@@ -4,30 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ==== PAGE TITLE + SEARCH/SHARE DESCRIPTION (edit freely) ==== -->
-  <title>Overyard | Landscape design for contractors</title>
-  <meta name="description" content="White-label landscape design for landscape, hardscape, pool and outdoor-living contractors in the US and Australia. 2D plans, 3D renders and material takeoffs at a lower cost, with faster turnaround.">
-  <meta property="og:title" content="Overyard | Landscape design for contractors">
-  <meta property="og:description" content="2D plans, 3D renders and material takeoffs, delivered under your brand. Lower cost, faster turnaround.">
-  <meta property="og:image" content="images/hero-01.webp">
+  <!-- ==== PAGE TITLE + SEARCH/SHARE TEXT (edit freely) ==== -->
+  <title>Overyard | White-label landscape design for contractors</title>
+  <meta name="description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors in the US and Australia. Get a free sample render.">
+  <link rel="canonical" href="https://kimdeegeo.github.io/overyard-website/">
   <meta name="theme-color" content="#F7F7F5">
+
+  <!-- Link previews (Facebook, LinkedIn, iMessage, Slack...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Overyard">
+  <meta property="og:url" content="https://kimdeegeo.github.io/overyard-website/">
+  <meta property="og:title" content="Overyard | Show them the yard. Win the job.">
+  <meta property="og:description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors.">
+  <meta property="og:image" content="https://kimdeegeo.github.io/overyard-website/images/hero-01.webp">
+  <meta property="og:image:width" content="2000">
+  <meta property="og:image:height" content="1125">
+  <meta property="og:image:alt" content="3D render of a modern backyard pool with a pergola fire lounge">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Overyard | Show them the yard. Win the job.">
+  <meta name="twitter:description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors.">
+  <meta name="twitter:image" content="https://kimdeegeo.github.io/overyard-website/images/hero-01.webp">
 
   <!-- Favicons -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-  <!-- Font: Manrope (Google Fonts) -->
+  <!-- Load the hero image and font early -->
+  <link rel="preload" as="image" href="images/hero-01.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
 
   <link rel="stylesheet" href="css/style.css">
 
   <!--
-    Image placeholder helper (keep this here, in the <head>).
-    If an image file in /images is missing, its box shows the filename and
-    aspect ratio instead of a broken image. Drop in the real file and it appears.
+    Image placeholder helper (keep this in the <head>).
+    If an image file in /images is missing, its box shows the filename
+    instead of a broken image. Drop in the real file and it appears.
   -->
   <script>
     document.documentElement.classList.add('js');
@@ -40,6 +55,13 @@
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!--
+    HOW NUMBERS GET ONTO THIS PAGE
+    Prices, counts, turnaround, email and links are NOT typed here.
+    They come from the SITE SETTINGS block at the top of js/main.js.
+    Elements with data-cfg="..." are filled in from there automatically.
+  -->
 
   <!-- =========================================================
        1. HEADER
@@ -58,12 +80,11 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <ul>
           <li><a href="#work">Work</a></li>
-          <li><a href="#offer">Offer</a></li>
-          <li><a href="#packages">Packages</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#process">How it works</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
-        <!-- "Book a call" buttons: the link is set in js/main.js (BOOKING_URL) -->
-        <a href="#contact" class="btn btn-primary btn-small" data-booking-link>Book a call</a>
+        <a href="#contact" class="btn btn-primary btn-small" data-topic="sample">Get a free sample render</a>
       </nav>
     </div>
   </header>
@@ -72,336 +93,196 @@
 
     <!-- =========================================================
          2. HERO
+         To show a before/after slider here, add a before photo and set
+         beforePhotos.hero in js/main.js.
          ========================================================= -->
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow reveal">White-label landscape design · US and Australia</p>
-          <h1 class="hero-title reveal">Cut your design costs, not your design quality.</h1>
+          <p class="eyebrow reveal">White-label landscape design for contractors</p>
+          <h1 class="hero-title reveal">Show them the yard. Win the job.</h1>
         </div>
         <div>
-          <p class="hero-lead reveal">Overyard is a Philippine-based landscape design team for landscape, hardscape, pool and outdoor-living contractors. We produce the 2D plans, 3D renders and material takeoffs. You sell and build the job.</p>
+          <p class="hero-lead reveal">White-label 2D plans and 3D renders for landscape, pool and outdoor-living contractors. Designed by a landscape designer with 1,000+ residential projects, with material takeoffs from a licensed civil engineer.</p>
           <div class="hero-actions reveal">
-            <a href="#contact" class="btn btn-primary" data-booking-link>Book a call</a>
-            <a href="#work" class="link-arrow">See the work</a>
+            <a href="#contact" class="btn btn-primary" data-topic="sample">Get a free sample render</a>
+            <a href="#pricing" class="btn btn-outline">See pricing</a>
           </div>
         </div>
       </div>
 
-      <!-- Hero image: images/hero-01.webp (16:9, at least 2000px wide) -->
+      <div class="container">
+        <ul class="chips reveal" aria-label="Why contractors choose Overyard">
+          <li>1,000+ residential designs by our lead designer</li>
+          <li>Delivered under your brand</li>
+          <li>Takeoffs by a licensed civil engineer</li>
+        </ul>
+      </div>
+
+      <!-- Hero image: images/hero-01.webp (16:9, 2000px wide) -->
       <figure class="media hero-media reveal" style="--ratio: 16 / 9" data-label="hero-01.webp · 16:9">
         <img src="images/hero-01.webp" alt="3D render of a modern backyard pool with a slatted pergola fire lounge, lounge deck and a row of cypress trees" width="2000" height="1125" fetchpriority="high">
       </figure>
     </section>
 
     <!-- =========================================================
-         3. WORK (portfolio)
-         Each project = one <article class="project">: a title, a short
-         description, then a gallery. The first image is shown large;
-         the rest sit in a 2-column grid (an even number looks tidiest).
-         To swap an image, replace the file in /images with the same name.
-         To add one, copy a <figure class="gallery-item"> block and change
-         the filename (in both href and src), alt text and caption.
-         Clicking an image opens it full size (handled in js/main.js).
+         3. PROBLEM
          ========================================================= -->
-    <section class="section" id="work">
+    <section class="section section-tight" id="problem">
       <div class="container">
         <header class="section-head reveal">
-          <h2>Selected work</h2>
-          <p>Five recent projects, from pools and outdoor living to hillside terracing. Every design is drawn to be sold and built.</p>
+          <h2>Good crews lose jobs to better pictures.</h2>
         </header>
-
-        <!-- ---------- Modern pool and front yard ---------- -->
-        <article class="project reveal">
-          <div class="project-info">
-            <h3>Modern pool and front yard</h3>
-            <p>Pool and spa, slatted pergola fire lounge, outdoor kitchen, floating stairs with a water wall, and a low-water front yard. Full landscape lighting front and back. [City, State]</p>
+        <div class="problems">
+          <div class="problem reveal">
+            <h3>Designing at 10 p.m.</h3>
+            <p>You're on site all day, then drawing plans at the kitchen table at night. Design time comes out of estimating, crews and sleep.</p>
           </div>
-
-          <div class="gallery">
-            <figure class="gallery-item gallery-lead">
-              <a class="media" style="--ratio: 3 / 2" data-label="modern-01.webp · 3:2" href="images/modern-01.webp" data-lightbox>
-                <img src="images/modern-01.webp" alt="Render of a modern pool and spa with an outdoor kitchen bar in front and a slatted pergola lounge behind" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Pool, spa and outdoor kitchen</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="modern-02.webp · 3:2" href="images/modern-02.webp" data-lightbox>
-                <img src="images/modern-02.webp" alt="Night render of the pool, spa and pergola fire lounge with landscape lighting" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Pool and pergola lounge, night</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="modern-03.webp · 3:2" href="images/modern-03.webp" data-lightbox>
-                <img src="images/modern-03.webp" alt="Render of a slatted pergola with a fire table and lounge seating" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Pergola fire lounge</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="modern-04.webp · 3:2" href="images/modern-04.webp" data-lightbox>
-                <img src="images/modern-04.webp" alt="Night render of floating concrete stairs on a grass slope beside a lit water wall" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Floating stairs and water wall, night</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="modern-05.webp · 3:2" href="images/modern-05.webp" data-lightbox>
-                <img src="images/modern-05.webp" alt="Render of a modern front yard with salvia, boulders, river rock and path lights" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Front yard planting</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="modern-06.webp · 3:2" href="images/modern-06.webp" data-lightbox>
-                <img src="images/modern-06.webp" alt="Night render of the front yard with path lights and uplit shrubs" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Front yard lighting, night</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="modern-07.webp · 3:2" href="images/modern-07.webp" data-lightbox>
-                <img src="images/modern-07.webp" alt="Top-down render of the property showing the pool, pergola, kitchen, side yards and front yard" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Plan view</figcaption>
-            </figure>
+          <div class="problem reveal">
+            <h3>"I can't picture it."</h3>
+            <p>A sketch and a price sheet ask homeowners to imagine the finished yard. Most can't, so they stall, shrink the scope or shop around.</p>
           </div>
-        </article>
-
-        <!-- ---------- Pool courtyard and citrus grove ---------- -->
-        <article class="project reveal">
-          <div class="project-info">
-            <h3>Pool courtyard and citrus grove</h3>
-            <p>Pool and spa, pergola dining with an outdoor kitchen, a fire pit lounge under lemon trees, a fountain and stepping pads set in lawn. [City, State]</p>
-          </div>
-
-          <div class="gallery">
-            <figure class="gallery-item gallery-lead">
-              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-01.webp · 3:2" href="images/courtyard-01.webp" data-lightbox>
-                <img src="images/courtyard-01.webp" alt="Render of a backyard with a fountain, stepping pads in lawn, a pool and spa, and a fire pit lounge under lemon trees" width="1920" height="1080" loading="lazy">
-              </a>
-              <figcaption>Courtyard overview</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-02.webp · 3:2" href="images/courtyard-02.webp" data-lightbox>
-                <img src="images/courtyard-02.webp" alt="Night render of the fountain, stepping pads, lit pool and uplit lemon trees" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Courtyard overview, night</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-03.webp · 3:2" href="images/courtyard-03.webp" data-lightbox>
-                <img src="images/courtyard-03.webp" alt="Render of a fire pit lounge on a stamped concrete pad framed by lemon trees" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Fire pit under the lemon trees</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-04.webp · 3:2" href="images/courtyard-04.webp" data-lightbox>
-                <img src="images/courtyard-04.webp" alt="Night render of the fire pit lounge with uplit lemon trees and in-ground lights" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Fire pit, night</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-05.webp · 3:2" href="images/courtyard-05.webp" data-lightbox>
-                <img src="images/courtyard-05.webp" alt="Render of a pergola dining area with an outdoor kitchen, with the tiled spa and pool in front" width="1920" height="1080" loading="lazy">
-              </a>
-              <figcaption>Pergola dining and outdoor kitchen</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-06.webp · 3:2" href="images/courtyard-06.webp" data-lightbox>
-                <img src="images/courtyard-06.webp" alt="Render looking from the fire pit across the lawn and stepping pads to the pool and house" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>View from the fire pit</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="courtyard-07.webp · 3:2" href="images/courtyard-07.webp" data-lightbox>
-                <img src="images/courtyard-07.webp" alt="Top-down render of the pool, spa, pergola, lawn and stepping pads" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Plan view</figcaption>
-            </figure>
-          </div>
-        </article>
-
-        <!-- ---------- Terraced hillside ---------- -->
-        <article class="project reveal">
-          <div class="project-info">
-            <h3>Terraced hillside</h3>
-            <p>Three tiers of retaining walls, wide stairs with lit treads, a sunken fire lounge, a lawn terrace and layered slope planting. [City, State]</p>
-          </div>
-
-          <div class="gallery">
-            <figure class="gallery-item gallery-lead">
-              <a class="media" style="--ratio: 3 / 2" data-label="terraced-01.webp · 3:2" href="images/terraced-01.webp" data-lightbox>
-                <img src="images/terraced-01.webp" alt="Render of a terraced hillside backyard with tiered retaining walls, wide stairs, a sunken fire lounge and a lawn terrace" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Hillside overview</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="terraced-02.webp · 3:2" href="images/terraced-02.webp" data-lightbox>
-                <img src="images/terraced-02.webp" alt="Render of a sunken fire lounge with stairs and planted terraces behind" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Sunken fire lounge</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="terraced-03.webp · 3:2" href="images/terraced-03.webp" data-lightbox>
-                <img src="images/terraced-03.webp" alt="Render of the main stairs climbing between planted terraces" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Main stairs and terraces</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="terraced-04.webp · 3:2" href="images/terraced-04.webp" data-lightbox>
-                <img src="images/terraced-04.webp" alt="Night render looking up the lit stairs past wall-washed retaining walls to the house" width="1440" height="959" loading="lazy">
-              </a>
-              <figcaption>Stair and wall lighting, night</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="terraced-05.webp · 3:2" href="images/terraced-05.webp" data-lightbox>
-                <img src="images/terraced-05.webp" alt="Top-down render of the retaining walls, stairs, lawn terrace and fire lounge" width="2000" height="1125" loading="lazy">
-              </a>
-              <figcaption>Plan view</figcaption>
-            </figure>
-          </div>
-        </article>
-
-        <!-- ---------- Lakeside hillside ---------- -->
-        <article class="project reveal">
-          <div class="project-info">
-            <h3>Lakeside hillside</h3>
-            <p>Under-deck patio with seat wall, curved retaining walls, a lakeside paver terrace with boathouse access, layered planting and full landscape lighting. [City, State]</p>
-          </div>
-
-          <div class="gallery">
-            <figure class="gallery-item gallery-lead">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakeside-01.webp · 3:2" href="images/lakeside-01.webp" data-lightbox>
-                <img src="images/lakeside-01.webp" alt="Dusk render of an under-deck patio with a curved seat wall, paver walkway, path lights and foundation planting" width="2000" height="1331" loading="lazy">
-              </a>
-              <figcaption>Under-deck patio and walkway, dusk</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakeside-02.webp · 3:2" href="images/lakeside-02.webp" data-lightbox>
-                <img src="images/lakeside-02.webp" alt="Render of a lakeside paver terrace with retaining walls, planting beds and a boathouse, with the house on the hill behind" width="2000" height="1331" loading="lazy">
-              </a>
-              <figcaption>Lakeside terrace and boathouse</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakeside-03.webp · 3:2" href="images/lakeside-03.webp" data-lightbox>
-                <img src="images/lakeside-03.webp" alt="Night render of a curved seat wall around a paver patio, with lit planting along the driveway" width="2000" height="1331" loading="lazy">
-              </a>
-              <figcaption>Curved seat wall and driveway planting, night</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakeside-04.webp · 3:2" href="images/lakeside-04.webp" data-lightbox>
-                <img src="images/lakeside-04.webp" alt="Dusk render of a large paver terrace with recessed stairs, step lighting and a retaining wall with planting above" width="2000" height="1331" loading="lazy">
-              </a>
-              <figcaption>Recessed stairs with step lighting</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakeside-05.webp · 3:2" href="images/lakeside-05.webp" data-lightbox>
-                <img src="images/lakeside-05.webp" alt="Aerial render of a curved paver patio, planting bed and lawn with landscape lighting" width="1500" height="999" loading="lazy">
-              </a>
-              <figcaption>Aerial view of patio and planting</figcaption>
-            </figure>
-          </div>
-        </article>
-
-
-        <!-- ---------- Wooded lakefront ---------- -->
-        <article class="project reveal">
-          <div class="project-info">
-            <h3>Wooded lakefront</h3>
-            <p>Flagstone fire pit and patios, a raised hot tub, stepping-stone paths and naturalistic planting that works with the existing trees, down to the dock. [City, State]</p>
-          </div>
-
-          <div class="gallery">
-            <figure class="gallery-item gallery-lead">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-01.webp · 3:2" href="images/lakefront-01.webp" data-lightbox>
-                <img src="images/lakefront-01.webp" alt="Render of a flagstone fire pit facing the lake with a stepping-stone path and planting bed" width="1439" height="959" loading="lazy">
-              </a>
-              <figcaption>Fire pit facing the lake</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-02.webp · 3:2" href="images/lakefront-02.webp" data-lightbox>
-                <img src="images/lakefront-02.webp" alt="Render of a flagstone fire pit with redbuds and perennial beds, with the lake and dock behind" width="1125" height="750" loading="lazy">
-              </a>
-              <figcaption>Fire pit with redbuds and perennials</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-03.webp · 3:2" href="images/lakefront-03.webp" data-lightbox>
-                <img src="images/lakefront-03.webp" alt="Render of a flagstone patio with a raised hot tub and layered planting" width="1439" height="959" loading="lazy">
-              </a>
-              <figcaption>Hot tub patio</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-04.webp · 3:2" href="images/lakefront-04.webp" data-lightbox>
-                <img src="images/lakefront-04.webp" alt="Render of a flagstone lounge looking back toward the house along a stepping-stone path" width="1439" height="959" loading="lazy">
-              </a>
-              <figcaption>Flagstone lounge and path</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <a class="media" style="--ratio: 3 / 2" data-label="lakefront-05.webp · 3:2" href="images/lakefront-05.webp" data-lightbox>
-                <img src="images/lakefront-05.webp" alt="Top-down aerial render of the property with the dock, fire pit area, driveway and shoreline" width="1439" height="959" loading="lazy">
-              </a>
-              <figcaption>Plan view</figcaption>
-            </figure>
-          </div>
-        </article>
-
-        <!-- ---------- Full portfolio request ---------- -->
-        <div class="portfolio-cta reveal">
-          <div>
-            <h3>Want to see more?</h3>
-            <p>These are a few of the projects we can show publicly. Book a call and we'll walk you through the full portfolio, or ask for the link and we'll send it privately.</p>
-          </div>
-          <div class="portfolio-cta-actions">
-            <a href="#contact" class="btn btn-primary" data-booking-link>Book a call</a>
-            <a href="#contact" class="btn btn-outline" data-topic="portfolio">Request the portfolio</a>
+          <div class="problem reveal">
+            <h3>The other bid had 3D.</h3>
+            <p>When a competitor walks in with photoreal renders, your proposal looks like a guess, even when your price and your crew are better.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         4. THE OFFER (what you get + why Overyard)
+         4. WORK
+         Each project is one <article class="work-card">:
+         - the cover image + name + one line are what visitors see first
+         - <template class="work-images"> lists every image in its gallery
+           (data-src = file, alt = description, data-caption = caption)
+         To add an image to a gallery, copy an <img> line inside the template.
          ========================================================= -->
-    <section class="section section-alt" id="offer">
+    <section class="section section-alt" id="work">
       <div class="container">
         <header class="section-head reveal">
-          <h2>The offer</h2>
-          <p>Contractor-ready landscape design at a lower cost than a local hire, with faster turnaround.</p>
+          <h2>Selected work</h2>
+          <p>Pools, outdoor living, hillside terracing and planting. Tap a project to see the full set, including the plan view.</p>
         </header>
 
-        <h3 class="sub-title reveal">What you get</h3>
-        <div class="features">
-          <article class="feature reveal">
-            <h4>2D site and planting plans</h4>
-            <p>Scaled layouts for hardscape, planting and lighting. Clear for your client, usable by your crew.</p>
+        <div class="work-grid">
+
+          <!-- ---------- Project 01 ---------- -->
+          <article class="work-card reveal" data-project="project-01">
+            <div class="media" style="--ratio: 4 / 3" data-label="modern-01.webp · 4:3">
+              <img src="images/modern-01.webp" alt="Render of a modern pool and spa with an outdoor kitchen bar and a slatted pergola lounge" width="2000" height="1125" loading="lazy">
+            </div>
+            <div class="work-body">
+              <h3><button class="work-open" type="button" aria-haspopup="dialog">Modern pool and front yard</button></h3>
+              <p>Pool and spa, pergola fire lounge, outdoor kitchen, floating stairs and a low-water front yard.</p>
+              <span class="work-count" aria-hidden="true">7 images</span>
+            </div>
+            <template class="work-images">
+              <img data-src="images/modern-01.webp" alt="Render of a modern pool and spa with an outdoor kitchen bar in front and a slatted pergola lounge behind" data-caption="Pool, spa and outdoor kitchen">
+              <img data-src="images/modern-02.webp" alt="Night render of the pool, spa and pergola fire lounge with landscape lighting" data-caption="Pool and pergola lounge, night">
+              <img data-src="images/modern-03.webp" alt="Render of a slatted pergola with a fire table and lounge seating" data-caption="Pergola fire lounge">
+              <img data-src="images/modern-04.webp" alt="Night render of floating concrete stairs on a grass slope beside a lit water wall" data-caption="Floating stairs and water wall, night">
+              <img data-src="images/modern-05.webp" alt="Render of a modern front yard with salvia, boulders, river rock and path lights" data-caption="Front yard planting">
+              <img data-src="images/modern-06.webp" alt="Night render of the front yard with path lights and uplit shrubs" data-caption="Front yard lighting, night">
+              <img data-src="images/modern-07.webp" alt="Top-down render of the property showing the pool, pergola, kitchen, side yards and front yard" data-caption="Plan view">
+            </template>
           </article>
-          <article class="feature reveal">
-            <h4>3D renders and walkthroughs</h4>
-            <p>Photoreal stills and walkthrough videos that show homeowners the finished yard before they sign.</p>
+
+          <!-- ---------- Project 02 ---------- -->
+          <article class="work-card reveal" data-project="project-02">
+            <div class="media" style="--ratio: 4 / 3" data-label="courtyard-01.webp · 4:3">
+              <img src="images/courtyard-01.webp" alt="Render of a backyard with a fountain, stepping pads, pool and a fire pit lounge under lemon trees" width="1920" height="1080" loading="lazy">
+            </div>
+            <div class="work-body">
+              <h3><button class="work-open" type="button" aria-haspopup="dialog">Pool courtyard and citrus grove</button></h3>
+              <p>Pool and spa, pergola dining with an outdoor kitchen, and a fire pit under lemon trees.</p>
+              <span class="work-count" aria-hidden="true">7 images</span>
+            </div>
+            <template class="work-images">
+              <img data-src="images/courtyard-01.webp" alt="Render of a backyard with a fountain, stepping pads in lawn, a pool and spa, and a fire pit lounge under lemon trees" data-caption="Courtyard overview">
+              <img data-src="images/courtyard-02.webp" alt="Night render of the fountain, stepping pads, lit pool and uplit lemon trees" data-caption="Courtyard overview, night">
+              <img data-src="images/courtyard-03.webp" alt="Render of a fire pit lounge on a stamped concrete pad framed by lemon trees" data-caption="Fire pit under the lemon trees">
+              <img data-src="images/courtyard-04.webp" alt="Night render of the fire pit lounge with uplit lemon trees and in-ground lights" data-caption="Fire pit, night">
+              <img data-src="images/courtyard-05.webp" alt="Render of a pergola dining area with an outdoor kitchen, with the tiled spa and pool in front" data-caption="Pergola dining and outdoor kitchen">
+              <img data-src="images/courtyard-06.webp" alt="Render looking from the fire pit across the lawn and stepping pads to the pool and house" data-caption="View from the fire pit">
+              <img data-src="images/courtyard-07.webp" alt="Top-down render of the pool, spa, pergola, lawn and stepping pads" data-caption="Plan view">
+            </template>
           </article>
-          <article class="feature reveal">
-            <h4>Defined revisions</h4>
-            <p>A set number of revision rounds in every package. Clear scope, no surprise invoices.</p>
+
+          <!-- ---------- Project 03 ---------- -->
+          <article class="work-card reveal" data-project="project-03">
+            <div class="media" style="--ratio: 4 / 3" data-label="terraced-01.webp · 4:3">
+              <img src="images/terraced-01.webp" alt="Render of a terraced hillside backyard with tiered retaining walls, wide stairs and a lawn terrace" width="2000" height="1125" loading="lazy">
+            </div>
+            <div class="work-body">
+              <h3><button class="work-open" type="button" aria-haspopup="dialog">Terraced hillside</button></h3>
+              <p>Three tiers of retaining walls, lit stairs, a sunken fire lounge and slope planting.</p>
+              <span class="work-count" aria-hidden="true">5 images</span>
+            </div>
+            <template class="work-images">
+              <img data-src="images/terraced-01.webp" alt="Render of a terraced hillside backyard with tiered retaining walls, wide stairs, a sunken fire lounge and a lawn terrace" data-caption="Hillside overview">
+              <img data-src="images/terraced-02.webp" alt="Render of a sunken fire lounge with stairs and planted terraces behind" data-caption="Sunken fire lounge">
+              <img data-src="images/terraced-03.webp" alt="Render of the main stairs climbing between planted terraces" data-caption="Main stairs and terraces">
+              <img data-src="images/terraced-04.webp" alt="Night render looking up the lit stairs past wall-washed retaining walls to the house" data-caption="Stair and wall lighting, night">
+              <img data-src="images/terraced-05.webp" alt="Top-down render of the retaining walls, stairs, lawn terrace and fire lounge" data-caption="Plan view">
+            </template>
           </article>
-          <article class="feature reveal">
-            <h4>Material takeoff <span class="tag">Add-on</span></h4>
-            <p>Quantities pulled from the approved design, so you go from sold to priced faster.</p>
+
+          <!-- ---------- Project 04 ---------- -->
+          <article class="work-card reveal" data-project="project-04">
+            <div class="media" style="--ratio: 4 / 3" data-label="lakeside-01.webp · 4:3">
+              <img src="images/lakeside-01.webp" alt="Dusk render of an under-deck patio with a curved seat wall and paver walkway" width="2000" height="1331" loading="lazy">
+            </div>
+            <div class="work-body">
+              <h3><button class="work-open" type="button" aria-haspopup="dialog">Lakeside hillside</button></h3>
+              <p>Under-deck patio, curved retaining walls, a lakeside terrace and full landscape lighting.</p>
+              <span class="work-count" aria-hidden="true">5 images</span>
+            </div>
+            <template class="work-images">
+              <img data-src="images/lakeside-01.webp" alt="Dusk render of an under-deck patio with a curved seat wall, paver walkway, path lights and foundation planting" data-caption="Under-deck patio and walkway, dusk">
+              <img data-src="images/lakeside-02.webp" alt="Render of a lakeside paver terrace with retaining walls, planting beds and a boathouse, with the house on the hill behind" data-caption="Lakeside terrace and boathouse">
+              <img data-src="images/lakeside-03.webp" alt="Night render of a curved seat wall around a paver patio, with lit planting along the driveway" data-caption="Curved seat wall and driveway planting, night">
+              <img data-src="images/lakeside-04.webp" alt="Dusk render of a large paver terrace with recessed stairs, step lighting and a retaining wall with planting above" data-caption="Recessed stairs with step lighting">
+              <img data-src="images/lakeside-05.webp" alt="Aerial render of a curved paver patio, planting bed and lawn with landscape lighting" data-caption="Aerial view">
+            </template>
           </article>
+
+          <!-- ---------- Project 05 ---------- -->
+          <article class="work-card reveal" data-project="project-05">
+            <div class="media" style="--ratio: 4 / 3" data-label="lakefront-01.webp · 4:3">
+              <img src="images/lakefront-01.webp" alt="Render of a flagstone fire pit facing a lake with a stepping-stone path" width="1439" height="959" loading="lazy">
+            </div>
+            <div class="work-body">
+              <h3><button class="work-open" type="button" aria-haspopup="dialog">Wooded lakefront</button></h3>
+              <p>Flagstone fire pit and patios, a raised hot tub and naturalistic planting down to the dock.</p>
+              <span class="work-count" aria-hidden="true">5 images</span>
+            </div>
+            <template class="work-images">
+              <img data-src="images/lakefront-01.webp" alt="Render of a flagstone fire pit facing the lake with a stepping-stone path and planting bed" data-caption="Fire pit facing the lake">
+              <img data-src="images/lakefront-02.webp" alt="Render of a flagstone fire pit with redbuds and perennial beds, with the lake and dock behind" data-caption="Fire pit with redbuds and perennials">
+              <img data-src="images/lakefront-03.webp" alt="Render of a flagstone patio with a raised hot tub and layered planting" data-caption="Hot tub patio">
+              <img data-src="images/lakefront-04.webp" alt="Render of a flagstone lounge looking back toward the house along a stepping-stone path" data-caption="Flagstone lounge and path">
+              <img data-src="images/lakefront-05.webp" alt="Top-down aerial render of the property with the dock, fire pit area, driveway and shoreline" data-caption="Plan view">
+            </template>
+          </article>
+
         </div>
 
-        <h3 class="sub-title reveal">Why Overyard</h3>
-        <div class="reasons">
-          <div class="reason reveal">
-            <h4>Lower design cost</h4>
-            <p>We're based in the Philippines. You get experienced landscape designers without the overhead of a local hire.</p>
+        <!-- Optional walkthrough video: set walkthroughVideo in js/main.js -->
+        <figure class="walkthrough reveal" data-walkthrough>
+          <video muted loop playsinline preload="none" aria-label="Walkthrough video of a landscape design"></video>
+          <figcaption>Walkthrough video, included in Premium.</figcaption>
+        </figure>
+
+        <!-- ---------- Full portfolio request ---------- -->
+        <div class="portfolio-cta reveal">
+          <div>
+            <h3>Want to see more?</h3>
+            <p>Book a call and we'll walk you through the full portfolio, or ask for the link and we'll send it privately.</p>
           </div>
-          <div class="reason reveal">
-            <h4>Faster turnaround</h4>
-            <p>Our team does residential landscape design full time. [X days] standard, and US clients get progress overnight.</p>
-          </div>
-          <div class="reason reveal">
-            <h4>A contact who knows construction</h4>
-            <p>Your point of contact is a licensed civil engineer who talks grades, bases and quantities.</p>
-          </div>
-          <div class="reason reveal">
-            <h4>Your brand, not ours</h4>
-            <p>White-label or co-branded. We never contact your clients.</p>
+          <div class="portfolio-cta-actions">
+            <a href="#contact" class="btn btn-primary" data-booking-link>Book a call</a>
+            <a href="#contact" class="btn btn-outline" data-topic="portfolio">Request the portfolio</a>
           </div>
         </div>
       </div>
@@ -426,123 +307,243 @@
           <li class="step reveal">
             <span class="step-num">2</span>
             <h3>We design</h3>
-            <p>A scaled 2D plan and 3D renders, back to you in [X days].</p>
+            <p>A scaled 2D plan and photoreal 3D renders<span data-cfg-block>, back to you in <span data-cfg="computed.turnaroundRange"></span> depending on the package</span>.</p>
           </li>
           <li class="step reveal">
             <span class="step-num">3</span>
-            <h3>You review and revise</h3>
-            <p>Mark up what to change. [X] revision rounds included.</p>
+            <h3>You revise</h3>
+            <p>Send one list of changes per round<span data-cfg-block>. <span data-cfg="computed.revisionRange"></span> included</span>.</p>
           </li>
           <li class="step reveal">
             <span class="step-num">4</span>
             <h3>You close and build</h3>
-            <p>Present it under your brand, then price the job from the plan and takeoff.</p>
+            <p>Present it under your brand, then price the job from the plan and material takeoff.</p>
           </li>
         </ol>
       </div>
     </section>
 
     <!-- =========================================================
-         6. PACKAGES
-         Replace [$___], [X] and [X days] with real values.
+         6. PRICING (Founding Contractor offer)
+         All prices and counts come from js/main.js.
          ========================================================= -->
-    <section class="section section-alt" id="packages">
+    <section class="section section-alt" id="pricing">
       <div class="container">
         <header class="section-head reveal">
-          <h2>Packages</h2>
-          <p>Starting prices. We confirm scope and a fixed price once we see the site.</p>
+          <h2>Founding Contractor rates</h2>
+          <p>We're opening Overyard with a small group of founding contractors.<span data-cfg-block> Only <strong data-cfg="foundingSpots"></strong> founding spots are open<span data-cfg-block>, and your rate stays locked for <strong data-cfg="rateLockMonths"></strong> months</span>.</span></p>
         </header>
 
         <div class="packages">
+          <!-- Starter -->
           <article class="package reveal">
             <h3>Starter</h3>
             <p class="package-desc">Smaller yards and quick sells.</p>
-            <p class="price"><span>Starting at</span> [$___]</p>
+            <p class="price">
+              <span class="price-now" data-cfg-money="packages.starter.founding"></span>
+              <span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.starter.regular"></s></span>
+            </p>
             <ul>
-              <li>2D site and planting plan</li>
-              <li>[X] 3D renders</li>
-              <li>[X] revision rounds</li>
-              <li>[X days] turnaround</li>
+              <li>Scaled 2D site and planting plan</li>
+              <li data-cfg-renders="packages.starter.renders"></li>
+              <li data-cfg-if="packages.starter.video" data-cfg="packages.starter.video"></li>
+              <li data-cfg-rounds="packages.starter.revisions"></li>
+              <li data-cfg-if="packages.starter.takeoff">Material takeoff included</li>
+              <li data-cfg-unless="packages.starter.takeoff"><span data-cfg-block>Material takeoff add-on: <span data-cfg-money="takeoffAddon"></span></span></li>
+              <li data-cfg="packages.starter.turnaround"></li>
             </ul>
-            <a href="#contact" class="btn btn-outline" data-booking-link>Book a call</a>
+            <a href="#contact" class="btn btn-outline" data-topic="quote">Start with Starter</a>
           </article>
 
+          <!-- Standard (featured) -->
           <article class="package package-featured reveal">
+            <p class="badge">Most popular</p>
             <h3>Standard</h3>
             <p class="package-desc">Full backyard projects.</p>
-            <p class="price"><span>Starting at</span> [$___]</p>
+            <p class="price">
+              <span class="price-now" data-cfg-money="packages.standard.founding"></span>
+              <span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.standard.regular"></s></span>
+            </p>
             <ul>
-              <li>2D site and planting plan</li>
-              <li>[X] 3D renders</li>
-              <li>[X] revision rounds</li>
-              <li>[X days] turnaround</li>
+              <li>Scaled 2D site and planting plan</li>
+              <li data-cfg-renders="packages.standard.renders"></li>
+              <li data-cfg-if="packages.standard.video" data-cfg="packages.standard.video"></li>
+              <li data-cfg-rounds="packages.standard.revisions"></li>
+              <li data-cfg-if="packages.standard.takeoff">Material takeoff included</li>
+              <li data-cfg-unless="packages.standard.takeoff"><span data-cfg-block>Material takeoff add-on: <span data-cfg-money="takeoffAddon"></span></span></li>
+              <li data-cfg="packages.standard.turnaround"></li>
             </ul>
-            <a href="#contact" class="btn btn-primary" data-booking-link>Book a call</a>
+            <a href="#contact" class="btn btn-primary" data-topic="quote">Start with Standard</a>
           </article>
 
+          <!-- Premium -->
           <article class="package reveal">
             <h3>Premium</h3>
             <p class="package-desc">Pools, outdoor living and larger builds.</p>
-            <p class="price"><span>Starting at</span> [$___]</p>
+            <p class="price">
+              <span class="price-now" data-cfg-money="packages.premium.founding"></span>
+              <span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.premium.regular"></s></span>
+            </p>
             <ul>
-              <li>2D site and planting plan</li>
-              <li>[X] 3D renders</li>
-              <li>3D walkthrough video</li>
-              <li>[X] revision rounds</li>
-              <li>Material takeoff included</li>
-              <li>[X days] turnaround</li>
+              <li>Scaled 2D site and planting plan</li>
+              <li data-cfg-renders="packages.premium.renders"></li>
+              <li data-cfg-if="packages.premium.video" data-cfg="packages.premium.video"></li>
+              <li data-cfg-rounds="packages.premium.revisions"></li>
+              <li data-cfg-if="packages.premium.takeoff">Material takeoff included</li>
+              <li data-cfg-unless="packages.premium.takeoff"><span data-cfg-block>Material takeoff add-on: <span data-cfg-money="takeoffAddon"></span></span></li>
+              <li data-cfg="packages.premium.turnaround"></li>
             </ul>
-            <a href="#contact" class="btn btn-outline" data-booking-link>Book a call</a>
+            <a href="#contact" class="btn btn-outline" data-topic="quote">Start with Premium</a>
           </article>
         </div>
 
-        <p class="note reveal">Material takeoff can be added to Starter or Standard from [$___].</p>
+        <div class="offer-extras">
+          <!-- Founding bonuses -->
+          <div class="value-stack reveal">
+            <h3>Founding bonuses</h3>
+            <ul>
+              <li><strong>Free material takeoff</strong> on your first project.</li>
+              <li><strong>Branded presentation PDF template</strong> with your logo, ready to send to homeowners.</li>
+              <li><strong>One-page homeowner presentation script</strong> for walking clients through the design.</li>
+            </ul>
+          </div>
+
+          <!-- Guarantee -->
+          <div class="guarantee reveal" data-cfg-block>
+            <h3>Our guarantee</h3>
+            <p data-cfg="guarantee"></p>
+          </div>
+        </div>
+
+        <ul class="fine-print reveal">
+          <li data-cfg-block>Extra revision round: <span data-cfg-money="extraRevision"></span> (one round = one consolidated list of changes).</li>
+          <li data-cfg-block>Rush delivery: <span data-cfg="rush"></span>.</li>
+          <li data-cfg="currencyNote"></li>
+          <li>Need recurring designs every month? <a href="#contact" data-topic="quote">Ask about monthly plans.</a></li>
+        </ul>
       </div>
     </section>
 
     <!-- =========================================================
-         7. ABOUT
-         Founder photos: images/founder-edmond.jpg and
-         images/founder-kim.jpg (4:5, portrait)
+         7. COMPARISON
          ========================================================= -->
-    <section class="section" id="about">
+    <section class="section" id="compare">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>How Overyard compares</h2>
+          <p>Your options for getting a design in front of a homeowner.</p>
+        </header>
+
+        <div class="table-wrap reveal" tabindex="0" role="region" aria-label="Comparison table, scrolls sideways on small screens">
+          <table class="compare">
+            <thead>
+              <tr>
+                <th scope="col"><span class="visually-hidden">Feature</span></th>
+                <th scope="col" class="is-us">Overyard</th>
+                <th scope="col">Local landscape designer</th>
+                <th scope="col">Freelance marketplace</th>
+                <th scope="col">Doing it yourself</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Typical cost per design</th>
+                <td class="is-us"><span data-cfg-block>From <span data-cfg-money="computed.fromPrice"></span> (founding rate)</span></td>
+                <!-- Source: lawnstarter.com/blog/cost/landscape-design-price/ (updated Dec 27, 2025):
+                     typical landscape designer range $2,200 to $6,180 per project. -->
+                <td>Typically $2,200+ per project</td>
+                <td>Varies widely by freelancer</td>
+                <td>Your evenings and weekends</td>
+              </tr>
+              <tr>
+                <th scope="row">Turnaround</th>
+                <td class="is-us" data-cfg="computed.turnaroundRange"></td>
+                <td>Depends on their schedule</td>
+                <td>Depends on the freelancer</td>
+                <td>Whenever you find the time</td>
+              </tr>
+              <tr>
+                <th scope="row">Built for contractors</th>
+                <td class="is-us"><span class="yes">Yes</span></td>
+                <td>Varies</td>
+                <td>Varies</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">White-label (your brand)</th>
+                <td class="is-us"><span class="yes">Yes</span></td>
+                <td>Varies</td>
+                <td>Varies</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">Construction-literate contact</th>
+                <td class="is-us"><span class="yes">Licensed civil engineer</span></td>
+                <td>Varies</td>
+                <td>Varies</td>
+                <td>You</td>
+              </tr>
+              <tr>
+                <th scope="row">Material takeoffs</th>
+                <td class="is-us"><span class="yes">Add-on or included in Premium</span></td>
+                <td>Varies</td>
+                <td>Varies</td>
+                <td>You do the math</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         8. ABOUT
+         Founder photos: set founderPhotos in js/main.js once the
+         files are in /images (4:5 portrait). Until then, initials show.
+         ========================================================= -->
+    <section class="section section-alt" id="about">
       <div class="container">
         <header class="section-head reveal">
           <h2>Who you'll work with</h2>
-          <p>Based in the Philippines, working with contractors in the US and Australia.</p>
+          <p>Two founders. One designer, one engineer, no middlemen.</p>
         </header>
 
         <div class="founders">
           <article class="founder reveal">
-            <figure class="media" style="--ratio: 4 / 5" data-label="founder-edmond.jpg · 4:5">
-              <img src="images/founder-edmond.jpg" alt="Portrait of Edmond De Claro" loading="lazy">
+            <figure class="founder-photo" data-founder="edmond" data-alt="Portrait of Edmond De Claro" aria-hidden="true">
+              <span>ED</span>
             </figure>
             <div>
               <h3>Edmond De Claro</h3>
               <p class="role">Co-founder, design lead</p>
-              <p>About 7 years in residential landscape design. Edmond leads the design team and signs off every plan and render.</p>
+              <p>Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist. He designs every Overyard project in Realtime Landscaping Architect and renders in Lumion.</p>
             </div>
           </article>
 
           <article class="founder reveal">
-            <figure class="media" style="--ratio: 4 / 5" data-label="founder-kim.jpg · 4:5">
-              <img src="images/founder-kim.jpg" alt="Portrait of Kim Daryl Geolagon" loading="lazy">
+            <figure class="founder-photo" data-founder="kim" data-alt="Portrait of Kim Daryl Geolagon" aria-hidden="true">
+              <span>KG</span>
             </figure>
             <div>
               <h3>Kim Daryl Geolagon</h3>
               <p class="role">Co-founder, sales and client accounts</p>
-              <p>Licensed civil engineer with 5+ years in construction. Kim Daryl is your single point of contact, from first call to final takeoff.</p>
+              <p>Licensed civil engineer with 5+ years in construction, currently a remote estimator for a US general contractor. Kim Daryl is your single point of contact and handles every material takeoff.</p>
             </div>
           </article>
+        </div>
+
+        <div class="timezone reveal">
+          <h3>Based in the Philippines, working your hours</h3>
+          <p>Our workday overlaps Australian business hours. US clients can send notes at the end of their day and see progress when they're back on the job.</p>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         8. FAQ
+         9. FAQ
          Each question is a <details> block. Copy one to add more.
          ========================================================= -->
-    <section class="section section-alt" id="faq">
+    <section class="section" id="faq">
       <div class="container container-narrow">
         <header class="section-head reveal">
           <h2>Questions</h2>
@@ -550,24 +551,44 @@
 
         <div class="faq reveal">
           <details>
+            <summary>What's the free sample render?</summary>
+            <p>Send us one real upcoming project with site photos and a short brief. We'll send back one 3D render<span data-cfg-block> in <span data-cfg="sample.turnaround"></span></span>, under your brand. <span data-cfg="sample.terms"></span></p>
+          </details>
+          <details>
             <summary>Is the work white-label?</summary>
             <p>Yes. We deliver under your logo, or co-branded if you prefer. We never contact your clients unless you ask us to.</p>
           </details>
           <details>
-            <summary>Can I see more of your work?</summary>
-            <p>Yes. We keep most projects private. Book a call, or request the portfolio link through the form below and we'll send it.</p>
+            <summary>Is the first project risk-free?</summary>
+            <p><span data-cfg="guarantee"></span> And the free sample render lets you see our work on your own project before you pay anything.</p>
           </details>
           <details>
-            <summary>How many revisions do I get?</summary>
-            <p>Each package includes [X] revision rounds. Extra rounds are [$___] each. Scope is agreed before we start.</p>
+            <summary>What counts as a revision?</summary>
+            <p>One revision round is one consolidated list of changes, sent together.<span data-cfg-block> Packages include <span data-cfg="computed.revisionRange"></span>.</span><span data-cfg-block> Extra rounds are <span data-cfg-money="extraRevision"></span> each.</span></p>
           </details>
           <details>
             <summary>How fast is turnaround?</summary>
-            <p>Standard turnaround is [X days] from when we have complete site info. Rush delivery is [available / $___].</p>
+            <p>From the day we have complete site info: Starter <span data-cfg="packages.starter.turnaround"></span>, Standard <span data-cfg="packages.standard.turnaround"></span>, Premium <span data-cfg="packages.premium.turnaround"></span>.<span data-cfg-block> Rush delivery is available for <span data-cfg="rush"></span>.</span></p>
+          </details>
+          <details>
+            <summary>Do you work with pool builders?</summary>
+            <p>Yes. We design the pool surround, decking, outdoor kitchens, pergolas, lighting and planting, and show it all in 3D so homeowners can see the finished backyard. Pool structure, engineering and equipment stay with you and your engineer.</p>
+          </details>
+          <details>
+            <summary>Who owns the designs?</summary>
+            <p>You do. Final files are yours once the project is paid in full.</p>
+          </details>
+          <details>
+            <summary>How do I send a project?</summary>
+            <p>Use the form below and paste a link to your site photos, measurements or plans (Google Drive, Dropbox or similar).<span data-cfg-block> You can also email them to <a href="#" data-email></a>.</span></p>
+          </details>
+          <details>
+            <summary>Can I see more of your work?</summary>
+            <p>Yes. Book a call, or request the full portfolio through the form below and we'll send the link privately.</p>
           </details>
           <details>
             <summary>You're in the Philippines. How do time zones work?</summary>
-            <p>Our workday overlaps with Australian business hours and US early mornings or evenings. US clients often send notes at the end of the day and get updates the next morning. Calls are booked at a time that suits you.</p>
+            <p>Our workday overlaps Australian business hours. US clients can send notes at the end of their day and see progress when they're back on the job. Calls are booked at a time that suits you.</p>
           </details>
           <details>
             <summary>What file formats do you deliver?</summary>
@@ -586,40 +607,31 @@
     </section>
 
     <!-- =========================================================
-         9. CONTACT
+         10. CONTACT (final call to action)
+         Form sends through Web3Forms: set web3formsKey in js/main.js.
+         Calendar: set bookingUrl in js/main.js.
          ========================================================= -->
-    <section class="section" id="contact">
+    <section class="section section-alt" id="contact">
       <div class="container contact-grid">
         <div class="contact-intro reveal">
-          <h2>Send a project or book a call.</h2>
-          <p>Send a job for a quote or ask for the full portfolio. Kim Daryl replies within [X business hours].</p>
-
-          <div class="contact-book">
-            <h3>Prefer to talk?</h3>
-            <p>Book a [XX]-minute call to go over your projects and our portfolio.</p>
-            <!-- Calendar link: set BOOKING_URL in js/main.js (Calendly, Cal.com, Google Calendar, etc.) -->
-            <a href="#contact" class="btn btn-primary" data-booking-link>Book a call</a>
-          </div>
-
-          <p class="contact-email">Or email <a href="mailto:hello@overyard.com">[hello@overyard.com]</a></p>
+          <h2>Get a free sample render.</h2>
+          <p>Send one real upcoming project. We'll send back one 3D render<span data-cfg-block> in <span data-cfg="sample.turnaround"></span></span>, under your brand.</p>
+          <p class="contact-terms" data-cfg="sample.terms"></p>
+          <p class="contact-who">Kim Daryl reads every request and is your single point of contact.</p>
+          <p class="contact-email" data-cfg-block>Prefer email? <a href="#" data-email></a></p>
         </div>
 
-        <!--
-          ============ CONNECT FORM SERVICE HERE ============
-          The form currently works front-end only (it shows a thank-you message).
-          To receive submissions, paste your form service URL (Formspree,
-          Basin, etc.) into FORM_ENDPOINT at the top of js/main.js.
-          Field names (topic, name, company, email...) are sent as-is.
-          ===================================================
-        -->
         <form class="contact-form reveal" id="contact-form" novalidate>
+          <!-- Honeypot: hidden from people, catches spam bots -->
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
           <div class="field">
             <label for="f-topic">What do you need?</label>
             <select id="f-topic" name="topic">
+              <option value="sample">A free sample render</option>
               <option value="quote">A quote for a project</option>
-              <option value="portfolio">The full portfolio</option>
               <option value="call">A call</option>
-              <option value="other">Something else</option>
+              <option value="portfolio">The full portfolio</option>
             </select>
           </div>
           <div class="field-row">
@@ -644,8 +656,8 @@
           </div>
           <div class="field-row">
             <div class="field">
-              <label for="f-website">Website <span class="optional">(optional)</span></label>
-              <input id="f-website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourcompany.com">
+              <label for="f-website">Website</label>
+              <input id="f-website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourcompany.com" required>
             </div>
             <div class="field">
               <label for="f-area">Service area</label>
@@ -653,42 +665,65 @@
             </div>
           </div>
           <div class="field">
-            <label for="f-message">Message <span class="optional">(optional)</span></label>
-            <textarea id="f-message" name="message" rows="5" placeholder="Project type, size, timeline, what your client wants."></textarea>
+            <label for="f-files">Link to site photos or plans <span class="optional">(optional)</span></label>
+            <input id="f-files" name="files_link" type="text" inputmode="url" placeholder="Google Drive, Dropbox or similar">
+          </div>
+          <div class="field">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="5" placeholder="Project type, size, timeline, what your client wants." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Send</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
+      </div>
+
+      <!-- Inline Calendly calendar (loads when scrolled near; hidden if no bookingUrl) -->
+      <div class="container book" id="book">
+        <h3 class="reveal">Or book a call</h3>
+        <div class="calendly-inline-widget" aria-label="Booking calendar"></div>
       </div>
     </section>
 
   </main>
 
   <!-- =========================================================
-       10. FOOTER
-       Replace the # in each social link with your profile URL.
+       11. FOOTER
+       Email and social links come from js/main.js (unset ones are hidden).
        ========================================================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <a href="#top" class="logo" aria-label="Overyard home">
-        <img src="assets/logo.svg" alt="Overyard" width="120" height="23">
+        <img src="assets/logo.svg" alt="Overyard" width="120" height="23" loading="lazy">
       </a>
       <p class="footer-tagline">White-label landscape design for contractors in the US and Australia.</p>
       <ul class="footer-links">
-        <li><a href="mailto:hello@overyard.com">[hello@overyard.com]</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Facebook</a></li>
+        <li data-cfg-block><a href="#" data-email></a></li>
+        <li data-cfg-block><a href="#" data-social="linkedin">LinkedIn</a></li>
+        <li data-cfg-block><a href="#" data-social="instagram">Instagram</a></li>
+        <li data-cfg-block><a href="#" data-social="facebook">Facebook</a></li>
       </ul>
       <p class="copyright">&copy; <span id="year">2026</span> Overyard. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Full-size image viewer for the Work section -->
-  <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
-    <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
-    <img src="" alt="">
-    <p class="lightbox-caption"></p>
+  <!-- Sticky call to action on phones -->
+  <div class="mobile-cta">
+    <a href="#contact" class="btn btn-primary" data-topic="sample">Get a free sample render</a>
+  </div>
+
+  <!-- Project gallery viewer -->
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+    <div class="lb-bar">
+      <p class="lb-title" id="lb-title"></p>
+      <p class="lb-counter" aria-live="polite"></p>
+      <button class="lb-close" type="button" aria-label="Close gallery">&times;</button>
+    </div>
+    <div class="lb-stage"></div>
+    <div class="lb-foot">
+      <button class="lb-prev" type="button" aria-label="Previous image">&larr;</button>
+      <p class="lb-caption"></p>
+      <button class="lb-next" type="button" aria-label="Next image">&rarr;</button>
+    </div>
   </dialog>
 
   <script src="js/main.js" defer></script>
