@@ -92,6 +92,9 @@ try {
     }, v.theme);
     const page = await context.newPage();
     await page.goto(base, { waitUntil: "load", timeout: 30000 });
+    // Render every section for the capture (the site skips off-screen sections
+    // with content-visibility, which would otherwise come out blank)
+    await page.addStyleTag({ content: "main > *, main > .section, main > .band { content-visibility: visible !important; }" });
 
     // Scroll through the page so lazy images load, then return to the top
     await page.evaluate(async () => {
