@@ -13,7 +13,7 @@
    clay  = urgency and important terms only (never decorative)
    ========================================================================== */
 
-/* ---- Fonts (self-hosted Google Fonts, SIL Open Font License: assets/fonts/OFL.txt) ----
+/* ---- Fonts (self-hosted Google Fonts, SIL Open Font License: assets/fonts/OFL-*.txt) ----
    One variable file per family, latin subset. Self-hosting removes a render-blocking
    request to Google and lets the page preload the headline and body fonts. */
 @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700 800; font-display: swap;
