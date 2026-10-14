@@ -1,8 +1,9 @@
 /* ==========================================================================
    OVERYARD: SITE SETTINGS  (edit this block)
 
-   Every price, number, link and ID on the site comes from here.
-   Change a value, save, commit and push: the whole site updates.
+   Every price, number, link, image list and ID on the site comes from here.
+   The HTML already contains these default values (so link previews and
+   crawlers see real text); this block updates them when you change them.
    Leave a value empty ("") or 0 to HIDE whatever uses it, so placeholder
    text never shows on the live site.
    ========================================================================== */
@@ -14,15 +15,27 @@ const CONFIG = {
   web3formsKey: "",       // Access key from web3forms.com. The form won't send until this is set.
   replyHours: 12,         // "Kim Daryl replies within 12 hours"
   callMinutes: 20,        // "Book a 20-minute call"
+  whatsapp: {
+    display: "+63 976 373 0461",            // shown on the page ("" = hidden)
+    url: "https://wa.me/639763730461",      // opens WhatsApp in a new tab
+  },
+  portalUrl: "",          // "Client login" link in the header (hidden when empty)
+
+  // ---- Social links ----
+  // All five icons always show. Empty = muted icon with a "Coming soon" tooltip.
+  // Fill in a URL and the icon becomes a real link.
+  facebookUrl: "",
+  instagramUrl: "",
+  tiktokUrl: "",
+  youtubeUrl: "",
+  linkedinUrl: "",
 
   // ---- Analytics (scripts only load when an ID is set) ----
   ga4Id: "",              // e.g. "G-XXXXXXXXXX"
   clarityId: "",          // e.g. "abcd1234ef"
 
-  // ---- Social links (empty = hidden) ----
-  linkedinUrl: "",
-  instagramUrl: "",
-  facebookUrl: "",
+  // ---- Team ----
+  edmondTools: ["Realtime Landscaping Architect", "SketchUp", "Lumion", "D5 Render"],
 
   // ---- Founding offer ----
   foundingSpots: 5,
@@ -42,45 +55,21 @@ const CONFIG = {
   // ---- Single projects ----
   // founding = price shown large, regular = struck through, credits = membership credits used
   packages: {
-    sprout: {
-      name: "Sprout", desc: "Small yards, front yards and quick sells.",
-      founding: 199, regular: 349, credits: 1,
-      plan: "2D site and planting plan", renders: 3, walkthrough: "", rounds: 1, takeoff: false,
-      days: "3 business days",
-    },
-    grove: {
-      name: "Grove", desc: "Full backyard projects.", featured: "Most popular",
-      founding: 399, regular: 649, credits: 2,
-      plan: "2D plan + planting schedule", renders: 6, walkthrough: "", rounds: 2, takeoff: false,
-      days: "5 business days",
-    },
-    canopy: {
-      name: "Canopy", desc: "Pools, outdoor living and larger builds.",
-      founding: 799, regular: 1249, credits: 4,
-      plan: "Full plan set", renders: 10, walkthrough: "60–90 sec walkthrough video", rounds: 3, takeoff: true,
-      days: "7–10 business days",
-    },
+    sprout: { name: "Sprout", founding: 199, regular: 349, credits: 1, plan: "2D site and planting plan",
+      renders: 3, walkthrough: "", rounds: 1, takeoff: false, days: "3 business days" },
+    grove:  { name: "Grove", founding: 399, regular: 649, credits: 2, plan: "2D plan + planting schedule",
+      renders: 6, walkthrough: "", rounds: 2, takeoff: false, days: "5 business days" },
+    canopy: { name: "Canopy", founding: 799, regular: 1249, credits: 4, plan: "Full plan set",
+      renders: 10, walkthrough: "60–90 sec walkthrough video", rounds: 3, takeoff: true, days: "7–10 business days" },
   },
 
   // ---- Evergreen memberships (monthly) ----
   memberships: {
-    orchard: {
-      name: "Orchard", desc: "A steady few projects a month.",
-      founding: 699, regular: 1099, credits: 4,
-      perks: ["Takeoffs at $49"],
-    },
-    forest: {
-      name: "Forest", desc: "For crews selling every week.", featured: "Best value",
-      founding: 1299, regular: 1999, credits: 8,
-      perks: ["2 free takeoffs a month", "Monthly 30-min design review call"],
-    },
-    oldGrowth: {
-      name: "Old Growth", desc: "High-volume design-build teams.",
-      founding: 2399, regular: 3699, credits: 16,
-      perks: ["Priority turnaround", "Unlimited takeoffs"],
-      status: "waitlist",  // "waitlist" = shows "Join the waitlist" instead of a sign-up button
-    },
+    orchard:   { name: "Orchard", founding: 699, regular: 1099, credits: 4 },
+    forest:    { name: "Forest", founding: 1299, regular: 1999, credits: 8 },
+    oldGrowth: { name: "Old Growth", founding: 2399, regular: 3699, credits: 16 },
   },
+  // (Perks, descriptions and the Old Growth waitlist are written in index.html.)
 
   // ---- Add-ons ----
   addons: {
@@ -91,87 +80,133 @@ const CONFIG = {
     redesign: "Quoted as a new project",
   },
 
+  // ---- Hero camera roll ----
+  // Day and night renders that crossfade in the hero frame. Start with a night
+  // render, then alternate. Only use renders from cleared projects.
+  // thumb = small filmstrip image (images/thumbs/, 240px wide).
+  heroSlides: [
+    { src: "images/modern-02.webp", thumb: "images/thumbs/modern-02.webp", time: "night", w: 2000, h: 1125,
+      label: "Sheet R-01 · 3D render · Modern pool · Night", alt: "Night render of a modern pool and spa with a lit pergola fire lounge" },
+    { src: "images/hero-01.webp", thumb: "images/thumbs/hero-01.webp", time: "day", w: 2000, h: 1125,
+      label: "Sheet R-02 · 3D render · Modern pool · Day", alt: "Render of a modern pool with a slatted pergola fire lounge, lounge deck and cypress trees" },
+    { src: "images/courtyard-04.webp", thumb: "images/thumbs/courtyard-04.webp", time: "night", w: 2000, h: 1125,
+      label: "Sheet R-03 · 3D render · Citrus fire pit · Night", alt: "Night render of a fire pit lounge under uplit lemon trees" },
+    { src: "images/courtyard-01.webp", thumb: "images/thumbs/courtyard-01.webp", time: "day", w: 1920, h: 1080,
+      label: "Sheet R-04 · 3D render · Pool courtyard · Day", alt: "Render of a backyard with a fountain, stepping pads, pool and spa, and a fire pit under lemon trees" },
+    { src: "images/terraced-04.webp", thumb: "images/thumbs/terraced-04.webp", time: "night", w: 1440, h: 959,
+      label: "Sheet R-05 · 3D render · Terraced hillside · Night", alt: "Night render looking up lit stairs past wall-washed retaining walls" },
+    { src: "images/courtyard-03.webp", thumb: "images/thumbs/courtyard-03.webp", time: "day", w: 2000, h: 1125,
+      label: "Sheet R-06 · 3D render · Citrus fire pit · Day", alt: "Render of a fire pit lounge on a stamped concrete pad framed by lemon trees" },
+  ],
+  heroInterval: 6,        // seconds per slide
+
+  // ---- Full-width night band (after How it works) ----
+  bandImage: "images/courtyard-02.webp",
+
+  // ---- How it works images (portrait, ~4:5). "" = plan-symbol placeholder ----
+  processImages: [
+    "images/process-01.webp",   // 01 · Send site info   (site photos)
+    "images/process-02.webp",   // 02 · We design        (clay 3D model)
+    "images/process-03.webp",   // 03 · You revise       (finished render)
+    "images/process-04.webp",   // 04 · You close and build (2D plan sheet)
+  ],
+
   // ---- Optional files (leave "" until the file is in the folder) ----
   samplePackagePdf: "",   // e.g. "assets/sample-package.pdf"  → shows "See a sample package"
-  heroBefore: "",         // e.g. "images/hero-before.webp"    → hero becomes a before/after slider
-  samplePlan: "",         // e.g. "images/sample-plan.webp"    → used as the "2D plan" in What you receive
-  receiveProject: "Pool courtyard and citrus grove", // project shown in "What you receive" (its plan view + 2 renders)
+  samplePlan: "images/process-04.webp",  // the "2D plan" in What you receive
+  receiveProject: "Pool courtyard and citrus grove", // renders shown in What you receive
   walkthroughVideo: "",   // e.g. "videos/walkthrough-01.mp4"
   walkthroughPoster: "",
+
+  // ---- Work: featured "From overhead" slider ----
+  featured: {
+    project: "Pool courtyard and citrus grove",
+    plan: "images/courtyard-07.webp",   // plan view (left handle: PLAN)
+    view: "images/courtyard-01.webp",   // eye-level render (right handle: VIEW)
+  },
 
   // ---- Work: projects ----
   // Only projects with cleared: true are shown.
   // !! The founders must confirm image rights for every project before launch. !!
-  // images: first = card cover, last = plan view. beforeImage (optional) adds a
-  // before/after slider as the first gallery slide.
+  // dayImage / nightImage = card images (images/cards/, 900px). With both set,
+  //   the card gets a Day / Night toggle.
+  // images = the full gallery ("View sheets"). plan: true marks the plan view,
+  //   photo: true marks a site photo.
+  // beforeImage (optional) adds a before/after slider as the first gallery slide.
   projects: [
     {
       name: "Modern pool and front yard",
       line: "Pool and spa, pergola fire lounge, outdoor kitchen, floating stairs and a low-water front yard.",
       cleared: true,
+      dayImage: "images/cards/modern-01.webp", nightImage: "images/cards/modern-02.webp", cardW: 900, cardH: 506,
       beforeImage: "",
       images: [
-        { src: "images/modern-01.webp", w: 2000, h: 1125, caption: "Pool, spa and outdoor kitchen", alt: "Render of a modern pool and spa with an outdoor kitchen bar in front and a slatted pergola lounge behind" },
-        { src: "images/modern-02.webp", w: 2000, h: 1125, caption: "Pool and pergola lounge, night", alt: "Night render of the pool, spa and pergola fire lounge with landscape lighting" },
-        { src: "images/modern-03.webp", w: 2000, h: 1125, caption: "Pergola fire lounge", alt: "Render of a slatted pergola with a fire table and lounge seating" },
-        { src: "images/modern-04.webp", w: 2000, h: 1125, caption: "Floating stairs and water wall, night", alt: "Night render of floating concrete stairs on a grass slope beside a lit water wall" },
-        { src: "images/modern-05.webp", w: 2000, h: 1125, caption: "Front yard planting", alt: "Render of a modern front yard with salvia, boulders, river rock and path lights" },
-        { src: "images/modern-06.webp", w: 2000, h: 1125, caption: "Front yard lighting, night", alt: "Night render of the front yard with path lights and uplit shrubs" },
-        { src: "images/modern-07.webp", w: 2000, h: 1125, caption: "Plan view", alt: "Top-down render of the property showing the pool, pergola, kitchen, side yards and front yard", plan: true },
+        { src: "images/modern-01.webp", caption: "Pool, spa and outdoor kitchen", alt: "Render of a modern pool and spa with an outdoor kitchen bar in front and a slatted pergola lounge behind" },
+        { src: "images/modern-02.webp", caption: "Pool and pergola lounge, night", alt: "Night render of the pool, spa and pergola fire lounge with landscape lighting" },
+        { src: "images/modern-03.webp", caption: "Pergola fire lounge", alt: "Render of a slatted pergola with a fire table and lounge seating" },
+        { src: "images/modern-04.webp", caption: "Floating stairs and water wall, night", alt: "Night render of floating concrete stairs on a grass slope beside a lit water wall" },
+        { src: "images/modern-05.webp", caption: "Front yard planting", alt: "Render of a modern front yard with salvia, boulders, river rock and path lights" },
+        { src: "images/modern-06.webp", caption: "Front yard lighting, night", alt: "Night render of the front yard with path lights and uplit shrubs" },
+        { src: "images/modern-07.webp", caption: "Plan view", alt: "Top-down render of the property showing the pool, pergola, kitchen, side yards and front yard", plan: true },
       ],
     },
     {
       name: "Pool courtyard and citrus grove",
       line: "Pool and spa, pergola dining with an outdoor kitchen, and a fire pit under lemon trees.",
       cleared: true,
+      dayImage: "images/cards/courtyard-01.webp", nightImage: "images/cards/courtyard-02.webp", cardW: 900, cardH: 506,
       beforeImage: "",
       images: [
-        { src: "images/courtyard-01.webp", w: 1920, h: 1080, caption: "Courtyard overview", alt: "Render of a backyard with a fountain, stepping pads in lawn, a pool and spa, and a fire pit lounge under lemon trees" },
-        { src: "images/courtyard-02.webp", w: 2000, h: 1125, caption: "Courtyard overview, night", alt: "Night render of the fountain, stepping pads, lit pool and uplit lemon trees" },
-        { src: "images/courtyard-03.webp", w: 2000, h: 1125, caption: "Fire pit under the lemon trees", alt: "Render of a fire pit lounge on a stamped concrete pad framed by lemon trees" },
-        { src: "images/courtyard-04.webp", w: 2000, h: 1125, caption: "Fire pit, night", alt: "Night render of the fire pit lounge with uplit lemon trees and in-ground lights" },
-        { src: "images/courtyard-05.webp", w: 1920, h: 1080, caption: "Pergola dining and outdoor kitchen", alt: "Render of a pergola dining area with an outdoor kitchen, with the tiled spa and pool in front" },
-        { src: "images/courtyard-06.webp", w: 2000, h: 1125, caption: "View from the fire pit", alt: "Render looking from the fire pit across the lawn and stepping pads to the pool and house" },
-        { src: "images/courtyard-07.webp", w: 2000, h: 1125, caption: "Plan view", alt: "Top-down render of the pool, spa, pergola, lawn and stepping pads", plan: true },
+        { src: "images/process-01.webp", caption: "Site photo · before", alt: "Site photo of the bare backyard before the design, with a tape measure in the foreground", photo: true },
+        { src: "images/courtyard-01.webp", caption: "Courtyard overview", alt: "Render of a backyard with a fountain, stepping pads in lawn, a pool and spa, and a fire pit lounge under lemon trees" },
+        { src: "images/courtyard-02.webp", caption: "Courtyard overview, night", alt: "Night render of the fountain, stepping pads, lit pool and uplit lemon trees" },
+        { src: "images/courtyard-03.webp", caption: "Fire pit under the lemon trees", alt: "Render of a fire pit lounge on a stamped concrete pad framed by lemon trees" },
+        { src: "images/courtyard-04.webp", caption: "Fire pit, night", alt: "Night render of the fire pit lounge with uplit lemon trees and in-ground lights" },
+        { src: "images/courtyard-05.webp", caption: "Pergola dining and outdoor kitchen", alt: "Render of a pergola dining area with an outdoor kitchen, with the tiled spa and pool in front" },
+        { src: "images/courtyard-06.webp", caption: "View from the fire pit", alt: "Render looking from the fire pit across the lawn and stepping pads to the pool and house" },
+        { src: "images/courtyard-07.webp", caption: "Plan view", alt: "Top-down render of the pool, spa, pergola, lawn and stepping pads", plan: true },
       ],
     },
     {
       name: "Terraced hillside",
       line: "Three tiers of retaining walls, lit stairs, a sunken fire lounge and slope planting.",
       cleared: true,
+      dayImage: "images/cards/terraced-01.webp", nightImage: "images/cards/terraced-04.webp", cardW: 900, cardH: 506,
       beforeImage: "",
       images: [
-        { src: "images/terraced-01.webp", w: 2000, h: 1125, caption: "Hillside overview", alt: "Render of a terraced hillside backyard with tiered retaining walls, wide stairs, a sunken fire lounge and a lawn terrace" },
-        { src: "images/terraced-02.webp", w: 2000, h: 1125, caption: "Sunken fire lounge", alt: "Render of a sunken fire lounge with stairs and planted terraces behind" },
-        { src: "images/terraced-03.webp", w: 2000, h: 1125, caption: "Main stairs and terraces", alt: "Render of the main stairs climbing between planted terraces" },
-        { src: "images/terraced-04.webp", w: 1440, h: 959, caption: "Stair and wall lighting, night", alt: "Night render looking up the lit stairs past wall-washed retaining walls to the house" },
-        { src: "images/terraced-05.webp", w: 2000, h: 1125, caption: "Plan view", alt: "Top-down render of the retaining walls, stairs, lawn terrace and fire lounge", plan: true },
+        { src: "images/terraced-01.webp", caption: "Hillside overview", alt: "Render of a terraced hillside backyard with tiered retaining walls, wide stairs, a sunken fire lounge and a lawn terrace" },
+        { src: "images/terraced-02.webp", caption: "Sunken fire lounge", alt: "Render of a sunken fire lounge with stairs and planted terraces behind" },
+        { src: "images/terraced-03.webp", caption: "Main stairs and terraces", alt: "Render of the main stairs climbing between planted terraces" },
+        { src: "images/terraced-04.webp", caption: "Stair and wall lighting, night", alt: "Night render looking up the lit stairs past wall-washed retaining walls to the house" },
+        { src: "images/terraced-05.webp", caption: "Plan view", alt: "Top-down render of the retaining walls, stairs, lawn terrace and fire lounge", plan: true },
       ],
     },
     {
       name: "Lakeside hillside",
       line: "Under-deck patio, curved retaining walls, a lakeside terrace and full landscape lighting.",
       cleared: true,
+      dayImage: "images/cards/lakeside-02.webp", nightImage: "images/cards/lakeside-03.webp", cardW: 900, cardH: 599,
       beforeImage: "",
       images: [
-        { src: "images/lakeside-01.webp", w: 2000, h: 1331, caption: "Under-deck patio and walkway, dusk", alt: "Dusk render of an under-deck patio with a curved seat wall, paver walkway, path lights and foundation planting" },
-        { src: "images/lakeside-02.webp", w: 2000, h: 1331, caption: "Lakeside terrace and boathouse", alt: "Render of a lakeside paver terrace with retaining walls, planting beds and a boathouse, with the house on the hill behind" },
-        { src: "images/lakeside-03.webp", w: 2000, h: 1331, caption: "Curved seat wall and driveway planting, night", alt: "Night render of a curved seat wall around a paver patio, with lit planting along the driveway" },
-        { src: "images/lakeside-04.webp", w: 2000, h: 1331, caption: "Recessed stairs with step lighting", alt: "Dusk render of a large paver terrace with recessed stairs, step lighting and a retaining wall with planting above" },
-        { src: "images/lakeside-05.webp", w: 1500, h: 999, caption: "Aerial view", alt: "Aerial render of a curved paver patio, planting bed and lawn with landscape lighting" },
+        { src: "images/lakeside-01.webp", caption: "Under-deck patio and walkway, dusk", alt: "Dusk render of an under-deck patio with a curved seat wall, paver walkway, path lights and foundation planting" },
+        { src: "images/lakeside-02.webp", caption: "Lakeside terrace and boathouse", alt: "Render of a lakeside paver terrace with retaining walls, planting beds and a boathouse, with the house on the hill behind" },
+        { src: "images/lakeside-03.webp", caption: "Curved seat wall and driveway planting, night", alt: "Night render of a curved seat wall around a paver patio, with lit planting along the driveway" },
+        { src: "images/lakeside-04.webp", caption: "Recessed stairs with step lighting", alt: "Dusk render of a large paver terrace with recessed stairs, step lighting and a retaining wall with planting above" },
+        { src: "images/lakeside-05.webp", caption: "Aerial view", alt: "Aerial render of a curved paver patio, planting bed and lawn with landscape lighting" },
       ],
     },
     {
       name: "Wooded lakefront",
       line: "Flagstone fire pit and patios, a raised hot tub and naturalistic planting down to the dock.",
       cleared: true,
+      dayImage: "images/cards/lakefront-02.webp", nightImage: "", cardW: 900, cardH: 600,
       beforeImage: "",
       images: [
-        { src: "images/lakefront-02.webp", w: 1125, h: 750, caption: "Fire pit with redbuds and perennials", alt: "Render of a flagstone fire pit with redbuds and perennial beds, with the lake and dock behind" },
-        { src: "images/lakefront-01.webp", w: 1439, h: 959, caption: "Woodland path to the fire pit", alt: "Render of a stepping-stone path through the woods to a fire pit by the lake" },
-        { src: "images/lakefront-03.webp", w: 1439, h: 959, caption: "Hot tub patio", alt: "Render of a flagstone patio with a raised hot tub and layered planting" },
-        { src: "images/lakefront-04.webp", w: 1439, h: 959, caption: "Flagstone lounge and path", alt: "Render of a flagstone lounge looking back toward the house along a stepping-stone path" },
-        { src: "images/lakefront-05.webp", w: 1439, h: 959, caption: "Plan view", alt: "Top-down aerial render of the property with the dock, fire pit area, driveway and shoreline", plan: true },
+        { src: "images/lakefront-02.webp", caption: "Fire pit with redbuds and perennials", alt: "Render of a flagstone fire pit with redbuds and perennial beds, with the lake and dock behind" },
+        { src: "images/lakefront-01.webp", caption: "Woodland path to the fire pit", alt: "Render of a stepping-stone path through the woods to a fire pit by the lake" },
+        { src: "images/lakefront-03.webp", caption: "Hot tub patio", alt: "Render of a flagstone patio with a raised hot tub and layered planting" },
+        { src: "images/lakefront-04.webp", caption: "Flagstone lounge and path", alt: "Render of a flagstone lounge looking back toward the house along a stepping-stone path" },
+        { src: "images/lakefront-05.webp", caption: "Plan view", alt: "Top-down aerial render of the property with the dock, fire pit area, driveway and shoreline", plan: true },
       ],
     },
   ],
@@ -186,12 +221,13 @@ const CONFIG = {
 
   var SITE_URL = "https://kimdeegeo.github.io/overyard-website/";
   var THEME_KEY = "overyard-theme";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ---------- helpers ----------
   function get(path) {
     return path.split(".").reduce(function (o, k) { return o == null ? undefined : o[k]; }, CONFIG);
   }
-  function isEmpty(v) { return v === undefined || v === null || v === "" || v === 0 || v === false || v === "#"; }
+  function isEmpty(v) { return v === undefined || v === null || v === "" || v === 0 || v === false || v === "#" || (Array.isArray(v) && !v.length); }
   function money(n) { return "$" + Number(n).toLocaleString("en-US"); }
   function plural(n, one, many) { return n + " " + (n === 1 ? one : many); }
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -199,33 +235,15 @@ const CONFIG = {
   function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function hide(el) { (el.closest("[data-cfg-block]") || el).hidden = true; }
   function onReady(fn) { if (document.readyState !== "loading") fn(); else document.addEventListener("DOMContentLoaded", fn); }
-  function whenNear(el, fn) {
-    if (!("IntersectionObserver" in window)) { fn(); return; }
-    var io = new IntersectionObserver(function (entries) {
-      if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); fn(); }
-    }, { rootMargin: "600px 0px" });
-    io.observe(el);
-  }
-
-  // ---------- Plan-symbol glyphs (thin strokes, take the color of their parent) ----------
-  var GLYPHS = {
-    seed: '<ellipse cx="16" cy="16" rx="6.5" ry="10" transform="rotate(35 16 16)"/><path d="M12 20 Q16 16 20 12"/>',
-    sprout: '<path d="M16 28 V12"/><path d="M16 19 C10 19 7.5 14.5 7.5 11 C12.5 11 16 14 16 19 Z"/><path d="M16 15 C22 15 24.5 10.5 24.5 7 C19.5 7 16 10 16 15 Z"/>',
-    grove: '<circle cx="11" cy="19.5" r="7"/><circle cx="21" cy="19.5" r="7"/><circle cx="16" cy="11" r="7"/>',
-    canopy: '<circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="7" stroke-dasharray="2.6 2.4"/><circle cx="16" cy="16" r="1.8" fill="currentColor" stroke="none"/>',
-    orchard: '<circle cx="10" cy="10" r="5.2"/><circle cx="22" cy="10" r="5.2"/><circle cx="10" cy="22" r="5.2"/><circle cx="22" cy="22" r="5.2"/>',
-    forest: '<circle cx="11.5" cy="12" r="7"/><circle cx="21.5" cy="11" r="6"/><circle cx="10" cy="21.5" r="6"/><circle cx="20.5" cy="21" r="7.5"/>',
-    oldGrowth: '<circle cx="16" cy="16" r="13"/><circle cx="16.5" cy="15.5" r="9.5"/><circle cx="17" cy="15.5" r="6"/><circle cx="17" cy="15" r="2.6"/>',
-  };
-  function glyph(name, cls) {
-    return '<svg class="glyph ' + (cls || "") + '" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' + GLYPHS[name] + "</svg>";
+  function joinList(arr, word) {
+    if (arr.length < 2) return arr.join("");
+    return arr.slice(0, -1).join(", ") + " " + word + " " + arr[arr.length - 1];
   }
 
   // ---------- Values worked out from the config ----------
   var pkgList = Object.keys(CONFIG.packages).map(function (k) { return CONFIG.packages[k]; });
   var days = pkgList.reduce(function (a, p) { return a.concat((String(p.days).match(/\d+/g) || []).map(Number)); }, []);
   var rounds = pkgList.map(function (p) { return p.rounds; }).filter(Boolean);
-  var seedScope = CONFIG.packages[String(CONFIG.seed.scope || "").toLowerCase()] || null;
   CONFIG.computed = {
     turnaroundRange: days.length ? Math.min.apply(null, days) + " to " + Math.max.apply(null, days) + " business days" : "",
     revisionRange: rounds.length ? Math.min.apply(null, rounds) + " to " + Math.max.apply(null, rounds) + " revision rounds" : "",
@@ -235,8 +253,8 @@ const CONFIG = {
   };
 
   /* ======================================================================
-     THEME (dark default, light toggle). The <head> script applies the saved
-     theme before paint; this wires up the button and theme-color.
+     THEME (dark default, light toggle). The <head> script applies the
+     saved theme before paint; this wires up the button and theme-color.
      ====================================================================== */
   function currentTheme() { return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark"; }
   function applyTheme(theme, save) {
@@ -247,7 +265,7 @@ const CONFIG = {
       btn.setAttribute("aria-pressed", String(theme === "light"));
       btn.setAttribute("aria-label", theme === "light" ? "Switch to dark mode" : "Switch to light mode");
     });
-    if (save) { try { localStorage.setItem(THEME_KEY, theme); } catch (e) { /* storage blocked: ignore */ } }
+    if (save) { try { localStorage.setItem(THEME_KEY, theme); } catch (e) { /* storage blocked */ } }
   }
   function initTheme() {
     applyTheme(currentTheme(), false);
@@ -258,42 +276,80 @@ const CONFIG = {
 
   /* ======================================================================
      FILL CONFIG VALUES INTO THE PAGE
-     data-cfg="path"          → text
-     data-cfg-money="path"    → $1,249
-     data-cfg-if / -unless    → show only if value set / empty
+     The HTML holds default text; these attributes update it from CONFIG.
+     data-cfg="path"            → text
+     data-cfg-money="path"      → $1,249
+     data-cfg-count="path" data-one="render" data-many="renders" → "6 renders"
+     data-cfg-list="path" data-join=" · " (or data-join-word="and")
+     data-cfg-percredit="memberships.forest" → "$162 per credit"
+     data-cfg-if / -unless      → show only if value set / empty
      Empty values hide the element (or its nearest [data-cfg-block]).
      ====================================================================== */
   function fillConfig() {
     $$("[data-cfg]").forEach(function (el) {
       var v = get(el.dataset.cfg);
-      if (isEmpty(v)) hide(el); else el.textContent = v;
+      if (isEmpty(v)) hide(el); else { el.textContent = v; el.hidden = false; }  // optional lines ship hidden
     });
     $$("[data-cfg-money]").forEach(function (el) {
       var v = get(el.dataset.cfgMoney);
       if (isEmpty(v) || v === Infinity) hide(el); else el.textContent = money(v);
+    });
+    $$("[data-cfg-count]").forEach(function (el) {
+      var v = get(el.dataset.cfgCount);
+      if (isEmpty(v)) hide(el); else el.textContent = plural(v, el.dataset.one, el.dataset.many);
+    });
+    $$("[data-cfg-list]").forEach(function (el) {
+      var v = get(el.dataset.cfgList);
+      if (isEmpty(v)) { hide(el); return; }
+      el.textContent = el.dataset.joinWord ? joinList(v, el.dataset.joinWord) : v.join(el.dataset.join || ", ");
+    });
+    $$("[data-cfg-percredit]").forEach(function (el) {
+      var m = get(el.dataset.cfgPercredit);
+      if (!m || !m.founding || !m.credits) hide(el); else el.textContent = money(Math.round(m.founding / m.credits)) + " per credit";
     });
     $$("[data-cfg-if]").forEach(function (el) { if (isEmpty(get(el.dataset.cfgIf))) hide(el); });
     $$("[data-cfg-unless]").forEach(function (el) { if (!isEmpty(get(el.dataset.cfgUnless))) hide(el); });
 
     // Plain-text email
     $$("[data-email-text]").forEach(function (el) {
-      if (!CONFIG.email) hide(el); else el.textContent = CONFIG.email;
+      var block = el.closest("[data-cfg-block]") || el;
+      if (!CONFIG.email) { block.hidden = true; return; }
+      el.textContent = CONFIG.email;
+      block.hidden = false;
     });
-    // Social links
+
+    // Booking, sample PDF, portal: links appear only when set (they ship hidden)
+    function showLink(sel, url) {
+      $$(sel).forEach(function (el) {
+        if (!url) { el.hidden = true; return; }
+        el.href = url; el.target = "_blank"; el.rel = "noopener"; el.hidden = false;
+      });
+    }
+    showLink("[data-booking]", CONFIG.bookingUrl);
+    showLink("[data-sample-pdf]", CONFIG.samplePackagePdf);
+    showLink("[data-portal]", CONFIG.portalUrl);
+
+    // WhatsApp
+    $$("[data-whatsapp]").forEach(function (el) {
+      var w = CONFIG.whatsapp || {};
+      if (!w.display || !w.url) { hide(el); return; }
+      el.href = w.url; el.target = "_blank"; el.rel = "noopener";
+      var num = el.querySelector(".wa-number");
+      if (num) num.textContent = w.display;
+    });
+
+    // Social icons: empty = muted "Coming soon"; set = real link
     $$("[data-social]").forEach(function (el) {
-      var url = CONFIG[el.dataset.social + "Url"];
-      if (isEmpty(url)) hide(el); else { el.href = url; el.target = "_blank"; el.rel = "noopener"; }
+      var key = el.dataset.social, url = CONFIG[key + "Url"], name = el.dataset.name || key;
+      if (!url) return; // stays as the muted "Coming soon" icon
+      var a = document.createElement("a");
+      a.className = "social";
+      a.href = url; a.target = "_blank"; a.rel = "noopener";
+      a.setAttribute("aria-label", "Overyard on " + name);
+      a.innerHTML = el.innerHTML;
+      el.replaceWith(a);
     });
-    // Booking links (new tab)
-    $$("[data-booking]").forEach(function (el) {
-      if (!CONFIG.bookingUrl) { hide(el); return; }
-      el.href = CONFIG.bookingUrl; el.target = "_blank"; el.rel = "noopener";
-    });
-    // Sample package PDF
-    $$("[data-sample-pdf]").forEach(function (el) {
-      if (!CONFIG.samplePackagePdf) { hide(el); return; }
-      el.href = CONFIG.samplePackagePdf;
-    });
+
     // Seed option in the form shows the configured price
     var seedOpt = $('#f-topic option[value="seed"]');
     if (seedOpt && CONFIG.seed.price) seedOpt.textContent = "Start a " + money(CONFIG.seed.price) + " Seed Project";
@@ -303,139 +359,203 @@ const CONFIG = {
   }
 
   /* ======================================================================
-     PRICING: Seed card, packages, memberships, add-ons
+     HERO CAMERA ROLL
      ====================================================================== */
-  function priceBlock(now, was) {
-    return '<p class="price"><span class="price-now">' + money(now) + "</span>" +
-      (was ? '<span class="price-was"><span class="visually-hidden">Regular price </span><s>' + money(was) + "</s></span>" : "") + "</p>";
-  }
-  function packageItems(p) {
-    var li = [];
-    if (p.plan) li.push(esc(p.plan));
-    if (p.renders) li.push(esc(plural(p.renders, "photoreal 3D render", "photoreal 3D renders")));
-    if (p.walkthrough) li.push(esc(p.walkthrough));
-    if (p.rounds) li.push(esc(plural(p.rounds, "revision round", "revision rounds")));
-    if (p.takeoff) li.push("Material takeoff included");
-    else if (CONFIG.addons.takeoff) li.push("Material takeoff add-on: " + money(CONFIG.addons.takeoff));
-    if (p.days) li.push(esc(p.days));
-    return li.map(function (t) { return "<li>" + t + "</li>"; }).join("");
-  }
+  function initCameraRoll() {
+    var roll = $(".roll");
+    var slides = (CONFIG.heroSlides || []).filter(function (s) { return s && s.src; });
+    if (!roll || !slides.length) return;
 
-  function renderSeed() {
-    var el = $("#seed-card");
-    if (!el) return;
-    var s = CONFIG.seed;
-    if (!s || !s.price) { hide(el); return; }
-    el.innerHTML =
-      '<div class="seed-head">' + glyph("seed", "is-stone") +
-        '<div><p class="label">First project</p><h3>Seed Project</h3></div></div>' +
-      '<p class="seed-desc">Your first design at ' + esc(s.scope || "") + " scope. One per company, paid upfront.</p>" +
-      priceBlock(s.price, s.was) +
-      (seedScope ? '<ul class="ticks">' + packageItems(seedScope) + "</ul>" : "") +
-      (s.guarantee ? '<p class="note-clay"><strong>Guarantee.</strong> ' + esc(s.guarantee) + "</p>" : "") +
-      '<a href="#contact" class="btn btn-primary" data-topic="seed">Start a ' + money(s.price) + " Seed Project</a>";
-  }
+    var stage = $(".roll-stage", roll), tag = $(".roll-tag", roll), strip = $(".filmstrip");
+    var toggle = $(".roll-toggle", roll);
+    var interval = (CONFIG.heroInterval || 6) * 1000;
 
-  function renderConversion() {
-    var el = $("#seed-conversion");
-    if (!el) return;
-    var c = CONFIG, parts = [];
-    if (c.seedJoinWindowDays && c.rateLockMonths) parts.push("Join as a Founding Root within " + c.seedJoinWindowDays + " days of delivery to lock founding rates for " + c.rateLockMonths + " months.");
-    if (c.seedCreditDays && c.seed.price) parts.push("Join a membership within " + c.seedCreditDays + " days and we credit your " + money(c.seed.price) + " to the first month.");
-    if (c.foundingSpots) parts.push("Only " + c.foundingSpots + " founding spots.");
-    if (!parts.length) { hide(el); return; }
-    el.textContent = parts.join(" ");
-  }
+    // First slide is already in the HTML (preloaded). Sync it with config.
+    var first = $(".roll-img", stage);
+    first.src = slides[0].src; first.alt = slides[0].alt || ""; first.width = slides[0].w; first.height = slides[0].h;
+    tag.textContent = slides[0].label || "";
 
-  function renderPackages() {
-    var wrap = $("#packages");
-    if (!wrap) return;
-    var glyphs = { sprout: "sprout", grove: "grove", canopy: "canopy" };
-    wrap.innerHTML = Object.keys(CONFIG.packages).map(function (key) {
-      var p = CONFIG.packages[key];
-      return '<article class="card package' + (p.featured ? " is-featured" : "") + '">' +
-        (p.featured ? '<p class="badge">' + esc(p.featured) + "</p>" : "") +
-        '<div class="card-head">' + glyph(glyphs[key] || "sprout", "is-fern") +
-          "<div><h3>" + esc(p.name) + '</h3><p class="card-desc">' + esc(p.desc || "") + "</p></div></div>" +
-        priceBlock(p.founding, p.regular) +
-        (p.credits ? '<p class="label credits">' + plural(p.credits, "credit", "credits") + " on Evergreen</p>" : "") +
-        '<ul class="ticks">' + packageItems(p) + "</ul>" +
-        '<a href="#contact" class="btn ' + (p.featured ? "btn-primary" : "btn-outline") + '" data-topic="quote" data-package="' + esc(p.name) + '">Start with ' + esc(p.name) + "</a>" +
-        "</article>";
+    // Reduced motion or a single slide: show the first slide only
+    if (reduceMotion || slides.length < 2) {
+      if (strip) strip.hidden = true;
+      if (toggle) toggle.hidden = true;
+      return;
+    }
+
+    // Build the remaining slides (lazy) and the filmstrip
+    var imgs = [first];
+    slides.slice(1).forEach(function (s) {
+      var img = document.createElement("img");
+      img.className = "roll-img";
+      img.alt = s.alt || ""; img.loading = "lazy"; img.decoding = "async";
+      img.width = s.w || 2000; img.height = s.h || 1125;
+      img.dataset.src = s.src;               // set src just before it's shown
+      stage.appendChild(img);
+      imgs.push(img);
+    });
+    strip.innerHTML = slides.map(function (s, i) {
+      return '<li><button type="button" class="frame" data-i="' + i + '" aria-label="Show render ' + (i + 1) + ": " + esc(s.label || "") + '">' +
+        '<img src="' + esc(s.thumb || s.src) + '" alt="" width="240" height="135" loading="lazy" decoding="async">' +
+        '<span class="frame-num">' + String(i + 1).padStart(2, "0") + " · " + (s.time === "night" ? "N" : "D") + "</span>" +
+        '<span class="frame-progress" aria-hidden="true"></span></button></li>';
     }).join("");
-  }
+    strip.hidden = false;
+    toggle.hidden = false;
+    var frames = $$(".frame", strip);
 
-  function renderMemberships() {
-    var wrap = $("#memberships");
-    if (!wrap) return;
-    var look = { orchard: ["orchard", "is-gold", "tone-gold"], forest: ["forest", "is-fern", "tone-fern"], oldGrowth: ["oldGrowth", "is-clay", "tone-clay"] };
-    wrap.innerHTML = Object.keys(CONFIG.memberships).map(function (key) {
-      var m = CONFIG.memberships[key];
-      var l = look[key] || ["forest", "is-fern", "tone-fern"];
-      var waitlist = m.status === "waitlist";
-      var perCredit = m.founding && m.credits ? money(Math.round(m.founding / m.credits)) : "";
-      return '<article class="card membership ' + l[2] + (m.featured ? " is-featured" : "") + (waitlist ? " is-waitlist" : "") + '">' +
-        (m.featured ? '<p class="badge">' + esc(m.featured) + "</p>" : "") +
-        (waitlist ? '<p class="badge badge-clay">Waitlist</p>' : "") +
-        '<div class="card-head">' + glyph(l[0], l[1]) +
-          "<div><h3>" + esc(m.name) + '</h3><p class="card-desc">' + esc(m.desc || "") + "</p></div></div>" +
-        '<p class="price"><span class="price-now">' + money(m.founding) + '</span><span class="per">/mo</span>' +
-          (m.regular ? '<span class="price-was"><span class="visually-hidden">Regular price </span><s>' + money(m.regular) + "</s></span>" : "") + "</p>" +
-        '<p class="label credits">' + plural(m.credits, "credit", "credits") + " a month" + (perCredit ? " · " + perCredit + " per credit" : "") + "</p>" +
-        '<ul class="ticks">' + (m.perks || []).map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" +
-        (waitlist
-          ? '<a href="#contact" class="btn btn-clay" data-topic="waitlist" data-package="' + esc(m.name) + '">Join the waitlist</a>'
-          : '<a href="#contact" class="btn ' + (m.featured ? "btn-primary" : "btn-outline") + '" data-topic="membership" data-package="' + esc(m.name) + '">Join ' + esc(m.name) + "</a>") +
-        "</article>";
-    }).join("");
-  }
+    var index = 0, timer = null, userPaused = false, hoverPaused = false;
+    function load(i) { var im = imgs[i]; if (im.dataset.src) { im.src = im.dataset.src; delete im.dataset.src; im.loading = "eager"; } }
+    function show(i) {
+      index = (i + slides.length) % slides.length;
+      load(index); load((index + 1) % slides.length);
+      imgs.forEach(function (im, j) { im.classList.toggle("is-active", j === index); });
+      frames.forEach(function (f, j) {
+        f.classList.toggle("is-active", j === index);
+        f.setAttribute("aria-current", j === index ? "true" : "false");
+      });
+      tag.textContent = slides[index].label || "";
+      schedule();
+    }
+    function running() { return !userPaused && !hoverPaused && !document.hidden; }
+    function schedule() {
+      clearTimeout(timer);
+      roll.classList.toggle("is-paused", !running());
+      strip.classList.toggle("is-paused", !running());
+      // restart the progress animation on the active frame
+      frames.forEach(function (f) { f.classList.remove("is-running"); });
+      if (!running()) return;
+      void strip.offsetWidth;
+      frames[index].classList.add("is-running");
+      timer = setTimeout(function () { show(index + 1); }, interval);
+    }
+    function setUserPaused(p) {
+      userPaused = p;
+      toggle.setAttribute("aria-pressed", String(p));
+      toggle.setAttribute("aria-label", p ? "Play slideshow" : "Pause slideshow");
+      schedule();
+    }
 
-  function renderAddons() {
-    var ul = $("#addons");
-    if (!ul) return;
-    var a = CONFIG.addons, li = [];
-    if (a.takeoff) li.push(["Material takeoff", money(a.takeoff) + (a.takeoffMembers ? " (" + money(a.takeoffMembers) + " for members)" : "")]);
-    if (a.extraRound) li.push(["Extra revision round", money(a.extraRound)]);
-    if (a.rush) li.push(["Rush delivery", a.rush]);
-    if (a.redesign) li.push(["New layout (redesign)", a.redesign]);
-    if (!li.length) { hide(ul); return; }
-    ul.innerHTML = li.map(function (r) { return '<li><span>' + esc(r[0]) + '</span><span class="addon-price">' + esc(r[1]) + "</span></li>"; }).join("");
+    strip.style.setProperty("--roll-ms", interval + "ms");
+    frames.forEach(function (f) { f.addEventListener("click", function () { show(Number(f.dataset.i)); }); });
+    toggle.addEventListener("click", function () { setUserPaused(!userPaused); });
+    roll.addEventListener("mouseenter", function () { hoverPaused = true; schedule(); });
+    roll.addEventListener("mouseleave", function () { hoverPaused = false; schedule(); });
+    document.addEventListener("visibilitychange", schedule);
+
+    // Arrow keys when focus is inside the roll or filmstrip
+    function onKey(e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); show(index + 1); var f = frames[index]; if (strip.contains(document.activeElement)) f.focus(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); show(index - 1); var g = frames[index]; if (strip.contains(document.activeElement)) g.focus(); }
+    }
+    roll.addEventListener("keydown", onKey);
+    strip.addEventListener("keydown", onKey);
+
+    // Swipe on the frame
+    var sx = null, sy = null;
+    stage.addEventListener("pointerdown", function (e) { sx = e.clientX; sy = e.clientY; });
+    stage.addEventListener("pointerup", function (e) {
+      if (sx === null) return;
+      var dx = e.clientX - sx, dy = e.clientY - sy;
+      sx = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) show(index + (dx < 0 ? 1 : -1));
+    });
+
+    show(0);
   }
 
   /* ======================================================================
-     WORK: project cards from CONFIG.projects (cleared only)
+     BEFORE/AFTER SLIDER (native range input = keyboard, touch, screen reader)
+     labels: [left, right], e.g. ["Before", "After"] or ["Plan", "View"]
+     ====================================================================== */
+  function buildBeforeAfter(leftSrc, rightSrc, alt, eager, labels) {
+    labels = labels || ["Before", "After"];
+    var wrap = document.createElement("div");
+    wrap.className = "ba";
+    var loading = eager ? "eager" : "lazy";
+    wrap.innerHTML =
+      '<img class="ba-after" src="' + esc(rightSrc) + '" alt="' + esc(labels[1] + ": " + alt) + '" loading="' + loading + '" decoding="async">' +
+      '<img class="ba-before" src="' + esc(leftSrc) + '" alt="' + esc(labels[0] + ": " + alt) + '" loading="' + loading + '" decoding="async">' +
+      '<span class="ba-label ba-label-before" aria-hidden="true">' + esc(labels[0]) + "</span>" +
+      '<span class="ba-label ba-label-after" aria-hidden="true">' + esc(labels[1]) + "</span>" +
+      '<span class="ba-handle" aria-hidden="true"></span>' +
+      '<input class="ba-range" type="range" min="0" max="100" value="50" aria-label="' + esc(labels[0] + " and " + labels[1].toLowerCase()) + ' comparison. Use arrow keys to move the divider.">';
+    var range = wrap.querySelector(".ba-range");
+    range.addEventListener("input", function () {
+      wrap.style.setProperty("--pos", range.value + "%");
+      range.setAttribute("aria-valuetext", range.value + "% " + labels[0].toLowerCase() + " shown");
+    });
+    return wrap;
+  }
+
+  /* ======================================================================
+     WORK: featured slider + bento grid (cleared projects only)
      ====================================================================== */
   var shownProjects = CONFIG.projects.filter(function (p) { return p.cleared && p.images && p.images.length; });
+
+  function renderFeatured() {
+    var holder = $("#featured-slider");
+    if (!holder) return;
+    var f = CONFIG.featured || {};
+    var p = shownProjects.filter(function (x) { return x.name === f.project; })[0];
+    if (!p || !f.plan || !f.view) { hide(holder); return; }
+    var box = $(".featured-media", holder);
+    box.appendChild(buildBeforeAfter(f.plan, f.view, p.name, false, ["Plan", "View"]));
+    var name = $(".featured-name", holder);
+    if (name) name.textContent = p.name;
+  }
+
+  var CROPS = '<i class="cm cm-tl"></i><i class="cm cm-tr"></i><i class="cm cm-bl"></i><i class="cm cm-br"></i>';
 
   function renderWork() {
     var grid = $("#work-grid");
     if (!grid) return;
     if (!shownProjects.length) { hide(grid); return; }
     grid.innerHTML = shownProjects.map(function (p, i) {
-      var c = p.images[0];
-      return '<article class="work-card">' +
-        '<div class="media"><img src="' + esc(c.src) + '" alt="' + esc(c.alt) + '" width="' + c.w + '" height="' + c.h + '" loading="lazy" decoding="async"></div>' +
+      var day = p.dayImage || (p.images[0] && p.images[0].src);
+      var night = p.nightImage || "";
+      var start = day || night;
+      var sheet = "P-" + String(i + 1).padStart(2, "0");
+      var count = p.images.length + (p.beforeImage ? 1 : 0);
+      var toggle = day && night
+        ? '<div class="dn" role="group" aria-label="Day or night render">' +
+            '<button type="button" class="dn-btn" data-src="' + esc(day) + '" aria-pressed="true">Day</button>' +
+            '<button type="button" class="dn-btn" data-src="' + esc(night) + '" aria-pressed="false">Night</button></div>'
+        : "";
+      return '<article class="work-card' + (i === 0 ? " is-large" : "") + ' wipe">' +
+        '<div class="work-media">' + CROPS +
+          '<div class="media"><img src="' + esc(start) + '" alt="' + esc(p.images.filter(function (im) { return !im.photo; })[0].alt) + '" width="' + (p.cardW || 900) + '" height="' + (p.cardH || 506) + '" loading="lazy" decoding="async"></div>' +
+          toggle +
+        "</div>" +
         '<div class="work-body">' +
-          '<p class="label">P-' + String(i + 1).padStart(2, "0") + "</p>" +
-          '<h3><button class="work-open" type="button" aria-haspopup="dialog" data-index="' + i + '">' + esc(p.name) + "</button></h3>" +
+          '<p class="label">' + sheet + " · " + esc(p.name) + "</p>" +
+          "<h3>" + esc(p.name) + "</h3>" +
           "<p>" + esc(p.line) + "</p>" +
-          '<span class="work-count" aria-hidden="true">' + plural(p.images.length + (p.beforeImage ? 1 : 0), "image", "images") + "</span>" +
+          '<button class="work-open" type="button" aria-haspopup="dialog" data-index="' + i + '">View sheets <span class="label">' + count + "</span></button>" +
         "</div></article>";
     }).join("");
+
+    // Day / Night toggles
+    grid.addEventListener("click", function (e) {
+      var btn = e.target.closest(".dn-btn");
+      if (!btn) return;
+      var card = btn.closest(".work-card"), img = $(".media img", card);
+      img.src = btn.dataset.src;
+      $$(".dn-btn", card).forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+    });
   }
 
-  // What you receive: plan + 2 renders from CONFIG.receiveProject (or the first cleared project)
+  // What you receive: 2D plan + 2 renders
   function renderDeliverables() {
     var wrap = $("#deliverables-media");
     if (!wrap) return;
     var p = shownProjects.filter(function (x) { return x.name === CONFIG.receiveProject; })[0] || shownProjects[0];
     if (!p) { hide(wrap); return; }
     var plan = p.images.filter(function (im) { return im.plan; })[0];
-    var renders = p.images.filter(function (im) { return !im.plan; }).slice(0, 2);
-    var planSrc = CONFIG.samplePlan || (plan && plan.src);
+    var renders = p.images.filter(function (im) { return !im.plan && !im.photo; }).slice(0, 2);
     var items = [];
-    if (planSrc) items.push({ src: planSrc, w: plan ? plan.w : 2000, h: plan ? plan.h : 1125, alt: "2D plan view of " + p.name.toLowerCase(), label: "2D plan", plan: true });
-    renders.forEach(function (r, i) { items.push({ src: r.src, w: r.w, h: r.h, alt: r.alt, label: "3D render " + (i + 1) }); });
+    var planSrc = CONFIG.samplePlan || (plan && plan.src);
+    if (planSrc) items.push({ src: planSrc, w: CONFIG.samplePlan ? 928 : 2000, h: CONFIG.samplePlan ? 1152 : 1125, alt: "2D landscape plan sheet with pool, spa, lawn, stepping pads and planting", label: "Sheet L-101 · 2D plan", plan: true });
+    renders.forEach(function (r, i) { items.push({ src: r.src, w: 2000, h: 1125, alt: r.alt, label: "Sheet R-0" + (i + 1) + " · 3D render" }); });
     wrap.innerHTML = items.map(function (it) {
       return '<figure class="sheet' + (it.plan ? " is-plan" : "") + '">' +
         '<div class="media"><img src="' + esc(it.src) + '" alt="' + esc(it.alt) + '" width="' + it.w + '" height="' + it.h + '" loading="lazy" decoding="async"></div>' +
@@ -443,35 +563,43 @@ const CONFIG = {
     }).join("");
   }
 
-  /* ======================================================================
-     BEFORE/AFTER SLIDER (native range input = keyboard, touch, screen reader)
-     ====================================================================== */
-  function buildBeforeAfter(beforeSrc, afterSrc, alt, eager) {
-    var wrap = document.createElement("div");
-    wrap.className = "ba";
-    var loading = eager ? "eager" : "lazy";
-    wrap.innerHTML =
-      '<img class="ba-after" src="' + esc(afterSrc) + '" alt="After: ' + esc(alt) + '" loading="' + loading + '">' +
-      '<img class="ba-before" src="' + esc(beforeSrc) + '" alt="Before: site photo" loading="' + loading + '">' +
-      '<span class="ba-label ba-label-before" aria-hidden="true">Before</span>' +
-      '<span class="ba-label ba-label-after" aria-hidden="true">After</span>' +
-      '<span class="ba-handle" aria-hidden="true"></span>' +
-      '<input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after comparison. Use arrow keys to move the divider.">';
-    var range = wrap.querySelector(".ba-range");
-    range.addEventListener("input", function () {
-      wrap.style.setProperty("--pos", range.value + "%");
-      range.setAttribute("aria-valuetext", range.value + "% before photo shown");
+  // How it works images (or plan-symbol placeholders)
+  function renderProcess() {
+    $$(".process-card").forEach(function (card, i) {
+      var src = (CONFIG.processImages || [])[i];
+      var media = $(".process-media", card);
+      if (!src || !media) return;  // placeholder SVG stays
+      var img = document.createElement("img");
+      img.src = src; img.alt = media.dataset.alt || "";
+      img.width = 928; img.height = 1152; img.loading = "lazy"; img.decoding = "async";
+      media.innerHTML = "";
+      media.appendChild(img);
+      media.classList.add("has-img");
     });
-    return wrap;
   }
 
-  function initHeroBeforeAfter() {
-    var fig = $(".hero-media");
-    if (!CONFIG.heroBefore || !fig) return;
-    var img = fig.querySelector(".hero-img-dark") || fig.querySelector("img");
-    fig.innerHTML = "";
-    fig.appendChild(buildBeforeAfter(CONFIG.heroBefore, img.getAttribute("src"), img.alt, true));
-    fig.classList.add("has-ba");
+  /* ======================================================================
+     NIGHT BAND (image from config + subtle parallax on desktop)
+     ====================================================================== */
+  function initBand() {
+    var band = $(".band");
+    if (!band) return;
+    var img = $(".band-img", band);
+    if (CONFIG.bandImage && img) img.src = CONFIG.bandImage;
+    if (reduceMotion || !img) return;
+    var desktop = window.matchMedia("(min-width: 900px)");
+    var ticking = false;
+    function update() {
+      ticking = false;
+      if (!desktop.matches) { img.style.transform = ""; return; }
+      var r = band.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;
+      // background moves at 0.85x the scroll speed → offset of 15% of scroll distance
+      img.style.transform = "translate3d(0," + (-r.top * 0.15).toFixed(1) + "px,0)";
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
   }
 
   /* ======================================================================
@@ -486,7 +614,8 @@ const CONFIG = {
 
     function slidesFor(p) {
       var list = [];
-      if (p.beforeImage) list.push({ type: "ba", before: p.beforeImage, after: p.images[0].src, alt: p.images[0].alt, caption: "Before and after: drag to compare" });
+      var firstRender = p.images.filter(function (im) { return !im.photo; })[0];
+      if (p.beforeImage && firstRender) list.push({ type: "ba", before: p.beforeImage, after: firstRender.src, alt: firstRender.alt, caption: "Before and after: drag to compare" });
       p.images.forEach(function (im) { list.push({ type: "img", src: im.src, alt: im.alt, caption: im.caption || "" }); });
       return list;
     }
@@ -525,7 +654,10 @@ const CONFIG = {
 
     var grid = $("#work-grid");
     if (grid) grid.addEventListener("click", function (e) {
+      if (e.target.closest(".dn")) return;
       var btn = e.target.closest(".work-open");
+      var media = e.target.closest(".work-media");
+      if (!btn && media) btn = $(".work-open", media.closest(".work-card"));  // clicking the picture opens it too
       if (btn) open(shownProjects[Number(btn.dataset.index)], btn);
     });
 
@@ -564,7 +696,7 @@ const CONFIG = {
   }
 
   /* ======================================================================
-     HEADER, REVEAL, VIDEO, MOBILE CTA
+     HEADER, REVEALS, VIDEO, MOBILE CTA
      ====================================================================== */
   function initHeader() {
     var toggle = $(".nav-toggle"), nav = $("#site-nav");
@@ -586,9 +718,9 @@ const CONFIG = {
   }
 
   // Content is always visible. Elements that START below the fold get a short
-  // rise-in animation the first time they scroll into view.
+  // rise-in (.reveal) or clip-path wipe (.wipe) the first time they enter view.
   function initReveal() {
-    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!("IntersectionObserver" in window) || reduceMotion) return;
     var first = true;
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -598,7 +730,7 @@ const CONFIG = {
       });
       first = false;
     }, { rootMargin: "0px 0px -6% 0px" });
-    $$(".reveal").forEach(function (el) { io.observe(el); });
+    $$(".reveal, .wipe").forEach(function (el) { io.observe(el); });
   }
 
   function initVideo() {
@@ -607,10 +739,13 @@ const CONFIG = {
     if (!CONFIG.walkthroughVideo) { wrap.hidden = true; return; }
     var video = wrap.querySelector("video");
     if (CONFIG.walkthroughPoster) video.poster = CONFIG.walkthroughPoster;
-    whenNear(wrap, function () {
+    var go = function () {
       video.src = CONFIG.walkthroughVideo;
-      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) video.play().catch(function () {});
-    });
+      if (!reduceMotion) video.play().catch(function () {});
+    };
+    if (!("IntersectionObserver" in window)) { go(); return; }
+    var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { io.disconnect(); go(); } }, { rootMargin: "600px 0px" });
+    io.observe(wrap);
   }
 
   function initMobileCta() {
@@ -627,13 +762,12 @@ const CONFIG = {
      ====================================================================== */
   function initForm() {
     var form = $("#contact-form");
-    // Buttons with data-topic pre-select "What do you need?" (and note the package)
+    // Buttons with data-topic pre-select "What do you need?" and pre-fill a note
     document.addEventListener("click", function (e) {
       var link = e.target.closest("[data-topic]");
       if (!link || !form) return;
       var topic = $("#f-topic");
       topic.value = link.dataset.topic;
-      // Pre-fill the message (only if empty or still holding an earlier pre-fill)
       var pkg = link.dataset.package, msg = $("#f-message");
       var note = link.dataset.note || (pkg ? (link.dataset.topic === "quote" ? "I'd like to start with " + pkg + "." : "I'm interested in " + pkg + ".") : "");
       if (note && msg && (!msg.value || msg.dataset.prefilled === msg.value)) {
@@ -659,7 +793,9 @@ const CONFIG = {
       if ($("[name=botcheck]", form).checked) return; // honeypot
 
       if (!CONFIG.web3formsKey) {
-        setStatus("error", "The form isn't connected yet." + (CONFIG.email ? " Please email " + CONFIG.email + " instead." : ""));
+        setStatus("error", "The form isn't connected yet." +
+          (CONFIG.whatsapp && CONFIG.whatsapp.display ? " Please message us on WhatsApp at " + CONFIG.whatsapp.display + "." :
+          CONFIG.email ? " Please email " + CONFIG.email + " instead." : ""));
         return;
       }
       var data = Object.fromEntries(new FormData(form).entries());
@@ -727,6 +863,9 @@ const CONFIG = {
       "priceRange": "$" + CONFIG.computed.fromPrice + "+",
     };
     if (CONFIG.email) data.email = CONFIG.email;
+    if (CONFIG.whatsapp && CONFIG.whatsapp.display) data.telephone = CONFIG.whatsapp.display;
+    var sameAs = ["facebook", "instagram", "tiktok", "youtube", "linkedin"].map(function (k) { return CONFIG[k + "Url"]; }).filter(Boolean);
+    if (sameAs.length) data.sameAs = sameAs;
     var s = document.createElement("script");
     s.type = "application/ld+json";
     s.textContent = JSON.stringify(data);
@@ -736,19 +875,17 @@ const CONFIG = {
   // ---------- start ----------
   onReady(function () {
     initTheme();
-    renderSeed();
-    renderConversion();
-    renderPackages();
-    renderMemberships();
-    renderAddons();
+    renderFeatured();
     renderWork();
     renderDeliverables();
+    renderProcess();
     fillConfig();
     addSchema();
     addAnalytics();
     initHeader();
+    initCameraRoll();
+    initBand();
     initReveal();
-    initHeroBeforeAfter();
     initLightbox();
     initVideo();
     initMobileCta();
