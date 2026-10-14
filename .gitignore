@@ -6,3 +6,6 @@ desktop.ini
 
 # Local Claude settings (personal)
 .claude/settings.local.json
+
+# Dev tools
+node_modules/

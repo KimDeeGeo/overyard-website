@@ -1,0 +1,13 @@
+{
+  "name": "overyard-website",
+  "private": true,
+  "description": "Dev tools only (snapshots, image compression, Lighthouse). The site itself needs no build step.",
+  "type": "module",
+  "scripts": {
+    "snapshot": "node scripts/snapshot.mjs"
+  },
+  "devDependencies": {
+    "lighthouse": "^13.5.0",
+    "playwright": "^1.64.1"
+  }
+}
