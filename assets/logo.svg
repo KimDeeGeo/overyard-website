@@ -1,25 +1,21 @@
-<!--
-  Overyard logo: plan-view mark + wordmark.
-  Colors: #3D5A45 = green accent, #111111 = near-black text.
-  To change the green, replace #3D5A45 below (and in logo-mark.svg / favicon.svg).
--->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 54" role="img" aria-labelledby="t">
+<!-- Overyard logo (for light backgrounds). The "O" is a tree-canopy plan symbol: outer ring, dashed crown, center dot.
+     Ink = #141613, accent = #3D5A45. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 54" role="img" aria-labelledby="t">
   <title id="t">Overyard</title>
-  <!-- Mark: top-down yard plan (lot, lawn edge, tree) -->
-  <g transform="translate(0 2)">
-    <rect width="38" height="38" rx="8" fill="#3D5A45"/>
-    <path d="M8 30 A22 22 0 0 1 30 8" fill="none" stroke="#F7F7F5" stroke-width="3.4" stroke-linecap="round"/>
-    <circle cx="27.5" cy="27.5" r="4.2" fill="#F7F7F5"/>
-  </g>
-  <!-- Wordmark: "Overyard" -->
-  <g transform="translate(52 0)" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="18.5" cy="21" r="16.5"/>                                   <!-- O -->
-    <path d="M44.5 14.5 L55 37.5 L65.5 14.5"/>                             <!-- v -->
-    <path d="M73.5 26 H96.5 A11.5 11.5 0 1 0 93.8 33.4"/>                  <!-- e -->
-    <path d="M105.5 37.5 V14.5 M105.5 24 C105.5 17.5 110 14.5 116 14.5"/>  <!-- r -->
-    <path d="M123.5 14.5 L134 37.5 M144.5 14.5 L127.8 51"/>                <!-- y -->
-    <circle cx="164" cy="26" r="11.5"/><path d="M175.5 14.5 V37.5"/>       <!-- a -->
-    <path d="M184.5 37.5 V14.5 M184.5 24 C184.5 17.5 189 14.5 195 14.5"/>  <!-- r -->
-    <circle cx="214" cy="26" r="11.5"/><path d="M225.5 4.5 V37.5"/>        <!-- d -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#3D5A45">
+      <circle cx="21" cy="21" r="16.5" stroke-width="5"/>
+      <circle cx="21" cy="21" r="9" stroke-width="2.4" stroke-dasharray="3.4 3.1"/>
+    </g>
+    <circle cx="21" cy="21" r="2.8" fill="#3D5A45"/>
+    <g stroke="#141613" stroke-width="5" transform="translate(2.5 0)">
+      <path d="M44.5 14.5 L55 37.5 L65.5 14.5"/>
+      <path d="M73.5 26 H96.5 A11.5 11.5 0 1 0 93.8 33.4"/>
+      <path d="M105.5 37.5 V14.5 M105.5 24 C105.5 17.5 110 14.5 116 14.5"/>
+      <path d="M123.5 14.5 L134 37.5 M144.5 14.5 L127.8 51"/>
+      <circle cx="164" cy="26" r="11.5"/><path d="M175.5 14.5 V37.5"/>
+      <path d="M184.5 37.5 V14.5 M184.5 24 C184.5 17.5 189 14.5 195 14.5"/>
+      <circle cx="214" cy="26" r="11.5"/><path d="M225.5 4.5 V37.5"/>
+    </g>
   </g>
 </svg>
