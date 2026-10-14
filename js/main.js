@@ -84,18 +84,19 @@ const CONFIG = {
   // Day and night renders that crossfade in the hero frame. Start with a night
   // render, then alternate. Only use renders from cleared projects.
   // thumb = small filmstrip image (images/thumbs/, 240px wide).
+  // small = 1000px version for phones (images/hero-sm/). Optional.
   heroSlides: [
-    { src: "images/modern-02.webp", thumb: "images/thumbs/modern-02.webp", time: "night", w: 2000, h: 1125,
+    { src: "images/modern-02.webp", thumb: "images/thumbs/modern-02.webp", small: "images/hero-sm/modern-02.webp", time: "night", w: 2000, h: 1125,
       label: "Sheet R-01 · 3D render · Modern pool · Night", alt: "Night render of a modern pool and spa with a lit pergola fire lounge" },
-    { src: "images/hero-01.webp", thumb: "images/thumbs/hero-01.webp", time: "day", w: 2000, h: 1125,
+    { src: "images/hero-01.webp", thumb: "images/thumbs/hero-01.webp", small: "images/hero-sm/hero-01.webp", time: "day", w: 2000, h: 1125,
       label: "Sheet R-02 · 3D render · Modern pool · Day", alt: "Render of a modern pool with a slatted pergola fire lounge, lounge deck and cypress trees" },
-    { src: "images/courtyard-04.webp", thumb: "images/thumbs/courtyard-04.webp", time: "night", w: 2000, h: 1125,
+    { src: "images/courtyard-04.webp", thumb: "images/thumbs/courtyard-04.webp", small: "images/hero-sm/courtyard-04.webp", time: "night", w: 2000, h: 1125,
       label: "Sheet R-03 · 3D render · Citrus fire pit · Night", alt: "Night render of a fire pit lounge under uplit lemon trees" },
-    { src: "images/courtyard-01.webp", thumb: "images/thumbs/courtyard-01.webp", time: "day", w: 1920, h: 1080,
+    { src: "images/courtyard-01.webp", thumb: "images/thumbs/courtyard-01.webp", small: "images/hero-sm/courtyard-01.webp", time: "day", w: 1920, h: 1080,
       label: "Sheet R-04 · 3D render · Pool courtyard · Day", alt: "Render of a backyard with a fountain, stepping pads, pool and spa, and a fire pit under lemon trees" },
-    { src: "images/terraced-04.webp", thumb: "images/thumbs/terraced-04.webp", time: "night", w: 1440, h: 959,
+    { src: "images/terraced-04.webp", thumb: "images/thumbs/terraced-04.webp", small: "images/hero-sm/terraced-04.webp", time: "night", w: 1440, h: 959,
       label: "Sheet R-05 · 3D render · Terraced hillside · Night", alt: "Night render looking up lit stairs past wall-washed retaining walls" },
-    { src: "images/courtyard-03.webp", thumb: "images/thumbs/courtyard-03.webp", time: "day", w: 2000, h: 1125,
+    { src: "images/courtyard-03.webp", thumb: "images/thumbs/courtyard-03.webp", small: "images/hero-sm/courtyard-03.webp", time: "day", w: 2000, h: 1125,
       label: "Sheet R-06 · 3D render · Citrus fire pit · Day", alt: "Render of a fire pit lounge on a stamped concrete pad framed by lemon trees" },
   ],
   heroInterval: 6,        // seconds per slide
@@ -235,6 +236,24 @@ const CONFIG = {
   function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function hide(el) { (el.closest("[data-cfg-block]") || el).hidden = true; }
   function onReady(fn) { if (document.readyState !== "loading") fn(); else document.addEventListener("DOMContentLoaded", fn); }
+  // Set an image's src only when it gets close to the screen. Native lazy
+  // loading starts very early on slow phones, which competes with the hero.
+  var nearObserver = "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      nearObserver.unobserve(e.target);
+      $$("img[data-near-src]", e.target).forEach(function (img) { img.src = img.dataset.nearSrc; img.removeAttribute("data-near-src"); });
+    });
+  }, { rootMargin: "500px 0px" }) : null;
+  function loadWhenNear(container) {
+    if (nearObserver) nearObserver.observe(container);
+    else $$("img[data-near-src]", container).forEach(function (img) { img.src = img.dataset.nearSrc; });
+  }
+  // Run after the page (and the first hero slide) has finished loading
+  function afterLoad(fn) {
+    var go = function () { setTimeout(fn, 1200); };
+    if (document.readyState === "complete") go(); else window.addEventListener("load", go);
+  }
   function joinList(arr, word) {
     if (arr.length < 2) return arr.join("");
     return arr.slice(0, -1).join(", ") + " " + word + " " + arr[arr.length - 1];
@@ -371,8 +390,14 @@ const CONFIG = {
     var interval = (CONFIG.heroInterval || 6) * 1000;
 
     // First slide is already in the HTML (preloaded). Sync it with config.
+    var SIZES = "(min-width: 1280px) 1200px, 100vw";
+    function setSources(img, s) {
+      if (s.small) { img.srcset = s.small + " 1000w, " + s.src + " 2000w"; img.sizes = SIZES; } else img.removeAttribute("srcset");
+      img.src = s.src;
+    }
     var first = $(".roll-img", stage);
-    first.src = slides[0].src; first.alt = slides[0].alt || ""; first.width = slides[0].w; first.height = slides[0].h;
+    if (first.getAttribute("src") !== slides[0].src) setSources(first, slides[0]);
+    first.alt = slides[0].alt || ""; first.width = slides[0].w; first.height = slides[0].h;
     tag.textContent = slides[0].label || "";
 
     // Reduced motion or a single slide: show the first slide only
@@ -389,13 +414,13 @@ const CONFIG = {
       img.className = "roll-img";
       img.alt = s.alt || ""; img.loading = "lazy"; img.decoding = "async";
       img.width = s.w || 2000; img.height = s.h || 1125;
-      img.dataset.src = s.src;               // set src just before it's shown
+      img.dataset.slide = String(imgs.length); // sources are set just before it's shown
       stage.appendChild(img);
       imgs.push(img);
     });
     strip.innerHTML = slides.map(function (s, i) {
       return '<li><button type="button" class="frame" data-i="' + i + '" aria-label="Show render ' + (i + 1) + ": " + esc(s.label || "") + '">' +
-        '<img src="' + esc(s.thumb || s.src) + '" alt="" width="240" height="135" loading="lazy" decoding="async">' +
+        '<img data-thumb="' + esc(s.thumb || s.src) + '" alt="" width="240" height="135" decoding="async">' +
         '<span class="frame-num">' + String(i + 1).padStart(2, "0") + " · " + (s.time === "night" ? "N" : "D") + "</span>" +
         '<span class="frame-progress" aria-hidden="true"></span></button></li>';
     }).join("");
@@ -403,14 +428,22 @@ const CONFIG = {
     toggle.hidden = false;
     var frames = $$(".frame", strip);
 
-    var index = 0, timer = null, userPaused = false, hoverPaused = false;
-    function load(i) { var im = imgs[i]; if (im.dataset.src) { im.src = im.dataset.src; delete im.dataset.src; im.loading = "eager"; } }
+    var index = 0, timer = null, userPaused = false, hoverPaused = false, pageLoaded = false;
+    function load(i) { var im = imgs[i]; if (im.dataset.slide) { delete im.dataset.slide; im.loading = "eager"; setSources(im, slides[i]); } }
+    // Thumbnails and the next slide wait until the page has loaded, so the first
+    // slide gets the full connection.
+    afterLoad(function () {
+      pageLoaded = true;
+      $$("img[data-thumb]", strip).forEach(function (t) { t.src = t.dataset.thumb; t.removeAttribute("data-thumb"); });
+      load((index + 1) % slides.length);
+    });
     var prev = -1;
     function show(i) {
       var next = (i + slides.length) % slides.length;
       if (next !== index) prev = index;
       index = next;
-      load(index); load((index + 1) % slides.length);
+      load(index);
+      if (pageLoaded) load((index + 1) % slides.length);
       // the outgoing slide keeps its zoom (paused) while it fades out
       imgs.forEach(function (im, j) {
         im.classList.toggle("is-active", j === index);
@@ -483,10 +516,10 @@ const CONFIG = {
     labels = labels || ["Before", "After"];
     var wrap = document.createElement("div");
     wrap.className = "ba";
-    var loading = eager ? "eager" : "lazy";
+    var srcAttr = eager ? "src" : "data-near-src";
     wrap.innerHTML =
-      '<img class="ba-after" src="' + esc(rightSrc) + '" alt="' + esc(labels[1] + ": " + alt) + '" loading="' + loading + '" decoding="async">' +
-      '<img class="ba-before" src="' + esc(leftSrc) + '" alt="' + esc(labels[0] + ": " + alt) + '" loading="' + loading + '" decoding="async">' +
+      '<img class="ba-after" ' + srcAttr + '="' + esc(rightSrc) + '" alt="' + esc(labels[1] + ": " + alt) + '" decoding="async">' +
+      '<img class="ba-before" ' + srcAttr + '="' + esc(leftSrc) + '" alt="' + esc(labels[0] + ": " + alt) + '" decoding="async">' +
       '<span class="ba-label ba-label-before" aria-hidden="true">' + esc(labels[0]) + "</span>" +
       '<span class="ba-label ba-label-after" aria-hidden="true">' + esc(labels[1]) + "</span>" +
       '<span class="ba-handle" aria-hidden="true"></span>' +
@@ -512,6 +545,7 @@ const CONFIG = {
     if (!p || !f.plan || !f.view) { hide(holder); return; }
     var box = $(".featured-media", holder);
     box.appendChild(buildBeforeAfter(f.plan, f.view, p.name, false, ["Plan", "View"]));
+    loadWhenNear(holder);
     var name = $(".featured-name", holder);
     if (name) name.textContent = p.name;
   }
@@ -535,7 +569,7 @@ const CONFIG = {
         : "";
       return '<article class="work-card' + (i === 0 ? " is-large" : "") + ' wipe">' +
         '<div class="work-media">' + CROPS +
-          '<div class="media"><img src="' + esc(start) + '" alt="' + esc(p.images.filter(function (im) { return !im.photo; })[0].alt) + '" width="' + (p.cardW || 900) + '" height="' + (p.cardH || 506) + '" loading="lazy" decoding="async"></div>' +
+          '<div class="media"><img data-near-src="' + esc(start) + '" alt="' + esc(p.images.filter(function (im) { return !im.photo; })[0].alt) + '" width="' + (p.cardW || 900) + '" height="' + (p.cardH || 506) + '" decoding="async"></div>' +
           toggle +
         "</div>" +
         '<div class="work-body">' +
@@ -545,6 +579,8 @@ const CONFIG = {
           '<button class="work-open" type="button" aria-haspopup="dialog" data-index="' + i + '">View sheets <span class="label">' + count + "</span></button>" +
         "</div></article>";
     }).join("");
+
+    $$(".work-card", grid).forEach(loadWhenNear);
 
     // Day / Night toggles
     grid.addEventListener("click", function (e) {
@@ -570,9 +606,10 @@ const CONFIG = {
     renders.forEach(function (r, i) { items.push({ src: r.src, w: 2000, h: 1125, alt: r.alt, label: "Sheet R-0" + (i + 1) + " · 3D render" }); });
     wrap.innerHTML = items.map(function (it) {
       return '<figure class="sheet' + (it.plan ? " is-plan" : "") + '">' +
-        '<div class="media"><img src="' + esc(it.src) + '" alt="' + esc(it.alt) + '" width="' + it.w + '" height="' + it.h + '" loading="lazy" decoding="async"></div>' +
+        '<div class="media"><img data-near-src="' + esc(it.src) + '" alt="' + esc(it.alt) + '" width="' + it.w + '" height="' + it.h + '" decoding="async"></div>' +
         '<figcaption class="label">' + esc(it.label) + "</figcaption></figure>";
     }).join("");
+    loadWhenNear(wrap);
   }
 
   // How it works images (or plan-symbol placeholders)
@@ -582,11 +619,12 @@ const CONFIG = {
       var media = $(".process-media", card);
       if (!src || !media) return;  // placeholder SVG stays
       var img = document.createElement("img");
-      img.src = src; img.alt = media.dataset.alt || "";
-      img.width = 928; img.height = 1152; img.loading = "lazy"; img.decoding = "async";
+      img.dataset.nearSrc = src; img.alt = media.dataset.alt || "";
+      img.width = 928; img.height = 1152; img.decoding = "async";
       media.innerHTML = "";
       media.appendChild(img);
       media.classList.add("has-img");
+      loadWhenNear(card);
     });
   }
 
@@ -885,8 +923,16 @@ const CONFIG = {
   }
 
   // ---------- start ----------
+  // Hero and header first; everything below the fold after the first paint
+  // (the HTML already contains the default values, so nothing visibly changes).
+  function afterPaint(fn) { requestAnimationFrame(function () { setTimeout(fn, 0); }); }
   onReady(function () {
     initTheme();
+    initHeader();
+    initCameraRoll();
+    afterPaint(rest);
+  });
+  function rest() {
     renderFeatured();
     renderWork();
     renderDeliverables();
@@ -894,13 +940,11 @@ const CONFIG = {
     fillConfig();
     addSchema();
     addAnalytics();
-    initHeader();
-    initCameraRoll();
     initBand();
     initReveal();
     initLightbox();
     initVideo();
     initMobileCta();
     initForm();
-  });
+  }
 })();

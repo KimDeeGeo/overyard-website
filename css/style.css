@@ -13,6 +13,16 @@
    clay  = urgency and important terms only (never decorative)
    ========================================================================== */
 
+/* ---- Fonts (self-hosted Google Fonts, SIL Open Font License: assets/fonts/OFL.txt) ----
+   One variable file per family, latin subset. Self-hosting removes a render-blocking
+   request to Google and lets the page preload the headline and body fonts. */
+@font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700 800; font-display: swap;
+  src: url("../assets/fonts/bricolage-grotesque.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url("../assets/fonts/manrope.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url("../assets/fonts/jetbrains-mono.woff2") format("woff2"); }
+
 /* ---- DARK theme (default) ---- */
 :root,
 [data-theme="dark"] {
@@ -64,7 +74,7 @@
   /* ---- Type ---- */
   --font-display: "Bricolage Grotesque", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-mono: "JetBrains Mono", "Courier New", ui-monospace, Menlo, Consolas, monospace; /* Courier New matches its width, so no reflow when it loads */
 
   /* ---- Layout ---- */
   --container: 1200px;
@@ -302,7 +312,7 @@ a:hover { color: var(--fern-hover); }
 .draft-line path { fill: none; stroke: var(--fern); stroke-width: 3; stroke-linecap: round; }
 @media (prefers-reduced-motion: no-preference) {
   .hero-title .w {
-    opacity: 0; transform: translateY(.6em);
+    opacity: .01; transform: translateY(.6em); /* .01 not 0: keeps the headline a paint candidate (LCP) */
     animation: word-rise 600ms cubic-bezier(.2, .7, .2, 1) forwards;
     animation-delay: calc(var(--i) * 70ms);
   }
@@ -353,10 +363,11 @@ a:hover { color: var(--fern-hover); }
 .frame {
   position: relative; display: block; width: 100%; padding: 0;
   border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
-  background: var(--paper); cursor: pointer; opacity: .62;
-  transition: opacity .2s, border-color .2s;
+  background: var(--paper); cursor: pointer;
+  transition: border-color .2s;
 }
-.frame:hover { opacity: .9; }
+.frame img { opacity: .55; transition: opacity .2s; }
+.frame:hover img, .frame.is-active img { opacity: 1; }
 .frame img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .frame-num { display: block; padding: 4px 6px 6px; text-align: left; font: 600 .66rem/1 var(--font-mono); letter-spacing: .06em; color: var(--muted); }
 .frame.is-active { opacity: 1; border-color: var(--fern); }
@@ -388,6 +399,9 @@ a:hover { color: var(--fern-hover); }
    Sections (shared)
    ========================================================================== */
 .section { padding: var(--section-space) 0; }
+/* Skip layout/paint for sections until they're near the screen (big win on phones).
+   "auto" remembers each section's real height once it has been rendered. */
+main > .section, main > .band { content-visibility: auto; contain-intrinsic-size: auto 1000px; }
 .section-tight { padding: clamp(56px, 8vw, 96px) 0; }
 .section-alt { background: var(--paper); border-block: 1px solid var(--line); }
 .section-head { max-width: 46rem; margin-bottom: clamp(32px, 5vw, 56px); }

@@ -42,12 +42,10 @@
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-  <!-- First hero slide and fonts load first -->
-  <link rel="preload" as="image" href="images/modern-02.webp" fetchpriority="high">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600&display=swap">
+  <!-- First hero slide and fonts load first (fonts are self-hosted in assets/fonts) -->
+  <link rel="preload" as="image" href="images/modern-02.webp" imagesrcset="images/hero-sm/modern-02.webp 1000w, images/modern-02.webp 2000w" imagesizes="(min-width: 1280px) 1200px, 100vw" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bricolage-grotesque.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope.woff2" crossorigin>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -149,7 +147,7 @@
       <div class="container">
         <figure class="hero-media roll" aria-roledescription="carousel" aria-label="Project renders">
           <div class="roll-stage">
-            <img class="roll-img is-active" src="images/modern-02.webp" alt="Night render of a modern pool and spa with a lit pergola fire lounge" width="2000" height="1125" fetchpriority="high" decoding="async">
+            <img class="roll-img is-active" src="images/modern-02.webp" srcset="images/hero-sm/modern-02.webp 1000w, images/modern-02.webp 2000w" sizes="(min-width: 1280px) 1200px, 100vw" alt="Night render of a modern pool and spa with a lit pergola fire lounge" width="2000" height="1125" fetchpriority="high" decoding="async">
           </div>
           <figcaption class="sheet-tag label roll-tag">Sheet R-01 · 3D render · Modern pool · Night</figcaption>
           <button class="roll-toggle" type="button" aria-pressed="false" aria-label="Pause slideshow" hidden>
