@@ -95,6 +95,7 @@ const CONFIG = {
   samplePackagePdf: "",   // e.g. "assets/sample-package.pdf"  → shows "See a sample package"
   heroBefore: "",         // e.g. "images/hero-before.webp"    → hero becomes a before/after slider
   samplePlan: "",         // e.g. "images/sample-plan.webp"    → used as the "2D plan" in What you receive
+  receiveProject: "Pool courtyard and citrus grove", // project shown in "What you receive" (its plan view + 2 renders)
   walkthroughVideo: "",   // e.g. "videos/walkthrough-01.mp4"
   walkthroughPoster: "",
 
@@ -423,11 +424,11 @@ const CONFIG = {
     }).join("");
   }
 
-  // What you receive: plan + 2 renders from the first cleared project
+  // What you receive: plan + 2 renders from CONFIG.receiveProject (or the first cleared project)
   function renderDeliverables() {
     var wrap = $("#deliverables-media");
     if (!wrap) return;
-    var p = shownProjects[0];
+    var p = shownProjects.filter(function (x) { return x.name === CONFIG.receiveProject; })[0] || shownProjects[0];
     if (!p) { hide(wrap); return; }
     var plan = p.images.filter(function (im) { return im.plan; })[0];
     var renders = p.images.filter(function (im) { return !im.plan; }).slice(0, 2);
