@@ -293,6 +293,10 @@ const CONFIG = {
       if (!CONFIG.samplePackagePdf) { hide(el); return; }
       el.href = CONFIG.samplePackagePdf;
     });
+    // Seed option in the form shows the configured price
+    var seedOpt = $('#f-topic option[value="seed"]');
+    if (seedOpt && CONFIG.seed.price) seedOpt.textContent = "Start a " + money(CONFIG.seed.price) + " Seed Project";
+
     var year = $("#year");
     if (year) year.textContent = new Date().getFullYear();
   }
@@ -628,9 +632,12 @@ const CONFIG = {
       if (!link || !form) return;
       var topic = $("#f-topic");
       topic.value = link.dataset.topic;
+      // Pre-fill the message (only if empty or still holding an earlier pre-fill)
       var pkg = link.dataset.package, msg = $("#f-message");
-      if (pkg && msg && (!msg.value || /^I'd like to start with /.test(msg.value) || /^I'm interested in /.test(msg.value))) {
-        msg.value = link.dataset.topic === "quote" ? "I'd like to start with " + pkg + "." : "I'm interested in " + pkg + ".";
+      var note = link.dataset.note || (pkg ? (link.dataset.topic === "quote" ? "I'd like to start with " + pkg + "." : "I'm interested in " + pkg + ".") : "");
+      if (note && msg && (!msg.value || msg.dataset.prefilled === msg.value)) {
+        msg.value = note;
+        msg.dataset.prefilled = note;
       }
     });
     if (!form) return;

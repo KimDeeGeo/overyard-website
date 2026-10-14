@@ -1,16 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <!-- ==== PAGE TITLE + SEARCH/SHARE TEXT (edit freely) ==== -->
   <title>Overyard | White-label landscape design for contractors</title>
-  <meta name="description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors in the US and Australia. Get a free sample render.">
+  <meta name="description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors in the US and Australia. Start with a $199 Seed Project.">
   <link rel="canonical" href="https://kimdeegeo.github.io/overyard-website/">
-  <meta name="theme-color" content="#F7F7F5">
+  <meta name="theme-color" content="#121512">
 
-  <!-- Link previews (Facebook, LinkedIn, iMessage, Slack...) -->
+  <!-- Theme: dark by default; applies a saved "light" choice before the page paints -->
+  <script>
+    (function () {
+      var t = 'dark';
+      try { if (localStorage.getItem('overyard-theme') === 'light') t = 'light'; } catch (e) {}
+      var d = document.documentElement;
+      d.setAttribute('data-theme', t);
+      d.classList.add('js');
+      if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#F5F6F2');
+    })();
+  </script>
+
+  <!-- Link previews -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Overyard">
   <meta property="og:url" content="https://kimdeegeo.github.io/overyard-website/">
@@ -30,37 +42,23 @@
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-  <!-- Load the hero image and font early -->
-  <link rel="preload" as="image" href="images/hero-01.webp" fetchpriority="high">
+  <!-- Hero image (night render for the dark theme) and fonts load first -->
+  <link rel="preload" as="image" href="images/modern-02.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600&display=swap">
 
   <link rel="stylesheet" href="css/style.css">
-
-  <!--
-    Image placeholder helper (keep this in the <head>).
-    If an image file in /images is missing, its box shows the filename
-    instead of a broken image. Drop in the real file and it appears.
-  -->
-  <script>
-    document.documentElement.classList.add('js');
-    document.addEventListener('error', function (e) {
-      var box = e.target.tagName === 'IMG' && e.target.closest('.media');
-      if (box) box.classList.add('is-missing');
-    }, true);
-  </script>
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!--
-    HOW NUMBERS GET ONTO THIS PAGE
-    Prices, counts, turnaround, email and links are NOT typed here.
-    They come from the SITE SETTINGS block at the top of js/main.js.
-    Elements with data-cfg="..." are filled in from there automatically.
+    HOW NUMBERS AND PROJECTS GET ONTO THIS PAGE
+    Prices, credits, turnaround, email, links and the Work projects are NOT
+    typed here. They come from the SITE SETTINGS block at the top of js/main.js.
   -->
 
   <!-- =========================================================
@@ -69,13 +67,31 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="logo" aria-label="Overyard home">
-        <img src="assets/logo.svg" alt="Overyard" width="140" height="27">
+        <svg class="logo-svg" viewBox="0 0 236 54" aria-hidden="true" focusable="false">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <g class="logo-o"><circle cx="21" cy="21" r="16.5" stroke-width="5"/><circle cx="21" cy="21" r="9" stroke-width="2.4" stroke-dasharray="3.4 3.1"/></g>
+            <circle class="logo-dot" cx="21" cy="21" r="2.8"/>
+            <g stroke="currentColor" stroke-width="5" transform="translate(2.5 0)">
+              <path d="M44.5 14.5 L55 37.5 L65.5 14.5"/><path d="M73.5 26 H96.5 A11.5 11.5 0 1 0 93.8 33.4"/>
+              <path d="M105.5 37.5 V14.5 M105.5 24 C105.5 17.5 110 14.5 116 14.5"/><path d="M123.5 14.5 L134 37.5 M144.5 14.5 L127.8 51"/>
+              <circle cx="164" cy="26" r="11.5"/><path d="M175.5 14.5 V37.5"/>
+              <path d="M184.5 37.5 V14.5 M184.5 24 C184.5 17.5 189 14.5 195 14.5"/>
+              <circle cx="214" cy="26" r="11.5"/><path d="M225.5 4.5 V37.5"/>
+            </g>
+          </g>
+        </svg>
       </a>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-        <span class="nav-toggle-bar"></span>
-        <span class="visually-hidden">Menu</span>
-      </button>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+      </div>
 
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <ul>
@@ -84,45 +100,51 @@
           <li><a href="#process">How it works</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
-        <a href="#contact" class="btn btn-primary btn-small" data-topic="sample">Get a free sample render</a>
+        <a href="#contact" class="btn btn-primary btn-small" data-topic="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" class="home">
 
     <!-- =========================================================
          2. HERO
-         To show a before/after slider here, add a before photo and set
-         beforePhotos.hero in js/main.js.
+         Dark theme shows the night render, light theme the day render.
+         Before/after: set heroBefore in js/main.js.
          ========================================================= -->
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow reveal">White-label landscape design for contractors</p>
-          <h1 class="hero-title reveal">Show them the yard. Win the job.</h1>
+          <p class="eyebrow">
+            <svg class="north" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M12 4.5 L15.5 16 L12 13.5 L8.5 16 Z"/></svg>
+            White-label landscape design for contractors
+          </p>
+          <h1 class="hero-title">Show them the yard. Win the job.</h1>
         </div>
         <div>
-          <p class="hero-lead reveal">White-label 2D plans and 3D renders for landscape, pool and outdoor-living contractors. Designed by a landscape designer with 1,000+ residential projects, with material takeoffs from a licensed civil engineer.</p>
-          <div class="hero-actions reveal">
-            <a href="#contact" class="btn btn-primary" data-topic="sample">Get a free sample render</a>
-            <a href="#pricing" class="btn btn-outline">See pricing</a>
+          <p class="hero-lead">White-label 2D plans and 3D renders for landscape, pool and outdoor-living contractors. Designed by a landscape designer with 1,000+ residential projects, with material takeoffs from a licensed civil engineer.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary" data-topic="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+            <a href="#" class="btn btn-outline" data-sample-pdf target="_blank" rel="noopener">See a sample package</a>
           </div>
         </div>
       </div>
 
       <div class="container">
-        <ul class="chips reveal" aria-label="Why contractors choose Overyard">
+        <ul class="chips" aria-label="Why contractors choose Overyard">
           <li>1,000+ residential designs by our lead designer</li>
           <li>Delivered under your brand</li>
           <li>Takeoffs by a licensed civil engineer</li>
         </ul>
       </div>
 
-      <!-- Hero image: images/hero-01.webp (16:9, 2000px wide) -->
-      <figure class="media hero-media reveal" style="--ratio: 16 / 9" data-label="hero-01.webp · 16:9">
-        <img src="images/hero-01.webp" alt="3D render of a modern backyard pool with a slatted pergola fire lounge, lounge deck and a row of cypress trees" width="2000" height="1125" fetchpriority="high">
-      </figure>
+      <div class="container">
+        <figure class="media hero-media">
+          <img class="hero-img-dark" src="images/modern-02.webp" alt="Night render of a modern backyard pool and spa with a lit pergola fire lounge" width="2000" height="1125" fetchpriority="high">
+          <img class="hero-img-light" src="images/hero-01.webp" alt="3D render of a modern backyard pool with a slatted pergola fire lounge, lounge deck and a row of cypress trees" width="2000" height="1125" loading="lazy">
+          <figcaption class="sheet-tag label">Sheet R-01 · 3D render · Modern pool</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- =========================================================
@@ -130,9 +152,8 @@
          ========================================================= -->
     <section class="section section-tight" id="problem">
       <div class="container">
-        <header class="section-head reveal">
-          <h2>Good crews lose jobs to better pictures.</h2>
-        </header>
+        <p class="sheet-label">L-01 · Existing conditions</p>
+        <h2 class="reveal">Good crews lose jobs to better pictures.</h2>
         <div class="problems">
           <div class="problem reveal">
             <h3>Designing at 10 p.m.</h3>
@@ -151,153 +172,71 @@
     </section>
 
     <!-- =========================================================
-         4. WORK
-         Each project is one <article class="work-card">:
-         - the cover image + name + one line are what visitors see first
-         - <template class="work-images"> lists every image in its gallery
-           (data-src = file, alt = description, data-caption = caption)
-         To add an image to a gallery, copy an <img> line inside the template.
+         4. WORK (cards are built from CONFIG.projects in js/main.js)
          ========================================================= -->
     <section class="section section-alt" id="work">
       <div class="container">
+        <p class="sheet-label">L-02 · Work</p>
         <header class="section-head reveal">
           <h2>Selected work</h2>
-          <p>Pools, outdoor living, hillside terracing and planting. Tap a project to see the full set, including the plan view.</p>
+          <p>Pools, outdoor living, hillside terracing and planting. Open a project to see the full set, including the plan view.</p>
         </header>
 
-        <div class="work-grid">
-
-          <!-- ---------- Project 01 ---------- -->
-          <article class="work-card reveal" data-project="project-01">
-            <div class="media" style="--ratio: 4 / 3" data-label="modern-01.webp · 4:3">
-              <img src="images/modern-01.webp" alt="Render of a modern pool and spa with an outdoor kitchen bar and a slatted pergola lounge" width="2000" height="1125" loading="lazy">
-            </div>
-            <div class="work-body">
-              <h3><button class="work-open" type="button" aria-haspopup="dialog">Modern pool and front yard</button></h3>
-              <p>Pool and spa, pergola fire lounge, outdoor kitchen, floating stairs and a low-water front yard.</p>
-              <span class="work-count" aria-hidden="true">7 images</span>
-            </div>
-            <template class="work-images">
-              <img data-src="images/modern-01.webp" alt="Render of a modern pool and spa with an outdoor kitchen bar in front and a slatted pergola lounge behind" data-caption="Pool, spa and outdoor kitchen">
-              <img data-src="images/modern-02.webp" alt="Night render of the pool, spa and pergola fire lounge with landscape lighting" data-caption="Pool and pergola lounge, night">
-              <img data-src="images/modern-03.webp" alt="Render of a slatted pergola with a fire table and lounge seating" data-caption="Pergola fire lounge">
-              <img data-src="images/modern-04.webp" alt="Night render of floating concrete stairs on a grass slope beside a lit water wall" data-caption="Floating stairs and water wall, night">
-              <img data-src="images/modern-05.webp" alt="Render of a modern front yard with salvia, boulders, river rock and path lights" data-caption="Front yard planting">
-              <img data-src="images/modern-06.webp" alt="Night render of the front yard with path lights and uplit shrubs" data-caption="Front yard lighting, night">
-              <img data-src="images/modern-07.webp" alt="Top-down render of the property showing the pool, pergola, kitchen, side yards and front yard" data-caption="Plan view">
-            </template>
-          </article>
-
-          <!-- ---------- Project 02 ---------- -->
-          <article class="work-card reveal" data-project="project-02">
-            <div class="media" style="--ratio: 4 / 3" data-label="courtyard-01.webp · 4:3">
-              <img src="images/courtyard-01.webp" alt="Render of a backyard with a fountain, stepping pads, pool and a fire pit lounge under lemon trees" width="1920" height="1080" loading="lazy">
-            </div>
-            <div class="work-body">
-              <h3><button class="work-open" type="button" aria-haspopup="dialog">Pool courtyard and citrus grove</button></h3>
-              <p>Pool and spa, pergola dining with an outdoor kitchen, and a fire pit under lemon trees.</p>
-              <span class="work-count" aria-hidden="true">7 images</span>
-            </div>
-            <template class="work-images">
-              <img data-src="images/courtyard-01.webp" alt="Render of a backyard with a fountain, stepping pads in lawn, a pool and spa, and a fire pit lounge under lemon trees" data-caption="Courtyard overview">
-              <img data-src="images/courtyard-02.webp" alt="Night render of the fountain, stepping pads, lit pool and uplit lemon trees" data-caption="Courtyard overview, night">
-              <img data-src="images/courtyard-03.webp" alt="Render of a fire pit lounge on a stamped concrete pad framed by lemon trees" data-caption="Fire pit under the lemon trees">
-              <img data-src="images/courtyard-04.webp" alt="Night render of the fire pit lounge with uplit lemon trees and in-ground lights" data-caption="Fire pit, night">
-              <img data-src="images/courtyard-05.webp" alt="Render of a pergola dining area with an outdoor kitchen, with the tiled spa and pool in front" data-caption="Pergola dining and outdoor kitchen">
-              <img data-src="images/courtyard-06.webp" alt="Render looking from the fire pit across the lawn and stepping pads to the pool and house" data-caption="View from the fire pit">
-              <img data-src="images/courtyard-07.webp" alt="Top-down render of the pool, spa, pergola, lawn and stepping pads" data-caption="Plan view">
-            </template>
-          </article>
-
-          <!-- ---------- Project 03 ---------- -->
-          <article class="work-card reveal" data-project="project-03">
-            <div class="media" style="--ratio: 4 / 3" data-label="terraced-01.webp · 4:3">
-              <img src="images/terraced-01.webp" alt="Render of a terraced hillside backyard with tiered retaining walls, wide stairs and a lawn terrace" width="2000" height="1125" loading="lazy">
-            </div>
-            <div class="work-body">
-              <h3><button class="work-open" type="button" aria-haspopup="dialog">Terraced hillside</button></h3>
-              <p>Three tiers of retaining walls, lit stairs, a sunken fire lounge and slope planting.</p>
-              <span class="work-count" aria-hidden="true">5 images</span>
-            </div>
-            <template class="work-images">
-              <img data-src="images/terraced-01.webp" alt="Render of a terraced hillside backyard with tiered retaining walls, wide stairs, a sunken fire lounge and a lawn terrace" data-caption="Hillside overview">
-              <img data-src="images/terraced-02.webp" alt="Render of a sunken fire lounge with stairs and planted terraces behind" data-caption="Sunken fire lounge">
-              <img data-src="images/terraced-03.webp" alt="Render of the main stairs climbing between planted terraces" data-caption="Main stairs and terraces">
-              <img data-src="images/terraced-04.webp" alt="Night render looking up the lit stairs past wall-washed retaining walls to the house" data-caption="Stair and wall lighting, night">
-              <img data-src="images/terraced-05.webp" alt="Top-down render of the retaining walls, stairs, lawn terrace and fire lounge" data-caption="Plan view">
-            </template>
-          </article>
-
-          <!-- ---------- Project 04 ---------- -->
-          <article class="work-card reveal" data-project="project-04">
-            <div class="media" style="--ratio: 4 / 3" data-label="lakeside-01.webp · 4:3">
-              <img src="images/lakeside-01.webp" alt="Dusk render of an under-deck patio with a curved seat wall and paver walkway" width="2000" height="1331" loading="lazy">
-            </div>
-            <div class="work-body">
-              <h3><button class="work-open" type="button" aria-haspopup="dialog">Lakeside hillside</button></h3>
-              <p>Under-deck patio, curved retaining walls, a lakeside terrace and full landscape lighting.</p>
-              <span class="work-count" aria-hidden="true">5 images</span>
-            </div>
-            <template class="work-images">
-              <img data-src="images/lakeside-01.webp" alt="Dusk render of an under-deck patio with a curved seat wall, paver walkway, path lights and foundation planting" data-caption="Under-deck patio and walkway, dusk">
-              <img data-src="images/lakeside-02.webp" alt="Render of a lakeside paver terrace with retaining walls, planting beds and a boathouse, with the house on the hill behind" data-caption="Lakeside terrace and boathouse">
-              <img data-src="images/lakeside-03.webp" alt="Night render of a curved seat wall around a paver patio, with lit planting along the driveway" data-caption="Curved seat wall and driveway planting, night">
-              <img data-src="images/lakeside-04.webp" alt="Dusk render of a large paver terrace with recessed stairs, step lighting and a retaining wall with planting above" data-caption="Recessed stairs with step lighting">
-              <img data-src="images/lakeside-05.webp" alt="Aerial render of a curved paver patio, planting bed and lawn with landscape lighting" data-caption="Aerial view">
-            </template>
-          </article>
-
-          <!-- ---------- Project 05 ---------- -->
-          <article class="work-card reveal" data-project="project-05">
-            <div class="media" style="--ratio: 4 / 3" data-label="lakefront-02.webp · 4:3">
-              <img src="images/lakefront-02.webp" alt="Render of a flagstone fire pit with redbuds and perennial beds by a lake" width="1125" height="750" loading="lazy">
-            </div>
-            <div class="work-body">
-              <h3><button class="work-open" type="button" aria-haspopup="dialog">Wooded lakefront</button></h3>
-              <p>Flagstone fire pit and patios, a raised hot tub and naturalistic planting down to the dock.</p>
-              <span class="work-count" aria-hidden="true">5 images</span>
-            </div>
-            <template class="work-images">
-              <img data-src="images/lakefront-02.webp" alt="Render of a flagstone fire pit with redbuds and perennial beds, with the lake and dock behind" data-caption="Fire pit with redbuds and perennials">
-              <img data-src="images/lakefront-01.webp" alt="Render of a stepping-stone path through the woods to a fire pit by the lake" data-caption="Woodland path to the fire pit">
-              <img data-src="images/lakefront-03.webp" alt="Render of a flagstone patio with a raised hot tub and layered planting" data-caption="Hot tub patio">
-              <img data-src="images/lakefront-04.webp" alt="Render of a flagstone lounge looking back toward the house along a stepping-stone path" data-caption="Flagstone lounge and path">
-              <img data-src="images/lakefront-05.webp" alt="Top-down aerial render of the property with the dock, fire pit area, driveway and shoreline" data-caption="Plan view">
-            </template>
-          </article>
-
-        </div>
+        <div class="work-grid" id="work-grid"></div>
 
         <!-- Optional walkthrough video: set walkthroughVideo in js/main.js -->
         <figure class="walkthrough reveal" data-walkthrough>
           <video muted loop playsinline preload="none" aria-label="Walkthrough video of a landscape design"></video>
-          <figcaption>Walkthrough video, included in Premium.</figcaption>
+          <figcaption class="label">Walkthrough video · included in Canopy</figcaption>
         </figure>
 
-        <!-- ---------- Full portfolio request ---------- -->
         <div class="portfolio-cta reveal">
           <div>
             <h3>Want to see more?</h3>
             <p>Book a call and we'll walk you through the full portfolio, or ask for the link and we'll send it privately.</p>
           </div>
           <div class="portfolio-cta-actions">
-            <a href="#contact" class="btn btn-primary" data-booking-link>Book a call</a>
-            <a href="#contact" class="btn btn-outline" data-topic="portfolio">Request the portfolio</a>
+            <a href="#" class="btn btn-primary" data-booking>Book a call</a>
+            <a href="#contact" class="btn btn-outline" data-topic="call" data-note="Please send me the full portfolio link.">Request the portfolio</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         5. HOW IT WORKS
+         5. WHAT YOU RECEIVE
+         Images come from the first project in CONFIG.projects
+         (or samplePlan if set).
          ========================================================= -->
-    <section class="section" id="process">
+    <section class="section" id="receive">
       <div class="container">
+        <p class="sheet-label">L-03 · Deliverables</p>
+        <header class="section-head reveal">
+          <h2>What you receive</h2>
+          <p>A drawing set you can put in front of a homeowner the same day, under your logo.</p>
+        </header>
+        <div class="deliverables">
+          <div class="deliverables-media" id="deliverables-media"></div>
+          <ul class="files reveal" aria-label="Files you receive">
+            <li><span class="file-type">PDF</span><span>Scaled 2D plan with planting schedule</span></li>
+            <li><span class="file-type">JPG</span><span>High-resolution 3D renders</span></li>
+            <li><span class="file-type">MP4</span><span>Walkthrough video (Canopy)</span></li>
+            <li><span class="file-type">XLSX</span><span>Material takeoff spreadsheet</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. HOW IT WORKS
+         ========================================================= -->
+    <section class="section section-alt" id="process">
+      <div class="container">
+        <p class="sheet-label">L-04 · Process</p>
         <header class="section-head reveal">
           <h2>How it works</h2>
           <p>Four steps. One point of contact the whole way.</p>
         </header>
-
         <ol class="steps">
           <li class="step reveal">
             <span class="step-num">1</span>
@@ -307,7 +246,7 @@
           <li class="step reveal">
             <span class="step-num">2</span>
             <h3>We design</h3>
-            <p>A scaled 2D plan and photoreal 3D renders<span data-cfg-block>, back to you in <span data-cfg="computed.turnaroundRange"></span> depending on the package</span>.</p>
+            <p>A scaled 2D plan and photoreal 3D renders<span data-cfg-block>, back in <span data-cfg="computed.turnaroundRange"></span> depending on the package</span>.</p>
           </li>
           <li class="step reveal">
             <span class="step-num">3</span>
@@ -324,117 +263,64 @@
     </section>
 
     <!-- =========================================================
-         6. PRICING (Founding Contractor offer)
-         All prices and counts come from js/main.js.
+         7. PRICING (Seed Project + single projects + add-ons)
+         Cards are built from CONFIG in js/main.js.
          ========================================================= -->
-    <section class="section section-alt" id="pricing">
+    <section class="section" id="pricing">
       <div class="container">
+        <p class="sheet-label">L-05 · Pricing</p>
         <header class="section-head reveal">
-          <h2>Founding Contractor rates</h2>
-          <p>We're opening Overyard with a small group of founding contractors.<span data-cfg-block> Only <strong data-cfg="foundingSpots"></strong> founding spots are open<span data-cfg-block>, and your rate stays locked for <strong data-cfg="rateLockMonths"></strong> months</span>.</span></p>
+          <h2>Start with a Seed. Grow from there.</h2>
+          <p>Founding rates for our first contractors. Pick a single project, or see Evergreen memberships below.</p>
         </header>
 
-        <div class="packages">
-          <!-- Starter -->
-          <article class="package reveal">
-            <h3>Starter</h3>
-            <p class="package-desc">Smaller yards and quick sells.</p>
-            <p class="price">
-              <span class="price-now" data-cfg-money="packages.starter.founding"></span>
-              <span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.starter.regular"></s></span>
-            </p>
-            <ul>
-              <li>Scaled 2D site and planting plan</li>
-              <li data-cfg-renders="packages.starter.renders"></li>
-              <li data-cfg-if="packages.starter.video" data-cfg="packages.starter.video"></li>
-              <li data-cfg-rounds="packages.starter.revisions"></li>
-              <li data-cfg-if="packages.starter.takeoff">Material takeoff included</li>
-              <li data-cfg-unless="packages.starter.takeoff"><span data-cfg-block>Material takeoff add-on: <span data-cfg-money="takeoffAddon"></span></span></li>
-              <li data-cfg="packages.starter.turnaround"></li>
-            </ul>
-            <a href="#contact" class="btn btn-outline" data-topic="quote">Start with Starter</a>
-          </article>
-
-          <!-- Standard (featured) -->
-          <article class="package package-featured reveal">
-            <p class="badge">Most popular</p>
-            <h3>Standard</h3>
-            <p class="package-desc">Full backyard projects.</p>
-            <p class="price">
-              <span class="price-now" data-cfg-money="packages.standard.founding"></span>
-              <span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.standard.regular"></s></span>
-            </p>
-            <ul>
-              <li>Scaled 2D site and planting plan</li>
-              <li data-cfg-renders="packages.standard.renders"></li>
-              <li data-cfg-if="packages.standard.video" data-cfg="packages.standard.video"></li>
-              <li data-cfg-rounds="packages.standard.revisions"></li>
-              <li data-cfg-if="packages.standard.takeoff">Material takeoff included</li>
-              <li data-cfg-unless="packages.standard.takeoff"><span data-cfg-block>Material takeoff add-on: <span data-cfg-money="takeoffAddon"></span></span></li>
-              <li data-cfg="packages.standard.turnaround"></li>
-            </ul>
-            <a href="#contact" class="btn btn-primary" data-topic="quote">Start with Standard</a>
-          </article>
-
-          <!-- Premium -->
-          <article class="package reveal">
-            <h3>Premium</h3>
-            <p class="package-desc">Pools, outdoor living and larger builds.</p>
-            <p class="price">
-              <span class="price-now" data-cfg-money="packages.premium.founding"></span>
-              <span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.premium.regular"></s></span>
-            </p>
-            <ul>
-              <li>Scaled 2D site and planting plan</li>
-              <li data-cfg-renders="packages.premium.renders"></li>
-              <li data-cfg-if="packages.premium.video" data-cfg="packages.premium.video"></li>
-              <li data-cfg-rounds="packages.premium.revisions"></li>
-              <li data-cfg-if="packages.premium.takeoff">Material takeoff included</li>
-              <li data-cfg-unless="packages.premium.takeoff"><span data-cfg-block>Material takeoff add-on: <span data-cfg-money="takeoffAddon"></span></span></li>
-              <li data-cfg="packages.premium.turnaround"></li>
-            </ul>
-            <a href="#contact" class="btn btn-outline" data-topic="quote">Start with Premium</a>
-          </article>
-        </div>
-
-        <div class="offer-extras">
-          <!-- Founding bonuses -->
-          <div class="value-stack reveal">
-            <h3>Founding bonuses</h3>
-            <ul>
-              <li><strong>Free material takeoff</strong> on your first project.</li>
-              <li><strong>Branded presentation PDF template</strong> with your logo, ready to send to homeowners.</li>
-              <li><strong>One-page homeowner presentation script</strong> for walking clients through the design.</li>
-            </ul>
-          </div>
-
-          <!-- Guarantee -->
-          <div class="guarantee reveal" data-cfg-block>
-            <h3>Our guarantee</h3>
-            <p data-cfg="guarantee"></p>
+        <div class="seed-row">
+          <article class="card seed-card" id="seed-card"></article>
+          <div class="seed-side">
+            <p class="note-clay conversion" id="seed-conversion"></p>
+            <div class="addons-box">
+              <h3 class="label">Add-ons</h3>
+              <ul class="addons" id="addons"></ul>
+            </div>
           </div>
         </div>
 
-        <ul class="fine-print reveal">
-          <li data-cfg-block>Extra revision round: <span data-cfg-money="extraRevision"></span> (one round = one consolidated list of changes).</li>
-          <li data-cfg-block>Rush delivery: <span data-cfg="rush"></span>.</li>
+        <h3 class="sub-head">Single projects</h3>
+        <div class="cards-3" id="packages"></div>
+
+        <ul class="fine-print">
+          <li>Pay by card or bank transfer through a Wise or Payoneer invoice. First project paid upfront.</li>
           <li data-cfg="currencyNote"></li>
-          <li>Need recurring designs every month? <a href="#contact" data-topic="quote">Ask about monthly plans.</a></li>
         </ul>
       </div>
     </section>
 
     <!-- =========================================================
-         7. COMPARISON
+         8. EVERGREEN MEMBERSHIPS
+         ========================================================= -->
+    <section class="section section-alt" id="evergreen">
+      <div class="container">
+        <p class="sheet-label">L-06 · Evergreen memberships</p>
+        <header class="section-head reveal">
+          <h2>Evergreen: design every month.</h2>
+          <p>Credits let you mix small and large jobs in the same month: <span data-cfg="computed.creditMix"></span>.</p>
+        </header>
+        <div class="cards-3" id="memberships"></div>
+        <p class="rules">Billed monthly in advance. Unused credits roll over one month (capped at one month's credits). Extra credits at your plan's credit price. 30 days' notice to cancel.<span data-cfg-block> Founding rate locked <span data-cfg="rateLockMonths"></span> months while active.</span></p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         9. COMPARISON
          ========================================================= -->
     <section class="section" id="compare">
       <div class="container">
+        <p class="sheet-label">L-07 · Compare</p>
         <header class="section-head reveal">
           <h2>How Overyard compares</h2>
           <p>Your options for getting a design in front of a homeowner.</p>
         </header>
-
-        <div class="table-wrap reveal" tabindex="0" role="region" aria-label="Comparison table, scrolls sideways on small screens">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Comparison table, scrolls sideways on small screens">
           <table class="compare">
             <thead>
               <tr>
@@ -485,7 +371,7 @@
               </tr>
               <tr>
                 <th scope="row">Material takeoffs</th>
-                <td class="is-us"><span class="yes">Add-on or included in Premium</span></td>
+                <td class="is-us"><span class="yes">Add-on, or included in Canopy</span></td>
                 <td>Varies</td>
                 <td>Varies</td>
                 <td>You do the math</td>
@@ -497,12 +383,13 @@
     </section>
 
     <!-- =========================================================
-         8. ABOUT
-         Founder photos: set founderPhotos in js/main.js once the
-         files are in /images (4:5 portrait). Until then, initials show.
+         10. WHO YOU'LL WORK WITH
+         Photos: images/founder-edmond.jpg, images/founder-kim.jpg (square).
+         To add WebP versions later, uncomment the <source> lines.
          ========================================================= -->
     <section class="section section-alt" id="about">
       <div class="container">
+        <p class="sheet-label">L-08 · Team</p>
         <header class="section-head reveal">
           <h2>Who you'll work with</h2>
           <p>Two founders. One designer, one engineer, no middlemen.</p>
@@ -510,128 +397,146 @@
 
         <div class="founders">
           <article class="founder reveal">
-            <figure class="founder-photo" data-founder="edmond" data-alt="Portrait of Edmond De Claro" aria-hidden="true">
-              <span>ED</span>
+            <figure class="founder-photo">
+              <picture>
+                <!-- <source srcset="images/founder-edmond.webp" type="image/webp"> -->
+                <img src="images/founder-edmond.jpg" alt="Portrait of Edmond De Claro" width="640" height="640" loading="lazy" decoding="async">
+              </picture>
+              <figcaption class="label">E. De Claro · Design</figcaption>
             </figure>
-            <div>
+            <div class="founder-text">
               <h3>Edmond De Claro</h3>
               <p class="role">Co-founder, design lead</p>
-              <p>Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist. He designs in Realtime Landscaping Architect and SketchUp, and renders in Lumion.</p>
+              <p>Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist. He personally designs and reviews every Overyard project.</p>
+              <p class="tools label">Tools: Realtime Landscaping Architect · SketchUp · Lumion · D5 Render</p>
             </div>
           </article>
 
           <article class="founder reveal">
-            <figure class="founder-photo" data-founder="kim" data-alt="Portrait of Kim Daryl Geolagon" aria-hidden="true">
-              <span>KG</span>
+            <figure class="founder-photo">
+              <picture>
+                <!-- <source srcset="images/founder-kim.webp" type="image/webp"> -->
+                <img src="images/founder-kim.jpg" alt="Portrait of Kim Daryl Geolagon" width="640" height="640" loading="lazy" decoding="async">
+              </picture>
+              <figcaption class="label">K. D. Geolagon · Accounts</figcaption>
             </figure>
-            <div>
+            <div class="founder-text">
               <h3>Kim Daryl Geolagon</h3>
               <p class="role">Co-founder, sales and client accounts</p>
-              <p>Licensed civil engineer with 5+ years in construction, currently a remote estimator for a US general contractor. Kim Daryl is your single point of contact and handles every material takeoff.</p>
+              <p>Licensed civil engineer with 5+ years in construction, currently a remote estimator for a US general contractor. Kim Daryl is your single point of contact and prepares every material takeoff.</p>
             </div>
           </article>
         </div>
 
         <div class="timezone reveal">
           <h3>Based in the Philippines, working your hours</h3>
-          <p>Our workday overlaps Australian business hours. US clients can send notes at the end of their day and see progress when they're back on the job.</p>
+          <p>Our day overlaps Australian business hours. US contractors send notes at the end of their day and find progress when they're back on the job.</p>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         9. FAQ
-         Each question is a <details> block. Copy one to add more.
+         11. FAQ (each question is a <details> block)
          ========================================================= -->
     <section class="section" id="faq">
       <div class="container container-narrow">
+        <p class="sheet-label">L-09 · FAQ</p>
         <header class="section-head reveal">
           <h2>Questions</h2>
         </header>
-
-        <div class="faq reveal">
+        <div class="faq">
           <details>
-            <summary>What's the free sample render?</summary>
-            <p>Send us one real upcoming project with site photos and a short brief. We'll send back one 3D render<span data-cfg-block> in <span data-cfg="sample.turnaround"></span></span>, under your brand. <span data-cfg="sample.terms"></span></p>
+            <summary>What is a Seed Project?</summary>
+            <p>Your first project with us, at a founding price<span data-cfg-block> of <span data-cfg-money="seed.price"></span></span><span data-cfg-block> with <span data-cfg="seed.scope"></span> scope</span>. One per company, paid upfront. <span data-cfg="seed.guarantee"></span></p>
           </details>
           <details>
             <summary>Is the work white-label?</summary>
             <p>Yes. We deliver under your logo, or co-branded if you prefer. We never contact your clients unless you ask us to.</p>
           </details>
           <details>
-            <summary>Is the first project risk-free?</summary>
-            <p><span data-cfg="guarantee"></span> And the free sample render lets you see our work on your own project before you pay anything.</p>
-          </details>
-          <details>
-            <summary>What counts as a revision?</summary>
-            <p>One revision round is one consolidated list of changes, sent together.<span data-cfg-block> Packages include <span data-cfg="computed.revisionRange"></span>.</span><span data-cfg-block> Extra rounds are <span data-cfg-money="extraRevision"></span> each.</span></p>
-          </details>
-          <details>
-            <summary>How fast is turnaround?</summary>
-            <p>From the day we have complete site info: Starter <span data-cfg="packages.starter.turnaround"></span>, Standard <span data-cfg="packages.standard.turnaround"></span>, Premium <span data-cfg="packages.premium.turnaround"></span>.<span data-cfg-block> Rush delivery is available for <span data-cfg="rush"></span>.</span></p>
-          </details>
-          <details>
-            <summary>Do you work with pool builders?</summary>
-            <p>Yes. We design the pool surround, decking, outdoor kitchens, pergolas, lighting and planting, and show it all in 3D so homeowners can see the finished backyard. Pool structure, engineering and equipment stay with you and your engineer.</p>
-          </details>
-          <details>
             <summary>Who owns the designs?</summary>
             <p>You do. Final files are yours once the project is paid in full.</p>
           </details>
           <details>
-            <summary>How do I send a project?</summary>
-            <p>Use the form below and paste a link to your site photos, measurements or plans (Google Drive, Dropbox or similar).<span data-cfg-block> You can also email them to <a href="#" data-email></a>.</span></p>
+            <summary>What counts as a revision?</summary>
+            <p>One revision round is one consolidated list of changes, sent together.<span data-cfg-block> Packages include <span data-cfg="computed.revisionRange"></span>.</span><span data-cfg-block> Extra rounds are <span data-cfg-money="addons.extraRound"></span> each.</span> A new layout is a redesign<span data-cfg-block>, <span class="lc" data-cfg="addons.redesign"></span></span>.</p>
           </details>
           <details>
-            <summary>Can I see more of your work?</summary>
-            <p>Yes. Book a call, or request the full portfolio through the form below and we'll send the link privately.</p>
+            <summary>How fast is turnaround?</summary>
+            <p>From the day we have complete site info: Sprout <span data-cfg="packages.sprout.days"></span>, Grove <span data-cfg="packages.grove.days"></span>, Canopy <span data-cfg="packages.canopy.days"></span>.<span data-cfg-block> Rush delivery is <span data-cfg="addons.rush"></span>.</span></p>
           </details>
           <details>
-            <summary>You're in the Philippines. How do time zones work?</summary>
-            <p>Our workday overlaps Australian business hours. US clients can send notes at the end of their day and see progress when they're back on the job. Calls are booked at a time that suits you.</p>
-          </details>
-          <details>
-            <summary>What file formats do you deliver?</summary>
-            <p>Plans as PDF, renders as high-resolution JPG, walkthroughs as MP4, and takeoffs as a spreadsheet or PDF. Other formats on request.</p>
-          </details>
-          <details>
-            <summary>What do you need from me to start?</summary>
+            <summary>What do you need from me?</summary>
             <p>Site photos, rough measurements or a survey, your client's wish list, and a budget range. More detail means fewer revisions.</p>
           </details>
           <details>
-            <summary>What don't you do?</summary>
-            <p>Our designs are conceptual landscape design. You, the contractor, verify site conditions, local codes, HOA rules and utility locations before building. We do not provide stamped engineering, permit drawings or installation.</p>
+            <summary>Can you work from photos only?</summary>
+            <p>Yes. We work from your photos and approximate dimensions, and the plan is drawn to those. You verify measurements on site before pricing and building.</p>
+          </details>
+          <details>
+            <summary>What software do you use?</summary>
+            <p>Edmond designs in Realtime Landscaping Architect and SketchUp, and renders in Lumion and D5 Render. You receive PDF plans, JPG renders, MP4 walkthroughs and takeoff spreadsheets, so you don't need any of that software.</p>
+          </details>
+          <details>
+            <summary>Will the plants suit my region?</summary>
+            <p>We build the plant palette from your climate zone and your client's brief. You confirm nursery availability in your area before ordering.</p>
+          </details>
+          <details>
+            <summary>Do you cover grading, drainage, irrigation or structural work?</summary>
+            <p>We show them conceptually, so homeowners and your crew can see the intent. We don't provide engineering, stamped drawings or permit sets. You verify site conditions, codes, HOA rules and utilities before building.</p>
+          </details>
+          <details>
+            <summary>You're in the Philippines. How do time zones and replies work?</summary>
+            <p>Our day overlaps Australian business hours. US contractors send notes at the end of their day and find progress when they're back on the job.<span data-cfg-block> Kim Daryl replies within <span data-cfg="replyHours"></span> hours.</span></p>
+          </details>
+          <details>
+            <summary>How do I pay?</summary>
+            <p>By card or bank transfer through a Wise or Payoneer invoice. Your first project is paid upfront. Memberships are billed monthly in advance.<span data-cfg-block> <span data-cfg="currencyNote"></span></span></p>
+          </details>
+          <details>
+            <summary>How do credits work?</summary>
+            <p>Each Evergreen membership gives you credits every month. A project uses credits by size: <span data-cfg="computed.creditMix"></span>. Unused credits roll over one month, capped at one month's credits. Need more? Extra credits are charged at your plan's credit price.</p>
+          </details>
+          <details>
+            <summary>Can I cancel a membership?</summary>
+            <p>Yes, with 30 days' notice.<span data-cfg-block> Your founding rate stays locked for <span data-cfg="rateLockMonths"></span> months while your membership is active.</span></p>
+          </details>
+          <details>
+            <summary>How big is your team?</summary>
+            <p>Small, on purpose. Edmond personally designs and reviews every project, and Kim Daryl handles your account and takeoffs. We'll add designers only when quality holds.</p>
           </details>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         10. CONTACT (final call to action)
+         12. CONTACT / INTAKE
          Form sends through Web3Forms: set web3formsKey in js/main.js.
-         Calendar: set bookingUrl in js/main.js.
          ========================================================= -->
     <section class="section section-alt" id="contact">
       <div class="container contact-grid">
-        <div class="contact-intro reveal">
-          <h2>Get a free sample render.</h2>
-          <p>Send one real upcoming project. We'll send back one 3D render<span data-cfg-block> in <span data-cfg="sample.turnaround"></span></span>, under your brand.</p>
-          <p class="contact-terms" data-cfg="sample.terms"></p>
-          <p class="contact-who">Kim Daryl reads every request and is your single point of contact.</p>
-          <p class="contact-email" data-cfg-block>Prefer email? <a href="#" data-email></a></p>
+        <div class="contact-intro">
+          <p class="sheet-label">L-10 · Intake</p>
+          <h2>Send a project. Start with a Seed.</h2>
+          <p>Tell us about the job and pick what you need. One consolidated brief gets you the best first draft.</p>
+          <p class="reply" data-cfg-block>Kim Daryl replies within <strong><span data-cfg="replyHours"></span> hours</strong>.</p>
+          <a href="#" class="btn btn-outline" data-booking>Book a <span data-cfg="callMinutes"></span>-minute call</a>
+          <p class="contact-email" data-cfg-block>Email: <span data-email-text></span></p>
         </div>
 
-        <form class="contact-form reveal" id="contact-form" novalidate>
+        <form class="contact-form" id="contact-form" novalidate>
           <!-- Honeypot: hidden from people, catches spam bots -->
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="field">
             <label for="f-topic">What do you need?</label>
             <select id="f-topic" name="topic">
-              <option value="sample">A free sample render</option>
-              <option value="quote">A quote for a project</option>
-              <option value="call">A call</option>
-              <option value="portfolio">The full portfolio</option>
+              <option value="seed">Start a $199 Seed Project</option>
+              <option value="membership">Join a membership</option>
+              <option value="waitlist">Old Growth waitlist</option>
+              <option value="quote">Quote for a project</option>
+              <option value="sample">Get the sample package</option>
+              <option value="call">Book a call</option>
             </select>
           </div>
           <div class="field-row">
@@ -665,50 +570,81 @@
             </div>
           </div>
           <div class="field">
-            <label for="f-files">Link to site photos or plans <span class="optional">(optional)</span></label>
+            <label for="f-files">Link to site photos or plans <span class="optional">(needed to start a project)</span></label>
             <input id="f-files" name="files_link" type="text" inputmode="url" placeholder="Google Drive, Dropbox or similar">
           </div>
           <div class="field">
-            <label for="f-message">Message</label>
-            <textarea id="f-message" name="message" rows="5" placeholder="Project type, size, timeline, what your client wants." required></textarea>
+            <label for="f-brief">Client's wish list and budget <span class="optional">(optional)</span></label>
+            <textarea id="f-brief" name="wish_list_budget" rows="3" placeholder="Pool, fire pit, low-water planting… budget around $60k"></textarea>
+          </div>
+          <div class="field">
+            <label for="f-message">Message <span class="optional">(optional)</span></label>
+            <textarea id="f-message" name="message" rows="3"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Send</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
-      </div>
-
-      <!-- Inline Calendly calendar (loads when scrolled near; hidden if no bookingUrl) -->
-      <div class="container book" id="book">
-        <h3 class="reveal">Or book a call</h3>
-        <div class="calendly-inline-widget" aria-label="Booking calendar"></div>
       </div>
     </section>
 
   </main>
 
   <!-- =========================================================
-       11. FOOTER
-       Email and social links come from js/main.js (unset ones are hidden).
+       13. FOOTER (drawing title block)
        ========================================================= -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a href="#top" class="logo" aria-label="Overyard home">
-        <img src="assets/logo.svg" alt="Overyard" width="120" height="23" loading="lazy">
-      </a>
-      <p class="footer-tagline">White-label landscape design for contractors in the US and Australia.</p>
-      <ul class="footer-links">
-        <li data-cfg-block><a href="#" data-email></a></li>
-        <li data-cfg-block><a href="#" data-social="linkedin">LinkedIn</a></li>
-        <li data-cfg-block><a href="#" data-social="instagram">Instagram</a></li>
-        <li data-cfg-block><a href="#" data-social="facebook">Facebook</a></li>
-      </ul>
-      <p class="copyright">&copy; <span id="year">2026</span> Overyard. All rights reserved.</p>
+    <div class="container">
+      <div class="title-block">
+        <div class="tb-cell tb-logo">
+          <a href="#top" class="logo" aria-label="Overyard home">
+            <svg class="logo-svg" viewBox="0 0 236 54" aria-hidden="true" focusable="false">
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <g class="logo-o"><circle cx="21" cy="21" r="16.5" stroke-width="5"/><circle cx="21" cy="21" r="9" stroke-width="2.4" stroke-dasharray="3.4 3.1"/></g>
+                <circle class="logo-dot" cx="21" cy="21" r="2.8"/>
+                <g stroke="currentColor" stroke-width="5" transform="translate(2.5 0)">
+                  <path d="M44.5 14.5 L55 37.5 L65.5 14.5"/><path d="M73.5 26 H96.5 A11.5 11.5 0 1 0 93.8 33.4"/>
+                  <path d="M105.5 37.5 V14.5 M105.5 24 C105.5 17.5 110 14.5 116 14.5"/><path d="M123.5 14.5 L134 37.5 M144.5 14.5 L127.8 51"/>
+                  <circle cx="164" cy="26" r="11.5"/><path d="M175.5 14.5 V37.5"/>
+                  <path d="M184.5 37.5 V14.5 M184.5 24 C184.5 17.5 189 14.5 195 14.5"/>
+                  <circle cx="214" cy="26" r="11.5"/><path d="M225.5 4.5 V37.5"/>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <p class="label">Overyard · Landscape design for contractors · Rev 2026</p>
+        </div>
+        <div class="tb-cell">
+          <p class="label tb-key">Contact</p>
+          <ul class="tb-list">
+            <li data-cfg-block><span data-email-text></span></li>
+            <li data-cfg-block><a href="#" data-social="linkedin">LinkedIn</a></li>
+            <li data-cfg-block><a href="#" data-social="instagram">Instagram</a></li>
+            <li data-cfg-block><a href="#" data-social="facebook">Facebook</a></li>
+            <li><a href="#contact">Send a project</a></li>
+          </ul>
+        </div>
+        <div class="tb-cell">
+          <p class="label tb-key">Sheet</p>
+          <ul class="tb-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+        <div class="tb-cell tb-drawing">
+          <svg class="north" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M12 4.5 L15.5 16 L12 13.5 L8.5 16 Z"/></svg>
+          <svg class="scale-bar" viewBox="0 0 120 18" aria-hidden="true">
+            <rect x="0.5" y="2.5" width="30" height="5"/><rect x="30.5" y="2.5" width="30" height="5" class="fill"/><rect x="60.5" y="2.5" width="30" height="5"/><rect x="90.5" y="2.5" width="29" height="5" class="fill"/>
+            <text x="0" y="17">0</text><text x="56" y="17">10</text><text x="108" y="17">20</text>
+          </svg>
+          <p class="label">Scale 1:100 · &copy; <span id="year">2026</span> Overyard</p>
+        </div>
+      </div>
     </div>
   </footer>
 
   <!-- Sticky call to action on phones -->
   <div class="mobile-cta">
-    <a href="#contact" class="btn btn-primary" data-topic="sample">Get a free sample render</a>
+    <a href="#contact" class="btn btn-primary" data-topic="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
   </div>
 
   <!-- Project gallery viewer -->
