@@ -4,7 +4,10 @@
   "description": "Dev tools only (snapshots, image compression, Lighthouse). The site itself needs no build step.",
   "type": "module",
   "scripts": {
-    "snapshot": "node scripts/snapshot.mjs"
+    "snapshot": "node scripts/snapshot.mjs",
+    "serve": "node scripts/serve.mjs",
+    "compress": "node scripts/compress.mjs",
+    "lighthouse": "lighthouse http://localhost:8090/ --view"
   },
   "devDependencies": {
     "lighthouse": "^13.5.0",

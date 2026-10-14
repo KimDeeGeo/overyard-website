@@ -6,14 +6,23 @@ Lead-generation site for Overyard: plain HTML, CSS and vanilla JS with no framew
 A busy US or Australian landscape contractor understands the offer in 10 seconds, trusts us in 30, and takes one action on the first visit: **start a $199 Seed Project** or **book a call**.
 
 ## Budget rule
-Free tools only: Web3Forms (form), Cal.com or Calendly free (booking link), GitHub Pages (hosting), GA4 and Microsoft Clarity (analytics), Google Fonts. No paid libraries, fonts, plugins or services.
+Free tools only: Web3Forms (form), Cal.com or Calendly free (booking link), GitHub Pages (hosting), GA4 and Microsoft Clarity (analytics), WhatsApp click-to-chat, free Google Fonts (self-hosted in `assets/fonts`, OFL licensed). No paid libraries, fonts, plugins or services. Dev tools (Node, Playwright, Lighthouse) are local only and never shipped.
 
 ## Files
-- `index.html`: home page. Sections are marked with numbered comment banners.
+- `index.html`: home page. Sections are marked with numbered comment banners: header, hero (camera roll), problem, Work, What you receive, How it works, night band, pricing, Evergreen, compare, team, FAQ, contact, footer.
 - `privacy.html`, `terms.html`: legal pages with the same header, theme toggle and footer. The header and footer are duplicated, so update all three pages together.
-- `css/style.css`: all styling. Both themes are CSS variable blocks at the top.
-- `js/main.js`: the **SITE SETTINGS (`CONFIG`) block at the top** holds every price, credit, window, link, ID and the Work `projects` list. Pricing cards, memberships, add-ons, project cards and "What you receive" are rendered from it. Other values use `data-cfg`, `data-cfg-money`, `data-cfg-if` and `data-cfg-unless`. Empty values hide the element, or its nearest `[data-cfg-block]` wrapper.
-- `images/`, `assets/` (logo light/dark, favicons). `serve.ps1`: local preview on port 8080.
+- `css/style.css`: all styling. `@font-face` and both theme blocks are at the top.
+- `js/main.js`: the **SITE SETTINGS (`CONFIG`) block at the top** holds every price, credit, window, link, ID, the hero slides, process images, band image, featured slider and the Work `projects` list.
+- `images/`: full renders (2000px). `images/cards/` (900px card images), `images/thumbs/` (240px filmstrip), `images/hero-sm/` (1000px phone versions of hero slides), `images/process-0N.webp`.
+- `assets/`: logo light/dark, favicons, `fonts/` (woff2 + OFL licenses).
+- `scripts/` (dev only): `snapshot.mjs` (version history), `compress.mjs` (WebP via installed Chrome), `serve.mjs` (gzip preview on 8090, use for Lighthouse). `serve.ps1`: no-install preview on 8080.
+
+## No-JS defaults (important)
+The HTML contains the **real default text** for every price, count, turnaround and credit (so link previews and crawlers see values, never "a founding price of  with  scope"). `data-cfg`, `data-cfg-money`, `data-cfg-count` (`data-one`/`data-many`), `data-cfg-list`, `data-cfg-percredit`, `data-cfg-if`, `data-cfg-unless` only **update** that text from CONFIG. Empty values hide the element or its nearest `[data-cfg-block]`. When you change a default in CONFIG, also change the matching text in the HTML.
+Links that depend on config (booking, sample PDF, portal) ship with `hidden` and no `href`. Never use `href="#"`.
+
+## Version history
+Before a significant change: `git tag vN` on the current commit and run `node scripts/snapshot.mjs vN`. Copies and screenshots go to `../overyard-site-history/` (outside the public repo). `../overyard-site-history/compare.html` compares any two versions.
 
 ## Brand system: "From the ground up"
 Overyard is the bird's-eye plan view every design starts from. The visual signature is a landscape drawing set: title blocks, north arrow, plan symbols, thin rules and mono sheet labels.
@@ -48,7 +57,11 @@ Overyard is the bird's-eye plan view every design starts from. The visual signat
   - dashed stepping-stone path in How it works
 - **Plan-symbol glyphs** (in `GLYPHS` in `main.js`): Seed oval (stone), Sprout stem (fern), Grove three circles (fern), Canopy ring with dashed crown (fern), Orchard 2x2 circles (gold), Forest cluster (fern), Old Growth tree rings (clay).
 - **Logo:** wordmark whose "O" is a tree-canopy plan symbol (outer ring, dashed crown, center dot). It's inlined in the HTML so it follows the theme. The files are `assets/logo-light.svg` and `logo-dark.svg`, and the favicon is the "O".
-- **Motion:** content is always visible. Only elements that start below the fold get a short rise-in. Everything respects `prefers-reduced-motion`.
+- **Motion:** content is always visible (reveals start from a visible resting state). Everything respects `prefers-reduced-motion`.
+  - Hero H1 rises in word by word, then a fern drafting line draws under "Win the job." Pure CSS, H1 only. Words start at opacity .01 (not 0) so the headline stays an LCP candidate.
+  - Hero camera roll: framed slideshow (day and night renders from `heroSlides`), 6s crossfade with a 1 → 1.05 Ken Burns zoom, filmstrip with mono frame numbers and a progress line, pause/play button, pauses on hover and hidden tab, arrows/swipe/click. Reduced motion: first slide only. Hero is NOT full-bleed.
+  - Work: featured "From overhead" PLAN/VIEW slider, bento grid with crop marks, Day/Night toggle when a project has `dayImage` + `nightImage`, 1.04 hover zoom, one-time clip-path wipe.
+  - One full-width night band only (after How it works), `bandImage`, 0.85x parallax on desktop only.
 
 ## Offer
 - **Seed Project:** first project, $199 (was $399), Grove scope, one per company, paid upfront. Refund guarantee: "If the design misses the brief after the included revisions, you get a full refund."
@@ -66,7 +79,7 @@ Overyard is the bird's-eye plan view every design starts from. The visual signat
 
 ## Business facts (do not change or exaggerate)
 - White-label and co-branded landscape design for landscape, hardscape, pool and outdoor-living contractors in the US and Australia.
-- **Edmond De Claro**, co-founder and design lead: "Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist." Tools: Realtime Landscaping Architect, SketchUp, Lumion and D5 Render.
+- **Edmond De Claro**, co-founder and design lead: "Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist." Tools (CONFIG.edmondTools): Realtime Landscaping Architect, SketchUp (confirmed by Kim Daryl, Oct 2026), Lumion and D5 Render.
 - **Kim Daryl Geolagon**, co-founder, sales and client accounts: licensed civil engineer, 5+ years in construction, currently a remote estimator for a US general contractor. Single point of contact. Prepares material takeoffs.
 - Two founders based in the Philippines. **Edmond is the only designer right now.**
 
@@ -92,11 +105,16 @@ Overyard is the bird's-eye plan view every design starts from. The visual signat
 - Short, direct, contractor language. Readable on a phone. No sugar-coating.
 - No mention of the Philippines or low cost in the hero. The Philippines appears in Team and the FAQ as a time-zone benefit.
 - Primary action everywhere: "Start a $199 Seed Project". Secondary: "Book a call", "See a sample package".
+- WhatsApp (+63 976 373 0461) appears in Contact and the footer, never the hero. Social icons (Facebook, Instagram, TikTok, YouTube, LinkedIn) always show; an empty URL renders a muted "Coming soon" icon, not a link. "Client login" shows in the header only when `portalUrl` is set. No portfolio page: "Request the full portfolio" is a form option only.
 
 ## Technical rules
-- Non-hero images: `loading="lazy"` plus `width`/`height`. Preload the hero (night render) and fonts.
+- Every image has `width`/`height`. The first hero slide is preloaded (with a 1000px `srcset` for phones). JS-rendered images below the fold use `data-near-src` + `loadWhenNear()` (native lazy loading starts too early on slow phones and competes with the hero). Extra hero slides and thumbnails load after the page `load` event.
+- New images: WebP, about 250 KB at 2000px (`node scripts/compress.mjs in out.webp 2000 250`), plus card (900px) and thumb/phone sizes where used.
+- Fonts are self-hosted with `font-display: swap` and preloaded. The mono stack falls back to Courier New (same width as JetBrains Mono) so nothing re-wraps when fonts load. Keep CLS at 0.
+- `main.js` runs theme, header and camera roll first, then everything else after the first paint (`afterPaint`). Sections use `content-visibility: auto`.
+- Lighthouse (local, gzip via `scripts/serve.mjs`) at v3: mobile 97/100/100/100, desktop 100/100/100/100. Keep 90+.
 - No 404-probing for optional files. These are switched on by setting their path in `CONFIG`, which keeps the console clean:
-  - `samplePackagePdf`, `heroBefore`, `samplePlan`
+  - `samplePackagePdf`, `samplePlan`
   - `walkthroughVideo`
   - each project's `beforeImage`
 - Header is sticky at `top: env(safe-area-inset-top)`. The mobile CTA bar respects `env(safe-area-inset-bottom)`.
