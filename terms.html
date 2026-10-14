@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Terms | Overyard</title>
+  <meta name="description" content="Terms for Overyard landscape design projects and Evergreen memberships.">
+  <link rel="canonical" href="https://kimdeegeo.github.io/overyard-website/terms.html">
+  <meta name="theme-color" content="#121512">
+  <script>
+    (function () {
+      var t = 'dark';
+      try { if (localStorage.getItem('overyard-theme') === 'light') t = 'light'; } catch (e) {}
+      var d = document.documentElement;
+      d.setAttribute('data-theme', t);
+      d.classList.add('js');
+      if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#F5F6F2');
+    })();
+  </script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Overyard home">
+        <svg class="logo-svg" viewBox="0 0 236 54" aria-hidden="true" focusable="false">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <g class="logo-o"><circle cx="21" cy="21" r="16.5" stroke-width="5"/><circle cx="21" cy="21" r="9" stroke-width="2.4" stroke-dasharray="3.4 3.1"/></g>
+            <circle class="logo-dot" cx="21" cy="21" r="2.8"/>
+            <g stroke="currentColor" stroke-width="5" transform="translate(2.5 0)">
+              <path d="M44.5 14.5 L55 37.5 L65.5 14.5"/><path d="M73.5 26 H96.5 A11.5 11.5 0 1 0 93.8 33.4"/>
+              <path d="M105.5 37.5 V14.5 M105.5 24 C105.5 17.5 110 14.5 116 14.5"/><path d="M123.5 14.5 L134 37.5 M144.5 14.5 L127.8 51"/>
+              <circle cx="164" cy="26" r="11.5"/><path d="M175.5 14.5 V37.5"/>
+              <path d="M184.5 37.5 V14.5 M184.5 24 C184.5 17.5 189 14.5 195 14.5"/>
+              <circle cx="214" cy="26" r="11.5"/><path d="M225.5 4.5 V37.5"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+      </div>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#process">How it works</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary btn-small">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <!--
+    TERMS: plain-language draft. Have it reviewed before relying on it.
+    Prices, rounds and windows come from the SITE SETTINGS block in js/main.js.
+  -->
+  <main id="main" class="legal">
+    <div class="container container-narrow">
+      <p class="sheet-label">L-12 · Terms</p>
+      <h1>Terms</h1>
+      <p class="label">Last updated: October 2026</p>
+
+      <h2>1. What we provide</h2>
+      <p>Overyard provides <strong>conceptual landscape design</strong> for contractors: 2D plans, 3D renders, walkthrough videos and material takeoffs, delivered white-label or co-branded.</p>
+
+      <h2>2. What we don't provide</h2>
+      <p>We don't provide stamped engineering (structural, grading, drainage or irrigation), permit drawings, or installation. Grading, drainage, irrigation and structural elements are shown conceptually only.</p>
+      <p><strong>You, the contractor, verify</strong> site conditions, measurements, local codes, HOA rules and utility locations before pricing or building. When we work from photos and approximate dimensions, the plan is drawn to those dimensions.</p>
+
+      <h2>3. Revisions</h2>
+      <p>One revision round is <strong>one consolidated list of changes</strong>, sent together. Each package includes a set number of rounds<span data-cfg-block> (<span data-cfg="computed.revisionRange"></span>)</span>.<span data-cfg-block> Extra rounds are <span data-cfg-money="addons.extraRound"></span> each.</span> A new layout is a redesign<span data-cfg-block>, <span class="lc" data-cfg="addons.redesign"></span></span>.</p>
+
+      <h2>4. Turnaround</h2>
+      <p>Turnaround starts once we have complete site information and is counted in business days.<span data-cfg-block> Rush delivery is available at <span data-cfg="addons.rush"></span>.</span></p>
+
+      <h2>5. Payment</h2>
+      <p>We invoice through Wise or Payoneer, payable by card or bank transfer. Your first project is paid upfront. Memberships are billed monthly in advance.<span data-cfg-block> <span data-cfg="currencyNote"></span></span></p>
+
+      <h2>6. Seed Project</h2>
+      <p>The Seed Project is a first project at a founding price<span data-cfg-block> of <span data-cfg-money="seed.price"></span></span>, limited to one per company and paid upfront.</p>
+      <p data-cfg-block><strong>Guarantee:</strong> <span data-cfg="seed.guarantee"></span></p>
+
+      <h2>7. Evergreen memberships</h2>
+      <ul>
+        <li>Memberships are billed monthly in advance.</li>
+        <li>Each month includes a set number of credits. Projects use credits by size.</li>
+        <li>Unused credits roll over one month, capped at one month's credits.</li>
+        <li>Extra credits are charged at your plan's credit price.</li>
+        <li>You can cancel with 30 days' notice.</li>
+        <li data-cfg-block>Founding rates are locked for <span data-cfg="rateLockMonths"></span> months while your membership stays active.</li>
+      </ul>
+
+      <h2>8. Ownership of files</h2>
+      <p>You own the final design files once the project is <strong>paid in full</strong>.</p>
+
+      <h2>9. Contact</h2>
+      <p data-cfg-block>Questions about these terms: <strong data-email-text></strong>.</p>
+      <p><a href="index.html#contact">Send a project</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="title-block">
+        <div class="tb-cell tb-logo">
+          <a href="index.html" class="logo" aria-label="Overyard home">
+            <svg class="logo-svg" viewBox="0 0 236 54" aria-hidden="true" focusable="false">
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <g class="logo-o"><circle cx="21" cy="21" r="16.5" stroke-width="5"/><circle cx="21" cy="21" r="9" stroke-width="2.4" stroke-dasharray="3.4 3.1"/></g>
+                <circle class="logo-dot" cx="21" cy="21" r="2.8"/>
+                <g stroke="currentColor" stroke-width="5" transform="translate(2.5 0)">
+                  <path d="M44.5 14.5 L55 37.5 L65.5 14.5"/><path d="M73.5 26 H96.5 A11.5 11.5 0 1 0 93.8 33.4"/>
+                  <path d="M105.5 37.5 V14.5 M105.5 24 C105.5 17.5 110 14.5 116 14.5"/><path d="M123.5 14.5 L134 37.5 M144.5 14.5 L127.8 51"/>
+                  <circle cx="164" cy="26" r="11.5"/><path d="M175.5 14.5 V37.5"/>
+                  <path d="M184.5 37.5 V14.5 M184.5 24 C184.5 17.5 189 14.5 195 14.5"/>
+                  <circle cx="214" cy="26" r="11.5"/><path d="M225.5 4.5 V37.5"/>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <p class="label">Overyard · Landscape design for contractors · Rev 2026</p>
+        </div>
+        <div class="tb-cell">
+          <p class="label tb-key">Contact</p>
+          <ul class="tb-list">
+            <li data-cfg-block><span data-email-text></span></li>
+            <li data-cfg-block><a href="#" data-social="linkedin">LinkedIn</a></li>
+            <li data-cfg-block><a href="#" data-social="instagram">Instagram</a></li>
+            <li data-cfg-block><a href="#" data-social="facebook">Facebook</a></li>
+            <li><a href="index.html#contact">Send a project</a></li>
+          </ul>
+        </div>
+        <div class="tb-cell">
+          <p class="label tb-key">Sheet</p>
+          <ul class="tb-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+        <div class="tb-cell tb-drawing">
+          <svg class="north" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M12 4.5 L15.5 16 L12 13.5 L8.5 16 Z"/></svg>
+          <svg class="scale-bar" viewBox="0 0 120 18" aria-hidden="true">
+            <rect x="0.5" y="2.5" width="30" height="5"/><rect x="30.5" y="2.5" width="30" height="5" class="fill"/><rect x="60.5" y="2.5" width="30" height="5"/><rect x="90.5" y="2.5" width="29" height="5" class="fill"/>
+            <text x="0" y="17">0</text><text x="56" y="17">10</text><text x="108" y="17">20</text>
+          </svg>
+          <p class="label">Scale 1:100 · &copy; <span id="year">2026</span> Overyard</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
