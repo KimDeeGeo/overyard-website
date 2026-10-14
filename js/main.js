@@ -405,10 +405,17 @@ const CONFIG = {
 
     var index = 0, timer = null, userPaused = false, hoverPaused = false;
     function load(i) { var im = imgs[i]; if (im.dataset.src) { im.src = im.dataset.src; delete im.dataset.src; im.loading = "eager"; } }
+    var prev = -1;
     function show(i) {
-      index = (i + slides.length) % slides.length;
+      var next = (i + slides.length) % slides.length;
+      if (next !== index) prev = index;
+      index = next;
       load(index); load((index + 1) % slides.length);
-      imgs.forEach(function (im, j) { im.classList.toggle("is-active", j === index); });
+      // the outgoing slide keeps its zoom (paused) while it fades out
+      imgs.forEach(function (im, j) {
+        im.classList.toggle("is-active", j === index);
+        im.classList.toggle("is-leaving", j === prev && j !== index);
+      });
       frames.forEach(function (f, j) {
         f.classList.toggle("is-active", j === index);
         f.setAttribute("aria-current", j === index ? "true" : "false");
@@ -421,9 +428,14 @@ const CONFIG = {
       clearTimeout(timer);
       roll.classList.toggle("is-paused", !running());
       strip.classList.toggle("is-paused", !running());
-      // restart the progress animation on the active frame
+      if (!running()) {
+        // paused: freeze the progress line where it is (on the active frame only)
+        frames.forEach(function (f, j) { if (j !== index) f.classList.remove("is-running"); });
+        if (!frames[index].classList.contains("is-running")) frames[index].classList.add("is-running");
+        return;
+      }
+      // running: restart the progress line on the active frame
       frames.forEach(function (f) { f.classList.remove("is-running"); });
-      if (!running()) return;
       void strip.offsetWidth;
       frames[index].classList.add("is-running");
       timer = setTimeout(function () { show(index + 1); }, interval);
