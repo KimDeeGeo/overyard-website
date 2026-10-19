@@ -869,7 +869,9 @@ const CONFIG = {
           track("generate_lead", { topic: data.topic });
         })
         .catch(function () {
-          setStatus("error", "Something went wrong sending the form." + (CONFIG.email ? " Please email " + CONFIG.email + "." : " Please try again."));
+          setStatus("error", "Something went wrong sending the form. Your details are still here, so you can try again" +
+            (CONFIG.whatsapp && CONFIG.whatsapp.display ? ", or message us on WhatsApp at " + CONFIG.whatsapp.display + "." :
+            CONFIG.email ? ", or email " + CONFIG.email + "." : "."));
         })
         .finally(function () { button.disabled = false; });
     });

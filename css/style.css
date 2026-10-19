@@ -399,9 +399,6 @@ a:hover { color: var(--fern-hover); }
    Sections (shared)
    ========================================================================== */
 .section { padding: var(--section-space) 0; }
-/* Skip layout/paint for sections until they're near the screen (big win on phones).
-   "auto" remembers each section's real height once it has been rendered. */
-main > .section, main > .band { content-visibility: auto; contain-intrinsic-size: auto 1000px; }
 .section-tight { padding: clamp(56px, 8vw, 96px) 0; }
 .section-alt { background: var(--paper); border-block: 1px solid var(--line); }
 .section-head { max-width: 46rem; margin-bottom: clamp(32px, 5vw, 56px); }
