@@ -7,7 +7,7 @@
     "front-yard"
   ],
   "cleared": true,
-  "featured": false,
+  "featured": true,
   "cover": "front-steps.webp",
   "coverNight": "front-steps-night.webp",
   "images": [

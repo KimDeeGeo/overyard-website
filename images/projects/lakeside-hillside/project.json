@@ -8,7 +8,7 @@
     "planting"
   ],
   "cleared": true,
-  "featured": true,
+  "featured": false,
   "cover": "terrace-boathouse.webp",
   "coverNight": "seat-wall-night.webp",
   "images": [
