@@ -28,14 +28,14 @@
   <meta property="og:url" content="https://kimdeegeo.github.io/overyard-website/">
   <meta property="og:title" content="Overyard | Show them the yard. Win the job.">
   <meta property="og:description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors. Start with a $199 Seed Project.">
-  <meta property="og:image" content="https://kimdeegeo.github.io/overyard-website/images/hero-01.webp">
+  <meta property="og:image" content="https://kimdeegeo.github.io/overyard-website/images/projects/modern-pool-front-yard/pool-day.webp">
   <meta property="og:image:width" content="2000">
   <meta property="og:image:height" content="1125">
   <meta property="og:image:alt" content="3D render of a modern backyard pool with a pergola fire lounge">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Overyard | Show them the yard. Win the job.">
   <meta name="twitter:description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors.">
-  <meta name="twitter:image" content="https://kimdeegeo.github.io/overyard-website/images/hero-01.webp">
+  <meta name="twitter:image" content="https://kimdeegeo.github.io/overyard-website/images/projects/modern-pool-front-yard/pool-day.webp">
 
   <!-- Favicons -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -43,7 +43,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <!-- First hero slide and fonts load first (fonts are self-hosted in assets/fonts) -->
-  <link rel="preload" as="image" href="images/modern-02.webp" imagesrcset="images/hero-sm/modern-02.webp 1000w, images/modern-02.webp 2000w" imagesizes="(min-width: 1280px) 1200px, 100vw" fetchpriority="high">
+  <link rel="preload" as="image" href="images/projects/modern-pool-front-yard/pool-night.webp" imagesrcset="images/projects/modern-pool-front-yard/pool-night-md.webp 900w, images/projects/modern-pool-front-yard/pool-night.webp 2000w" imagesizes="(min-width: 1280px) 1200px, 100vw" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bricolage-grotesque.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope.woff2" crossorigin>
 
@@ -98,6 +98,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <ul>
           <li><a href="#work">Work</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#process">How it works</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -127,7 +128,7 @@
           </h1>
         </div>
         <div>
-          <p class="hero-lead">White-label 2D plans and 3D renders for landscape, pool and outdoor-living contractors. Designed by a landscape designer with 1,000+ residential projects, with material takeoffs from a licensed civil engineer.</p>
+          <p class="hero-lead">White-label 2D plans and 3D renders for landscape, pool and outdoor-living contractors. Designed by a landscape designer with 1,000+ residential projects, with material takeoffs from the approved design.</p>
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary" data-topic="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
             <!-- Shows once samplePackagePdf is set in js/main.js -->
@@ -140,14 +141,14 @@
         <ul class="chips" aria-label="Why contractors choose Overyard">
           <li>1,000+ residential designs by our lead designer</li>
           <li>Delivered under your brand</li>
-          <li>Takeoffs by a licensed civil engineer</li>
+          <li>Plans, renders and takeoffs in one package</li>
         </ul>
       </div>
 
       <div class="container">
         <figure class="hero-media roll" aria-roledescription="carousel" aria-label="Project renders">
           <div class="roll-stage">
-            <img class="roll-img is-active" src="images/modern-02.webp" srcset="images/hero-sm/modern-02.webp 1000w, images/modern-02.webp 2000w" sizes="(min-width: 1280px) 1200px, 100vw" alt="Night render of a modern pool and spa with a lit pergola fire lounge" width="2000" height="1125" fetchpriority="high" decoding="async">
+            <img class="roll-img is-active" src="images/projects/modern-pool-front-yard/pool-night.webp" srcset="images/projects/modern-pool-front-yard/pool-night-md.webp 900w, images/projects/modern-pool-front-yard/pool-night.webp 2000w" sizes="(min-width: 1280px) 1200px, 100vw" alt="Night render of a modern pool and spa with a lit pergola fire lounge" width="2000" height="1125" fetchpriority="high" decoding="async">
           </div>
           <figcaption class="sheet-tag label roll-tag">Sheet R-01 · 3D render · Modern pool · Night</figcaption>
           <button class="roll-toggle" type="button" aria-pressed="false" aria-label="Pause slideshow" hidden>
@@ -185,7 +186,9 @@
 
     <!-- =========================================================
          4. WORK
-         Featured slider: CONFIG.featured. Cards: CONFIG.projects (cleared only).
+         Featured slider: CONFIG.featured. Cards: up to 5 projects whose
+         images/projects/<slug>/project.json has "featured": true and
+         "cleared": true (order = CONFIG.projects).
          ========================================================= -->
     <section class="section section-alt" id="work">
       <div class="container">
@@ -207,6 +210,8 @@
 
         <div class="bento" id="work-grid"></div>
 
+        <p class="see-all reveal"><a href="portfolio.html" class="link-arrow">See the full portfolio</a></p>
+
         <!-- Optional walkthrough video: set walkthroughVideo in js/main.js -->
         <figure class="walkthrough reveal" data-walkthrough hidden>
           <video muted loop playsinline preload="none" aria-label="Walkthrough video of a landscape design"></video>
@@ -216,7 +221,7 @@
         <div class="portfolio-cta reveal">
           <div>
             <h3>Want to see more?</h3>
-            <p>Book a call and we'll walk you through the full portfolio, or ask for the link and we'll send it privately.</p>
+            <p>Book a call and we'll walk you through more of our work, or request the full portfolio and we'll send it privately.</p>
           </div>
           <div class="portfolio-cta-actions">
             <a class="btn btn-primary" data-booking hidden>Book a call</a>
@@ -227,7 +232,7 @@
     </section>
 
     <!-- =========================================================
-         5. WHAT YOU RECEIVE (plan from samplePlan, renders from receiveProject)
+         5. WHAT YOU RECEIVE (images from CONFIG.receive)
          ========================================================= -->
     <section class="section" id="receive">
       <div class="container">
@@ -249,12 +254,44 @@
     </section>
 
     <!-- =========================================================
+         5b. MATERIAL TAKEOFFS
+         Prices come from addons in js/main.js.
+         ========================================================= -->
+    <section class="section section-tight" id="takeoffs">
+      <div class="container takeoff-grid">
+        <div>
+          <p class="sheet-label">L-04 · Takeoffs</p>
+          <h2 class="reveal">Material takeoffs from the approved design.</h2>
+          <p class="takeoff-lead reveal">Once your client signs off on the design, our design team prepares the quantities from that same plan, so you can price and order without measuring it all again.</p>
+          <p class="takeoff-price reveal"><span data-cfg-block>Add-on: <strong data-cfg-money="addons.takeoff">$75</strong></span><span data-cfg-block> · <strong data-cfg-money="addons.takeoffMembers">$49</strong> for Evergreen members</span> · Included in Canopy.</p>
+          <p class="takeoff-note reveal">Quantities are estimates from the approved conceptual design. Confirm site measurements and supplier units before ordering.</p>
+        </div>
+        <div class="takeoff-sheet reveal" aria-label="What a takeoff covers">
+          <p class="label takeoff-sheet-head"><span>Sheet T-01 · Material takeoff</span><span>XLSX + PDF</span></p>
+          <table class="takeoff-table">
+            <thead><tr><th scope="col">Item</th><th scope="col">Unit</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Pavers and stone patios</th><td>sq ft</td></tr>
+              <tr><th scope="row">Retaining wall and seat wall block</th><td>units / face sq ft</td></tr>
+              <tr><th scope="row">Base aggregate and sand</th><td>cu yd / tons</td></tr>
+              <tr><th scope="row">Edging and border</th><td>linear ft</td></tr>
+              <tr><th scope="row">Plants by species and size</th><td>each</td></tr>
+              <tr><th scope="row">Mulch, rock and soil</th><td>cu yd</td></tr>
+              <tr><th scope="row">Lawn and turf</th><td>sq ft</td></tr>
+              <tr><th scope="row">Landscape lighting fixtures</th><td>each</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
          6. HOW IT WORKS (images from processImages in js/main.js;
             the plan-symbol SVGs below show until an image is set)
          ========================================================= -->
     <section class="section section-alt" id="process">
       <div class="container">
-        <p class="sheet-label">L-04 · Process</p>
+        <p class="sheet-label">L-05 · Process</p>
         <header class="section-head reveal">
           <h2>How it works</h2>
           <p>Four steps. One point of contact the whole way.</p>
@@ -301,7 +338,7 @@
          ========================================================= -->
     <section class="band" aria-labelledby="band-title">
       <div class="band-bg" aria-hidden="true">
-        <img class="band-img" src="images/courtyard-02.webp" alt="" width="2000" height="1125" loading="lazy" decoding="async">
+        <img class="band-img" src="images/projects/pool-courtyard-citrus/courtyard-night.webp" alt="" width="2000" height="1125" loading="lazy" decoding="async">
       </div>
       <div class="container band-inner">
         <p class="band-eyebrow">That's the whole process</p>
@@ -320,11 +357,17 @@
          ========================================================= -->
     <section class="section" id="pricing">
       <div class="container">
-        <p class="sheet-label">L-05 · Pricing</p>
+        <p class="sheet-label">L-06 · Pricing</p>
         <header class="section-head reveal">
           <h2>Start with a Seed. Grow from there.</h2>
-          <p>Founding rates for our first contractors. Pick a single project, or see Evergreen memberships below.</p>
+          <p>Pick a single project, or see Evergreen memberships below. Prices rise as our member count grows, so early members pay least.</p>
         </header>
+
+        <!-- Founding offer: deadline, spots left and next price all come from the price ladder in js/main.js -->
+        <div class="founding-offer reveal">
+          <p class="note-clay founding-line" data-cfg-block><strong data-cfg="computed.foundingLine">Founding rates for the first 5 members, until April 30, 2027.</strong><span data-cfg-block> Spots left: <strong data-cfg="computed.foundingSpotsLeft">5</strong>.</span></p>
+          <p class="next-price label" data-cfg="computed.nextPriceLine">Next price after founding: Grove $459, Orchard $799, Forest $1,499.</p>
+        </div>
 
         <div class="seed-row">
           <article class="card seed-card">
@@ -332,8 +375,8 @@
               <svg class="glyph is-stone" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="16" cy="16" rx="6.5" ry="10" transform="rotate(35 16 16)"/><path d="M12 20 Q16 16 20 12"/></svg>
               <div><p class="label">First project</p><h3>Seed Project</h3></div>
             </div>
-            <p class="seed-desc">Your first design at <span data-cfg="seed.scope">Grove</span> scope. One per company, paid upfront.</p>
-            <p class="price"><span class="price-now" data-cfg-money="seed.price">$199</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="seed.was">$399</s></span></p>
+            <p class="seed-desc">Your first design at <span data-cfg="seed.scope">Grove</span> scope. One per company. See watermarked previews first, then pay to unlock the full files.</p>
+            <p class="price"><span class="price-now" data-cfg-money="seed.price">$199</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="seed.regular">$325</s></span></p>
             <ul class="ticks">
               <li data-cfg="packages.grove.plan">2D plan + planting schedule</li>
               <li data-cfg-count="packages.grove.renders" data-one="photoreal 3D render" data-many="photoreal 3D renders">6 photoreal 3D renders</li>
@@ -346,7 +389,7 @@
           </article>
 
           <div class="seed-side">
-            <p class="note-clay conversion"><span data-cfg-block>Join as a Founding Root within <span data-cfg="seedJoinWindowDays">14</span> days of delivery to lock founding rates for <span data-cfg="rateLockMonths">6</span> months. </span><span data-cfg-block>Join a membership within <span data-cfg="seedCreditDays">7</span> days and we credit your <span data-cfg-money="seed.price">$199</span> to the first month. </span><span data-cfg-block>Only <span data-cfg="foundingSpots">5</span> founding spots.</span></p>
+            <p class="note-clay conversion"><span data-cfg-block data-cfg-if="computed.foundingLine">Join as a Founding Root within <span data-cfg="seedJoinWindowDays">14</span> days of delivery to lock founding rates for <span data-cfg="foundingLockMonths">6</span> months. </span><span data-cfg-block>Join a membership within <span data-cfg="seedCreditDays">7</span> days and we credit your <span data-cfg-money="seed.price">$199</span> to the first month.</span></p>
             <div class="addons-box">
               <h3 class="label">Add-ons</h3>
               <ul class="addons">
@@ -367,7 +410,7 @@
               <svg class="glyph is-fern" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 28 V12"/><path d="M16 19 C10 19 7.5 14.5 7.5 11 C12.5 11 16 14 16 19 Z"/><path d="M16 15 C22 15 24.5 10.5 24.5 7 C19.5 7 16 10 16 15 Z"/></svg>
               <div><h3>Sprout</h3><p class="card-desc">Small yards, front yards and quick sells.</p></div>
             </div>
-            <p class="price"><span class="price-now" data-cfg-money="packages.sprout.founding">$199</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.sprout.regular">$349</s></span></p>
+            <p class="price"><span class="price-now" data-cfg-money="packages.sprout.price">$199</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.sprout.regular">$349</s></span></p>
             <p class="label credits"><span data-cfg-count="packages.sprout.credits" data-one="credit" data-many="credits">1 credit</span> on Evergreen</p>
             <ul class="ticks">
               <li data-cfg="packages.sprout.plan">2D site and planting plan</li>
@@ -387,7 +430,7 @@
               <svg class="glyph is-fern" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="19.5" r="7"/><circle cx="21" cy="19.5" r="7"/><circle cx="16" cy="11" r="7"/></svg>
               <div><h3>Grove</h3><p class="card-desc">Full backyard projects.</p></div>
             </div>
-            <p class="price"><span class="price-now" data-cfg-money="packages.grove.founding">$399</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.grove.regular">$649</s></span></p>
+            <p class="price"><span class="price-now" data-cfg-money="packages.grove.price">$399</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.grove.regular">$649</s></span></p>
             <p class="label credits"><span data-cfg-count="packages.grove.credits" data-one="credit" data-many="credits">2 credits</span> on Evergreen</p>
             <ul class="ticks">
               <li data-cfg="packages.grove.plan">2D plan + planting schedule</li>
@@ -406,7 +449,7 @@
               <svg class="glyph is-fern" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="7" stroke-dasharray="2.6 2.4"/><circle cx="16" cy="16" r="1.8" fill="currentColor" stroke="none"/></svg>
               <div><h3>Canopy</h3><p class="card-desc">Pools, outdoor living and larger builds.</p></div>
             </div>
-            <p class="price"><span class="price-now" data-cfg-money="packages.canopy.founding">$799</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.canopy.regular">$1,249</s></span></p>
+            <p class="price"><span class="price-now" data-cfg-money="packages.canopy.price">$799</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.canopy.regular">$1,249</s></span></p>
             <p class="label credits"><span data-cfg-count="packages.canopy.credits" data-one="credit" data-many="credits">4 credits</span> on Evergreen</p>
             <ul class="ticks">
               <li data-cfg="packages.canopy.plan">Full plan set</li>
@@ -420,8 +463,26 @@
           </article>
         </div>
 
+        <!-- Project size guide: rows come from sizeGuide in js/main.js -->
+        <div class="size-guide reveal">
+          <h3 class="sub-head">Which size is my project?</h3>
+          <p class="size-guide-lead">Whichever is higher, the build budget or the design area, sets the tier.</p>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Project size guide, scrolls sideways on small screens">
+            <table class="compare size-table">
+              <thead><tr><th scope="col">Tier</th><th scope="col">Build budget</th><th scope="col">Design area</th><th scope="col">Price</th></tr></thead>
+              <tbody id="size-guide-rows">
+                <tr><th scope="row">Sprout</th><td>Up to $75k</td><td>Up to 1,500 sq ft</td><td>$199</td></tr>
+                <tr><th scope="row">Grove</th><td>$75k – $250k</td><td>Up to 5,000 sq ft</td><td>$399</td></tr>
+                <tr><th scope="row">Canopy</th><td>$250k – $750k</td><td>Up to 15,000 sq ft</td><td>$799</td></tr>
+                <tr><th scope="row">Canopy Plus</th><td>Above $750k</td><td>Above 15,000 sq ft</td><td>Canopy price plus $300 for each additional $250k of build budget (or part of it). Custom quote.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <ul class="fine-print">
-          <li>Pay by card or bank transfer through a Wise or Payoneer invoice. First project paid upfront.</li>
+          <li>Pay by card or bank transfer through a Wise or Payoneer invoice. Seed Project: pay to unlock the full files after you see the previews. Other single projects are paid upfront.</li>
+          <li data-cfg="computed.lockLine">Founding members keep founding rates for 6 months, then move to the members 6–10 rate while their membership stays active.</li>
           <li data-cfg="currencyNote">All prices in USD.</li>
         </ul>
       </div>
@@ -432,7 +493,7 @@
          ========================================================= -->
     <section class="section section-alt" id="evergreen">
       <div class="container">
-        <p class="sheet-label">L-06 · Evergreen memberships</p>
+        <p class="sheet-label">L-07 · Evergreen memberships</p>
         <header class="section-head reveal">
           <h2>Evergreen: design every month.</h2>
           <p>Credits let you mix small and large jobs in the same month: <span data-cfg="computed.creditMix">Sprout 1, Grove 2, Canopy 4</span>.</p>
@@ -444,7 +505,7 @@
               <svg class="glyph is-gold" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="5.2"/><circle cx="22" cy="10" r="5.2"/><circle cx="10" cy="22" r="5.2"/><circle cx="22" cy="22" r="5.2"/></svg>
               <div><h3>Orchard</h3><p class="card-desc">A steady few projects a month.</p></div>
             </div>
-            <p class="price"><span class="price-now" data-cfg-money="memberships.orchard.founding">$699</span><span class="per">/mo</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="memberships.orchard.regular">$1,099</s></span></p>
+            <p class="price"><span class="price-now" data-cfg-money="memberships.orchard.price">$699</span><span class="per">/mo</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="memberships.orchard.regular">$1,099</s></span></p>
             <p class="label credits"><span data-cfg-count="memberships.orchard.credits" data-one="credit" data-many="credits">4 credits</span> a month · <span data-cfg-percredit="memberships.orchard">$175 per credit</span></p>
             <ul class="ticks">
               <li>Takeoffs at <span data-cfg-money="addons.takeoffMembers">$49</span></li>
@@ -459,7 +520,7 @@
               <svg class="glyph is-fern" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11.5" cy="12" r="7"/><circle cx="21.5" cy="11" r="6"/><circle cx="10" cy="21.5" r="6"/><circle cx="20.5" cy="21" r="7.5"/></svg>
               <div><h3>Forest</h3><p class="card-desc">For crews selling every week.</p></div>
             </div>
-            <p class="price"><span class="price-now" data-cfg-money="memberships.forest.founding">$1,299</span><span class="per">/mo</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="memberships.forest.regular">$1,999</s></span></p>
+            <p class="price"><span class="price-now" data-cfg-money="memberships.forest.price">$1,299</span><span class="per">/mo</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="memberships.forest.regular">$1,999</s></span></p>
             <p class="label credits"><span data-cfg-count="memberships.forest.credits" data-one="credit" data-many="credits">8 credits</span> a month · <span data-cfg-percredit="memberships.forest">$162 per credit</span></p>
             <ul class="ticks">
               <li>2 free takeoffs a month</li>
@@ -475,7 +536,7 @@
               <svg class="glyph is-clay" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="13"/><circle cx="16.5" cy="15.5" r="9.5"/><circle cx="17" cy="15.5" r="6"/><circle cx="17" cy="15" r="2.6"/></svg>
               <div><h3>Old Growth</h3><p class="card-desc">High-volume design-build teams.</p></div>
             </div>
-            <p class="price"><span class="price-now" data-cfg-money="memberships.oldGrowth.founding">$2,399</span><span class="per">/mo</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="memberships.oldGrowth.regular">$3,699</s></span></p>
+            <p class="price"><span class="price-now" data-cfg-money="memberships.oldGrowth.price">$2,399</span><span class="per">/mo</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="memberships.oldGrowth.regular">$3,699</s></span></p>
             <p class="label credits"><span data-cfg-count="memberships.oldGrowth.credits" data-one="credit" data-many="credits">16 credits</span> a month · <span data-cfg-percredit="memberships.oldGrowth">$150 per credit</span></p>
             <ul class="ticks">
               <li>Priority turnaround</li>
@@ -484,7 +545,8 @@
             <a href="#contact" class="btn btn-clay" data-topic="waitlist" data-package="Old Growth">Join the waitlist</a>
           </article>
         </div>
-        <p class="rules">Billed monthly in advance. Unused credits roll over one month (capped at one month's credits). Extra credits at your plan's credit price. 30 days' notice to cancel.<span data-cfg-block> Founding rate locked <span data-cfg="rateLockMonths">6</span> months while active.</span></p>
+        <p class="rules fair-use" data-cfg="computed.fairUse">Active projects at a time: Orchard 1 · Forest 2 · Old Growth 4. Credits cover Sprout to Canopy; Canopy Plus uses extra credits. Unused credits roll over one month.</p>
+        <p class="rules">Billed monthly in advance. Rolled-over credits are capped at one month's credits. Extra credits at your plan's credit price. 30 days' notice to cancel.<span data-cfg-block> Founding rates stay locked for <span data-cfg="foundingLockMonths">6</span> months while your membership is active.</span></p>
       </div>
     </section>
 
@@ -493,7 +555,7 @@
          ========================================================= -->
     <section class="section" id="compare">
       <div class="container">
-        <p class="sheet-label">L-07 · Compare</p>
+        <p class="sheet-label">L-08 · Compare</p>
         <header class="section-head reveal">
           <h2>How Overyard compares</h2>
           <p>Your options for getting a design in front of a homeowner.</p>
@@ -541,15 +603,15 @@
                 <td>Not applicable</td>
               </tr>
               <tr>
-                <th scope="row">Construction-literate contact</th>
-                <td class="is-us"><span class="yes">Licensed civil engineer</span></td>
+                <th scope="row">Single point of contact</th>
+                <td class="is-us"><span class="yes">Yes, your account manager</span></td>
                 <td>Varies</td>
                 <td>Varies</td>
                 <td>You</td>
               </tr>
               <tr>
                 <th scope="row">Material takeoffs</th>
-                <td class="is-us"><span class="yes">Add-on, or included in Canopy</span></td>
+                <td class="is-us"><span class="yes">From the approved design (add-on, or included in Canopy)</span></td>
                 <td>Varies</td>
                 <td>Varies</td>
                 <td>Your own time</td>
@@ -562,48 +624,81 @@
 
     <!-- =========================================================
          11. WHO YOU'LL WORK WITH
-         Photos: images/founder-edmond.jpg, images/founder-kim.jpg (square).
-         Edmond's tools: edmondTools in js/main.js.
+         Photos: images/team/<name>.webp (square, 640px; source in _source/team/,
+         build with: node scripts/images.mjs). Edmond's tools: edmondTools in js/main.js.
          ========================================================= -->
     <section class="section section-alt" id="about">
       <div class="container">
-        <p class="sheet-label">L-08 · Team</p>
+        <p class="sheet-label">L-09 · Team</p>
         <header class="section-head reveal">
           <h2>Who you'll work with</h2>
-          <p>Two founders. One designer, one engineer, no middlemen.</p>
+          <p>A small senior team. Edmond leads design and reviews every project before it reaches you.</p>
         </header>
 
         <div class="founders">
           <article class="founder reveal">
             <figure class="founder-photo">
-              <picture>
-                <!-- <source srcset="images/founder-edmond.webp" type="image/webp"> -->
-                <img src="images/founder-edmond.jpg" alt="Portrait of Edmond De Claro" width="640" height="640" loading="lazy" decoding="async">
-              </picture>
+              <img src="images/team/edmond.webp" alt="Portrait of Edmond De Claro" width="640" height="640" loading="lazy" decoding="async">
               <figcaption class="label">Edmond · Design</figcaption>
             </figure>
             <div class="founder-text">
               <h3>Edmond De Claro</h3>
-              <p class="role">Co-founder, design lead</p>
-              <p>Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist. He personally designs and reviews every Overyard project.</p>
+              <p class="role">Co-founder · Design Lead</p>
+              <p>Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist. He leads design and reviews every Overyard project.</p>
               <p class="tools label" data-cfg-block>Tools: <span data-cfg-list="edmondTools" data-join=" · ">Realtime Landscaping Architect · SketchUp · Lumion · D5 Render</span></p>
             </div>
           </article>
 
           <article class="founder reveal">
             <figure class="founder-photo">
-              <picture>
-                <!-- <source srcset="images/founder-kim.webp" type="image/webp"> -->
-                <img src="images/founder-kim.jpg" alt="Portrait of Kim Daryl Geolagon" width="640" height="640" loading="lazy" decoding="async">
-              </picture>
-              <figcaption class="label">Kim Daryl · Accounts</figcaption>
+              <img src="images/team/alejandro.webp" alt="Portrait of Alejandro Bernardo Jr." width="640" height="640" loading="lazy" decoding="async">
+              <figcaption class="label">Alejandro · Sales</figcaption>
+            </figure>
+            <div class="founder-text">
+              <h3>Alejandro Bernardo Jr.</h3>
+              <p class="role">Co-founder · Head of Sales</p>
+              <!-- TODO update from CV (Alejandro's experience and background) -->
+              <p>Your first call and your account manager: discovery calls, proposals, onboarding, and keeping every project on track. 10+ years in sales and client management.</p>
+            </div>
+          </article>
+
+          <article class="founder reveal">
+            <figure class="founder-photo">
+              <img src="images/team/kim.webp" alt="Portrait of Kim Daryl Geolagon" width="640" height="640" loading="lazy" decoding="async">
+              <figcaption class="label">Kim Daryl · Operations</figcaption>
             </figure>
             <div class="founder-text">
               <h3>Kim Daryl Geolagon</h3>
-              <p class="role">Co-founder, sales and client accounts</p>
-              <p>Licensed civil engineer with 5+ years in construction, currently a remote estimator for a US general contractor. Kim Daryl is your single point of contact and prepares every material takeoff.</p>
+              <p class="role">Co-founder · CEO</p>
+              <p>Runs marketing, lead generation, the website, client portal and systems. Licensed civil engineer by background.</p>
             </div>
           </article>
+
+          <article class="founder reveal">
+            <figure class="founder-photo">
+              <!-- TODO swap in Alfred's photo: save it as _source/team/alfred.jpg, run
+                   node scripts/images.mjs, then replace this monogram with
+                   <img src="images/team/alfred.webp" alt="Portrait of Alfred Geronimo" width="640" height="640" loading="lazy" decoding="async"> -->
+              <span class="monogram" role="img" aria-label="Alfred Geronimo">AG</span>
+              <figcaption class="label">Alfred · Design</figcaption>
+            </figure>
+            <div class="founder-text">
+              <h3>Alfred Geronimo</h3>
+              <p class="role">Designer · Revisionist</p>
+              <p>Designs and revises plans and renders with Edmond, and prepares material takeoffs.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="mission reveal">
+          <div>
+            <p class="label">Mission</p>
+            <p class="mission-text">Help landscape and outdoor-living contractors win more jobs with design that sells, at a price that makes sense.</p>
+          </div>
+          <div>
+            <p class="label">Vision</p>
+            <p class="mission-text">Become the design partner contractors trust most, and a place where Filipino landscape designers build world-class careers.</p>
+          </div>
         </div>
 
         <div class="timezone reveal">
@@ -618,14 +713,18 @@
          ========================================================= -->
     <section class="section" id="faq">
       <div class="container container-narrow">
-        <p class="sheet-label">L-09 · FAQ</p>
+        <p class="sheet-label">L-10 · FAQ</p>
         <header class="section-head reveal">
           <h2>Questions</h2>
         </header>
         <div class="faq">
           <details>
             <summary>What is a Seed Project?</summary>
-            <p>Your first project with us, at a founding price<span data-cfg-block> of <span data-cfg-money="seed.price">$199</span></span><span data-cfg-block> with <span data-cfg="seed.scope">Grove</span> scope</span>. One per company, paid upfront. <span data-cfg="seed.guarantee">If the design misses the brief after the included revisions, you get a full refund.</span></p>
+            <p>Your first project with us, at a starter price<span data-cfg-block> of <span data-cfg-money="seed.price">$199</span></span><span data-cfg-block> with <span data-cfg="seed.scope">Grove</span> scope</span>. One per company. You see watermarked previews first and pay to unlock the full files. <span data-cfg="seed.guarantee">If the design misses the brief after the included revisions, you get a full refund.</span></p>
+          </details>
+          <details>
+            <summary>Can I see a design before paying?</summary>
+            <p>Yes, after a discovery call. We design your Seed Project and show you watermarked previews. Pay <span data-cfg-money="seed.price">$199</span> to unlock the full-resolution files. One preview project per company.</p>
           </details>
           <details>
             <summary>Is the work white-label?</summary>
@@ -665,11 +764,11 @@
           </details>
           <details>
             <summary>You're in the Philippines. How do time zones and replies work?</summary>
-            <p>Our day overlaps Australian business hours. US contractors send notes at the end of their day and find progress when they're back on the job.<span data-cfg-block> Kim Daryl replies within <span data-cfg="replyHours">12</span> hours.</span></p>
+            <p>Our day overlaps Australian business hours. US contractors send notes at the end of their day and find progress when they're back on the job.<span data-cfg-block> We reply within <span data-cfg="replyHours">12</span> hours.</span></p>
           </details>
           <details>
             <summary>How do I pay?</summary>
-            <p>By card or bank transfer through a Wise or Payoneer invoice. Your first project is paid upfront. Memberships are billed monthly in advance.<span data-cfg-block> <span data-cfg="currencyNote">All prices in USD.</span></span></p>
+            <p>By card or bank transfer through a Wise or Payoneer invoice. The Seed Project is paid after you see the previews; other single projects are paid upfront. Memberships are billed monthly in advance.<span data-cfg-block> <span data-cfg="currencyNote">All prices in USD.</span></span></p>
           </details>
           <details>
             <summary>How do credits work?</summary>
@@ -677,11 +776,11 @@
           </details>
           <details>
             <summary>Can I cancel a membership?</summary>
-            <p>Yes, with 30 days' notice.<span data-cfg-block> Your founding rate stays locked for <span data-cfg="rateLockMonths">6</span> months while your membership is active.</span></p>
+            <p>Yes, with 30 days' notice.<span data-cfg-block> Your founding rate stays locked for <span data-cfg="foundingLockMonths">6</span> months while your membership is active.</span></p>
           </details>
           <details>
             <summary>How big is your team?</summary>
-            <p>Small, on purpose. Edmond personally designs and reviews every project, and Kim Daryl handles your account and takeoffs. We'll add designers only when quality holds.</p>
+            <p>Edmond De Claro leads design and reviews every project, working with Alfred Geronimo as designer and revisionist. Alejandro leads sales and looks after your account, and Kim runs operations and systems. We add designers as Overyard membership grows, and only when quality holds.</p>
           </details>
         </div>
       </div>
@@ -694,10 +793,10 @@
     <section class="section section-alt" id="contact">
       <div class="container contact-grid">
         <div class="contact-intro">
-          <p class="sheet-label">L-10 · Intake</p>
+          <p class="sheet-label">L-11 · Intake</p>
           <h2>Send a project. Start with a Seed.</h2>
           <p>Tell us about the job and pick what you need. One consolidated brief gets you the best first draft.</p>
-          <p class="reply" data-cfg-block>Kim Daryl replies within <strong><span data-cfg="replyHours">12</span> hours</strong>.</p>
+          <p class="reply" data-cfg-block>Alejandro replies within <strong><span data-cfg="replyHours">12</span> hours</strong>.</p>
           <div class="contact-links">
             <a class="whatsapp" href="https://wa.me/639763730461" target="_blank" rel="noopener" data-whatsapp>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path class="wa-bubble" d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5z"/><path class="wa-phone" d="M9 8.6c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.6l-.5.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.5c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.4.8-.6.4-1.5.5-2.4.2-2.4-.9-4.3-2.8-5.2-5.2-.3-.9-.2-1.8.2-2.4z"/></svg>
