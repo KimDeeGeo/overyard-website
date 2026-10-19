@@ -9,3 +9,6 @@ desktop.ini
 
 # Dev tools
 node_modules/
+
+# Original images (v4): full-size sources, including unpublished projects
+_source/

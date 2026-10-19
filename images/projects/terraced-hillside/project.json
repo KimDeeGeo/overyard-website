@@ -1,0 +1,46 @@
+{
+  "title": "Terraced hillside",
+  "region": "",
+  "summary": "Three tiers of retaining walls, wide stairs with lit treads, a sunken fire lounge, a lawn terrace and layered slope planting.",
+  "category": [
+    "hillside",
+    "outdoor-living",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": true,
+  "cover": "overview.webp",
+  "coverNight": "stairs-night.webp",
+  "images": [
+    {
+      "file": "overview.webp",
+      "caption": "Hillside overview",
+      "alt": "Render of a terraced hillside backyard with tiered retaining walls, wide stairs, a sunken fire lounge and a lawn terrace",
+      "time": "day"
+    },
+    {
+      "file": "sunken-fire-lounge.webp",
+      "caption": "Sunken fire lounge",
+      "alt": "Render of a sunken fire lounge with stairs and planted terraces behind",
+      "time": "day"
+    },
+    {
+      "file": "main-stairs.webp",
+      "caption": "Main stairs and terraces",
+      "alt": "Render of the main stairs climbing between planted terraces",
+      "time": "day"
+    },
+    {
+      "file": "stairs-night.webp",
+      "caption": "Stair and wall lighting, night",
+      "alt": "Night render looking up the lit stairs past wall-washed retaining walls to the house",
+      "time": "night"
+    },
+    {
+      "file": "plan-view.webp",
+      "caption": "Plan view",
+      "alt": "Top-down render of the retaining walls, stairs, lawn terrace and fire lounge",
+      "time": "plan"
+    }
+  ]
+}

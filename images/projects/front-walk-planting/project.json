@@ -1,0 +1,57 @@
+{
+  "title": "Front walk and slope planting",
+  "region": "",
+  "summary": "Stone steps up a planted slope, a new front walk, driveway planting beds and path lighting.",
+  "category": [
+    "planting",
+    "front-yard"
+  ],
+  "cleared": false,
+  "featured": false,
+  "cover": "front-steps.webp",
+  "coverNight": "front-steps-night.webp",
+  "images": [
+    {
+      "file": "front-steps.webp",
+      "caption": "Stone steps and slope planting",
+      "alt": "Render of stone steps climbing a planted slope beside the porch",
+      "time": "day"
+    },
+    {
+      "file": "front-steps-night.webp",
+      "caption": "Lit front steps, night",
+      "alt": "Night render of the lit stone steps and slope planting",
+      "time": "night"
+    },
+    {
+      "file": "front-walk.webp",
+      "caption": "Front walk and planting beds",
+      "alt": "Render of a paver front walk between lawn and planting beds",
+      "time": "day"
+    },
+    {
+      "file": "front-night.webp",
+      "caption": "Front elevation, night",
+      "alt": "Night render of the front of the house with lit steps and planting",
+      "time": "night"
+    },
+    {
+      "file": "driveway-beds.webp",
+      "caption": "Driveway planting beds",
+      "alt": "Render of planting beds along the driveway with agave, lavender and boulders",
+      "time": "day"
+    },
+    {
+      "file": "driveway-night.webp",
+      "caption": "Driveway planting, night",
+      "alt": "Night render of the driveway planting with path lights",
+      "time": "night"
+    },
+    {
+      "file": "circle-drive-night.webp",
+      "caption": "Front yard and circle drive, night",
+      "alt": "Night render of the front yard, circle drive and uplit trees",
+      "time": "night"
+    }
+  ]
+}

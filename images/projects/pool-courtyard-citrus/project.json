@@ -1,0 +1,82 @@
+{
+  "title": "Pool courtyard and citrus grove",
+  "region": "",
+  "summary": "Pool and spa, pergola dining with an outdoor kitchen, a fire pit under lemon trees, a fountain and stepping pads set in lawn.",
+  "category": [
+    "pool",
+    "outdoor-living",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": true,
+  "cover": "courtyard-day.webp",
+  "coverNight": "courtyard-night.webp",
+  "images": [
+    {
+      "file": "site-photo.webp",
+      "caption": "Site photo, before",
+      "alt": "Site photo of the bare backyard before the design, with a tape measure in the foreground",
+      "time": "photo"
+    },
+    {
+      "file": "plan-sheet.webp",
+      "caption": "2D plan sheet",
+      "alt": "2D landscape plan sheet with pool, spa, lawn, stepping pads and planting",
+      "time": "plan"
+    },
+    {
+      "file": "clay-model.webp",
+      "caption": "3D clay model",
+      "alt": "Clay 3D model of the house, pool, pergola and fire pit before materials are applied",
+      "time": "model"
+    },
+    {
+      "file": "courtyard-day.webp",
+      "caption": "Courtyard overview",
+      "alt": "Render of a backyard with a fountain, stepping pads in lawn, a pool and spa, and a fire pit lounge under lemon trees",
+      "time": "day"
+    },
+    {
+      "file": "courtyard-night.webp",
+      "caption": "Courtyard overview, night",
+      "alt": "Night render of the fountain, stepping pads, lit pool and uplit lemon trees",
+      "time": "night"
+    },
+    {
+      "file": "fire-pit-day.webp",
+      "caption": "Fire pit under the lemon trees",
+      "alt": "Render of a fire pit lounge on a stamped concrete pad framed by lemon trees",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-night.webp",
+      "caption": "Fire pit, night",
+      "alt": "Night render of the fire pit lounge with uplit lemon trees and in-ground lights",
+      "time": "night"
+    },
+    {
+      "file": "pergola-dining.webp",
+      "caption": "Pergola dining and outdoor kitchen",
+      "alt": "Render of a pergola dining area with an outdoor kitchen, with the tiled spa and pool in front",
+      "time": "day"
+    },
+    {
+      "file": "pool-house-night.webp",
+      "caption": "Pool, spa and pergola, night",
+      "alt": "Night render of the pool, spa and pergola dining area with the house lit behind",
+      "time": "night"
+    },
+    {
+      "file": "view-from-fire-pit.webp",
+      "caption": "View from the fire pit",
+      "alt": "Render looking from the fire pit across the lawn and stepping pads to the pool and house",
+      "time": "day"
+    },
+    {
+      "file": "top-down.webp",
+      "caption": "Top-down view",
+      "alt": "Top-down render of the pool, spa, pergola, lawn and stepping pads",
+      "time": "plan"
+    }
+  ]
+}

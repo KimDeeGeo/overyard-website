@@ -1,0 +1,45 @@
+{
+  "title": "Stone pool and pergola",
+  "region": "",
+  "summary": "Stone-coped pool and spa, a timber pergola with outdoor dining and a planted front walk.",
+  "category": [
+    "pool",
+    "outdoor-living"
+  ],
+  "cleared": false,
+  "featured": false,
+  "cover": "pool-pergola.webp",
+  "coverNight": "pool-pergola-night.webp",
+  "images": [
+    {
+      "file": "pool-pergola.webp",
+      "caption": "Pool and pergola",
+      "alt": "Render of a stone-coped pool beside a timber pergola with loungers",
+      "time": "day"
+    },
+    {
+      "file": "pool-pergola-night.webp",
+      "caption": "Pool and pergola, night",
+      "alt": "Night render of the lit pool and pergola",
+      "time": "night"
+    },
+    {
+      "file": "pool-spa.webp",
+      "caption": "Pool, spa and pergola dining",
+      "alt": "Render of the pool and raised spa with the pergola dining area behind",
+      "time": "day"
+    },
+    {
+      "file": "pool-spa-night.webp",
+      "caption": "Pool, spa and pergola, night",
+      "alt": "Night render of the pool, spa and lit pergola",
+      "time": "night"
+    },
+    {
+      "file": "front-walk-dusk.webp",
+      "caption": "Front walk and planting, dusk",
+      "alt": "Dusk render of the front walk and planting beds",
+      "time": "night"
+    }
+  ]
+}

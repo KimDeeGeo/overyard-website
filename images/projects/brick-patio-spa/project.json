@@ -1,0 +1,40 @@
+{
+  "title": "Brick patio, spa and fire pit",
+  "region": "",
+  "summary": "Paver patio with a fire pit lounge, a small pool and spa, string lights and lavender beds.",
+  "category": [
+    "pool",
+    "outdoor-living",
+    "planting"
+  ],
+  "cleared": false,
+  "featured": false,
+  "cover": "fire-pit.webp",
+  "coverNight": "fire-pit-night.webp",
+  "images": [
+    {
+      "file": "fire-pit.webp",
+      "caption": "Fire pit lounge and spa",
+      "alt": "Render of a paver patio with a fire pit lounge and spa",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-night.webp",
+      "caption": "Fire pit and spa, night",
+      "alt": "Night render of the fire pit lounge and lit spa",
+      "time": "night"
+    },
+    {
+      "file": "patio.webp",
+      "caption": "Covered patio and fire pit",
+      "alt": "Render of the covered patio with string lights and a fire pit",
+      "time": "day"
+    },
+    {
+      "file": "spa.webp",
+      "caption": "Spa and lavender beds",
+      "alt": "Render of the spa and plunge pool with lavender beds",
+      "time": "day"
+    }
+  ]
+}

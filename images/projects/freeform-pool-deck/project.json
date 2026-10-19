@@ -1,0 +1,33 @@
+{
+  "title": "Freeform pool under the deck",
+  "region": "",
+  "summary": "Freeform pool and spa tucked under a raised deck, with a pergola and flagstone surround.",
+  "category": [
+    "pool",
+    "outdoor-living"
+  ],
+  "cleared": false,
+  "featured": false,
+  "cover": "pool-spa.webp",
+  "coverNight": "pool-night.webp",
+  "images": [
+    {
+      "file": "pool-spa.webp",
+      "caption": "Pool, spa and lounge deck",
+      "alt": "Render of a freeform pool and round spa with a flagstone surround",
+      "time": "day"
+    },
+    {
+      "file": "pool-night.webp",
+      "caption": "Pool and pergola, night",
+      "alt": "Night render of the lit freeform pool and pergola",
+      "time": "night"
+    },
+    {
+      "file": "under-deck.webp",
+      "caption": "Pool under the deck",
+      "alt": "Render of the pool and spa beside the raised deck and stairs",
+      "time": "day"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "title": "Modern pool and front yard",
+  "region": "",
+  "summary": "Pool and spa, slatted pergola fire lounge, outdoor kitchen, floating stairs and a low-water front yard, with landscape lighting front and back.",
+  "category": [
+    "pool",
+    "outdoor-living",
+    "front-yard"
+  ],
+  "cleared": true,
+  "featured": true,
+  "cover": "pool-day.webp",
+  "coverNight": "pool-night.webp",
+  "images": [
+    {
+      "file": "pool-day.webp",
+      "caption": "Pool and pergola fire lounge",
+      "alt": "Render of a modern pool with a slatted pergola fire lounge, lounge deck and a row of cypress trees",
+      "time": "day"
+    },
+    {
+      "file": "pool-night.webp",
+      "caption": "Pool and pergola lounge, night",
+      "alt": "Night render of the pool, spa and pergola fire lounge with landscape lighting",
+      "time": "night"
+    },
+    {
+      "file": "pool-kitchen.webp",
+      "caption": "Pool, spa and outdoor kitchen bar",
+      "alt": "Render of a modern pool and spa with an outdoor kitchen bar in front and a slatted pergola lounge behind",
+      "time": "day"
+    },
+    {
+      "file": "pergola-fire-lounge.webp",
+      "caption": "Pergola fire lounge",
+      "alt": "Render of a slatted pergola with a fire table and lounge seating",
+      "time": "day"
+    },
+    {
+      "file": "floating-stairs-night.webp",
+      "caption": "Floating stairs and water wall, night",
+      "alt": "Night render of floating concrete stairs on a grass slope beside a lit water wall",
+      "time": "night"
+    },
+    {
+      "file": "front-yard.webp",
+      "caption": "Front yard planting",
+      "alt": "Render of a modern front yard with salvia, boulders, river rock and path lights",
+      "time": "day"
+    },
+    {
+      "file": "front-yard-night.webp",
+      "caption": "Front yard lighting, night",
+      "alt": "Night render of the front yard with path lights and uplit shrubs",
+      "time": "night"
+    },
+    {
+      "file": "plan-view.webp",
+      "caption": "Plan view",
+      "alt": "Top-down render of the property showing the pool, pergola, kitchen, side yards and front yard",
+      "time": "plan"
+    }
+  ]
+}

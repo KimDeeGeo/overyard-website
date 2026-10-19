@@ -1,0 +1,57 @@
+{
+  "title": "Cottage front yard",
+  "region": "",
+  "summary": "Low-water front yard with a curved lawn edge, boulders, a tree ring, porch planting and lighting.",
+  "category": [
+    "front-yard",
+    "planting"
+  ],
+  "cleared": false,
+  "featured": false,
+  "cover": "front-yard.webp",
+  "coverNight": "front-yard-night.webp",
+  "images": [
+    {
+      "file": "front-yard.webp",
+      "caption": "Front yard and driveway",
+      "alt": "Render of a cottage front yard with lawn, agave, boulders and a shade tree",
+      "time": "day"
+    },
+    {
+      "file": "front-yard-night.webp",
+      "caption": "Front yard, night",
+      "alt": "Night render of the front yard with path and accent lighting",
+      "time": "night"
+    },
+    {
+      "file": "front-bed-night.webp",
+      "caption": "Front planting bed, night",
+      "alt": "Night render of the curved front planting bed with path lights",
+      "time": "night"
+    },
+    {
+      "file": "side-yard.webp",
+      "caption": "Side yard and tree ring",
+      "alt": "Render of a side yard with a tree ring, curved beds and lawn",
+      "time": "day"
+    },
+    {
+      "file": "side-yard-night.webp",
+      "caption": "Side yard, night",
+      "alt": "Night render of the side yard with an uplit tree",
+      "time": "night"
+    },
+    {
+      "file": "porch.webp",
+      "caption": "Front porch planting",
+      "alt": "Render of the front porch with a flowering bed and planters",
+      "time": "day"
+    },
+    {
+      "file": "porch-night.webp",
+      "caption": "Front porch, night",
+      "alt": "Night render of the front porch with lighting",
+      "time": "night"
+    }
+  ]
+}

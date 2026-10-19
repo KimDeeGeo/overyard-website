@@ -1,0 +1,33 @@
+{
+  "title": "Pool deck and fire lounge",
+  "region": "",
+  "summary": "Pool with a timber deck, sunken fire lounge, outdoor kitchen bar and stepping pads.",
+  "category": [
+    "pool",
+    "outdoor-living"
+  ],
+  "cleared": false,
+  "featured": false,
+  "cover": "deck-lounge.webp",
+  "coverNight": "pool-dusk.webp",
+  "images": [
+    {
+      "file": "deck-lounge.webp",
+      "caption": "Deck lounge and pool",
+      "alt": "Render of a timber deck lounge with a fire table beside the pool",
+      "time": "day"
+    },
+    {
+      "file": "pool-dusk.webp",
+      "caption": "Pool deck and fire lounge, dusk",
+      "alt": "Dusk render of the pool, deck and fire lounge",
+      "time": "night"
+    },
+    {
+      "file": "kitchen-bar.webp",
+      "caption": "Pool and outdoor kitchen bar",
+      "alt": "Render of the pool, outdoor kitchen bar and stepping pads",
+      "time": "day"
+    }
+  ]
+}
