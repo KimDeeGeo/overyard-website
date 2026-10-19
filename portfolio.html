@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Portfolio | Overyard</title>
+  <meta name="description" content="Landscape design work by Overyard: pools, outdoor living, hillside terracing and planting, each with its plan view and 3D renders.">
+  <link rel="canonical" href="https://kimdeegeo.github.io/overyard-website/portfolio.html">
+  <meta name="theme-color" content="#121512">
+  <script>
+    (function () {
+      var t = 'dark';
+      try { if (localStorage.getItem('overyard-theme') === 'light') t = 'light'; } catch (e) {}
+      var d = document.documentElement;
+      d.setAttribute('data-theme', t);
+      d.classList.add('js');
+      if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#F5F6F2');
+    })();
+  </script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bricolage-grotesque.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope.woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Overyard home">
+        <svg class="logo-svg" viewBox="0 0 236 54" aria-hidden="true" focusable="false">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <g class="logo-o"><circle cx="21" cy="21" r="16.5" stroke-width="5"/><circle cx="21" cy="21" r="9" stroke-width="2.4" stroke-dasharray="3.4 3.1"/></g>
+            <circle class="logo-dot" cx="21" cy="21" r="2.8"/>
+            <g stroke="currentColor" stroke-width="5" transform="translate(2.5 0)">
+              <path d="M44.5 14.5 L55 37.5 L65.5 14.5"/><path d="M73.5 26 H96.5 A11.5 11.5 0 1 0 93.8 33.4"/>
+              <path d="M105.5 37.5 V14.5 M105.5 24 C105.5 17.5 110 14.5 116 14.5"/><path d="M123.5 14.5 L134 37.5 M144.5 14.5 L127.8 51"/>
+              <circle cx="164" cy="26" r="11.5"/><path d="M175.5 14.5 V37.5"/>
+              <path d="M184.5 37.5 V14.5 M184.5 24 C184.5 17.5 189 14.5 195 14.5"/>
+              <circle cx="214" cy="26" r="11.5"/><path d="M225.5 4.5 V37.5"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+
+      <div class="header-actions">
+        <!-- Client login: set portalUrl in js/main.js (hidden until then) -->
+        <a class="portal-link" data-portal hidden>Client login</a>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+      </div>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#process">How it works</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary btn-small">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <!--
+    PORTFOLIO: every project whose images/projects/<slug>/project.json says
+    "cleared": true, in the order of CONFIG.projects in js/main.js.
+    Filter chips match project.json "category" values (and "night" = has a night render).
+  -->
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <p class="sheet-label">P-00 · Portfolio</p>
+        <h1>Portfolio</h1>
+        <p class="page-lead">Pools, outdoor living, hillside terracing and planting. Open a project to see its sheets in order: plan, model, then renders.</p>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" class="chip-filter" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip-filter" data-filter="pool" aria-pressed="false">Pools</button>
+          <button type="button" class="chip-filter" data-filter="outdoor-living" aria-pressed="false">Outdoor living</button>
+          <button type="button" class="chip-filter" data-filter="hillside" aria-pressed="false">Hillside</button>
+          <button type="button" class="chip-filter" data-filter="planting" aria-pressed="false">Planting</button>
+          <button type="button" class="chip-filter" data-filter="night" aria-pressed="false">Night</button>
+          <span class="label filter-count" id="portfolio-count" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt portfolio-section">
+      <div class="container">
+        <div class="bento" id="portfolio-grid"></div>
+        <noscript><p class="empty">The portfolio needs JavaScript to load the projects.</p></noscript>
+
+        <div class="portfolio-cta reveal">
+          <div>
+            <h3>Want to see more?</h3>
+            <p>Book a call and we'll walk you through more of our work, or request the full portfolio and we'll send it privately.</p>
+          </div>
+          <div class="portfolio-cta-actions">
+            <a class="btn btn-primary" data-booking hidden>Book a call</a>
+            <a href="index.html?topic=portfolio#contact" class="btn btn-outline">Request the full portfolio</a>
+            <a href="index.html?topic=seed#contact" class="btn btn-outline">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky call to action on phones -->
+  <div class="mobile-cta">
+    <a href="index.html?topic=seed#contact" class="btn btn-primary">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+  </div>
+
+  <!-- Project gallery viewer -->
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+    <div class="lb-bar">
+      <p class="lb-title" id="lb-title"></p>
+      <p class="lb-counter" aria-live="polite"></p>
+      <button class="lb-close" type="button" aria-label="Close gallery">&times;</button>
+    </div>
+    <div class="lb-stage"></div>
+    <div class="lb-foot">
+      <button class="lb-prev" type="button" aria-label="Previous image">&larr;</button>
+      <p class="lb-caption"></p>
+      <button class="lb-next" type="button" aria-label="Next image">&rarr;</button>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="title-block">
+        <div class="tb-cell tb-logo">
+          <a href="index.html" class="logo" aria-label="Overyard home">
+            <svg class="logo-svg" viewBox="0 0 236 54" aria-hidden="true" focusable="false">
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <g class="logo-o"><circle cx="21" cy="21" r="16.5" stroke-width="5"/><circle cx="21" cy="21" r="9" stroke-width="2.4" stroke-dasharray="3.4 3.1"/></g>
+                <circle class="logo-dot" cx="21" cy="21" r="2.8"/>
+                <g stroke="currentColor" stroke-width="5" transform="translate(2.5 0)">
+                  <path d="M44.5 14.5 L55 37.5 L65.5 14.5"/><path d="M73.5 26 H96.5 A11.5 11.5 0 1 0 93.8 33.4"/>
+                  <path d="M105.5 37.5 V14.5 M105.5 24 C105.5 17.5 110 14.5 116 14.5"/><path d="M123.5 14.5 L134 37.5 M144.5 14.5 L127.8 51"/>
+                  <circle cx="164" cy="26" r="11.5"/><path d="M175.5 14.5 V37.5"/>
+                  <path d="M184.5 37.5 V14.5 M184.5 24 C184.5 17.5 189 14.5 195 14.5"/>
+                  <circle cx="214" cy="26" r="11.5"/><path d="M225.5 4.5 V37.5"/>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <p class="label">Overyard · Landscape design for contractors · Rev 2026</p>
+        </div>
+        <div class="tb-cell">
+          <p class="label tb-key">Contact</p>
+          <ul class="tb-list">
+            <li><a class="whatsapp whatsapp-sm" href="https://wa.me/639763730461" target="_blank" rel="noopener" data-whatsapp><svg viewBox="0 0 24 24" aria-hidden="true"><path class="wa-bubble" d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5z"/><path class="wa-phone" d="M9 8.6c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.6l-.5.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.5c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.4.8-.6.4-1.5.5-2.4.2-2.4-.9-4.3-2.8-5.2-5.2-.3-.9-.2-1.8.2-2.4z"/></svg><span class="wa-number">+63 976 373 0461</span></a></li>
+            <li data-cfg-block hidden><span data-email-text></span></li>
+            <li><a href="index.html#contact">Send a project</a></li>
+          </ul>
+          <ul class="socials socials-sm" aria-label="Overyard on social media">
+            <li><span class="social is-soon" data-social="facebook" data-name="Facebook" data-tip="Coming soon" role="img" aria-label="Facebook (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M14 8h2.5V4.5H14c-2.5 0-4 1.6-4 4V11H7.5v3.5H10V21h3.5v-6.5h2.6l.4-3.5h-3V8.7c0-.4.3-.7.5-.7z"/></svg></span></li>
+            <li><span class="social is-soon" data-social="instagram" data-name="Instagram" data-tip="Coming soon" role="img" aria-label="Instagram (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="fill" cx="17.2" cy="6.8" r="1"/></svg></span></li>
+            <li><span class="social is-soon" data-social="tiktok" data-name="TikTok" data-tip="Coming soon" role="img" aria-label="TikTok (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.5v11.2a3.3 3.3 0 1 1-3.3-3.3"/><path d="M14 3.5c.4 2.6 2.2 4.3 5 4.5"/></svg></span></li>
+            <li><span class="social is-soon" data-social="youtube" data-name="YouTube" data-tip="Coming soon" role="img" aria-label="YouTube (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path class="fill" d="M10 9.3v5.4l4.6-2.7z"/></svg></span></li>
+            <li><span class="social is-soon" data-social="linkedin" data-name="LinkedIn" data-tip="Coming soon" role="img" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.6v.1M11.5 16.5v-6m0 3c0-1.7 1-3 2.6-3s2.4 1.2 2.4 3v3"/></svg></span></li>
+          </ul>
+        </div>
+        <div class="tb-cell">
+          <p class="label tb-key">Sheet</p>
+          <ul class="tb-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+        <div class="tb-cell tb-drawing">
+          <svg class="north" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M12 4.5 L15.5 16 L12 13.5 L8.5 16 Z"/></svg>
+          <svg class="scale-bar" viewBox="0 0 120 12" aria-hidden="true">
+            <rect x="0.5" y="2.5" width="30" height="5"/><rect x="30.5" y="2.5" width="30" height="5" class="fill"/><rect x="60.5" y="2.5" width="30" height="5"/><rect x="90.5" y="2.5" width="29" height="5" class="fill"/>
+          </svg>
+          <p class="label">Scale 1:100 · &copy; <span id="year">2026</span> Overyard</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
