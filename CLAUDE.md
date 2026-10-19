@@ -42,9 +42,10 @@ Free tools only: Web3Forms (form), Cal.com or Calendly free (booking link), GitH
 - Hero slides and the band image must come from cleared projects.
 
 ## Image provenance (strict)
-- The 6 new folders (front-walk-planting, stone-pool-pergola, front-yard-cottage, freeform-pool-deck, brick-patio-spa, pool-deck-fire-lounge) and the `_source/_gemini-variants/` files are **Gemini-generated or Gemini-edited** (filenames `Gemini_Generated_Image_*`).
-- They stay `cleared: false` until the founders confirm two things: (1) image rights, and (2) that they show the quality clients actually receive (not AI-only images).
-- Don't publish AI-generated or AI-enhanced renders as Overyard work without that confirmation.
+- The 6 newer projects (front-walk-planting, stone-pool-pergola, front-yard-cottage, freeform-pool-deck, brick-patio-spa, pool-deck-fire-lounge) are **Gemini-generated or Gemini-edited** images (original filenames `Gemini_Generated_Image_*`).
+- The founders confirmed them as cleared, and they were published on Oct 19, 2026. They appear on the portfolio page, not featured on the home page.
+- `_source/_gemini-variants/` holds Gemini versions of the 5 original projects. These are not published.
+- For any new project: publish only after the founders confirm image rights and that the images represent what clients receive.
 - `wooded-lakefront/fire-pit-redbuds` and `dock` came from files named after a client (Creswick / Local Landscapers). Never use client names in filenames or captions.
 
 ## No-JS defaults (important)

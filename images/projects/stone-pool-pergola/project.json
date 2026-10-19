@@ -6,7 +6,7 @@
     "pool",
     "outdoor-living"
   ],
-  "cleared": false,
+  "cleared": true,
   "featured": false,
   "cover": "pool-pergola.webp",
   "coverNight": "pool-pergola-night.webp",

@@ -92,10 +92,10 @@ _source/pool-courtyard-citrus/
 ### Feature a project on the home page
 Set `"featured": true` in its project.json. The home page shows up to 5 featured, cleared projects, in the order of the `projects` list. The first one gets the large card. Set `"featured": false` on another project if you want to swap one out.
 
-### Publish one of the hidden projects
-Six projects are prepared but hidden (`cleared: false`): `front-walk-planting`, `stone-pool-pergola`, `front-yard-cottage`, `freeform-pool-deck`, `brick-patio-spa`, `pool-deck-fire-lounge`. Their images are AI-generated or AI-edited (Gemini). Before publishing one, confirm the image rights, and that it shows what clients actually receive. Then:
-1. Set `"cleared": true` (and `"featured": true` if it should be on the home page).
-2. Run `node scripts/images.mjs <slug>`.
+### Hide or publish a project
+Set `"cleared": false` to hide a project everywhere, or `true` to publish it. For a newly cleared project:
+1. Run `node scripts/images.mjs <slug>` so its images exist.
+2. Set `"featured": true` if it should be on the home page.
 3. Commit and push.
 
 ### Hero camera roll, night band, featured slider

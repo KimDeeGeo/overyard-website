@@ -7,7 +7,7 @@
     "outdoor-living",
     "planting"
   ],
-  "cleared": false,
+  "cleared": true,
   "featured": false,
   "cover": "fire-pit.webp",
   "coverNight": "fire-pit-night.webp",

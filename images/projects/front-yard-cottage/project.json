@@ -6,7 +6,7 @@
     "front-yard",
     "planting"
   ],
-  "cleared": false,
+  "cleared": true,
   "featured": false,
   "cover": "front-yard.webp",
   "coverNight": "front-yard-night.webp",

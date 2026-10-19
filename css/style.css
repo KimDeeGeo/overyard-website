@@ -1057,3 +1057,11 @@ a.social:hover { color: var(--fern); border-color: var(--fern); }
 .work-card[hidden] { display: none; }
 .empty { padding: 40px 0; text-align: center; color: var(--muted); max-width: none; }
 #portfolio-grid:empty { min-height: 110vh; }   /* reserve space while project.json files load (no layout shift) */
+
+/* Bento: last cards stretch to fill the final row (set by balanceGrid in main.js) */
+@media (min-width: 700px) and (max-width: 999px) { .work-card.fill-t { grid-column: 1 / -1; } }
+@media (min-width: 1000px) {
+  .work-card.fill-d2 { grid-column: span 2; }
+  .work-card.fill-d3 { grid-column: span 3; }
+  .work-card.fill-d4 { grid-column: 1 / -1; }
+}

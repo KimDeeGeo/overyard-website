@@ -568,7 +568,24 @@ const CONFIG = {
       "</div></article>";
   }
 
+  // Stretch the last card(s) so the bento has no empty gap in its last row.
+  // Desktop: 4 columns, the large card takes 2x2. Tablet: 2 columns, large spans a row.
+  function balanceGrid(grid) {
+    var cards = $$(".work-card", grid).filter(function (c) { return !c.hidden; });
+    cards.forEach(function (c) { c.classList.remove("fill-d2", "fill-d3", "fill-d4", "fill-t"); });
+    var n = cards.length;
+    if (!n) return;
+    var large = cards[0].classList.contains("is-large");
+    var last = cards[n - 1], prev = cards[n - 2];
+    var r = ((large ? 4 : 1) + n - 1) % 4;
+    if (r === 1 && n > 1) last.classList.add("fill-d4");
+    if (r === 2 && n > 2) { last.classList.add("fill-d2"); prev.classList.add("fill-d2"); }
+    if (r === 3) last.classList.add("fill-d2");
+    if (((large ? 2 : 1) + n - 1) % 2 && n > 1) last.classList.add("fill-t");
+  }
+
   function wireGrid(grid) {
+    balanceGrid(grid);
     $$(".work-card", grid).forEach(loadWhenNear);
     grid.addEventListener("click", function (e) {
       var btn = e.target.closest(".dn-btn");
@@ -617,6 +634,7 @@ const CONFIG = {
         });
         var firstShown = $$(".work-card", grid).filter(function (c) { return !c.hidden; })[0];
         if (firstShown && shown > 2) firstShown.classList.add("is-large");
+        balanceGrid(grid);
         if (count) count.textContent = plural(shown, "project", "projects");
       });
     });
