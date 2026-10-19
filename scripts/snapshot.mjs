@@ -79,7 +79,9 @@ const base = `http://127.0.0.1:${server.address().port}/`;
 
 const browser = await chromium.launch({ channel: "chrome" });
 try {
-  for (const v of VIEWS) {
+  // Pages to capture (portfolio.html exists from v4). File names: 1440-dark-01.png, portfolio-1440-dark-01.png
+  const PAGES = ["", "portfolio.html"].filter((pg) => existsSync(join(siteDir, pg || "index.html")));
+  for (const pg of PAGES) for (const v of VIEWS) {
     const context = await browser.newContext({
       viewport: { width: v.width, height: v.height },
       deviceScaleFactor: 1,
@@ -91,7 +93,7 @@ try {
       try { theme === "light" ? localStorage.setItem("overyard-theme", "light") : localStorage.removeItem("overyard-theme"); } catch (e) {}
     }, v.theme);
     const page = await context.newPage();
-    await page.goto(base, { waitUntil: "load", timeout: 30000 });
+    await page.goto(base + pg, { waitUntil: "load", timeout: 30000 });
     // Render every section for the capture (the site skips off-screen sections
     // with content-visibility, which would otherwise come out blank)
     await page.addStyleTag({ content: "main > *, main > .section, main > .band { content-visibility: visible !important; }" });
@@ -118,8 +120,8 @@ try {
     // so capture in chunks: 1440-dark-01.png, 1440-dark-02.png, ...
     const fullHeight = await page.evaluate(() => document.documentElement.scrollHeight);
     const CHUNK = 8000;
-    const prefix = `${v.width}-${v.theme}`;
-    for (const f of readdirSync(screensDir)) if (f.startsWith(prefix)) rmSync(join(screensDir, f));
+    const prefix = (pg ? pg.replace(".html", "") + "-" : "") + `${v.width}-${v.theme}`;
+    for (const f of readdirSync(screensDir)) if (f.startsWith(prefix + "-") && /^d+.png$/.test(f.slice(prefix.length + 1))) rmSync(join(screensDir, f));
     let part = 1;
     for (let y = 0; y < fullHeight; y += CHUNK, part++) {
       const name = `${prefix}-${String(part).padStart(2, "0")}.png`;
@@ -138,13 +140,13 @@ try {
 const versions = readdirSync(historyRoot)
   .filter((d) => existsSync(join(historyRoot, d, "screens")) && readdirSync(join(historyRoot, d, "screens")).some((f) => f.endsWith(".png")))
   .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
-const views = VIEWS.map((v) => `${v.width}-${v.theme}`);
+const views = ["", "portfolio-"].flatMap((pre) => VIEWS.map((v) => `${pre}${v.width}-${v.theme}`));
 // Which screenshot parts exist for each version and view
 const manifest = {};
 for (const ver of versions) {
   const files = readdirSync(join(historyRoot, ver, "screens")).filter((f) => f.endsWith(".png")).sort();
   manifest[ver] = {};
-  for (const view of views) manifest[ver][view] = files.filter((f) => f === `${view}.png` || f.startsWith(`${view}-`));
+  for (const view of views) manifest[ver][view] = files.filter((f) => f === `${view}.png` || (f.startsWith(`${view}-`) && /^d+.png$/.test(f.slice(view.length + 1))));
 }
 
 writeFileSync(join(historyRoot, "compare.html"), `<!doctype html>
@@ -192,7 +194,7 @@ writeFileSync(join(historyRoot, "compare.html"), `<!doctype html>
   const FILES = ${JSON.stringify(manifest)};
   const $ = (id) => document.getElementById(id);
   VERSIONS.forEach((v) => { $("a").add(new Option(v, v)); $("b").add(new Option(v, v)); });
-  VIEWS.forEach((v) => $("view").add(new Option(v.replace("-", "px · "), v)));
+  VIEWS.forEach((v) => $("view").add(new Option(v.replace(/^portfolio-/, "Portfolio · ").replace(/(d+)-/, "$1px · "), v)));
   $("a").value = VERSIONS[Math.max(0, VERSIONS.length - 2)] || "";
   $("b").value = VERSIONS[VERSIONS.length - 1] || "";
 
