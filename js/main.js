@@ -13,7 +13,7 @@
 const CONFIG = {
 
   // ---- Contact and booking ----
-  email: "",              // e.g. "hello@overyard.com"  (shown as plain text when set)
+  email: "hello@overyarddesign.com", // shown as a mailto link in Contact, the footer and the legal pages ("" = hidden)
   bookingUrl: "",         // Cal.com or Calendly link (opens in a new tab; hidden when empty)
   web3formsKey: "",       // Access key from web3forms.com. The form won't send until this is set.
   replyHours: 12,         // "Alejandro replies within 12 hours"
@@ -178,7 +178,7 @@ const CONFIG = {
 (function () {
   "use strict";
 
-  var SITE_URL = "https://kimdeegeo.github.io/overyard-website/";
+  var SITE_URL = "https://overyarddesign.com/";
   var THEME_KEY = "overyard-theme";
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -323,6 +323,7 @@ const CONFIG = {
       var block = el.closest("[data-cfg-block]") || el;
       if (!CONFIG.email) { block.hidden = true; return; }
       el.textContent = CONFIG.email;
+      if (el.tagName === "A") el.href = "mailto:" + CONFIG.email;
       block.hidden = false;
     });
     function showLink(sel, url) {

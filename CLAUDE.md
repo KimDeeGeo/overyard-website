@@ -1,6 +1,6 @@
 # Overyard website: rules for Claude
 
-Lead-generation site for Overyard: plain HTML, CSS and vanilla JS with no framework and no build step. Hosted on GitHub Pages from `main` at https://kimdeegeo.github.io/overyard-website/.
+Lead-generation site for Overyard: plain HTML, CSS and vanilla JS with no framework and no build step. Hosted on GitHub Pages from `main` at **https://overyarddesign.com** (custom domain via the `CNAME` file; HTTPS on). Brand name on the page is always "Overyard"; only the web address and email use "overyarddesign". Contact email: hello@overyarddesign.com (`CONFIG.email`).
 
 ## Goal
 A busy US or Australian landscape contractor understands the offer in 10 seconds, trusts us in 30, and takes one action on the first visit: **start a $199 Seed Project** or **book a call**.

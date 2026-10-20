@@ -1,7 +1,7 @@
 # Overyard website
 
 A lead-generation site: plain HTML, CSS and a little JavaScript. There is no build step; the site itself needs nothing installed.
-Live at **https://kimdeegeo.github.io/overyard-website/**
+Live at **https://overyarddesign.com** (custom domain; the `CNAME` file in this folder must stay, containing exactly `overyarddesign.com`)
 
 ```
 index.html        Home page. Each section is marked with a numbered comment banner.
@@ -198,12 +198,14 @@ git push
 
 The live site updates within a minute or two.
 
-## 11. Connect a custom domain later
+## 11. Custom domain (overyarddesign.com)
 
-1. Buy a domain (e.g. `overyard.com`).
-2. GitHub: **Settings → Pages → Custom domain**, enter it and save.
-3. At your registrar:
-   - apex: `A` records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `www`: a `CNAME` to `kimdeegeo.github.io`
-4. Wait for DNS, then tick **Enforce HTTPS**.
-5. Replace `https://kimdeegeo.github.io/overyard-website/` with the new domain in the `<head>` of all four pages (canonical, `og:url`, `og:image`, `twitter:image`) and in `SITE_URL` in `js/main.js`.
+The site runs on **https://overyarddesign.com**.
+
+- The `CNAME` file in this folder contains exactly `overyarddesign.com`. Don't delete it, or GitHub Pages drops the custom domain.
+- GitHub: **Settings → Pages → Custom domain** = `overyarddesign.com`, **Enforce HTTPS** ticked.
+- DNS at the registrar:
+  - apex: `A` records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+  - `www`: a `CNAME` to `kimdeegeo.github.io`
+- The full address appears in the `<head>` of all four pages (canonical, `og:url`, `og:image`, `twitter:image`), in `SITE_URL` in `js/main.js`, and in `sitemap.xml` and `robots.txt`. Update all of them if the domain ever changes.
+- `sitemap.xml` lists the four pages. Update `lastmod` when you make big changes, and submit it in Google Search Console.
