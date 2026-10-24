@@ -59,6 +59,7 @@ Free tools only: Web3Forms (form), Cal.com or Calendly free (booking link), GitH
 - Prices bind to `packages.<k>.price` / `.regular`, `memberships.<k>.price`, `seed.price` / `seed.regular` (all computed from the ladder).
 - Config-dependent links (booking, sample PDF, portal) ship with `hidden` and no `href`. Never use `href="#"`.
 - Email-only lines ship `hidden`.
+- The contact form posts straight to Web3Forms without JS (`action`, hidden `access_key` = `CONFIG.web3formsKey`; keep both in sync). `initForm` runs in the first batch so a JS visitor never falls through to the plain post.
 
 ## Version history
 Before a significant change: `git tag vN` on the current commit and run `node scripts/snapshot.mjs vN`. Copies and screenshots of index and portfolio go to `../overyard-site-history/` (outside the public repo). `compare.html` there compares any two versions.

@@ -154,8 +154,8 @@ Other settings: `email`, `bookingUrl`, `web3formsKey`, `replyHours`, `callMinute
 ## 5. Connect the contact form (Web3Forms, free)
 
 1. Go to [web3forms.com](https://web3forms.com), enter the inbox that should receive leads, and copy the **access key**.
-2. Paste it into `web3formsKey` in `js/main.js`.
-3. Push, then send a test from the live site (check spam the first time).
+2. Paste it into `web3formsKey` in `js/main.js` **and** into the hidden `access_key` input of `#contact-form` in `index.html` (that copy makes the form work without JavaScript). The key is public by design.
+3. Push, then send a test from the live site in a normal browser (check spam the first time). Web3Forms rejects requests from servers, `curl` and automated browsers on the free plan, so those tests always fail.
 
 Until a key is set, the form says it isn't connected and points people to WhatsApp. Buttons on other pages pre-select the form option through the link, e.g. `index.html?topic=portfolio#contact`.
 

@@ -813,7 +813,12 @@
           </ul>
         </div>
 
-        <form class="contact-form" id="contact-form" novalidate>
+        <!-- Works without JS too: posts straight to Web3Forms (key = CONFIG.web3formsKey; keep both in sync).
+             With JS, main.js sends it in the background and shows the result here. -->
+        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="5ad681f6-a7ef-4ddb-870b-76eb54c058eb">
+          <input type="hidden" name="subject" value="Overyard: new enquiry from the website">
+          <input type="hidden" name="from_name" value="Overyard website">
           <!-- Honeypot: hidden from people, catches spam bots -->
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 

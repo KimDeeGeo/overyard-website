@@ -913,6 +913,9 @@ const CONFIG = {
       }
     });
     if (!form) return;
+    form.noValidate = true;   // JS validates with its own messages; without JS the browser checks required fields
+    var keyInput = $("[name=access_key]", form);
+    if (keyInput) keyInput.value = CONFIG.web3formsKey || "";
 
     var status = $(".form-status", form), topicSel = $("#f-topic"), button = $("button[type=submit]", form);
     // ?topic=portfolio (from other pages) pre-selects "What do you need?"
@@ -1030,6 +1033,7 @@ const CONFIG = {
     initTheme();
     initHeader();
     initCameraRoll();
+    initForm();   // cheap; attach now so a submit never falls through to the plain HTML post
     if ($("#portfolio-grid")) { loadProjects(); afterPaint(rest); return; }   // the grid is the portfolio page's main content
     if (document.readyState === "complete") afterPaint(rest);
     else window.addEventListener("load", function () { afterPaint(rest); });
@@ -1038,7 +1042,7 @@ const CONFIG = {
     var hasProjects = $("#work-grid") || $("#portfolio-grid") || $("#featured-slider");
     inSteps([
       fillConfig, renderDeliverables, renderProcess, addSchema, addAnalytics,
-      initBand, initReveal, initLightbox, initVideo, initMobileCta, initForm,
+      initBand, initReveal, initLightbox, initVideo, initMobileCta,
       function () {
         if (!hasProjects) return;
         loadProjects().then(function (projects) {
