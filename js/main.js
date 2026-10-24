@@ -972,12 +972,25 @@ const CONFIG = {
   /* ======================================================================
      ANALYTICS + STRUCTURED DATA
      ====================================================================== */
+  // The command queues start now (so the page view and early clicks are kept), but the two
+  // scripts only download on the visitor's first scroll, tap, click or key press, or after
+  // ANALYTICS_DELAY ms, so they never compete with the page while it starts up.
+  var ANALYTICS_DELAY = 6000;
+  function addScript(src) { var s = document.createElement("script"); s.async = true; s.src = src; document.head.appendChild(s); }
   function addAnalytics() {
+    if (!CONFIG.ga4Id && !CONFIG.clarityId) return;
+    var started = false, events = ["scroll", "pointerdown", "keydown", "touchstart"];
+    function start() {
+      if (started) return;
+      started = true;
+      events.forEach(function (ev) { window.removeEventListener(ev, start, true); });
+      if (CONFIG.ga4Id) addScript("https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(CONFIG.ga4Id));
+      if (CONFIG.clarityId) addScript("https://www.clarity.ms/tag/" + encodeURIComponent(CONFIG.clarityId));
+    }
+    events.forEach(function (ev) { window.addEventListener(ev, start, { capture: true, passive: true }); });
+    setTimeout(start, ANALYTICS_DELAY);
+
     if (CONFIG.ga4Id) {
-      var g = document.createElement("script");
-      g.async = true;
-      g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(CONFIG.ga4Id);
-      document.head.appendChild(g);
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () { window.dataLayer.push(arguments); };
       window.gtag("js", new Date());
@@ -991,11 +1004,7 @@ const CONFIG = {
       });
     }
     if (CONFIG.clarityId) {
-      (function (c, l, a, r, i, t, y) {
-        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", CONFIG.clarityId);
+      window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
     }
   }
   function track(name, params) { if (window.gtag) window.gtag("event", name, params || {}); }
