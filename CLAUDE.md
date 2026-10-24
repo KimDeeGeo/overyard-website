@@ -1,6 +1,6 @@
 # Overyard website: rules for Claude
 
-Lead-generation site for Overyard: plain HTML, CSS and vanilla JS with no framework and no build step. Hosted on GitHub Pages from `main` at **https://overyarddesign.com** (custom domain via the `CNAME` file; HTTPS on). Brand name on the page is always "Overyard"; only the web address and email use "overyarddesign". Contact email: hello@overyarddesign.com (`CONFIG.email`).
+Lead-generation site for Overyard: plain HTML, CSS and vanilla JS with no framework and no build step. Hosted on GitHub Pages from `main` at **https://overyarddesign.com** (custom domain via the `CNAME` file; HTTPS on). Brand name on the page is always "Overyard"; only the web address and email use "overyarddesign". Contact email: sales@overyarddesign.com (`CONFIG.email`).
 
 ## Goal
 A busy US or Australian landscape contractor understands the offer in 10 seconds, trusts us in 30, and takes one action on the first visit: **start a $199 Seed Project** or **book a call**.
@@ -19,7 +19,7 @@ Free tools only: Web3Forms (form), Cal.com or Calendly free (booking link), GitH
 - `images/projects/<slug>/`: one folder per project, with `project.json` plus `<name>.webp` (2000px), `<name>-md.webp` (900px) and `<name>-sm.webp` (320px).
 - `images/team/<name>.webp` (640px square) and `images/process/<name>.webp` (+ `-md`).
 - `_source/` (**git-ignored**): full-size originals in `_source/projects/<slug>/<name>.(png|jpg)`, plus `team/` and `process/`. Old v4 originals are archived in `../overyard-archive/`.
-- `assets/`: logo light/dark, favicons, `fonts/`.
+- `assets/`: logo light/dark, favicons, `fonts/`, and `og-image.jpg` (1200x630 JPG link preview for index and portfolio; JPG because WhatsApp and LinkedIn often drop WebP previews).
 - `scripts/` (dev only):
   - `images.mjs`: builds WebP sizes for cleared projects (from `_source/projects/<slug>/`) + team + process; canvas re-encoding strips all metadata
   - `compress.mjs`: one-off WebP conversion

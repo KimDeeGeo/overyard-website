@@ -104,6 +104,7 @@ Set `"cleared": false` to hide a project everywhere, or `true` to publish it. Fo
   - Start with a night render and alternate day and night.
   - Only use priority (featured) projects.
   - If you change the **first** slide, also update the two image paths near the top of `index.html` (the `preload` link and the first `<img class="roll-img">`).
+- **Link preview image:** `assets/og-image.jpg` (1200x630 JPG, under 300 KB), used by `og:image` and `twitter:image` on the home and portfolio pages. Keep it a JPG: WhatsApp and LinkedIn often skip WebP previews.
 - **Night band:** `bandImage`.
 - **"From overhead" slider:** `featured` (`project`, `plan`, `view`). `plan` is an overhead render (`pool-courtyard-citrus/overhead.webp`, not listed in project.json).
 - **"What you receive":** `receive`.

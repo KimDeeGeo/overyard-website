@@ -13,7 +13,7 @@
 const CONFIG = {
 
   // ---- Contact and booking ----
-  email: "hello@overyarddesign.com", // shown as a mailto link in Contact, the footer and the legal pages ("" = hidden)
+  email: "sales@overyarddesign.com", // shown as a mailto link in Contact, the footer and the legal pages ("" = hidden)
   bookingUrl: "",         // Cal.com or Calendly link (opens in a new tab; hidden when empty)
   web3formsKey: "",       // Access key from web3forms.com. The form won't send until this is set.
   replyHours: 12,         // "Alejandro replies within 12 hours"
