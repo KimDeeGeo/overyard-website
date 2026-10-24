@@ -67,11 +67,11 @@ const CONFIG = {
   // ---- Single projects (prices come from the ladder) ----
   packages: {
     sprout: { name: "Sprout", credits: 1, plan: "2D site and planting plan",
-      renders: 3, walkthrough: "", rounds: 1, takeoff: false, days: "3 business days" },
+      renders: 10, walkthrough: "", rounds: 1, takeoff: false, days: "3 business days" },
     grove:  { name: "Grove", credits: 2, plan: "2D plan + planting schedule",
-      renders: 6, walkthrough: "", rounds: 2, takeoff: false, days: "5 business days" },
+      renders: 15, walkthrough: "", rounds: 2, takeoff: false, days: "5 business days" },
     canopy: { name: "Canopy", credits: 4, plan: "Full plan set",
-      renders: 10, walkthrough: "60–90 sec walkthrough video", rounds: 3, takeoff: true, days: "7–10 business days" },
+      renders: 20, walkthrough: "60–90 sec walkthrough video", rounds: 3, takeoff: true, days: "7–10 business days" },
   },
   // Project size guide (whichever is higher, budget or area, sets the tier)
   sizeGuide: [
@@ -94,6 +94,7 @@ const CONFIG = {
     takeoff: 75,
     takeoffMembers: 49,
     extraRound: 49,
+    extraRenders: 49,        // "5 extra renders · $49"
     rush: "+50%",
     redesign: "Quoted as a new project",
   },
