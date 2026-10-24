@@ -1011,34 +1011,41 @@ const CONFIG = {
   }
 
   // ---------- start ----------
-  // Hero and header first; everything below the fold after the first paint
+  // Hero and header first. Everything below the fold waits for the page's load
+  // event and then runs one step per task, so no single long task delays the hero
   // (the HTML already contains the default values, so nothing visibly changes).
   function afterPaint(fn) { requestAnimationFrame(function () { setTimeout(fn, 0); }); }
+  function inSteps(steps) {
+    (function next() {
+      var fn = steps.shift();
+      if (!fn) return;
+      fn();
+      if (steps.length) setTimeout(next, 0);
+    })();
+  }
   onReady(function () {
     initTheme();
     initHeader();
     initCameraRoll();
-    if ($("#portfolio-grid")) loadProjects();   // start early on the portfolio page
-    afterPaint(rest);
+    if ($("#portfolio-grid")) { loadProjects(); afterPaint(rest); return; }   // the grid is the portfolio page's main content
+    if (document.readyState === "complete") afterPaint(rest);
+    else window.addEventListener("load", function () { afterPaint(rest); });
   });
   function rest() {
-    fillConfig();
-    renderDeliverables();
-    renderProcess();
-    addSchema();
-    addAnalytics();
-    initBand();
-    initReveal();
-    initLightbox();
-    initVideo();
-    initMobileCta();
-    initForm();
-    if ($("#work-grid") || $("#portfolio-grid") || $("#featured-slider")) {
-      loadProjects().then(function (projects) {
-        renderFeatured(projects);
-        renderWork(projects);
-        renderPortfolio(projects);
-      });
-    }
+    var hasProjects = $("#work-grid") || $("#portfolio-grid") || $("#featured-slider");
+    inSteps([
+      fillConfig, renderDeliverables, renderProcess, addSchema, addAnalytics,
+      initBand, initReveal, initLightbox, initVideo, initMobileCta, initForm,
+      function () {
+        if (!hasProjects) return;
+        loadProjects().then(function (projects) {
+          inSteps([
+            function () { renderFeatured(projects); },
+            function () { renderWork(projects); },
+            function () { renderPortfolio(projects); }
+          ]);
+        });
+      }
+    ]);
   }
 })();
