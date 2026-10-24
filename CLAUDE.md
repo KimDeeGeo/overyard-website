@@ -180,6 +180,7 @@ Overyard is the bird's-eye plan view every design starts from. The visual signat
 - Fonts are self-hosted, preloaded, `font-display: swap`. The mono fallback is Courier New (same width). Keep CLS at 0. Reserve space for async-filled grids (`#portfolio-grid:empty`).
 - **Don't use `content-visibility`**: its height estimates broke in-page anchor jumps on phones (fixed in v4).
 - `main.js` runs theme, header and camera roll first. On the home page everything else waits for the `load` event and then runs one step per task (`inSteps`), so no single long task lands near first paint. The portfolio page starts its grid straight after the first paint.
+- Analytics: GA4 (`ga4Id`) and Clarity (`clarityId`) queue commands at once but download their scripts only on the first scroll/tap/click/key or after `ANALYTICS_DELAY` (6 s). Loading them earlier cost ~350 ms of blocking time and best practices 77 (Clarity third-party cookies). GA4 events: `generate_lead` (form), `book_call`, `whatsapp_click`, `open_project`.
 - Lighthouse (live site, Oct 2026, v5): index mobile 83–98 (runs vary; ~90 average) / 100 / 100 / 100, desktop 100 across the board; portfolio mobile ~98 / 100 / 100 / 100. The remaining home cost is the first layout of the whole page (~1,400 elements, ~150 ms unthrottled). Keep 90+.
 - Test at 375, 768 and 1280px in both themes on all four pages. No horizontal page scroll.
 - Commit in small steps, with the Co-Authored-By line when the session asks for it. Pushing to `main` publishes the live site.
