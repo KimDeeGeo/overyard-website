@@ -12,7 +12,8 @@ Free tools only: Web3Forms (form), Cal.com or Calendly free (booking link), GitH
 - `index.html`: home page. Numbered comment banners: header, hero (camera roll), problem, Work, What you receive, Takeoffs, How it works, night band, pricing (founding offer, Seed, packages, size guide), Evergreen, compare, team, FAQ, contact, footer.
 - `portfolio.html`: every cleared project, filter chips, bento grid, lightbox.
 - `privacy.html`, `terms.html`: legal pages.
-- The header and footer are duplicated in all four pages, so update them together.
+- `404.html`: not-found page (GitHub Pages serves it for any missing address, at any depth, so all its paths start with `/`). `noindex`.
+- The header and footer are duplicated in all five pages (including `404.html`), so update them together.
 - `css/style.css`: all styling. `@font-face` and both theme blocks are at the top.
 - `js/main.js`: the **SITE SETTINGS (`CONFIG`) block at the top**: contact, socials, team tools, the **price ladder**, packages, size guide, memberships, add-ons, the list of project folders, hero slides, band, process images, What you receive, featured slider.
 - `images/projects/<slug>/`: one folder per project, with `project.json` plus `<name>.webp` (2000px), `<name>-md.webp` (900px) and `<name>-sm.webp` (320px).
@@ -94,7 +95,7 @@ Overyard is the bird's-eye plan view every design starts from. The visual signat
   - Primary buttons: `--fern` background with `--bg` text
 - **Type:** Bricolage Grotesque 700/800 headings, Manrope 400/500/600 body (17px, 1.6), JetBrains Mono 400/600 uppercase labels.
 - **Motifs:**
-  - mono sheet labels (L-01 … L-11 on the home page, P-00 on the portfolio, L-12/L-13 on the legal pages)
+  - mono sheet labels (L-01 … L-11 on the home page, P-00 on the portfolio, L-12/L-13 on the legal pages, L-14 on the 404 page)
   - north arrow in the hero and footer
   - title-block footer with scale bar
   - dashed stepping-stone path in How it works

@@ -921,6 +921,7 @@ a:hover { color: var(--fern-hover); }
 .legal h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.015em; margin: 36px 0 10px; }
 .legal p, .legal li { color: var(--muted); }
 .legal p + p { margin-top: 12px; }
+.not-found-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 20px; }
 .legal ul { padding-left: 1.2em; }
 .legal li + li { margin-top: 6px; }
 .legal strong { color: var(--ink); }
