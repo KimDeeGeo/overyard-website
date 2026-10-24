@@ -14,10 +14,10 @@ const CONFIG = {
 
   // ---- Contact and booking ----
   email: "sales@overyarddesign.com", // shown as a mailto link in Contact, the footer and the legal pages ("" = hidden)
-  bookingUrl: "",         // Cal.com or Calendly link (opens in a new tab; hidden when empty)
+  bookingUrl: "https://calendly.com/overyarddesign-sales/overyard-discovery-call", // Calendly, Alejandro (opens in a new tab; "" = hidden)
   web3formsKey: "5ad681f6-a7ef-4ddb-870b-76eb54c058eb", // Web3Forms access key (public by design; mail goes to sales@). "" = form shows a WhatsApp fallback.
   replyHours: 12,         // "Alejandro replies within 12 hours"
-  callMinutes: 20,        // "Book a 20-minute call"
+  callMinutes: 30,        // "Book a 30-minute call" (match the Calendly event length)
   whatsapp: {
     display: "+63 976 373 0461",            // shown on the page ("" = hidden)
     url: "https://wa.me/639763730461",      // opens WhatsApp in a new tab

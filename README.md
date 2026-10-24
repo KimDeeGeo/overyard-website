@@ -161,7 +161,7 @@ Until a key is set, the form says it isn't connected and points people to WhatsA
 
 ## 6. Connect booking (Cal.com or Calendly, free)
 
-Create a 20-minute event and paste its public link into `bookingUrl`. "Book a call" buttons appear and open it in a new tab.
+Create a 30-minute event (keep `callMinutes` and the "Book a 30-minute call" default text in `index.html` the same length) and paste its public link into `bookingUrl`. "Book a call" buttons appear and open it in a new tab.
 
 ## 7. Theme, colors and fonts
 
