@@ -138,7 +138,7 @@ Overyard is the bird's-eye plan view every design starts from. The visual signat
   - **Edmond De Claro**, Co-founder · Design Lead: "Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist." He leads design and reviews every project. Tools (`CONFIG.edmondTools`): Realtime Landscaping Architect, SketchUp, Lumion, D5 Render.
   - **Alejandro Bernardo Jr.**, Co-founder · Head of Sales: first call and account manager (discovery calls, proposals, onboarding, keeping projects on track); 10+ years in sales and client management. The contact person ("Alejandro replies within 12 hours"). Bio has a TODO to update from his CV.
   - **Kim Daryl Geolagon**, Co-founder · CEO: marketing, lead generation, website, client portal and systems. Licensed civil engineer by background.
-  - **Alfred Geronimo**, Designer · Revisionist: designs and revises plans and renders with Edmond, and prepares material takeoffs. The photo is a TODO ("AG" monogram until then).
+  - **Axl Jhon Olaso**, Designer · Revisionist: designs and revises plans and renders with Edmond, and prepares material takeoffs. Photo: images/team/axl.webp.
 - Mission: "Help landscape and outdoor-living contractors win more jobs with design that sells, at a price that makes sense." Vision: "Become the design partner contractors trust most, and a place where Filipino landscape designers build world-class careers."
 
 ## Honesty rules (strict)
