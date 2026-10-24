@@ -1,0 +1,64 @@
+{
+  "title": "Hill country infinity pool",
+  "region": "",
+  "summary": "Infinity-edge pool, a creek walk, layered native planting and terraces for a hill-country home.",
+  "category": [
+    "pool",
+    "hillside",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "infinity-edge-pool-day.webp",
+  "coverNight": "infinity-edge-pool-night.webp",
+  "images": [
+    {
+      "file": "infinity-edge-pool-day.webp",
+      "caption": "Infinity-edge pool",
+      "alt": "3D render of hill country infinity pool: infinity-edge pool",
+      "time": "day"
+    },
+    {
+      "file": "infinity-edge-pool-night.webp",
+      "caption": "Infinity-edge pool, night",
+      "alt": "3D render of hill country infinity pool: infinity-edge pool at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-terrace-day.webp",
+      "caption": "Pool terrace",
+      "alt": "3D render of hill country infinity pool: pool terrace",
+      "time": "day"
+    },
+    {
+      "file": "pool-terrace-night.webp",
+      "caption": "Pool terrace, night",
+      "alt": "3D render of hill country infinity pool: pool terrace at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-loungers-day.webp",
+      "caption": "Pool and loungers",
+      "alt": "3D render of hill country infinity pool: pool and loungers",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-planting-day.webp",
+      "caption": "Pool and planting",
+      "alt": "3D render of hill country infinity pool: pool and planting",
+      "time": "day"
+    },
+    {
+      "file": "estate-from-the-lawn-day.webp",
+      "caption": "Estate from the lawn",
+      "alt": "3D render of hill country infinity pool: estate from the lawn",
+      "time": "day"
+    },
+    {
+      "file": "pergola-terrace-at-dusk-night.webp",
+      "caption": "Pergola terrace at dusk, night",
+      "alt": "3D render of hill country infinity pool: pergola terrace at dusk at night",
+      "time": "night"
+    }
+  ]
+}

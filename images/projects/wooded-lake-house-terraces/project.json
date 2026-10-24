@@ -1,0 +1,63 @@
+{
+  "title": "Wooded lake house terraces",
+  "region": "",
+  "summary": "Boulder terraces and stone walks down a wooded slope to the lake, with layered planting and lighting.",
+  "category": [
+    "hillside",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "lake-house-from-the-shore-day.webp",
+  "coverNight": "stone-walk-to-the-lake-night.webp",
+  "images": [
+    {
+      "file": "lake-house-from-the-shore-day.webp",
+      "caption": "Lake house from the shore",
+      "alt": "3D render of wooded lake house terraces: lake house from the shore",
+      "time": "day"
+    },
+    {
+      "file": "stone-walk-to-the-lake-night.webp",
+      "caption": "Stone walk to the lake, night",
+      "alt": "3D render of wooded lake house terraces: stone walk to the lake at night",
+      "time": "night"
+    },
+    {
+      "file": "boulder-steps-and-planting-day.webp",
+      "caption": "Boulder steps and planting",
+      "alt": "3D render of wooded lake house terraces: boulder steps and planting",
+      "time": "day"
+    },
+    {
+      "file": "lawn-and-stone-walk-day.webp",
+      "caption": "Lawn and stone walk",
+      "alt": "3D render of wooded lake house terraces: lawn and stone walk",
+      "time": "day"
+    },
+    {
+      "file": "woodland-path-day.webp",
+      "caption": "Woodland path",
+      "alt": "3D render of wooded lake house terraces: woodland path",
+      "time": "day"
+    },
+    {
+      "file": "house-and-terraces-night.webp",
+      "caption": "House and terraces, night",
+      "alt": "3D render of wooded lake house terraces: house and terraces at night",
+      "time": "night"
+    },
+    {
+      "file": "terraced-planting-from-above-night.webp",
+      "caption": "Terraced planting from above, night",
+      "alt": "3D render of wooded lake house terraces: terraced planting from above at night",
+      "time": "night"
+    },
+    {
+      "file": "boulder-walk-and-planting-night.webp",
+      "caption": "Boulder walk and planting, night",
+      "alt": "3D render of wooded lake house terraces: boulder walk and planting at night",
+      "time": "night"
+    }
+  ]
+}

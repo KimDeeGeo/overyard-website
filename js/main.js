@@ -102,48 +102,83 @@ const CONFIG = {
   // ---- Work: project folders, in display order ----
   // Each folder needs images/projects/<slug>/project.json. A project shows
   // only if its project.json says "cleared": true. The home page shows up to
-  // 5 projects with "featured": true (in this order); portfolio.html shows
-  // every cleared project.
+  // 6 projects with "featured": true (priority projects, in this order);
+  // portfolio.html shows every cleared project.
+  homeProjectCount: 6,
   projects: [
+    // Priority (featured: true). The first 6 appear on the home page.
     "pool-courtyard-citrus",
-    "modern-pool-front-yard",
-    "terraced-hillside",
-    "wooded-lakefront",
-    "lakeside-hillside",
-    "front-walk-planting",
+    "modern-pool-courtyard",
+    "lake-house-woodland",
     "stone-pool-pergola",
-    "front-yard-cottage",
+    "front-walk-planting",
+    "cottage-front-yard",
+    "lakeside-fire-pit-terrace",
     "freeform-pool-deck",
     "brick-patio-spa",
     "pool-deck-fire-lounge",
+    // Not priority (featured: false): portfolio page only
+    "mountain-modern-estate",
+    "hill-country-infinity-pool",
+    "french-country-pool-estate",
+    "contemporary-pool-water-wall",
+    "mountain-lakefront-pool",
+    "hillside-infinity-pool",
+    "pool-spa-pergola-kitchen",
+    "modern-pool-covered-patio",
+    "barn-house-fire-terrace",
+    "french-cottage-garden-pool",
+    "mediterranean-pool-olive-tree",
+    "mediterranean-pool-courtyard",
+    "lakeside-curved-terrace",
+    "hillside-terraced-steps",
+    "wooded-lake-house-terraces",
+    "brick-cottage-perennial-garden",
+    "pollinator-garden-paths",
+    "cottage-garden-cabin",
+    "modern-front-entry-garden",
+    "ranch-front-yard-pergola",
+    "desert-side-yard-fire-pit",
+    "desert-boulder-garden",
+    "xeriscape-putting-green",
+    "pool-walkout-putting-green",
+    "georgian-pool-sport-court",
+    "modern-pool-tanning-ledge",
+    "rectangular-pool-ranch",
+    "hillside-pool-conifer-screen",
+    "modern-farmhouse-plunge-pool",
+    "fire-pit-swing-pergola",
+    "modern-pergola-backyard",
+    "mid-century-tree-decks",
+    "commercial-fire-bowl-courtyard",
   ],
 
   // ---- Hero camera roll ----
-  // Start with a night render, then alternate. Only use cleared projects.
+  // Priority projects only. Start with a night render, then alternate.
   // Each src needs the -md (900px) and -sm (320px) versions next to it,
   // which scripts/images.mjs makes automatically.
   heroSlides: [
-    { src: "images/projects/modern-pool-front-yard/pool-night.webp", time: "night", w: 2000, h: 1125,
-      label: "Sheet R-01 · 3D render · Modern pool · Night", alt: "Night render of a modern pool and spa with a lit pergola fire lounge" },
-    { src: "images/projects/pool-courtyard-citrus/courtyard-day.webp", time: "day", w: 1920, h: 1080,
-      label: "Sheet R-02 · 3D render · Pool courtyard · Day", alt: "Render of a backyard with a fountain, stepping pads, pool and spa, and a fire pit under lemon trees" },
-    { src: "images/projects/pool-courtyard-citrus/fire-pit-night.webp", time: "night", w: 2000, h: 1125,
-      label: "Sheet R-03 · 3D render · Citrus fire pit · Night", alt: "Night render of a fire pit lounge under uplit lemon trees" },
-    { src: "images/projects/terraced-hillside/overview.webp", time: "day", w: 2000, h: 1125,
-      label: "Sheet R-04 · 3D render · Terraced hillside · Day", alt: "Render of a terraced hillside backyard with tiered retaining walls and wide stairs" },
-    { src: "images/projects/lakeside-hillside/seat-wall-night.webp", time: "night", w: 2000, h: 1332,
-      label: "Sheet R-05 · 3D render · Lakeside hillside · Night", alt: "Night render of a curved seat wall and lit driveway planting" },
-    { src: "images/projects/wooded-lakefront/fire-pit-redbuds.webp", time: "day", w: 1439, h: 959,
-      label: "Sheet R-06 · 3D render · Wooded lakefront · Day", alt: "Render of a flagstone fire pit with redbuds and perennial beds by a lake" },
-    { src: "images/projects/terraced-hillside/stairs-night.webp", time: "night", w: 1440, h: 959,
-      label: "Sheet R-07 · 3D render · Terraced hillside · Night", alt: "Night render looking up lit stairs past wall-washed retaining walls" },
-    { src: "images/projects/modern-pool-front-yard/pool-day.webp", time: "day", w: 2000, h: 1125,
-      label: "Sheet R-08 · 3D render · Modern pool · Day", alt: "Render of a modern pool with a slatted pergola fire lounge and cypress trees" },
+    { src: "images/projects/modern-pool-courtyard/pool-on-axis-with-the-pergola-fire-lounge-night.webp", time: "night", w: 2000, h: 1125,
+      label: "Sheet R-01 · 3D render · Modern pool courtyard · Night", alt: "Night render of a long pool on axis with a lit pergola fire lounge" },
+    { src: "images/projects/pool-courtyard-citrus/fire-lounge-under-the-citrus-trees-day.webp", time: "day", w: 2000, h: 1125,
+      label: "Sheet R-02 · 3D render · Citrus fire lounge · Day", alt: "Render of a fire lounge under citrus trees beside a pool courtyard" },
+    { src: "images/projects/lake-house-woodland/fire-pit-circle-under-the-redbuds-night.webp", time: "night", w: 2000, h: 1332,
+      label: "Sheet R-03 · 3D render · Lake house woodland · Dusk", alt: "Dusk render of a fire pit circle under flowering redbuds" },
+    { src: "images/projects/stone-pool-pergola/pool-and-pergola-day.webp", time: "day", w: 2000, h: 1125,
+      label: "Sheet R-04 · 3D render · Stone pool and pergola · Day", alt: "Render of a stone-coped pool beside a timber pergola" },
+    { src: "images/projects/pool-courtyard-citrus/fire-lounge-under-the-citrus-trees-night.webp", time: "night", w: 2000, h: 1125,
+      label: "Sheet R-05 · 3D render · Citrus fire lounge · Night", alt: "Night render of a fire lounge under uplit citrus trees" },
+    { src: "images/projects/front-walk-planting/stone-steps-up-the-planted-slope-day.webp", time: "day", w: 2000, h: 1125,
+      label: "Sheet R-06 · 3D render · Front walk and slope planting · Day", alt: "Render of stone steps climbing a planted front slope" },
+    { src: "images/projects/stone-pool-pergola/pool-and-pergola-night.webp", time: "night", w: 2000, h: 1125,
+      label: "Sheet R-07 · 3D render · Stone pool and pergola · Night", alt: "Night render of a lit pool and timber pergola" },
+    { src: "images/projects/modern-pool-courtyard/pool-on-axis-with-the-pergola-fire-lounge-day.webp", time: "day", w: 2000, h: 1125,
+      label: "Sheet R-08 · 3D render · Modern pool courtyard · Day", alt: "Render of a long pool on axis with a slatted pergola fire lounge" },
   ],
   heroInterval: 6,        // seconds per slide
 
   // ---- Full-width night band (after How it works) ----
-  bandImage: "images/projects/pool-courtyard-citrus/courtyard-night.webp",
+  bandImage: "images/projects/pool-courtyard-citrus/stepping-pads-across-the-lawn-to-the-pool-night.webp",
 
   // ---- How it works images (portrait, ~4:5). "" = plan-symbol placeholder ----
   processImages: [
@@ -156,14 +191,15 @@ const CONFIG = {
   // ---- What you receive (plan sheet + 2 renders) ----
   receive: {
     plan: "images/process/plan-sheet.webp",
-    renders: ["images/projects/pool-courtyard-citrus/courtyard-day-md.webp", "images/projects/pool-courtyard-citrus/courtyard-night-md.webp"],
+    renders: ["images/projects/pool-courtyard-citrus/pool-spa-and-pergola-from-the-lawn-day-md.webp", "images/projects/pool-courtyard-citrus/pool-spa-and-pergola-from-the-lawn-night-md.webp"],
   },
 
   // ---- Work: featured "From overhead" slider ----
+  // Wipes between an overhead render and an eye-level render of the same design.
   featured: {
     project: "pool-courtyard-citrus",
-    plan: "images/projects/pool-courtyard-citrus/top-down.webp",
-    view: "images/projects/pool-courtyard-citrus/courtyard-day.webp",
+    plan: "images/projects/pool-courtyard-citrus/overhead.webp",
+    view: "images/projects/pool-courtyard-citrus/stepping-pads-across-the-lawn-to-the-pool-day.webp",
   },
 
   // ---- Optional files (leave "" until the file is in the folder) ----
@@ -600,11 +636,11 @@ const CONFIG = {
     if (window.__overyardObserveWipes) window.__overyardObserveWipes(grid);
   }
 
-  // Home page: up to 5 featured projects
+  // Home page: up to CONFIG.homeProjectCount featured projects
   function renderWork(projects) {
     var grid = $("#work-grid");
     if (!grid) return;
-    var featured = projects.filter(function (p) { return p.featured; }).slice(0, 5);
+    var featured = projects.filter(function (p) { return p.featured; }).slice(0, CONFIG.homeProjectCount || 6);
     if (!featured.length) { hide(grid); return; }
     grid.innerHTML = featured.map(function (p, i) { return cardHTML(p, i, i === 0); }).join("");
     wireGrid(grid);
@@ -648,7 +684,7 @@ const CONFIG = {
     var f = CONFIG.featured || {};
     var p = projects.filter(function (x) { return x.slug === f.project; })[0];
     if (!p || !f.plan || !f.view) { hide(holder); return; }
-    $(".featured-media", holder).appendChild(buildBeforeAfter(f.plan, f.view, p.title, false, ["Plan", "View"]));
+    $(".featured-media", holder).appendChild(buildBeforeAfter(f.plan, f.view, p.title, false, ["Overhead", "View"]));
     var name = $(".featured-name", holder);
     if (name) name.textContent = p.title;
     loadWhenNear(holder);
@@ -959,7 +995,7 @@ const CONFIG = {
       "name": "Overyard",
       "url": SITE_URL,
       "logo": SITE_URL + "assets/logo-light.svg",
-      "image": SITE_URL + "images/projects/modern-pool-front-yard/pool-day.webp",
+      "image": SITE_URL + "images/projects/modern-pool-courtyard/pool-on-axis-with-the-pergola-fire-lounge-day.webp",
       "description": "White-label and co-branded landscape design for landscape, hardscape, pool and outdoor-living contractors: 2D plans, 3D renders and material takeoffs.",
       "areaServed": [{ "@type": "Country", "name": "United States" }, { "@type": "Country", "name": "Australia" }],
       "priceRange": "$" + CONFIG.computed.fromPrice + "+",

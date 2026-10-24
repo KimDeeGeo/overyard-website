@@ -1,0 +1,64 @@
+{
+  "title": "Mountain lakefront pool terraces",
+  "region": "",
+  "summary": "Terraced pool and stone walls stepping down to a boat dock, with a pergola lounge and lighting.",
+  "category": [
+    "pool",
+    "hillside",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "lakefront-terraces-from-the-water-day.webp",
+  "coverNight": "lakefront-terraces-from-the-water-night.webp",
+  "images": [
+    {
+      "file": "lakefront-terraces-from-the-water-day.webp",
+      "caption": "Lakefront terraces from the water",
+      "alt": "3D render of mountain lakefront pool terraces: lakefront terraces from the water",
+      "time": "day"
+    },
+    {
+      "file": "lakefront-terraces-from-the-water-night.webp",
+      "caption": "Lakefront terraces from the water, night",
+      "alt": "3D render of mountain lakefront pool terraces: lakefront terraces from the water at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-stone-terraces-day.webp",
+      "caption": "Pool and stone terraces",
+      "alt": "3D render of mountain lakefront pool terraces: pool and stone terraces",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-stone-terraces-night.webp",
+      "caption": "Pool and stone terraces, night",
+      "alt": "3D render of mountain lakefront pool terraces: pool and stone terraces at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-lounge-deck-day.webp",
+      "caption": "Pool and lounge deck",
+      "alt": "3D render of mountain lakefront pool terraces: pool and lounge deck",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-lounge-deck-night.webp",
+      "caption": "Pool and lounge deck, night",
+      "alt": "3D render of mountain lakefront pool terraces: pool and lounge deck at night",
+      "time": "night"
+    },
+    {
+      "file": "pergola-lounge-day.webp",
+      "caption": "Pergola lounge",
+      "alt": "3D render of mountain lakefront pool terraces: pergola lounge",
+      "time": "day"
+    },
+    {
+      "file": "pergola-lounge-night.webp",
+      "caption": "Pergola lounge, night",
+      "alt": "3D render of mountain lakefront pool terraces: pergola lounge at night",
+      "time": "night"
+    }
+  ]
+}

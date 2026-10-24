@@ -1,0 +1,63 @@
+{
+  "title": "Mid-century courtyard decks",
+  "region": "",
+  "summary": "Timber decks wrapped around mature trees, a fire pit, cedar fences and garden beds.",
+  "category": [
+    "outdoor-living",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "courtyard-lounge-day.webp",
+  "coverNight": "",
+  "images": [
+    {
+      "file": "courtyard-lounge-day.webp",
+      "caption": "Courtyard lounge",
+      "alt": "3D render of mid-century courtyard decks: courtyard lounge",
+      "time": "day"
+    },
+    {
+      "file": "deck-around-the-tree-day.webp",
+      "caption": "Deck around the tree",
+      "alt": "3D render of mid-century courtyard decks: deck around the tree",
+      "time": "day"
+    },
+    {
+      "file": "pergola-deck-day.webp",
+      "caption": "Pergola deck",
+      "alt": "3D render of mid-century courtyard decks: pergola deck",
+      "time": "day"
+    },
+    {
+      "file": "backyard-decks-and-lawn-day.webp",
+      "caption": "Backyard decks and lawn",
+      "alt": "3D render of mid-century courtyard decks: backyard decks and lawn",
+      "time": "day"
+    },
+    {
+      "file": "deck-and-fire-bowl-day.webp",
+      "caption": "Deck and fire bowl",
+      "alt": "3D render of mid-century courtyard decks: deck and fire bowl",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-deck-day.webp",
+      "caption": "Fire pit deck",
+      "alt": "3D render of mid-century courtyard decks: fire pit deck",
+      "time": "day"
+    },
+    {
+      "file": "garden-path-day.webp",
+      "caption": "Garden path",
+      "alt": "3D render of mid-century courtyard decks: garden path",
+      "time": "day"
+    },
+    {
+      "file": "raised-beds-day.webp",
+      "caption": "Raised beds",
+      "alt": "3D render of mid-century courtyard decks: raised beds",
+      "time": "day"
+    }
+  ]
+}

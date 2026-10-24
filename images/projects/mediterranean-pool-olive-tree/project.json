@@ -1,0 +1,63 @@
+{
+  "title": "Mediterranean pool and olive tree",
+  "region": "",
+  "summary": "Pool and spa around a mature olive tree, a fire pit lounge and a gravel courtyard.",
+  "category": [
+    "pool",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-and-olive-tree-day.webp",
+  "coverNight": "pool-and-olive-tree-night.webp",
+  "images": [
+    {
+      "file": "pool-and-olive-tree-day.webp",
+      "caption": "Pool and olive tree",
+      "alt": "3D render of mediterranean pool and olive tree: pool and olive tree",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-olive-tree-night.webp",
+      "caption": "Pool and olive tree, night",
+      "alt": "3D render of mediterranean pool and olive tree: pool and olive tree at night",
+      "time": "night"
+    },
+    {
+      "file": "spa-and-pool-day.webp",
+      "caption": "Spa and pool",
+      "alt": "3D render of mediterranean pool and olive tree: spa and pool",
+      "time": "day"
+    },
+    {
+      "file": "spa-and-pool-night.webp",
+      "caption": "Spa and pool, night",
+      "alt": "3D render of mediterranean pool and olive tree: spa and pool at night",
+      "time": "night"
+    },
+    {
+      "file": "gravel-courtyard-day.webp",
+      "caption": "Gravel courtyard",
+      "alt": "3D render of mediterranean pool and olive tree: gravel courtyard",
+      "time": "day"
+    },
+    {
+      "file": "gravel-courtyard-night.webp",
+      "caption": "Gravel courtyard, night",
+      "alt": "3D render of mediterranean pool and olive tree: gravel courtyard at night",
+      "time": "night"
+    },
+    {
+      "file": "fire-pit-lounge-day.webp",
+      "caption": "Fire pit lounge",
+      "alt": "3D render of mediterranean pool and olive tree: fire pit lounge",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-lounge-night.webp",
+      "caption": "Fire pit lounge, night",
+      "alt": "3D render of mediterranean pool and olive tree: fire pit lounge at night",
+      "time": "night"
+    }
+  ]
+}

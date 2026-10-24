@@ -1,0 +1,63 @@
+{
+  "title": "Hillside pool and conifer screen",
+  "region": "",
+  "summary": "Pool on a retained hillside terrace, screened with conifers, with a lounge deck and uplighting.",
+  "category": [
+    "pool",
+    "hillside"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-and-lounge-deck-day.webp",
+  "coverNight": "pool-terrace-from-the-lawn-night.webp",
+  "images": [
+    {
+      "file": "pool-and-lounge-deck-day.webp",
+      "caption": "Pool and lounge deck",
+      "alt": "3D render of hillside pool and conifer screen: pool and lounge deck",
+      "time": "day"
+    },
+    {
+      "file": "pool-terrace-from-the-lawn-night.webp",
+      "caption": "Pool terrace from the lawn, night",
+      "alt": "3D render of hillside pool and conifer screen: pool terrace from the lawn at night",
+      "time": "night"
+    },
+    {
+      "file": "retaining-wall-and-pool-terrace-day.webp",
+      "caption": "Retaining wall and pool terrace",
+      "alt": "3D render of hillside pool and conifer screen: retaining wall and pool terrace",
+      "time": "day"
+    },
+    {
+      "file": "pool-terrace-night.webp",
+      "caption": "Pool terrace, night",
+      "alt": "3D render of hillside pool and conifer screen: pool terrace at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-planting-day.webp",
+      "caption": "Pool and planting",
+      "alt": "3D render of hillside pool and conifer screen: pool and planting",
+      "time": "day"
+    },
+    {
+      "file": "pool-lighting-night.webp",
+      "caption": "Pool lighting, night",
+      "alt": "3D render of hillside pool and conifer screen: pool lighting at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-loungers-day.webp",
+      "caption": "Pool and loungers",
+      "alt": "3D render of hillside pool and conifer screen: pool and loungers",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-loungers-night.webp",
+      "caption": "Pool and loungers, night",
+      "alt": "3D render of hillside pool and conifer screen: pool and loungers at night",
+      "time": "night"
+    }
+  ]
+}

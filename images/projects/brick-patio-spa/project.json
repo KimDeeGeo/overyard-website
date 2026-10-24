@@ -8,32 +8,32 @@
     "planting"
   ],
   "cleared": true,
-  "featured": false,
-  "cover": "fire-pit.webp",
-  "coverNight": "fire-pit-night.webp",
+  "featured": true,
+  "cover": "fire-pit-lounge-and-spa-day.webp",
+  "coverNight": "fire-pit-lounge-and-spa-night.webp",
   "images": [
     {
-      "file": "fire-pit.webp",
+      "file": "fire-pit-lounge-and-spa-day.webp",
       "caption": "Fire pit lounge and spa",
-      "alt": "Render of a paver patio with a fire pit lounge and spa",
+      "alt": "3D render of brick patio, spa and fire pit: fire pit lounge and spa",
       "time": "day"
     },
     {
-      "file": "fire-pit-night.webp",
-      "caption": "Fire pit and spa, night",
-      "alt": "Night render of the fire pit lounge and lit spa",
+      "file": "fire-pit-lounge-and-spa-night.webp",
+      "caption": "Fire pit lounge and spa, night",
+      "alt": "3D render of brick patio, spa and fire pit: fire pit lounge and spa at night",
       "time": "night"
     },
     {
-      "file": "patio.webp",
+      "file": "covered-patio-and-fire-pit-day.webp",
       "caption": "Covered patio and fire pit",
-      "alt": "Render of the covered patio with string lights and a fire pit",
+      "alt": "3D render of brick patio, spa and fire pit: covered patio and fire pit",
       "time": "day"
     },
     {
-      "file": "spa.webp",
+      "file": "spa-and-lavender-beds-day.webp",
       "caption": "Spa and lavender beds",
-      "alt": "Render of the spa and plunge pool with lavender beds",
+      "alt": "3D render of brick patio, spa and fire pit: spa and lavender beds",
       "time": "day"
     }
   ]

@@ -1,0 +1,65 @@
+{
+  "title": "Ranch front yard and pergola patio",
+  "region": "",
+  "summary": "Flagstone steps through layered front-yard planting, a cedar pergola patio and a freeform pool.",
+  "category": [
+    "front-yard",
+    "planting",
+    "pool",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "front-yard-planting-day.webp",
+  "coverNight": "flagstone-steps-and-planting-night.webp",
+  "images": [
+    {
+      "file": "front-yard-planting-day.webp",
+      "caption": "Front yard planting",
+      "alt": "3D render of ranch front yard and pergola patio: front yard planting",
+      "time": "day"
+    },
+    {
+      "file": "flagstone-steps-and-planting-night.webp",
+      "caption": "Flagstone steps and planting, night",
+      "alt": "3D render of ranch front yard and pergola patio: flagstone steps and planting at night",
+      "time": "night"
+    },
+    {
+      "file": "flagstone-steps-and-planting-day.webp",
+      "caption": "Flagstone steps and planting",
+      "alt": "3D render of ranch front yard and pergola patio: flagstone steps and planting",
+      "time": "day"
+    },
+    {
+      "file": "entry-pergola-and-garden-day.webp",
+      "caption": "Entry pergola and garden",
+      "alt": "3D render of ranch front yard and pergola patio: entry pergola and garden",
+      "time": "day"
+    },
+    {
+      "file": "cedar-pergola-patio-day.webp",
+      "caption": "Cedar pergola patio",
+      "alt": "3D render of ranch front yard and pergola patio: cedar pergola patio",
+      "time": "day"
+    },
+    {
+      "file": "cedar-pergola-patio-night.webp",
+      "caption": "Cedar pergola patio, night",
+      "alt": "3D render of ranch front yard and pergola patio: cedar pergola patio at night",
+      "time": "night"
+    },
+    {
+      "file": "freeform-pool-day.webp",
+      "caption": "Freeform pool",
+      "alt": "3D render of ranch front yard and pergola patio: freeform pool",
+      "time": "day"
+    },
+    {
+      "file": "rear-patio-and-planting-day.webp",
+      "caption": "Rear patio and planting",
+      "alt": "3D render of ranch front yard and pergola patio: rear patio and planting",
+      "time": "day"
+    }
+  ]
+}

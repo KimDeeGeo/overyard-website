@@ -12,3 +12,6 @@ node_modules/
 
 # Original images (v4): full-size sources, including unpublished projects
 _source/
+
+# Raw render drop folder (v5): never commit; originals move to _source/projects/
+images/projects/FROM SCRATCH/

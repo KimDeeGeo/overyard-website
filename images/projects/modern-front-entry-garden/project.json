@@ -1,0 +1,63 @@
+{
+  "title": "Modern front entry garden",
+  "region": "",
+  "summary": "Floating entry steps, planter walls and dense xeriscape beds for a modern front yard.",
+  "category": [
+    "front-yard",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "front-yard-from-the-street-day.webp",
+  "coverNight": "entry-walk-night.webp",
+  "images": [
+    {
+      "file": "front-yard-from-the-street-day.webp",
+      "caption": "Front yard from the street",
+      "alt": "3D render of modern front entry garden: front yard from the street",
+      "time": "day"
+    },
+    {
+      "file": "entry-walk-night.webp",
+      "caption": "Entry walk, night",
+      "alt": "3D render of modern front entry garden: entry walk at night",
+      "time": "night"
+    },
+    {
+      "file": "entry-walk-and-beds-day.webp",
+      "caption": "Entry walk and beds",
+      "alt": "3D render of modern front entry garden: entry walk and beds",
+      "time": "day"
+    },
+    {
+      "file": "steps-and-planting-day.webp",
+      "caption": "Steps and planting",
+      "alt": "3D render of modern front entry garden: steps and planting",
+      "time": "day"
+    },
+    {
+      "file": "planter-walls-day.webp",
+      "caption": "Planter walls",
+      "alt": "3D render of modern front entry garden: planter walls",
+      "time": "day"
+    },
+    {
+      "file": "driveway-planting-day.webp",
+      "caption": "Driveway planting",
+      "alt": "3D render of modern front entry garden: driveway planting",
+      "time": "day"
+    },
+    {
+      "file": "entry-steps-and-planters-day.webp",
+      "caption": "Entry steps and planters",
+      "alt": "3D render of modern front entry garden: entry steps and planters",
+      "time": "day"
+    },
+    {
+      "file": "entry-steps-and-planters-night.webp",
+      "caption": "Entry steps and planters, night",
+      "alt": "3D render of modern front entry garden: entry steps and planters at night",
+      "time": "night"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "title": "Lakeside curved terrace and dock",
+  "region": "",
+  "summary": "Curved paver terrace and retaining wall stepping down a lawn to a covered dock.",
+  "category": [
+    "hillside",
+    "outdoor-living",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "curved-terrace-and-planting-day.webp",
+  "coverNight": "curved-terrace-and-retaining-wall-night.webp",
+  "images": [
+    {
+      "file": "curved-terrace-and-planting-day.webp",
+      "caption": "Curved terrace and planting",
+      "alt": "3D render of lakeside curved terrace and dock: curved terrace and planting",
+      "time": "day"
+    },
+    {
+      "file": "curved-terrace-and-retaining-wall-night.webp",
+      "caption": "Curved terrace and retaining wall, night",
+      "alt": "3D render of lakeside curved terrace and dock: curved terrace and retaining wall at night",
+      "time": "night"
+    },
+    {
+      "file": "lawn-and-planting-beds-night.webp",
+      "caption": "Lawn and planting beds, night",
+      "alt": "3D render of lakeside curved terrace and dock: lawn and planting beds at night",
+      "time": "night"
+    },
+    {
+      "file": "walkout-stairs-and-patio-day.webp",
+      "caption": "Walkout stairs and patio",
+      "alt": "3D render of lakeside curved terrace and dock: walkout stairs and patio",
+      "time": "day"
+    },
+    {
+      "file": "walkout-patio-night.webp",
+      "caption": "Walkout patio, night",
+      "alt": "3D render of lakeside curved terrace and dock: walkout patio at night",
+      "time": "night"
+    },
+    {
+      "file": "covered-dock-at-sunset-day.webp",
+      "caption": "Covered dock at sunset",
+      "alt": "3D render of lakeside curved terrace and dock: covered dock at sunset",
+      "time": "day"
+    },
+    {
+      "file": "covered-dock-night.webp",
+      "caption": "Covered dock, night",
+      "alt": "3D render of lakeside curved terrace and dock: covered dock at night",
+      "time": "night"
+    },
+    {
+      "file": "lake-edge-planting-night.webp",
+      "caption": "Lake edge planting, night",
+      "alt": "3D render of lakeside curved terrace and dock: lake edge planting at night",
+      "time": "night"
+    }
+  ]
+}

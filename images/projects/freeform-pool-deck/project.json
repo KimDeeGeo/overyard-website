@@ -7,26 +7,26 @@
     "outdoor-living"
   ],
   "cleared": true,
-  "featured": false,
-  "cover": "pool-spa.webp",
-  "coverNight": "pool-night.webp",
+  "featured": true,
+  "cover": "pool-spa-and-lounge-deck-day.webp",
+  "coverNight": "pool-and-pergola-night.webp",
   "images": [
     {
-      "file": "pool-spa.webp",
+      "file": "pool-spa-and-lounge-deck-day.webp",
       "caption": "Pool, spa and lounge deck",
-      "alt": "Render of a freeform pool and round spa with a flagstone surround",
+      "alt": "3D render of freeform pool under the deck: pool, spa and lounge deck",
       "time": "day"
     },
     {
-      "file": "pool-night.webp",
+      "file": "pool-and-pergola-night.webp",
       "caption": "Pool and pergola, night",
-      "alt": "Night render of the lit freeform pool and pergola",
+      "alt": "3D render of freeform pool under the deck: pool and pergola at night",
       "time": "night"
     },
     {
-      "file": "under-deck.webp",
+      "file": "pool-under-the-deck-day.webp",
       "caption": "Pool under the deck",
-      "alt": "Render of the pool and spa beside the raised deck and stairs",
+      "alt": "3D render of freeform pool under the deck: pool under the deck",
       "time": "day"
     }
   ]

@@ -1,0 +1,63 @@
+{
+  "title": "Cottage garden and cabin",
+  "region": "",
+  "summary": "Layered cottage planting, curving paths, a garden cabin and a flagstone patio in a small backyard.",
+  "category": [
+    "planting",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "cottage-planting-and-patio-day.webp",
+  "coverNight": "curving-garden-path-night.webp",
+  "images": [
+    {
+      "file": "cottage-planting-and-patio-day.webp",
+      "caption": "Cottage planting and patio",
+      "alt": "3D render of cottage garden and cabin: cottage planting and patio",
+      "time": "day"
+    },
+    {
+      "file": "curving-garden-path-night.webp",
+      "caption": "Curving garden path, night",
+      "alt": "3D render of cottage garden and cabin: curving garden path at night",
+      "time": "night"
+    },
+    {
+      "file": "flowering-trees-and-patio-day.webp",
+      "caption": "Flowering trees and patio",
+      "alt": "3D render of cottage garden and cabin: flowering trees and patio",
+      "time": "day"
+    },
+    {
+      "file": "curving-garden-path-day.webp",
+      "caption": "Curving garden path",
+      "alt": "3D render of cottage garden and cabin: curving garden path",
+      "time": "day"
+    },
+    {
+      "file": "garden-cabin-and-planting-day.webp",
+      "caption": "Garden cabin and planting",
+      "alt": "3D render of cottage garden and cabin: garden cabin and planting",
+      "time": "day"
+    },
+    {
+      "file": "garden-cabin-and-planting-night.webp",
+      "caption": "Garden cabin and planting, night",
+      "alt": "3D render of cottage garden and cabin: garden cabin and planting at night",
+      "time": "night"
+    },
+    {
+      "file": "garden-lighting-night.webp",
+      "caption": "Garden lighting, night",
+      "alt": "3D render of cottage garden and cabin: garden lighting at night",
+      "time": "night"
+    },
+    {
+      "file": "stepping-stones-to-the-cabin-day.webp",
+      "caption": "Stepping stones to the cabin",
+      "alt": "3D render of cottage garden and cabin: stepping stones to the cabin",
+      "time": "day"
+    }
+  ]
+}

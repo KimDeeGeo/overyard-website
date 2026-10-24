@@ -1,0 +1,99 @@
+{
+  "title": "Lake house woodland garden",
+  "region": "",
+  "summary": "Fire pit circle under redbuds, a hot tub patio, woodland paths down to the dock and a lit front drive.",
+  "category": [
+    "planting",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": true,
+  "cover": "fire-pit-circle-under-the-redbuds-day.webp",
+  "coverNight": "fire-pit-circle-under-the-redbuds-night.webp",
+  "images": [
+    {
+      "file": "fire-pit-circle-under-the-redbuds-day.webp",
+      "caption": "Fire pit circle under the redbuds",
+      "alt": "3D render of lake house woodland garden: fire pit circle under the redbuds",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-circle-under-the-redbuds-night.webp",
+      "caption": "Fire pit circle under the redbuds, night",
+      "alt": "3D render of lake house woodland garden: fire pit circle under the redbuds at night",
+      "time": "night"
+    },
+    {
+      "file": "fire-pit-lawn-by-the-lake-day.webp",
+      "caption": "Fire pit lawn by the lake",
+      "alt": "3D render of lake house woodland garden: fire pit lawn by the lake",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-lawn-by-the-lake-night.webp",
+      "caption": "Fire pit lawn by the lake, night",
+      "alt": "3D render of lake house woodland garden: fire pit lawn by the lake at night",
+      "time": "night"
+    },
+    {
+      "file": "front-drive-and-entry-planting-day.webp",
+      "caption": "Front drive and entry planting",
+      "alt": "3D render of lake house woodland garden: front drive and entry planting",
+      "time": "day"
+    },
+    {
+      "file": "front-drive-and-entry-planting-night.webp",
+      "caption": "Front drive and entry planting, night",
+      "alt": "3D render of lake house woodland garden: front drive and entry planting at night",
+      "time": "night"
+    },
+    {
+      "file": "hot-tub-patio-day.webp",
+      "caption": "Hot tub patio",
+      "alt": "3D render of lake house woodland garden: hot tub patio",
+      "time": "day"
+    },
+    {
+      "file": "hot-tub-patio-night.webp",
+      "caption": "Hot tub patio, night",
+      "alt": "3D render of lake house woodland garden: hot tub patio at night",
+      "time": "night"
+    },
+    {
+      "file": "rear-patio-and-lawn-day.webp",
+      "caption": "Rear patio and lawn",
+      "alt": "3D render of lake house woodland garden: rear patio and lawn",
+      "time": "day"
+    },
+    {
+      "file": "rear-terrace-and-lake-lawn-night.webp",
+      "caption": "Rear terrace and lake lawn, night",
+      "alt": "3D render of lake house woodland garden: rear terrace and lake lawn at night",
+      "time": "night"
+    },
+    {
+      "file": "screened-porch-planting-night.webp",
+      "caption": "Screened porch planting, night",
+      "alt": "3D render of lake house woodland garden: screened porch planting at night",
+      "time": "night"
+    },
+    {
+      "file": "woodland-drive-day.webp",
+      "caption": "Woodland drive",
+      "alt": "3D render of lake house woodland garden: woodland drive",
+      "time": "day"
+    },
+    {
+      "file": "lakeside-path-day.webp",
+      "caption": "Lakeside path",
+      "alt": "3D render of lake house woodland garden: lakeside path",
+      "time": "day"
+    },
+    {
+      "file": "lake-dock-at-dusk-night.webp",
+      "caption": "Lake dock at dusk, night",
+      "alt": "3D render of lake house woodland garden: lake dock at dusk at night",
+      "time": "night"
+    }
+  ]
+}

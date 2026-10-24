@@ -1,0 +1,62 @@
+{
+  "title": "Fire pit and swing pergola",
+  "region": "",
+  "summary": "Fire pit circle, a swing pergola, an outdoor kitchen and string-lit backyard paths.",
+  "category": [
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "fire-pit-circle-day.webp",
+  "coverNight": "fire-pit-circle-night.webp",
+  "images": [
+    {
+      "file": "fire-pit-circle-day.webp",
+      "caption": "Fire pit circle",
+      "alt": "3D render of fire pit and swing pergola: fire pit circle",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-circle-night.webp",
+      "caption": "Fire pit circle, night",
+      "alt": "3D render of fire pit and swing pergola: fire pit circle at night",
+      "time": "night"
+    },
+    {
+      "file": "covered-lounge-day.webp",
+      "caption": "Covered lounge",
+      "alt": "3D render of fire pit and swing pergola: covered lounge",
+      "time": "day"
+    },
+    {
+      "file": "covered-lounge-night.webp",
+      "caption": "Covered lounge, night",
+      "alt": "3D render of fire pit and swing pergola: covered lounge at night",
+      "time": "night"
+    },
+    {
+      "file": "outdoor-kitchen-pergola-day.webp",
+      "caption": "Outdoor kitchen pergola",
+      "alt": "3D render of fire pit and swing pergola: outdoor kitchen pergola",
+      "time": "day"
+    },
+    {
+      "file": "backyard-from-the-patio-night.webp",
+      "caption": "Backyard from the patio, night",
+      "alt": "3D render of fire pit and swing pergola: backyard from the patio at night",
+      "time": "night"
+    },
+    {
+      "file": "string-lit-path-day.webp",
+      "caption": "String-lit path",
+      "alt": "3D render of fire pit and swing pergola: string-lit path",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-seating-night.webp",
+      "caption": "Fire pit seating, night",
+      "alt": "3D render of fire pit and swing pergola: fire pit seating at night",
+      "time": "night"
+    }
+  ]
+}

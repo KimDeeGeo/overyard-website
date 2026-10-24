@@ -1,0 +1,64 @@
+{
+  "title": "Modern farmhouse plunge pool",
+  "region": "",
+  "summary": "Plunge pool, pergola dining and a planted entry court for a modern farmhouse on a narrow lot.",
+  "category": [
+    "pool",
+    "outdoor-living",
+    "front-yard"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "plunge-pool-and-lawn-day.webp",
+  "coverNight": "plunge-pool-and-lawn-night.webp",
+  "images": [
+    {
+      "file": "plunge-pool-and-lawn-day.webp",
+      "caption": "Plunge pool and lawn",
+      "alt": "3D render of modern farmhouse plunge pool: plunge pool and lawn",
+      "time": "day"
+    },
+    {
+      "file": "plunge-pool-and-lawn-night.webp",
+      "caption": "Plunge pool and lawn, night",
+      "alt": "3D render of modern farmhouse plunge pool: plunge pool and lawn at night",
+      "time": "night"
+    },
+    {
+      "file": "pergola-dining-terrace-day.webp",
+      "caption": "Pergola dining terrace",
+      "alt": "3D render of modern farmhouse plunge pool: pergola dining terrace",
+      "time": "day"
+    },
+    {
+      "file": "pergola-dining-terrace-night.webp",
+      "caption": "Pergola dining terrace, night",
+      "alt": "3D render of modern farmhouse plunge pool: pergola dining terrace at night",
+      "time": "night"
+    },
+    {
+      "file": "front-facade-and-entry-planting-day.webp",
+      "caption": "Front facade and entry planting",
+      "alt": "3D render of modern farmhouse plunge pool: front facade and entry planting",
+      "time": "day"
+    },
+    {
+      "file": "front-facade-and-entry-planting-night.webp",
+      "caption": "Front facade and entry planting, night",
+      "alt": "3D render of modern farmhouse plunge pool: front facade and entry planting at night",
+      "time": "night"
+    },
+    {
+      "file": "patio-and-pool-from-the-house-day.webp",
+      "caption": "Patio and pool from the house",
+      "alt": "3D render of modern farmhouse plunge pool: patio and pool from the house",
+      "time": "day"
+    },
+    {
+      "file": "covered-patio-night.webp",
+      "caption": "Covered patio, night",
+      "alt": "3D render of modern farmhouse plunge pool: covered patio at night",
+      "time": "night"
+    }
+  ]
+}

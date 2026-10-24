@@ -1,0 +1,64 @@
+{
+  "title": "Mountain modern estate",
+  "region": "",
+  "summary": "Motor court, boulder terraces, a sunken fire lounge and pool terraces for a mountain-modern home.",
+  "category": [
+    "hillside",
+    "outdoor-living",
+    "front-yard"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "motor-court-day.webp",
+  "coverNight": "covered-lounge-with-a-view-night.webp",
+  "images": [
+    {
+      "file": "motor-court-day.webp",
+      "caption": "Motor court",
+      "alt": "3D render of mountain modern estate: motor court",
+      "time": "day"
+    },
+    {
+      "file": "covered-lounge-with-a-view-night.webp",
+      "caption": "Covered lounge with a view, night",
+      "alt": "3D render of mountain modern estate: covered lounge with a view at night",
+      "time": "night"
+    },
+    {
+      "file": "entry-drive-and-planting-day.webp",
+      "caption": "Entry drive and planting",
+      "alt": "3D render of mountain modern estate: entry drive and planting",
+      "time": "day"
+    },
+    {
+      "file": "boulder-terraces-day.webp",
+      "caption": "Boulder terraces",
+      "alt": "3D render of mountain modern estate: boulder terraces",
+      "time": "day"
+    },
+    {
+      "file": "terrace-planting-day.webp",
+      "caption": "Terrace planting",
+      "alt": "3D render of mountain modern estate: terrace planting",
+      "time": "day"
+    },
+    {
+      "file": "covered-lounge-with-a-view-day.webp",
+      "caption": "Covered lounge with a view",
+      "alt": "3D render of mountain modern estate: covered lounge with a view",
+      "time": "day"
+    },
+    {
+      "file": "sunken-fire-lounge-day.webp",
+      "caption": "Sunken fire lounge",
+      "alt": "3D render of mountain modern estate: sunken fire lounge",
+      "time": "day"
+    },
+    {
+      "file": "sunken-fire-lounge-night.webp",
+      "caption": "Sunken fire lounge, night",
+      "alt": "3D render of mountain modern estate: sunken fire lounge at night",
+      "time": "night"
+    }
+  ]
+}

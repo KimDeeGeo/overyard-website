@@ -1,0 +1,94 @@
+{
+  "title": "Modern pool courtyard and fire lounge",
+  "region": "",
+  "summary": "Long pool on axis with a slatted pergola fire lounge, an outdoor kitchen, floating stairs and a planted front entry.",
+  "category": [
+    "pool",
+    "outdoor-living",
+    "front-yard"
+  ],
+  "cleared": true,
+  "featured": true,
+  "cover": "pool-on-axis-with-the-pergola-fire-lounge-day.webp",
+  "coverNight": "pool-on-axis-with-the-pergola-fire-lounge-night.webp",
+  "images": [
+    {
+      "file": "pool-on-axis-with-the-pergola-fire-lounge-day.webp",
+      "caption": "Pool on axis with the pergola fire lounge",
+      "alt": "3D render of modern pool courtyard and fire lounge: pool on axis with the pergola fire lounge",
+      "time": "day"
+    },
+    {
+      "file": "pool-on-axis-with-the-pergola-fire-lounge-night.webp",
+      "caption": "Pool on axis with the pergola fire lounge, night",
+      "alt": "3D render of modern pool courtyard and fire lounge: pool on axis with the pergola fire lounge at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-deck-and-loungers-day.webp",
+      "caption": "Pool deck and loungers",
+      "alt": "3D render of modern pool courtyard and fire lounge: pool deck and loungers",
+      "time": "day"
+    },
+    {
+      "file": "pool-deck-and-loungers-night.webp",
+      "caption": "Pool deck and loungers, night",
+      "alt": "3D render of modern pool courtyard and fire lounge: pool deck and loungers at night",
+      "time": "night"
+    },
+    {
+      "file": "slatted-pergola-fire-lounge-day.webp",
+      "caption": "Slatted pergola fire lounge",
+      "alt": "3D render of modern pool courtyard and fire lounge: slatted pergola fire lounge",
+      "time": "day"
+    },
+    {
+      "file": "outdoor-kitchen-day.webp",
+      "caption": "Outdoor kitchen",
+      "alt": "3D render of modern pool courtyard and fire lounge: outdoor kitchen",
+      "time": "day"
+    },
+    {
+      "file": "outdoor-kitchen-night.webp",
+      "caption": "Outdoor kitchen, night",
+      "alt": "3D render of modern pool courtyard and fire lounge: outdoor kitchen at night",
+      "time": "night"
+    },
+    {
+      "file": "floating-stairs-and-lit-wall-day.webp",
+      "caption": "Floating stairs and lit wall",
+      "alt": "3D render of modern pool courtyard and fire lounge: floating stairs and lit wall",
+      "time": "day"
+    },
+    {
+      "file": "floating-stairs-and-lit-wall-night.webp",
+      "caption": "Floating stairs and lit wall, night",
+      "alt": "3D render of modern pool courtyard and fire lounge: floating stairs and lit wall at night",
+      "time": "night"
+    },
+    {
+      "file": "side-yard-stepping-pads-and-cypress-day.webp",
+      "caption": "Side yard stepping pads and cypress",
+      "alt": "3D render of modern pool courtyard and fire lounge: side yard stepping pads and cypress",
+      "time": "day"
+    },
+    {
+      "file": "side-yard-planting-night.webp",
+      "caption": "Side yard planting, night",
+      "alt": "3D render of modern pool courtyard and fire lounge: side yard planting at night",
+      "time": "night"
+    },
+    {
+      "file": "front-yard-planting-and-walk-day.webp",
+      "caption": "Front yard planting and walk",
+      "alt": "3D render of modern pool courtyard and fire lounge: front yard planting and walk",
+      "time": "day"
+    },
+    {
+      "file": "front-yard-lighting-night.webp",
+      "caption": "Front yard lighting, night",
+      "alt": "3D render of modern pool courtyard and fire lounge: front yard lighting at night",
+      "time": "night"
+    }
+  ]
+}

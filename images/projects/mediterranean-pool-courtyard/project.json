@@ -1,0 +1,64 @@
+{
+  "title": "Mediterranean pool courtyard",
+  "region": "",
+  "summary": "Courtyard pool, a sunken loggia lounge with a fire table, a shade pavilion and a planted front walk.",
+  "category": [
+    "pool",
+    "outdoor-living",
+    "front-yard"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-courtyard-day.webp",
+  "coverNight": "pool-courtyard-at-sunset-night.webp",
+  "images": [
+    {
+      "file": "pool-courtyard-day.webp",
+      "caption": "Pool courtyard",
+      "alt": "3D render of mediterranean pool courtyard: pool courtyard",
+      "time": "day"
+    },
+    {
+      "file": "pool-courtyard-at-sunset-night.webp",
+      "caption": "Pool courtyard at sunset, night",
+      "alt": "3D render of mediterranean pool courtyard: pool courtyard at sunset at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-shade-pavilion-day.webp",
+      "caption": "Pool and shade pavilion",
+      "alt": "3D render of mediterranean pool courtyard: pool and shade pavilion",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-pavilion-day.webp",
+      "caption": "Pool and pavilion",
+      "alt": "3D render of mediterranean pool courtyard: pool and pavilion",
+      "time": "day"
+    },
+    {
+      "file": "pool-at-sunset-night.webp",
+      "caption": "Pool at sunset, night",
+      "alt": "3D render of mediterranean pool courtyard: pool at sunset at night",
+      "time": "night"
+    },
+    {
+      "file": "loggia-lounge-and-fire-table-day.webp",
+      "caption": "Loggia lounge and fire table",
+      "alt": "3D render of mediterranean pool courtyard: loggia lounge and fire table",
+      "time": "day"
+    },
+    {
+      "file": "front-walk-day.webp",
+      "caption": "Front walk",
+      "alt": "3D render of mediterranean pool courtyard: front walk",
+      "time": "day"
+    },
+    {
+      "file": "front-walk-night.webp",
+      "caption": "Front walk, night",
+      "alt": "3D render of mediterranean pool courtyard: front walk at night",
+      "time": "night"
+    }
+  ]
+}

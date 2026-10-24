@@ -1,0 +1,62 @@
+{
+  "title": "Commercial fire bowl courtyard",
+  "region": "",
+  "summary": "Patterned paving, fire bowls, a shade pergola and planters for a commercial courtyard.",
+  "category": [
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "courtyard-and-pergola-day.webp",
+  "coverNight": "covered-lounge-night.webp",
+  "images": [
+    {
+      "file": "courtyard-and-pergola-day.webp",
+      "caption": "Courtyard and pergola",
+      "alt": "3D render of commercial fire bowl courtyard: courtyard and pergola",
+      "time": "day"
+    },
+    {
+      "file": "covered-lounge-night.webp",
+      "caption": "Covered lounge, night",
+      "alt": "3D render of commercial fire bowl courtyard: covered lounge at night",
+      "time": "night"
+    },
+    {
+      "file": "pergola-and-planters-day.webp",
+      "caption": "Pergola and planters",
+      "alt": "3D render of commercial fire bowl courtyard: pergola and planters",
+      "time": "day"
+    },
+    {
+      "file": "fire-bowl-court-day.webp",
+      "caption": "Fire bowl court",
+      "alt": "3D render of commercial fire bowl courtyard: fire bowl court",
+      "time": "day"
+    },
+    {
+      "file": "fire-bowl-court-and-seating-day.webp",
+      "caption": "Fire bowl court and seating",
+      "alt": "3D render of commercial fire bowl courtyard: fire bowl court and seating",
+      "time": "day"
+    },
+    {
+      "file": "fire-bowl-and-lounge-day.webp",
+      "caption": "Fire bowl and lounge",
+      "alt": "3D render of commercial fire bowl courtyard: fire bowl and lounge",
+      "time": "day"
+    },
+    {
+      "file": "covered-lounge-day.webp",
+      "caption": "Covered lounge",
+      "alt": "3D render of commercial fire bowl courtyard: covered lounge",
+      "time": "day"
+    },
+    {
+      "file": "planters-and-seating-day.webp",
+      "caption": "Planters and seating",
+      "alt": "3D render of commercial fire bowl courtyard: planters and seating",
+      "time": "day"
+    }
+  ]
+}

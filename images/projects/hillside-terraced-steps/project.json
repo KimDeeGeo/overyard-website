@@ -1,0 +1,63 @@
+{
+  "title": "Hillside terraced steps",
+  "region": "",
+  "summary": "Tiered retaining walls, wide steps and planted terraces climbing a hillside to the house.",
+  "category": [
+    "hillside",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "terraced-steps-to-the-house-day.webp",
+  "coverNight": "terraced-steps-to-the-house-night.webp",
+  "images": [
+    {
+      "file": "terraced-steps-to-the-house-day.webp",
+      "caption": "Terraced steps to the house",
+      "alt": "3D render of hillside terraced steps: terraced steps to the house",
+      "time": "day"
+    },
+    {
+      "file": "terraced-steps-to-the-house-night.webp",
+      "caption": "Terraced steps to the house, night",
+      "alt": "3D render of hillside terraced steps: terraced steps to the house at night",
+      "time": "night"
+    },
+    {
+      "file": "terraces-and-planting-day.webp",
+      "caption": "Terraces and planting",
+      "alt": "3D render of hillside terraced steps: terraces and planting",
+      "time": "day"
+    },
+    {
+      "file": "terraces-and-lighting-night.webp",
+      "caption": "Terraces and lighting, night",
+      "alt": "3D render of hillside terraced steps: terraces and lighting at night",
+      "time": "night"
+    },
+    {
+      "file": "lower-lounge-terrace-day.webp",
+      "caption": "Lower lounge terrace",
+      "alt": "3D render of hillside terraced steps: lower lounge terrace",
+      "time": "day"
+    },
+    {
+      "file": "terraces-from-the-lawn-day.webp",
+      "caption": "Terraces from the lawn",
+      "alt": "3D render of hillside terraced steps: terraces from the lawn",
+      "time": "day"
+    },
+    {
+      "file": "terraces-at-night-night.webp",
+      "caption": "Terraces at night, night",
+      "alt": "3D render of hillside terraced steps: terraces at night at night",
+      "time": "night"
+    },
+    {
+      "file": "wall-lighting-night.webp",
+      "caption": "Wall lighting, night",
+      "alt": "3D render of hillside terraced steps: wall lighting at night",
+      "time": "night"
+    }
+  ]
+}

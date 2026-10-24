@@ -1,0 +1,63 @@
+{
+  "title": "Brick cottage perennial garden",
+  "region": "",
+  "summary": "Perennial borders, a flagstone patio, a pine grove with stepping stones and a formal circle garden.",
+  "category": [
+    "planting",
+    "front-yard"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "cottage-and-perennial-garden-day.webp",
+  "coverNight": "stepping-stones-under-the-pine-night.webp",
+  "images": [
+    {
+      "file": "cottage-and-perennial-garden-day.webp",
+      "caption": "Cottage and perennial garden",
+      "alt": "3D render of brick cottage perennial garden: cottage and perennial garden",
+      "time": "day"
+    },
+    {
+      "file": "stepping-stones-under-the-pine-night.webp",
+      "caption": "Stepping stones under the pine, night",
+      "alt": "3D render of brick cottage perennial garden: stepping stones under the pine at night",
+      "time": "night"
+    },
+    {
+      "file": "porch-and-patio-day.webp",
+      "caption": "Porch and patio",
+      "alt": "3D render of brick cottage perennial garden: porch and patio",
+      "time": "day"
+    },
+    {
+      "file": "front-garden-day.webp",
+      "caption": "Front garden",
+      "alt": "3D render of brick cottage perennial garden: front garden",
+      "time": "day"
+    },
+    {
+      "file": "garden-and-patio-day.webp",
+      "caption": "Garden and patio",
+      "alt": "3D render of brick cottage perennial garden: garden and patio",
+      "time": "day"
+    },
+    {
+      "file": "stepping-stones-under-the-pine-day.webp",
+      "caption": "Stepping stones under the pine",
+      "alt": "3D render of brick cottage perennial garden: stepping stones under the pine",
+      "time": "day"
+    },
+    {
+      "file": "circle-garden-day.webp",
+      "caption": "Circle garden",
+      "alt": "3D render of brick cottage perennial garden: circle garden",
+      "time": "day"
+    },
+    {
+      "file": "circle-garden-and-paving-day.webp",
+      "caption": "Circle garden and paving",
+      "alt": "3D render of brick cottage perennial garden: circle garden and paving",
+      "time": "day"
+    }
+  ]
+}

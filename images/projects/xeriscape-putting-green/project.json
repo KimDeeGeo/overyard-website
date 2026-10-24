@@ -1,0 +1,64 @@
+{
+  "title": "Xeriscape front and putting green",
+  "region": "",
+  "summary": "Xeriscape front yard with boulders, a backyard putting green and a fire lounge.",
+  "category": [
+    "front-yard",
+    "planting",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "xeriscape-front-yard-day.webp",
+  "coverNight": "side-yard-planting-night.webp",
+  "images": [
+    {
+      "file": "xeriscape-front-yard-day.webp",
+      "caption": "Xeriscape front yard",
+      "alt": "3D render of xeriscape front and putting green: xeriscape front yard",
+      "time": "day"
+    },
+    {
+      "file": "side-yard-planting-night.webp",
+      "caption": "Side yard planting, night",
+      "alt": "3D render of xeriscape front and putting green: side yard planting at night",
+      "time": "night"
+    },
+    {
+      "file": "side-yard-planting-day.webp",
+      "caption": "Side yard planting",
+      "alt": "3D render of xeriscape front and putting green: side yard planting",
+      "time": "day"
+    },
+    {
+      "file": "front-entry-planting-day.webp",
+      "caption": "Front entry planting",
+      "alt": "3D render of xeriscape front and putting green: front entry planting",
+      "time": "day"
+    },
+    {
+      "file": "putting-green-day.webp",
+      "caption": "Putting green",
+      "alt": "3D render of xeriscape front and putting green: putting green",
+      "time": "day"
+    },
+    {
+      "file": "putting-green-night.webp",
+      "caption": "Putting green, night",
+      "alt": "3D render of xeriscape front and putting green: putting green at night",
+      "time": "night"
+    },
+    {
+      "file": "fire-lounge-day.webp",
+      "caption": "Fire lounge",
+      "alt": "3D render of xeriscape front and putting green: fire lounge",
+      "time": "day"
+    },
+    {
+      "file": "fire-lounge-night.webp",
+      "caption": "Fire lounge, night",
+      "alt": "3D render of xeriscape front and putting green: fire lounge at night",
+      "time": "night"
+    }
+  ]
+}

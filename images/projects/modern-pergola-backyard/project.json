@@ -1,0 +1,63 @@
+{
+  "title": "Modern pergola backyard",
+  "region": "",
+  "summary": "Black steel pergola, outdoor kitchen, planters and stepping pads in a compact modern backyard.",
+  "category": [
+    "outdoor-living",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pergola-and-planting-day.webp",
+  "coverNight": "pergola-and-stepping-pads-night.webp",
+  "images": [
+    {
+      "file": "pergola-and-planting-day.webp",
+      "caption": "Pergola and planting",
+      "alt": "3D render of modern pergola backyard: pergola and planting",
+      "time": "day"
+    },
+    {
+      "file": "pergola-and-stepping-pads-night.webp",
+      "caption": "Pergola and stepping pads, night",
+      "alt": "3D render of modern pergola backyard: pergola and stepping pads at night",
+      "time": "night"
+    },
+    {
+      "file": "pergola-lounge-day.webp",
+      "caption": "Pergola lounge",
+      "alt": "3D render of modern pergola backyard: pergola lounge",
+      "time": "day"
+    },
+    {
+      "file": "pergola-and-stepping-pads-day.webp",
+      "caption": "Pergola and stepping pads",
+      "alt": "3D render of modern pergola backyard: pergola and stepping pads",
+      "time": "day"
+    },
+    {
+      "file": "backyard-from-the-lawn-day.webp",
+      "caption": "Backyard from the lawn",
+      "alt": "3D render of modern pergola backyard: backyard from the lawn",
+      "time": "day"
+    },
+    {
+      "file": "backyard-from-the-lawn-night.webp",
+      "caption": "Backyard from the lawn, night",
+      "alt": "3D render of modern pergola backyard: backyard from the lawn at night",
+      "time": "night"
+    },
+    {
+      "file": "outdoor-kitchen-day.webp",
+      "caption": "Outdoor kitchen",
+      "alt": "3D render of modern pergola backyard: outdoor kitchen",
+      "time": "day"
+    },
+    {
+      "file": "kitchen-and-planters-day.webp",
+      "caption": "Kitchen and planters",
+      "alt": "3D render of modern pergola backyard: kitchen and planters",
+      "time": "day"
+    }
+  ]
+}

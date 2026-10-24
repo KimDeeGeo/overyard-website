@@ -7,38 +7,38 @@
     "outdoor-living"
   ],
   "cleared": true,
-  "featured": false,
-  "cover": "pool-pergola.webp",
-  "coverNight": "pool-pergola-night.webp",
+  "featured": true,
+  "cover": "pool-and-pergola-day.webp",
+  "coverNight": "pool-and-pergola-night.webp",
   "images": [
     {
-      "file": "pool-pergola.webp",
+      "file": "pool-and-pergola-day.webp",
       "caption": "Pool and pergola",
-      "alt": "Render of a stone-coped pool beside a timber pergola with loungers",
+      "alt": "3D render of stone pool and pergola: pool and pergola",
       "time": "day"
     },
     {
-      "file": "pool-pergola-night.webp",
+      "file": "pool-and-pergola-night.webp",
       "caption": "Pool and pergola, night",
-      "alt": "Night render of the lit pool and pergola",
+      "alt": "3D render of stone pool and pergola: pool and pergola at night",
       "time": "night"
     },
     {
-      "file": "pool-spa.webp",
+      "file": "pool-spa-and-pergola-dining-day.webp",
       "caption": "Pool, spa and pergola dining",
-      "alt": "Render of the pool and raised spa with the pergola dining area behind",
+      "alt": "3D render of stone pool and pergola: pool, spa and pergola dining",
       "time": "day"
     },
     {
-      "file": "pool-spa-night.webp",
-      "caption": "Pool, spa and pergola, night",
-      "alt": "Night render of the pool, spa and lit pergola",
+      "file": "pool-spa-and-pergola-dining-night.webp",
+      "caption": "Pool, spa and pergola dining, night",
+      "alt": "3D render of stone pool and pergola: pool, spa and pergola dining at night",
       "time": "night"
     },
     {
-      "file": "front-walk-dusk.webp",
-      "caption": "Front walk and planting, dusk",
-      "alt": "Dusk render of the front walk and planting beds",
+      "file": "front-walk-and-planting-night.webp",
+      "caption": "Front walk and planting, night",
+      "alt": "3D render of stone pool and pergola: front walk and planting at night",
       "time": "night"
     }
   ]

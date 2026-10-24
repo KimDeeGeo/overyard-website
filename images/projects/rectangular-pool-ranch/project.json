@@ -1,0 +1,62 @@
+{
+  "title": "Rectangular pool and ranch terrace",
+  "region": "",
+  "summary": "Rectangular pool with in-pool loungers, a wide terrace and a planted fence line.",
+  "category": [
+    "pool"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-and-terrace-day.webp",
+  "coverNight": "pool-and-house-night.webp",
+  "images": [
+    {
+      "file": "pool-and-terrace-day.webp",
+      "caption": "Pool and terrace",
+      "alt": "3D render of rectangular pool and ranch terrace: pool and terrace",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-house-night.webp",
+      "caption": "Pool and house, night",
+      "alt": "3D render of rectangular pool and ranch terrace: pool and house at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-house-day.webp",
+      "caption": "Pool and house",
+      "alt": "3D render of rectangular pool and ranch terrace: pool and house",
+      "time": "day"
+    },
+    {
+      "file": "lounge-deck-day.webp",
+      "caption": "Lounge deck",
+      "alt": "3D render of rectangular pool and ranch terrace: lounge deck",
+      "time": "day"
+    },
+    {
+      "file": "lounge-deck-night.webp",
+      "caption": "Lounge deck, night",
+      "alt": "3D render of rectangular pool and ranch terrace: lounge deck at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-planting-day.webp",
+      "caption": "Pool and planting",
+      "alt": "3D render of rectangular pool and ranch terrace: pool and planting",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-planting-night.webp",
+      "caption": "Pool and planting, night",
+      "alt": "3D render of rectangular pool and ranch terrace: pool and planting at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-edge-day.webp",
+      "caption": "Pool edge",
+      "alt": "3D render of rectangular pool and ranch terrace: pool edge",
+      "time": "day"
+    }
+  ]
+}

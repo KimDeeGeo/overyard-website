@@ -1,0 +1,63 @@
+{
+  "title": "Pool, walkout deck and putting green",
+  "region": "",
+  "summary": "Pool with in-pool loungers below a walkout deck, prairie planting and a putting green.",
+  "category": [
+    "pool",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-and-loungers-day.webp",
+  "coverNight": "pool-and-walkout-deck-night.webp",
+  "images": [
+    {
+      "file": "pool-and-loungers-day.webp",
+      "caption": "Pool and loungers",
+      "alt": "3D render of pool, walkout deck and putting green: pool and loungers",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-walkout-deck-night.webp",
+      "caption": "Pool and walkout deck, night",
+      "alt": "3D render of pool, walkout deck and putting green: pool and walkout deck at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-planting-day.webp",
+      "caption": "Pool and planting",
+      "alt": "3D render of pool, walkout deck and putting green: pool and planting",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-walkout-deck-day.webp",
+      "caption": "Pool and walkout deck",
+      "alt": "3D render of pool, walkout deck and putting green: pool and walkout deck",
+      "time": "day"
+    },
+    {
+      "file": "pool-from-the-lawn-day.webp",
+      "caption": "Pool from the lawn",
+      "alt": "3D render of pool, walkout deck and putting green: pool from the lawn",
+      "time": "day"
+    },
+    {
+      "file": "pool-lighting-night.webp",
+      "caption": "Pool lighting, night",
+      "alt": "3D render of pool, walkout deck and putting green: pool lighting at night",
+      "time": "night"
+    },
+    {
+      "file": "prairie-planting-and-putting-green-day.webp",
+      "caption": "Prairie planting and putting green",
+      "alt": "3D render of pool, walkout deck and putting green: prairie planting and putting green",
+      "time": "day"
+    },
+    {
+      "file": "pool-terrace-day.webp",
+      "caption": "Pool terrace",
+      "alt": "3D render of pool, walkout deck and putting green: pool terrace",
+      "time": "day"
+    }
+  ]
+}

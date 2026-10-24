@@ -1,0 +1,64 @@
+{
+  "title": "French cottage garden and pool",
+  "region": "",
+  "summary": "Garden walk under crape myrtles, a pool, a pergola fireplace lounge and porch planting.",
+  "category": [
+    "pool",
+    "planting",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "garden-gate-and-walk-day.webp",
+  "coverNight": "garden-gate-and-walk-night.webp",
+  "images": [
+    {
+      "file": "garden-gate-and-walk-day.webp",
+      "caption": "Garden gate and walk",
+      "alt": "3D render of french cottage garden and pool: garden gate and walk",
+      "time": "day"
+    },
+    {
+      "file": "garden-gate-and-walk-night.webp",
+      "caption": "Garden gate and walk, night",
+      "alt": "3D render of french cottage garden and pool: garden gate and walk at night",
+      "time": "night"
+    },
+    {
+      "file": "stepping-stone-garden-walk-day.webp",
+      "caption": "Stepping-stone garden walk",
+      "alt": "3D render of french cottage garden and pool: stepping-stone garden walk",
+      "time": "day"
+    },
+    {
+      "file": "stepping-stone-garden-walk-night.webp",
+      "caption": "Stepping-stone garden walk, night",
+      "alt": "3D render of french cottage garden and pool: stepping-stone garden walk at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-fountain-wall-day.webp",
+      "caption": "Pool and fountain wall",
+      "alt": "3D render of french cottage garden and pool: pool and fountain wall",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-fountain-wall-night.webp",
+      "caption": "Pool and fountain wall, night",
+      "alt": "3D render of french cottage garden and pool: pool and fountain wall at night",
+      "time": "night"
+    },
+    {
+      "file": "pergola-lounge-night.webp",
+      "caption": "Pergola lounge, night",
+      "alt": "3D render of french cottage garden and pool: pergola lounge at night",
+      "time": "night"
+    },
+    {
+      "file": "pergola-fireplace-night.webp",
+      "caption": "Pergola fireplace, night",
+      "alt": "3D render of french cottage garden and pool: pergola fireplace at night",
+      "time": "night"
+    }
+  ]
+}

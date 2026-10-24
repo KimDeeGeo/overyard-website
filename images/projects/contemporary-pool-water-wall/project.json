@@ -1,0 +1,64 @@
+{
+  "title": "Contemporary pool and water wall",
+  "region": "",
+  "summary": "Pool with a water wall and spa, a cabana lounge, a putting green and a planted entry.",
+  "category": [
+    "pool",
+    "outdoor-living",
+    "front-yard"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-and-water-wall-day.webp",
+  "coverNight": "pool-and-water-wall-night.webp",
+  "images": [
+    {
+      "file": "pool-and-water-wall-day.webp",
+      "caption": "Pool and water wall",
+      "alt": "3D render of contemporary pool and water wall: pool and water wall",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-water-wall-night.webp",
+      "caption": "Pool and water wall, night",
+      "alt": "3D render of contemporary pool and water wall: pool and water wall at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-cabana-day.webp",
+      "caption": "Pool and cabana",
+      "alt": "3D render of contemporary pool and water wall: pool and cabana",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-cabana-night.webp",
+      "caption": "Pool and cabana, night",
+      "alt": "3D render of contemporary pool and water wall: pool and cabana at night",
+      "time": "night"
+    },
+    {
+      "file": "spa-and-planting-day.webp",
+      "caption": "Spa and planting",
+      "alt": "3D render of contemporary pool and water wall: spa and planting",
+      "time": "day"
+    },
+    {
+      "file": "front-entry-day.webp",
+      "caption": "Front entry",
+      "alt": "3D render of contemporary pool and water wall: front entry",
+      "time": "day"
+    },
+    {
+      "file": "front-lawn-day.webp",
+      "caption": "Front lawn",
+      "alt": "3D render of contemporary pool and water wall: front lawn",
+      "time": "day"
+    },
+    {
+      "file": "cabana-and-lawn-day.webp",
+      "caption": "Cabana and lawn",
+      "alt": "3D render of contemporary pool and water wall: cabana and lawn",
+      "time": "day"
+    }
+  ]
+}

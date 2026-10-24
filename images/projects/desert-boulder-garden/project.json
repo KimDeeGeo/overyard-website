@@ -1,0 +1,63 @@
+{
+  "title": "Desert boulder garden and pond",
+  "region": "",
+  "summary": "Xeriscape garden with a boulder pond, raised timber beds, gravel paths and a deck.",
+  "category": [
+    "planting",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "boulder-pond-and-deck-day.webp",
+  "coverNight": "gravel-path-through-perennials-night.webp",
+  "images": [
+    {
+      "file": "boulder-pond-and-deck-day.webp",
+      "caption": "Boulder pond and deck",
+      "alt": "3D render of desert boulder garden and pond: boulder pond and deck",
+      "time": "day"
+    },
+    {
+      "file": "gravel-path-through-perennials-night.webp",
+      "caption": "Gravel path through perennials, night",
+      "alt": "3D render of desert boulder garden and pond: gravel path through perennials at night",
+      "time": "night"
+    },
+    {
+      "file": "boulder-pond-and-garden-day.webp",
+      "caption": "Boulder pond and garden",
+      "alt": "3D render of desert boulder garden and pond: boulder pond and garden",
+      "time": "day"
+    },
+    {
+      "file": "boulder-pond-day.webp",
+      "caption": "Boulder pond",
+      "alt": "3D render of desert boulder garden and pond: boulder pond",
+      "time": "day"
+    },
+    {
+      "file": "gravel-path-through-perennials-day.webp",
+      "caption": "Gravel path through perennials",
+      "alt": "3D render of desert boulder garden and pond: gravel path through perennials",
+      "time": "day"
+    },
+    {
+      "file": "raised-timber-beds-day.webp",
+      "caption": "Raised timber beds",
+      "alt": "3D render of desert boulder garden and pond: raised timber beds",
+      "time": "day"
+    },
+    {
+      "file": "garden-and-deck-day.webp",
+      "caption": "Garden and deck",
+      "alt": "3D render of desert boulder garden and pond: garden and deck",
+      "time": "day"
+    },
+    {
+      "file": "perennial-border-day.webp",
+      "caption": "Perennial border",
+      "alt": "3D render of desert boulder garden and pond: perennial border",
+      "time": "day"
+    }
+  ]
+}

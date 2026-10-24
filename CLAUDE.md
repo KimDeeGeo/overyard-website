@@ -17,10 +17,10 @@ Free tools only: Web3Forms (form), Cal.com or Calendly free (booking link), GitH
 - `js/main.js`: the **SITE SETTINGS (`CONFIG`) block at the top**: contact, socials, team tools, the **price ladder**, packages, size guide, memberships, add-ons, the list of project folders, hero slides, band, process images, What you receive, featured slider.
 - `images/projects/<slug>/`: one folder per project, with `project.json` plus `<name>.webp` (2000px), `<name>-md.webp` (900px) and `<name>-sm.webp` (320px).
 - `images/team/<name>.webp` (640px square) and `images/process/<name>.webp` (+ `-md`).
-- `_source/` (**git-ignored**): full-size originals, including unpublished projects and the Gemini variants.
+- `_source/` (**git-ignored**): full-size originals in `_source/projects/<slug>/<name>.(png|jpg)`, plus `team/` and `process/`. Old v4 originals are archived in `../overyard-archive/`.
 - `assets/`: logo light/dark, favicons, `fonts/`.
 - `scripts/` (dev only):
-  - `images.mjs`: builds WebP sizes for cleared projects + team + process from `_source/`
+  - `images.mjs`: builds WebP sizes for cleared projects (from `_source/projects/<slug>/`) + team + process; canvas re-encoding strips all metadata
   - `compress.mjs`: one-off WebP conversion
   - `webp.mjs`: shared encoder
   - `snapshot.mjs`: version history
@@ -31,22 +31,25 @@ Free tools only: Web3Forms (form), Cal.com or Calendly free (booking link), GitH
 ```json
 { "title": "", "region": "", "summary": "", "category": ["pool","outdoor-living","hillside","planting","front-yard"],
   "cleared": false, "featured": false, "cover": "x.webp", "coverNight": "y.webp",
-  "images": [{ "file": "x.webp", "caption": "", "alt": "", "time": "day|night|plan|model|photo" }] }
+  "images": [{ "file": "x.webp", "caption": "", "alt": "", "time": "day|night" }] }
 ```
-- `region`: a state or blank, **never an address**.
-- `alt` and `photo` are additions to the original spec.
-- `coverNight` (optional) gives the card a Day/Night toggle.
-- Lightbox order: photo, plan, model, then renders as listed. The "Night" filter = any `time: "night"` image.
-- **Only `cleared: true` projects appear anywhere.** Unpublished folders keep only `project.json` in the repo; their images stay in `_source/` until cleared (the repo is public).
-- Home page = up to 5 cleared projects with `featured: true`, in `CONFIG.projects` order. The portfolio page = all cleared projects.
-- Hero slides and the band image must come from cleared projects.
+- **Renders only** (since v5): no 2D plans, site photos, clay models, screenshots or top-down views in the portfolio. The one exception is `pool-courtyard-citrus/overhead.webp`, which is used only by the "From overhead" slider and is not listed in project.json.
+- **Design-based names:** slugs, titles, file names, captions and alt text describe the design only (e.g. `modern-pool-courtyard/pool-on-axis-with-the-pergola-fire-lounge-night.webp`). Never use a number, client name, address or original file name.
+- Duplicates are removed, keeping the largest version. All metadata is stripped by the encoder.
+- `region`: blank (or a state), **never an address**.
+- `coverNight` (optional) gives the card a Day/Night toggle. Images are listed with the day cover first, then the night cover, then the rest.
+- The "Night" filter = any `time: "night"` image.
+- **Only `cleared: true` projects appear anywhere** (the repo is public).
+- **Priority = `featured: true`.** Priority projects feed the hero camera roll (night and day alternating, starting with night), the night band and Selected Work. The home page shows the first `CONFIG.homeProjectCount` (6) featured projects in `CONFIG.projects` order. The portfolio page shows all cleared projects, with priority projects first.
+- Hero slides and the band image must come from priority projects.
 
 ## Image provenance (strict)
-- The 6 newer projects (front-walk-planting, stone-pool-pergola, front-yard-cottage, freeform-pool-deck, brick-patio-spa, pool-deck-fire-lounge) are **Gemini-generated or Gemini-edited** images (original filenames `Gemini_Generated_Image_*`).
-- The founders confirmed them as cleared, and they were published on Oct 19, 2026. They appear on the portfolio page, not featured on the home page.
-- `_source/_gemini-variants/` holds Gemini versions of the 5 original projects. These are not published.
+- v5 (Oct 2026) rebuilt the portfolio from the founders' render set ("Priority Renders" and "Not Priority"). The founders confirmed all of it as cleared and as representative of what clients receive.
+- Some priority sets were Gemini-edited versions of original renders. Where both versions existed, the original (larger) render was kept.
+- Priority projects publish every unique render. Not-priority projects publish their best 8.
+- The originals, including the v4 set and the full "FROM SCRATCH" delivery, are archived outside the repo in `../overyard-archive/`.
 - For any new project: publish only after the founders confirm image rights and that the images represent what clients receive.
-- `wooded-lakefront/fire-pit-redbuds` and `dock` came from files named after a client (Creswick / Local Landscapers). Never use client names in filenames or captions.
+- Several source folders were named after clients. Never use client names in filenames, captions, alt text or commit messages.
 
 ## No-JS defaults (important)
 - The HTML contains the **real default text** for every price, count, turnaround and credit (founding tier), so link previews and crawlers see values.
@@ -119,7 +122,7 @@ Overyard is the bird's-eye plan view every design starts from. The visual signat
   - After the deadline, the 6–10 tier applies.
   - Founding members keep founding rates for 6 months, then move to the members 6–10 rate while active.
 - **Seed Project:** Grove scope, one per company. After a discovery call we design it and show watermarked previews; the client pays to unlock the full files (it's not paid upfront). Refund guarantee: "If the design misses the brief after the included revisions, you get a full refund."
-- **Single projects:** Sprout (1 credit), Grove (2, "Most popular"), Canopy (4, walkthrough and takeoff included).
+- **Single projects:** Sprout (1 credit, 10 renders), Grove (2, 15 renders, "Most popular"), Canopy (4, 20 renders, walkthrough and takeoff included). The Seed has Grove scope, so 15 renders.
 - **Size guide:** whichever is higher (budget or area) sets the tier:
   - Sprout: up to $75k / 1,500 sq ft
   - Grove: up to $250k / 5,000 sq ft
@@ -128,7 +131,7 @@ Overyard is the bird's-eye plan view every design starts from. The visual signat
 - **Evergreen memberships:** Orchard (4 credits), Forest (8, "Best value"), Old Growth (16, waitlist).
   - Fair use: active projects at a time Orchard 1 · Forest 2 · Old Growth 4. Credits cover Sprout to Canopy; Canopy Plus uses extra credits.
   - Unused credits roll over one month (capped). Billed monthly in advance. 30 days' notice to cancel.
-- **Add-ons:** takeoff $75 ($49 members), extra round $49, rush +50%, redesign quoted as a new project.
+- **Add-ons:** takeoff $75 ($49 members), extra round $49, 5 extra renders $49 (`addons.extraRenders`), rush +50%, redesign quoted as a new project.
 - **Payment:** card or bank transfer via a Wise or Payoneer invoice; the Seed is paid after the previews, other single projects upfront. USD.
 - The live values are always the ones in `CONFIG`. Update this section if they change.
 

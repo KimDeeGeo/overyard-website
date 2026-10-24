@@ -4,8 +4,8 @@
 //   node scripts/images.mjs pool-courtyard-citrus   one project
 //   node scripts/images.mjs --force <slug>   build even if cleared is false (preview only; don't commit)
 //
-// Sources live in _source/ (git-ignored, full size). For each image listed in
-// images/projects/<slug>/project.json, the source is _source/<slug>/<name>.(jpg|png|webp)
+// Sources live in _source/projects/<slug>/ (git-ignored, full size). For each image listed in
+// images/projects/<slug>/project.json, the source is _source/projects/<slug>/<name>.(jpg|png|webp)
 // and the outputs are written next to project.json:
 //   <name>.webp     2000px long edge, ~250 KB   (lightbox, hero, band)
 //   <name>-md.webp   900px, ~90 KB              (cards, portfolio grid, phone hero)
@@ -45,8 +45,8 @@ for (const slug of slugs) {
   console.log(slug);
   for (const im of p.images) {
     const name = im.file.replace(/\.webp$/, "");
-    const src = sourceFor(`_source/${slug}`, name);
-    if (!src) { console.log(`  MISSING source for ${im.file} (expected _source/${slug}/${name}.jpg)`); continue; }
+    const src = sourceFor(`_source/projects/${slug}`, name);
+    if (!src) { console.log(`  MISSING source for ${im.file} (expected _source/projects/${slug}/${name}.jpg)`); continue; }
     await make(src, `images/projects/${slug}/${name}`);
   }
 }

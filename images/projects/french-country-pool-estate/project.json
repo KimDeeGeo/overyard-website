@@ -1,0 +1,64 @@
+{
+  "title": "French country pool estate",
+  "region": "",
+  "summary": "Long pool with a tanning ledge, a cabana, a clipped poplar hedge and a formal front garden.",
+  "category": [
+    "pool",
+    "outdoor-living",
+    "front-yard"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-and-poplar-hedge-day.webp",
+  "coverNight": "pool-and-poplar-hedge-night.webp",
+  "images": [
+    {
+      "file": "pool-and-poplar-hedge-day.webp",
+      "caption": "Pool and poplar hedge",
+      "alt": "3D render of french country pool estate: pool and poplar hedge",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-poplar-hedge-night.webp",
+      "caption": "Pool and poplar hedge, night",
+      "alt": "3D render of french country pool estate: pool and poplar hedge at night",
+      "time": "night"
+    },
+    {
+      "file": "cabana-and-pool-day.webp",
+      "caption": "Cabana and pool",
+      "alt": "3D render of french country pool estate: cabana and pool",
+      "time": "day"
+    },
+    {
+      "file": "cabana-day.webp",
+      "caption": "Cabana",
+      "alt": "3D render of french country pool estate: cabana",
+      "time": "day"
+    },
+    {
+      "file": "terrace-and-planting-day.webp",
+      "caption": "Terrace and planting",
+      "alt": "3D render of french country pool estate: terrace and planting",
+      "time": "day"
+    },
+    {
+      "file": "pool-lighting-day.webp",
+      "caption": "Pool lighting",
+      "alt": "3D render of french country pool estate: pool lighting",
+      "time": "day"
+    },
+    {
+      "file": "front-garden-day.webp",
+      "caption": "Front garden",
+      "alt": "3D render of french country pool estate: front garden",
+      "time": "day"
+    },
+    {
+      "file": "front-garden-night.webp",
+      "caption": "Front garden, night",
+      "alt": "3D render of french country pool estate: front garden at night",
+      "time": "night"
+    }
+  ]
+}

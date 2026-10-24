@@ -1,0 +1,81 @@
+{
+  "title": "Lakeside fire pit and terrace",
+  "region": "",
+  "summary": "Fire pit circle and lower patio below a lake house, with planted paths through the trees to the water.",
+  "category": [
+    "outdoor-living",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": true,
+  "cover": "fire-pit-circle-below-the-house-day.webp",
+  "coverNight": "fire-pit-circle-below-the-house-night.webp",
+  "images": [
+    {
+      "file": "fire-pit-circle-below-the-house-day.webp",
+      "caption": "Fire pit circle below the house",
+      "alt": "3D render of lakeside fire pit and terrace: fire pit circle below the house",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-circle-below-the-house-night.webp",
+      "caption": "Fire pit circle below the house, night",
+      "alt": "3D render of lakeside fire pit and terrace: fire pit circle below the house at night",
+      "time": "night"
+    },
+    {
+      "file": "fire-pit-seating-and-lawn-day.webp",
+      "caption": "Fire pit seating and lawn",
+      "alt": "3D render of lakeside fire pit and terrace: fire pit seating and lawn",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-seating-and-lawn-night.webp",
+      "caption": "Fire pit seating and lawn, night",
+      "alt": "3D render of lakeside fire pit and terrace: fire pit seating and lawn at night",
+      "time": "night"
+    },
+    {
+      "file": "lower-patio-lounge-day.webp",
+      "caption": "Lower patio lounge",
+      "alt": "3D render of lakeside fire pit and terrace: lower patio lounge",
+      "time": "day"
+    },
+    {
+      "file": "lower-patio-lounge-night.webp",
+      "caption": "Lower patio lounge, night",
+      "alt": "3D render of lakeside fire pit and terrace: lower patio lounge at night",
+      "time": "night"
+    },
+    {
+      "file": "planted-path-to-the-lake-day.webp",
+      "caption": "Planted path to the lake",
+      "alt": "3D render of lakeside fire pit and terrace: planted path to the lake",
+      "time": "day"
+    },
+    {
+      "file": "planted-path-to-the-lake-night.webp",
+      "caption": "Planted path to the lake, night",
+      "alt": "3D render of lakeside fire pit and terrace: planted path to the lake at night",
+      "time": "night"
+    },
+    {
+      "file": "under-deck-patio-day.webp",
+      "caption": "Under-deck patio",
+      "alt": "3D render of lakeside fire pit and terrace: under-deck patio",
+      "time": "day"
+    },
+    {
+      "file": "lakeside-gazebo-path-day.webp",
+      "caption": "Lakeside gazebo path",
+      "alt": "3D render of lakeside fire pit and terrace: lakeside gazebo path",
+      "time": "day"
+    },
+    {
+      "file": "rear-of-the-house-and-planting-day.webp",
+      "caption": "Rear of the house and planting",
+      "alt": "3D render of lakeside fire pit and terrace: rear of the house and planting",
+      "time": "day"
+    }
+  ]
+}

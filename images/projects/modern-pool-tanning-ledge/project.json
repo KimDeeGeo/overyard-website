@@ -1,0 +1,63 @@
+{
+  "title": "Modern pool and tanning ledge",
+  "region": "",
+  "summary": "Rectangular pool with a tanning ledge and loungers, a covered patio and a fire lounge.",
+  "category": [
+    "pool",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-and-covered-patio-day.webp",
+  "coverNight": "pool-and-covered-patio-night.webp",
+  "images": [
+    {
+      "file": "pool-and-covered-patio-day.webp",
+      "caption": "Pool and covered patio",
+      "alt": "3D render of modern pool and tanning ledge: pool and covered patio",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-covered-patio-night.webp",
+      "caption": "Pool and covered patio, night",
+      "alt": "3D render of modern pool and tanning ledge: pool and covered patio at night",
+      "time": "night"
+    },
+    {
+      "file": "tanning-ledge-day.webp",
+      "caption": "Tanning ledge",
+      "alt": "3D render of modern pool and tanning ledge: tanning ledge",
+      "time": "day"
+    },
+    {
+      "file": "pool-from-the-lounge-day.webp",
+      "caption": "Pool from the lounge",
+      "alt": "3D render of modern pool and tanning ledge: pool from the lounge",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-house-day.webp",
+      "caption": "Pool and house",
+      "alt": "3D render of modern pool and tanning ledge: pool and house",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-house-night.webp",
+      "caption": "Pool and house, night",
+      "alt": "3D render of modern pool and tanning ledge: pool and house at night",
+      "time": "night"
+    },
+    {
+      "file": "loungers-and-pool-day.webp",
+      "caption": "Loungers and pool",
+      "alt": "3D render of modern pool and tanning ledge: loungers and pool",
+      "time": "day"
+    },
+    {
+      "file": "pool-edge-day.webp",
+      "caption": "Pool edge",
+      "alt": "3D render of modern pool and tanning ledge: pool edge",
+      "time": "day"
+    }
+  ]
+}

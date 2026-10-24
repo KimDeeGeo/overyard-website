@@ -1,0 +1,64 @@
+{
+  "title": "Pollinator garden paths",
+  "region": "",
+  "summary": "Pollinator planting, gravel paths, a pergola entry and a deck dining area.",
+  "category": [
+    "planting",
+    "front-yard",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pergola-entry-and-planting-day.webp",
+  "coverNight": "pergola-entry-and-planting-night.webp",
+  "images": [
+    {
+      "file": "pergola-entry-and-planting-day.webp",
+      "caption": "Pergola entry and planting",
+      "alt": "3D render of pollinator garden paths: pergola entry and planting",
+      "time": "day"
+    },
+    {
+      "file": "pergola-entry-and-planting-night.webp",
+      "caption": "Pergola entry and planting, night",
+      "alt": "3D render of pollinator garden paths: pergola entry and planting at night",
+      "time": "night"
+    },
+    {
+      "file": "front-garden-day.webp",
+      "caption": "Front garden",
+      "alt": "3D render of pollinator garden paths: front garden",
+      "time": "day"
+    },
+    {
+      "file": "gravel-path-through-the-garden-day.webp",
+      "caption": "Gravel path through the garden",
+      "alt": "3D render of pollinator garden paths: gravel path through the garden",
+      "time": "day"
+    },
+    {
+      "file": "gravel-path-through-the-garden-night.webp",
+      "caption": "Gravel path through the garden, night",
+      "alt": "3D render of pollinator garden paths: gravel path through the garden at night",
+      "time": "night"
+    },
+    {
+      "file": "deck-dining-day.webp",
+      "caption": "Deck dining",
+      "alt": "3D render of pollinator garden paths: deck dining",
+      "time": "day"
+    },
+    {
+      "file": "deck-dining-night.webp",
+      "caption": "Deck dining, night",
+      "alt": "3D render of pollinator garden paths: deck dining at night",
+      "time": "night"
+    },
+    {
+      "file": "pergola-and-flowering-tree-day.webp",
+      "caption": "Pergola and flowering tree",
+      "alt": "3D render of pollinator garden paths: pergola and flowering tree",
+      "time": "day"
+    }
+  ]
+}

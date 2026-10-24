@@ -49,8 +49,8 @@ images/projects/pool-courtyard-citrus/
   courtyard-day-md.webp      900px wide, ~90 KB    (cards, phones)
   courtyard-day-sm.webp      320px wide, ~16 KB    (filmstrip thumbnails)
   ...
-_source/pool-courtyard-citrus/
-  courtyard-day.jpg          the full-size original (any jpg / png / webp)
+_source/projects/pool-courtyard-citrus/
+  courtyard-day.png          the full-size original (any jpg / png / webp)
 ```
 
 ### project.json fields
@@ -65,8 +65,8 @@ _source/pool-courtyard-citrus/
   "cover": "courtyard-day.webp",
   "coverNight": "courtyard-night.webp",
   "images": [
-    { "file": "plan-sheet.webp", "caption": "2D plan sheet", "alt": "Description for screen readers", "time": "plan" },
-    { "file": "courtyard-day.webp", "caption": "Courtyard overview", "alt": "…", "time": "day" }
+    { "file": "courtyard-day.webp", "caption": "Courtyard overview", "alt": "Description for screen readers", "time": "day" },
+    { "file": "courtyard-night.webp", "caption": "Courtyard overview, night", "alt": "…", "time": "night" }
   ]
 }
 ```
@@ -77,20 +77,20 @@ _source/pool-courtyard-citrus/
 | `region` | A state or region (e.g. "TX", "VIC"), or `""`. **Never an address.** |
 | `category` | Any of `pool`, `outdoor-living`, `hillside`, `planting`, `front-yard`. Drives the portfolio filters. |
 | `cleared` | `true` only once you've confirmed you're allowed to show it. **`false` = hidden everywhere.** |
-| `featured` | `true` = eligible for the home page (up to 5, in the order of `projects` in `js/main.js`) |
+| `featured` | `true` = a priority project: eligible for the home page (the first `homeProjectCount`, 6, in the order of `projects` in `js/main.js`), the hero and the night band |
 | `cover` / `coverNight` | Card image. Set `coverNight` to give the card a Day / Night toggle. |
-| `images` | The sheets. `time` is `day`, `night`, `plan`, `model` or `photo` (site photo). The gallery shows photo → plans → model → renders. `night` images also put the project under the Night filter. |
+| `images` | Renders only (no plans, site photos, models or top-downs). `time` is `day` or `night`; `night` images also put the project under the Night filter. Name files, captions and alt text by what the design shows, never by client, address or original file name. |
 
 ### Add a new project
 1. Pick a slug, e.g. `hilltop-pool`.
-2. Put the full-size images in `_source/hilltop-pool/`, named the way you want them on the site (`pool-day.jpg`, `pool-night.jpg`, `plan.jpg`…).
+2. Put the full-size images in `_source/projects/hilltop-pool/`, named the way you want them on the site (`pool-day.png`, `pool-night.png`…). Keep only the largest copy of any duplicate. The encoder strips all metadata.
 3. Create `images/projects/hilltop-pool/project.json` (copy one from another project), list each image as `"file": "pool-day.webp"` with a caption, alt text and time, and set `"cleared": true` once it's approved.
 4. Run `node scripts/images.mjs hilltop-pool` to make the three WebP sizes.
 5. Add `"hilltop-pool"` to `projects` in `js/main.js` (the list order is the display order).
 6. Preview, then commit and push.
 
 ### Feature a project on the home page
-Set `"featured": true` in its project.json. The home page shows up to 5 featured, cleared projects, in the order of the `projects` list. The first one gets the large card. Set `"featured": false` on another project if you want to swap one out.
+Set `"featured": true` in its project.json. The home page shows the first 6 (`homeProjectCount`) featured, cleared projects, in the order of the `projects` list. The first one gets the large card. Set `"featured": false` on another project if you want to swap one out.
 
 ### Hide or publish a project
 Set `"cleared": false` to hide a project everywhere, or `true` to publish it. For a newly cleared project:
@@ -102,10 +102,10 @@ Set `"cleared": false` to hide a project everywhere, or `true` to publish it. Fo
 - **Hero slides:** `heroSlides` in `js/main.js`.
   - Each `src` is a project image's 2000px file; the `-md` and `-sm` versions next to it are used automatically.
   - Start with a night render and alternate day and night.
-  - Only use cleared projects.
+  - Only use priority (featured) projects.
   - If you change the **first** slide, also update the two image paths near the top of `index.html` (the `preload` link and the first `<img class="roll-img">`).
 - **Night band:** `bandImage`.
-- **"From overhead" PLAN / VIEW slider:** `featured` (`project`, `plan`, `view`).
+- **"From overhead" slider:** `featured` (`project`, `plan`, `view`). `plan` is an overhead render (`pool-courtyard-citrus/overhead.webp`, not listed in project.json).
 - **"What you receive":** `receive`.
 
 ### How it works images and team photos

@@ -1,0 +1,64 @@
+{
+  "title": "Barn house fire terrace",
+  "region": "",
+  "summary": "Drive court planting, a stone fire pit terrace, perennial borders and boulder walls around a barn-style home.",
+  "category": [
+    "outdoor-living",
+    "planting",
+    "front-yard"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "barn-house-and-drive-court-day.webp",
+  "coverNight": "barn-house-and-drive-court-night.webp",
+  "images": [
+    {
+      "file": "barn-house-and-drive-court-day.webp",
+      "caption": "Barn house and drive court",
+      "alt": "3D render of barn house fire terrace: barn house and drive court",
+      "time": "day"
+    },
+    {
+      "file": "barn-house-and-drive-court-night.webp",
+      "caption": "Barn house and drive court, night",
+      "alt": "3D render of barn house fire terrace: barn house and drive court at night",
+      "time": "night"
+    },
+    {
+      "file": "fire-pit-terrace-day.webp",
+      "caption": "Fire pit terrace",
+      "alt": "3D render of barn house fire terrace: fire pit terrace",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-terrace-night.webp",
+      "caption": "Fire pit terrace, night",
+      "alt": "3D render of barn house fire terrace: fire pit terrace at night",
+      "time": "night"
+    },
+    {
+      "file": "entry-planting-day.webp",
+      "caption": "Entry planting",
+      "alt": "3D render of barn house fire terrace: entry planting",
+      "time": "day"
+    },
+    {
+      "file": "island-bed-in-the-drive-day.webp",
+      "caption": "Island bed in the drive",
+      "alt": "3D render of barn house fire terrace: island bed in the drive",
+      "time": "day"
+    },
+    {
+      "file": "covered-lounge-night.webp",
+      "caption": "Covered lounge, night",
+      "alt": "3D render of barn house fire terrace: covered lounge at night",
+      "time": "night"
+    },
+    {
+      "file": "drive-court-day.webp",
+      "caption": "Drive court",
+      "alt": "3D render of barn house fire terrace: drive court",
+      "time": "day"
+    }
+  ]
+}

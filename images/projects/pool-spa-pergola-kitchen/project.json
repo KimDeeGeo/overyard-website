@@ -1,0 +1,64 @@
+{
+  "title": "Pool, spa and pergola kitchen",
+  "region": "",
+  "summary": "Rectangular pool and raised spa, a pergola outdoor kitchen, an Italian cypress screen and curving garden paths.",
+  "category": [
+    "pool",
+    "outdoor-living",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-and-raised-spa-day.webp",
+  "coverNight": "pool-and-raised-spa-night.webp",
+  "images": [
+    {
+      "file": "pool-and-raised-spa-day.webp",
+      "caption": "Pool and raised spa",
+      "alt": "3D render of pool, spa and pergola kitchen: pool and raised spa",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-raised-spa-night.webp",
+      "caption": "Pool and raised spa, night",
+      "alt": "3D render of pool, spa and pergola kitchen: pool and raised spa at night",
+      "time": "night"
+    },
+    {
+      "file": "pergola-outdoor-kitchen-day.webp",
+      "caption": "Pergola outdoor kitchen",
+      "alt": "3D render of pool, spa and pergola kitchen: pergola outdoor kitchen",
+      "time": "day"
+    },
+    {
+      "file": "pergola-outdoor-kitchen-night.webp",
+      "caption": "Pergola outdoor kitchen, night",
+      "alt": "3D render of pool, spa and pergola kitchen: pergola outdoor kitchen at night",
+      "time": "night"
+    },
+    {
+      "file": "spa-and-cypress-screen-day.webp",
+      "caption": "Spa and cypress screen",
+      "alt": "3D render of pool, spa and pergola kitchen: spa and cypress screen",
+      "time": "day"
+    },
+    {
+      "file": "spa-and-cypress-screen-night.webp",
+      "caption": "Spa and cypress screen, night",
+      "alt": "3D render of pool, spa and pergola kitchen: spa and cypress screen at night",
+      "time": "night"
+    },
+    {
+      "file": "curving-garden-path-day.webp",
+      "caption": "Curving garden path",
+      "alt": "3D render of pool, spa and pergola kitchen: curving garden path",
+      "time": "day"
+    },
+    {
+      "file": "curving-garden-path-night.webp",
+      "caption": "Curving garden path, night",
+      "alt": "3D render of pool, spa and pergola kitchen: curving garden path at night",
+      "time": "night"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Cottage front yard",
+  "region": "",
+  "summary": "Low-water front yard with a curved lawn edge, boulders, a tree ring, porch planting and lighting.",
+  "category": [
+    "front-yard",
+    "planting"
+  ],
+  "cleared": true,
+  "featured": true,
+  "cover": "front-yard-and-driveway-day.webp",
+  "coverNight": "front-yard-and-driveway-night.webp",
+  "images": [
+    {
+      "file": "front-yard-and-driveway-day.webp",
+      "caption": "Front yard and driveway",
+      "alt": "3D render of cottage front yard: front yard and driveway",
+      "time": "day"
+    },
+    {
+      "file": "front-yard-and-driveway-night.webp",
+      "caption": "Front yard and driveway, night",
+      "alt": "3D render of cottage front yard: front yard and driveway at night",
+      "time": "night"
+    },
+    {
+      "file": "front-planting-bed-day.webp",
+      "caption": "Front planting bed",
+      "alt": "3D render of cottage front yard: front planting bed",
+      "time": "day"
+    },
+    {
+      "file": "front-planting-bed-night.webp",
+      "caption": "Front planting bed, night",
+      "alt": "3D render of cottage front yard: front planting bed at night",
+      "time": "night"
+    },
+    {
+      "file": "side-yard-and-tree-ring-day.webp",
+      "caption": "Side yard and tree ring",
+      "alt": "3D render of cottage front yard: side yard and tree ring",
+      "time": "day"
+    },
+    {
+      "file": "side-yard-and-tree-ring-night.webp",
+      "caption": "Side yard and tree ring, night",
+      "alt": "3D render of cottage front yard: side yard and tree ring at night",
+      "time": "night"
+    },
+    {
+      "file": "front-porch-planting-day.webp",
+      "caption": "Front porch planting",
+      "alt": "3D render of cottage front yard: front porch planting",
+      "time": "day"
+    },
+    {
+      "file": "front-porch-planting-night.webp",
+      "caption": "Front porch planting, night",
+      "alt": "3D render of cottage front yard: front porch planting at night",
+      "time": "night"
+    }
+  ]
+}

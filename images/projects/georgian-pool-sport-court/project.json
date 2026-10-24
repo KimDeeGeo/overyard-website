@@ -1,0 +1,63 @@
+{
+  "title": "Georgian pool and sport court",
+  "region": "",
+  "summary": "Pool terrace, an outdoor kitchen, a covered lounge and a sport court for a brick Georgian home.",
+  "category": [
+    "pool",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-terrace-day.webp",
+  "coverNight": "pool-terrace-night.webp",
+  "images": [
+    {
+      "file": "pool-terrace-day.webp",
+      "caption": "Pool terrace",
+      "alt": "3D render of georgian pool and sport court: pool terrace",
+      "time": "day"
+    },
+    {
+      "file": "pool-terrace-night.webp",
+      "caption": "Pool terrace, night",
+      "alt": "3D render of georgian pool and sport court: pool terrace at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-pool-house-day.webp",
+      "caption": "Pool and pool house",
+      "alt": "3D render of georgian pool and sport court: pool and pool house",
+      "time": "day"
+    },
+    {
+      "file": "covered-lounge-day.webp",
+      "caption": "Covered lounge",
+      "alt": "3D render of georgian pool and sport court: covered lounge",
+      "time": "day"
+    },
+    {
+      "file": "outdoor-kitchen-day.webp",
+      "caption": "Outdoor kitchen",
+      "alt": "3D render of georgian pool and sport court: outdoor kitchen",
+      "time": "day"
+    },
+    {
+      "file": "front-lawn-and-drive-day.webp",
+      "caption": "Front lawn and drive",
+      "alt": "3D render of georgian pool and sport court: front lawn and drive",
+      "time": "day"
+    },
+    {
+      "file": "front-planting-day.webp",
+      "caption": "Front planting",
+      "alt": "3D render of georgian pool and sport court: front planting",
+      "time": "day"
+    },
+    {
+      "file": "sport-court-day.webp",
+      "caption": "Sport court",
+      "alt": "3D render of georgian pool and sport court: sport court",
+      "time": "day"
+    }
+  ]
+}

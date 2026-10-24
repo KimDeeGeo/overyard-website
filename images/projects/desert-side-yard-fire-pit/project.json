@@ -1,0 +1,64 @@
+{
+  "title": "Desert side yard and fire pit",
+  "region": "",
+  "summary": "Desert front and side yards, an entry court, a fire pit under a redbud and lit garden walls.",
+  "category": [
+    "front-yard",
+    "planting",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "front-yard-day.webp",
+  "coverNight": "side-yard-path-night.webp",
+  "images": [
+    {
+      "file": "front-yard-day.webp",
+      "caption": "Front yard",
+      "alt": "3D render of desert side yard and fire pit: front yard",
+      "time": "day"
+    },
+    {
+      "file": "side-yard-path-night.webp",
+      "caption": "Side yard path, night",
+      "alt": "3D render of desert side yard and fire pit: side yard path at night",
+      "time": "night"
+    },
+    {
+      "file": "entry-court-day.webp",
+      "caption": "Entry court",
+      "alt": "3D render of desert side yard and fire pit: entry court",
+      "time": "day"
+    },
+    {
+      "file": "side-yard-path-day.webp",
+      "caption": "Side yard path",
+      "alt": "3D render of desert side yard and fire pit: side yard path",
+      "time": "day"
+    },
+    {
+      "file": "planted-garden-wall-day.webp",
+      "caption": "Planted garden wall",
+      "alt": "3D render of desert side yard and fire pit: planted garden wall",
+      "time": "day"
+    },
+    {
+      "file": "planted-garden-wall-night.webp",
+      "caption": "Planted garden wall, night",
+      "alt": "3D render of desert side yard and fire pit: planted garden wall at night",
+      "time": "night"
+    },
+    {
+      "file": "fire-pit-under-the-redbud-day.webp",
+      "caption": "Fire pit under the redbud",
+      "alt": "3D render of desert side yard and fire pit: fire pit under the redbud",
+      "time": "day"
+    },
+    {
+      "file": "fire-pit-under-the-redbud-night.webp",
+      "caption": "Fire pit under the redbud, night",
+      "alt": "3D render of desert side yard and fire pit: fire pit under the redbud at night",
+      "time": "night"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "title": "Hillside infinity pool",
+  "region": "",
+  "summary": "Infinity-edge pool above terraced cypress planting, a fire wall lounge and lit hillside stairs.",
+  "category": [
+    "pool",
+    "hillside",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "terraced-garden-below-the-pool-day.webp",
+  "coverNight": "pool-terrace-night.webp",
+  "images": [
+    {
+      "file": "terraced-garden-below-the-pool-day.webp",
+      "caption": "Terraced garden below the pool",
+      "alt": "3D render of hillside infinity pool: terraced garden below the pool",
+      "time": "day"
+    },
+    {
+      "file": "pool-terrace-night.webp",
+      "caption": "Pool terrace, night",
+      "alt": "3D render of hillside infinity pool: pool terrace at night",
+      "time": "night"
+    },
+    {
+      "file": "infinity-edge-pool-day.webp",
+      "caption": "Infinity-edge pool",
+      "alt": "3D render of hillside infinity pool: infinity-edge pool",
+      "time": "day"
+    },
+    {
+      "file": "infinity-edge-pool-at-dusk-day.webp",
+      "caption": "Infinity-edge pool at dusk",
+      "alt": "3D render of hillside infinity pool: infinity-edge pool at dusk",
+      "time": "day"
+    },
+    {
+      "file": "fire-wall-lounge-day.webp",
+      "caption": "Fire wall lounge",
+      "alt": "3D render of hillside infinity pool: fire wall lounge",
+      "time": "day"
+    },
+    {
+      "file": "fire-wall-lounge-night.webp",
+      "caption": "Fire wall lounge, night",
+      "alt": "3D render of hillside infinity pool: fire wall lounge at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-and-cypress-terraces-day.webp",
+      "caption": "Pool and cypress terraces",
+      "alt": "3D render of hillside infinity pool: pool and cypress terraces",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-cypress-terraces-night.webp",
+      "caption": "Pool and cypress terraces, night",
+      "alt": "3D render of hillside infinity pool: pool and cypress terraces at night",
+      "time": "night"
+    }
+  ]
+}

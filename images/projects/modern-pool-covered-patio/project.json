@@ -1,0 +1,63 @@
+{
+  "title": "Modern pool and covered patio",
+  "region": "",
+  "summary": "Modern pool with sheer descents, a covered patio, dining terrace and a tree-lined fence.",
+  "category": [
+    "pool",
+    "outdoor-living"
+  ],
+  "cleared": true,
+  "featured": false,
+  "cover": "pool-and-dining-terrace-day.webp",
+  "coverNight": "covered-patio-and-pool-night.webp",
+  "images": [
+    {
+      "file": "pool-and-dining-terrace-day.webp",
+      "caption": "Pool and dining terrace",
+      "alt": "3D render of modern pool and covered patio: pool and dining terrace",
+      "time": "day"
+    },
+    {
+      "file": "covered-patio-and-pool-night.webp",
+      "caption": "Covered patio and pool, night",
+      "alt": "3D render of modern pool and covered patio: covered patio and pool at night",
+      "time": "night"
+    },
+    {
+      "file": "covered-patio-and-pool-day.webp",
+      "caption": "Covered patio and pool",
+      "alt": "3D render of modern pool and covered patio: covered patio and pool",
+      "time": "day"
+    },
+    {
+      "file": "dining-terrace-day.webp",
+      "caption": "Dining terrace",
+      "alt": "3D render of modern pool and covered patio: dining terrace",
+      "time": "day"
+    },
+    {
+      "file": "pool-from-above-day.webp",
+      "caption": "Pool from above",
+      "alt": "3D render of modern pool and covered patio: pool from above",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-trees-night.webp",
+      "caption": "Pool and trees, night",
+      "alt": "3D render of modern pool and covered patio: pool and trees at night",
+      "time": "night"
+    },
+    {
+      "file": "pool-lighting-day.webp",
+      "caption": "Pool lighting",
+      "alt": "3D render of modern pool and covered patio: pool lighting",
+      "time": "day"
+    },
+    {
+      "file": "pool-and-lounge-chairs-night.webp",
+      "caption": "Pool and lounge chairs, night",
+      "alt": "3D render of modern pool and covered patio: pool and lounge chairs at night",
+      "time": "night"
+    }
+  ]
+}
