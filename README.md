@@ -113,7 +113,6 @@ Set `"cleared": false` to hide a project everywhere, or `true` to publish it. Fo
 - **Process images:** originals go in `_source/process/`, and `processImages` in `js/main.js` lists the outputs.
 - **Team photos:** square originals go in `_source/team/` (e.g. `axl.jpg`); `node scripts/images.mjs` makes `images/team/axl.webp`. The team cards themselves are written in `index.html` (search `11. WHO YOU'LL WORK WITH`):
   - **Axl:** photo is `images/team/axl.webp` (source `_source/team/axl.jpg`).
-  - **Alejandro:** update his bio from his CV (marked `TODO update from CV`).
 
 Running `node scripts/images.mjs` with no arguments builds everything that's missing: all cleared projects, team and process. Existing files are skipped; delete one to rebuild it.
 
