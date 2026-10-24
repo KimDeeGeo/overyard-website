@@ -479,7 +479,10 @@ const CONFIG = {
         f.classList.toggle("is-active", j === index);
         f.setAttribute("aria-current", j === index ? "true" : "false");
       });
-      tag.textContent = slides[index].label || "";
+      // Swap the sheet label once the new render is on screen, not before
+      var shown = index, im = imgs[index];
+      var setTag = function () { if (index === shown) tag.textContent = slides[shown].label || ""; };
+      if (im.complete && im.naturalWidth) setTag(); else im.addEventListener("load", setTag, { once: true });
       schedule();
     }
     function running() { return !userPaused && !hoverPaused && !document.hidden; }
