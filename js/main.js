@@ -33,8 +33,8 @@ const CONFIG = {
   linkedinUrl: "",
 
   // ---- Analytics (scripts only load when an ID is set) ----
-  ga4Id: "",
-  clarityId: "",
+  ga4Id: "G-RZK9MSXNHQ",    // Google Analytics 4 Measurement ID
+  clarityId: "z2yr7rdrmx",  // Microsoft Clarity Project ID
 
   // ---- Team ----
   edmondTools: ["Realtime Landscaping Architect", "SketchUp", "Lumion", "D5 Render"],
@@ -982,6 +982,13 @@ const CONFIG = {
       window.gtag = function () { window.dataLayer.push(arguments); };
       window.gtag("js", new Date());
       window.gtag("config", CONFIG.ga4Id);
+      // The other two lead actions (the form sends generate_lead). Both open a new tab, so the hit has time to send.
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest("a[href]");
+        if (!a) return;
+        if (a.matches("[data-booking]")) track("book_call", { link_text: a.textContent.trim() });
+        else if (a.matches("[data-whatsapp]")) track("whatsapp_click");
+      });
     }
     if (CONFIG.clarityId) {
       (function (c, l, a, r, i, t, y) {
