@@ -15,7 +15,7 @@ const CONFIG = {
   // ---- Contact and booking ----
   email: "sales@overyarddesign.com", // shown as a mailto link in Contact, the footer and the legal pages ("" = hidden)
   bookingUrl: "",         // Cal.com or Calendly link (opens in a new tab; hidden when empty)
-  web3formsKey: "",       // Access key from web3forms.com. The form won't send until this is set.
+  web3formsKey: "5ad681f6-a7ef-4ddb-870b-76eb54c058eb", // Web3Forms access key (public by design; mail goes to sales@). "" = form shows a WhatsApp fallback.
   replyHours: 12,         // "Alejandro replies within 12 hours"
   callMinutes: 20,        // "Book a 20-minute call"
   whatsapp: {
