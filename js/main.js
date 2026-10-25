@@ -740,7 +740,7 @@ const CONFIG = {
     var r = CONFIG.receive;
     if (!wrap || !r) return;
     var items = [];
-    if (r.plan) items.push({ src: r.plan, w: 928, h: 1152, alt: "2D landscape plan sheet with pool, spa, lawn, stepping pads and planting", label: "Sheet L-101 · 2D plan", plan: true });
+    if (r.plan) items.push({ src: r.plan, w: 928, h: 1152, alt: "2D landscape plan sheet with pool, spa, lawn, stepping pads and planting", label: "Sheet L-1 · Site plan", plan: true });
     (r.renders || []).forEach(function (src, i) { items.push({ src: src, w: 900, h: 506, alt: i ? "Night render of the courtyard, pool and uplit lemon trees" : "Render of the courtyard with fountain, stepping pads, pool and lemon trees", label: "Sheet R-0" + (i + 1) + " · 3D render" }); });
     if (!items.length) { hide(wrap); return; }
     wrap.innerHTML = items.map(function (it) {
