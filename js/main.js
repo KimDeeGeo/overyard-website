@@ -22,7 +22,7 @@ const CONFIG = {
     display: "+63 976 373 0461",            // shown on the page ("" = hidden)
     url: "https://wa.me/639763730461",      // opens WhatsApp in a new tab
   },
-  portalUrl: "",          // real client portal. Empty = the header "Portal login" button opens portal.html
+  portalUrl: "",          // real client portal. Empty = the header "Client portal" button opens portal.html
 
   // ---- Social links ----
   // All five icons always show. Empty = muted icon with a "Coming soon" tooltip.
@@ -40,20 +40,21 @@ const CONFIG = {
   edmondTools: ["Realtime Landscaping Architect", "SketchUp", "Lumion", "D5 Render"],
 
   // ---- Who we serve ----
-  // Use these labels everywhere. The contact form shows the "Interested in" chips
-  // listed for the type the visitor picks (slugs match data-interest in the form).
+  // name = plural (headings), label = short label (form, email subject). Never "Designer".
+  // The contact form shows the "Interested in" chips listed for the type the visitor
+  // picks (slugs match data-slug in the form). Old links with ?type=designer still work.
   audiences: {
-    contractor: { label: "Contractor", interests: ["seed", "single", "membership", "not-sure"] },
-    homeowner:  { label: "Homeowner",  interests: ["yard-design", "not-sure"] },
-    designer:   { label: "Designer",   interests: ["seed", "single", "membership", "not-sure"] },
+    contractor: { name: "Landscape contractors", label: "Contractor",    interests: ["seed", "single", "membership", "not-sure"] },
+    homeowner:  { name: "Homeowners",            label: "Homeowner",     interests: ["yard-design", "not-sure"] },
+    studio:     { name: "Design studios",        label: "Design studio", interests: ["seed", "single", "membership", "not-sure"] },
   },
   // Offer rules: packages are open to all three at the same prices; the Seed
-  // Project and Evergreen memberships are for businesses (Contractor, Designer).
+  // Project and Evergreen memberships are for businesses (contractors, design studios).
   // Homeowners get no white-label wording: their plans carry their own name and property.
   offerNotes: {
-    packages: "Open to contractors, homeowners and design firms at the same prices.",
-    seed: "For businesses only: contractors and design firms.",
-    memberships: "For businesses only: contractors and design firms.",
+    packages: "Open to contractors, homeowners and design studios at the same prices.",
+    seed: "For businesses only: contractors and design studios.",
+    memberships: "For businesses only: contractors and design studios.",
   },
 
   // ---- Price ladder ----
@@ -208,13 +209,8 @@ const CONFIG = {
   // ---- Full-width night band (after How it works) ----
   bandImage: "images/projects/pool-courtyard-citrus/stepping-pads-across-the-lawn-to-the-pool-night.webp",
 
-  // ---- How it works images (portrait, ~4:5). "" = plan-symbol placeholder ----
-  processImages: [
-    "images/process/site-photo-md.webp",   // 01 · Send site info
-    "images/process/clay-model-md.webp",   // 02 · We design
-    "images/process/night-render-md.webp", // 03 · You revise
-    "images/process/plan-sheet-md.webp",   // 04 · You close and build
-  ],
+  // How it works: the site photo / night render comparison and the plan sheet are
+  // written in index.html (#process), so they show without JavaScript.
 
   // ---- What you receive (plan sheet + 2 renders) ----
   receive: {
@@ -399,7 +395,7 @@ const CONFIG = {
     }
     showLink("[data-booking]", CONFIG.bookingUrl);
     showLink("[data-sample-pdf]", CONFIG.samplePackagePdf);
-    // "Portal login" opens portal.html until a real portal URL is set
+    // "Client portal" opens portal.html until a real portal URL is set
     if (CONFIG.portalUrl) $$("[data-portal]").forEach(function (el) { el.href = CONFIG.portalUrl; el.target = "_blank"; el.rel = "noopener"; });
 
     $$("[data-whatsapp]").forEach(function (el) {
@@ -432,8 +428,12 @@ const CONFIG = {
       }).join("");
     }
 
-    var year = $("#year");
-    if (year) year.textContent = new Date().getFullYear();
+    var now = new Date();
+    $$("#year, [data-year]").forEach(function (el) { el.textContent = now.getFullYear(); });
+    $$("[data-today]").forEach(function (el) {
+      el.textContent = now.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+      el.setAttribute("datetime", now.toISOString().slice(0, 10));
+    });
   }
 
   /* ======================================================================
@@ -521,8 +521,11 @@ const CONFIG = {
         if (!frames[index].classList.contains("is-running")) frames[index].classList.add("is-running");
         return;
       }
+      // Restart the progress bar. The forced reflow is only needed when one was running:
+      // on the first slide it would lay out the whole page before the hero can paint.
+      var wasRunning = frames.some(function (f) { return f.classList.contains("is-running"); });
       frames.forEach(function (f) { f.classList.remove("is-running"); });
-      void strip.offsetWidth;
+      if (wasRunning) void strip.offsetWidth;
       frames[index].classList.add("is-running");
       timer = setTimeout(function () { show(index + 1); }, interval);
     }
@@ -748,18 +751,14 @@ const CONFIG = {
     loadWhenNear(wrap);
   }
 
-  function renderProcess() {
-    $$(".process-card").forEach(function (card, i) {
-      var src = (CONFIG.processImages || [])[i];
-      var media = $(".process-media", card);
-      if (!src || !media) return;
-      var img = document.createElement("img");
-      img.dataset.nearSrc = src; img.alt = media.dataset.alt || "";
-      img.width = 700; img.height = 869; img.decoding = "async";
-      media.innerHTML = "";
-      media.appendChild(img);
-      media.classList.add("has-img");
-      loadWhenNear(card);
+  // Before/after sliders written in the HTML (data-static): the range input moves the divider
+  function wireCompare() {
+    $$(".ba[data-static]").forEach(function (wrap) {
+      var range = $(".ba-range", wrap), first = (wrap.dataset.before || "").toLowerCase();
+      range.addEventListener("input", function () {
+        wrap.style.setProperty("--pos", range.value + "%");
+        range.setAttribute("aria-valuetext", range.value + "% " + first + " shown");
+      });
     });
   }
 
@@ -941,23 +940,24 @@ const CONFIG = {
     if (keyInput) keyInput.value = CONFIG.web3formsKey || "";
 
     var status = $(".form-status", form), button = $("button[type=submit]", form);
-    var first = $("#f-first"), last = $("#f-last"), email = $("#f-email"), phone = $("#f-phone");
-    var company = $("#f-company"), companyField = company.closest(".field"), msg = $("#f-message");
+    var name = $("#f-name"), email = $("#f-email"), phone = $("#f-phone");
+    var company = $("#f-company"), companyField = company.closest(".field"), notes = $("#f-notes");
     var typeGroup = $("#f-type"), types = $$("[name=Type]", form), interests = $$('[name="Interested in"]', form);
+    var audiences = CONFIG.audiences || {};
     var tried = false;
     function setStatus(kind, text) { status.className = "form-status is-" + kind; status.textContent = text; }
     var wa = CONFIG.whatsapp && CONFIG.whatsapp.display ? CONFIG.whatsapp.display : "";
     function picked(list) { return list.filter(function (x) { return x.checked; })[0] || null; }
 
-    // "You are a" decides the company field and which "Interested in" chips show
+    // "I'm a" decides the company field and which "Interested in" chips show
     function updateType() {
-      var t = picked(types), slug = t ? t.dataset.slug : "";
+      var t = picked(types), slug = t ? t.value : "";
       var homeowner = slug === "homeowner";
       companyField.hidden = homeowner;
       company.disabled = homeowner;          // disabled = not sent
       company.required = !!slug && !homeowner;
       $$(".company-hint", form).forEach(function (h) { h.hidden = true; });
-      var allowed = ((CONFIG.audiences || {})[slug || "contractor"] || {}).interests || [];
+      var allowed = (audiences[slug || "contractor"] || {}).interests || [];
       interests.forEach(function (r) {
         var show = allowed.indexOf(r.dataset.slug) > -1;
         r.closest(".chip").hidden = !show;
@@ -967,14 +967,14 @@ const CONFIG = {
 
     // Inline messages: shown after a submit attempt or once the visitor leaves the field
     var rules = [
-      { el: first, test: function (v) { return v ? "" : "Needs your first name."; } },
-      { el: last, test: function (v) { return v ? "" : "Needs your last name."; } },
-      { el: email, test: function (v) { return !v ? "Needs your email." : /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? "" : "Needs a working email."; } },
+      { el: typeGroup, test: function () { return picked(types) ? "" : "Pick one so we know who we're talking to."; } },
+      { el: name, test: function (v) { return v ? "" : "Add your name so we know who to reply to."; } },
+      { el: email, test: function (v) { return !v ? "Add your email so we can reply." : /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? "" : "That email doesn't look right."; } },
       // US, Australian and international numbers: digits, spaces, + ( ) . -, at least 7 digits
       { el: phone, test: function (v) { return !v || (/^[+()\d\s.\-]+$/.test(v) && v.replace(/\D/g, "").length >= 7) ? "" : "Check the number, or leave it blank."; } },
-      { el: typeGroup, test: function () { return picked(types) ? "" : "Pick one so we know who we're talking to."; } },
-      { el: company, test: function (v) { return !company.required || v ? "" : "Needs your company name."; } },
+      { el: company, test: function (v) { return !company.required || v ? "" : "Add your company name."; } },
     ];
+    var companyRule = rules[4];
     function show(el, text) {
       var err = document.getElementById(el.getAttribute("aria-describedby").split(" ")[0]);
       err.textContent = text;
@@ -989,7 +989,7 @@ const CONFIG = {
     rules.forEach(function (rule) {
       rule.touched = false;
       rule.el.addEventListener("focusout", function (e) {
-        if (rule.el === typeGroup && typeGroup.contains(e.relatedTarget)) return;   // still inside the toggle group
+        if (rule.el === typeGroup && typeGroup.contains(e.relatedTarget)) return;   // still inside the card group
         rule.touched = true; check(rule);
       });
       rule.el.addEventListener(rule.el === typeGroup ? "change" : "input", function () { if (tried || rule.touched) check(rule); });
@@ -997,18 +997,21 @@ const CONFIG = {
     types.forEach(function (r) {
       r.addEventListener("change", function () {
         updateType();
-        if (tried || rules[5].touched) check(rules[5]);   // company may have become optional or required
+        if (tried || companyRule.touched) check(companyRule);   // company may have become optional or required
       });
     });
 
     // Pre-select from buttons (data-type / data-interest / data-note) or the URL
-    // (?type=homeowner&interest=yard-design#contact). Slugs match CONFIG.audiences.
+    // (?type=homeowner&interest=yard-design#contact). Slugs match CONFIG.audiences;
+    // "designer" (v6 links) means studio.
+    var ALIASES = { designer: "studio" };
     var NOTES = { "portal-link": "I need the link to my client portal folder." };
     function preselect(type, interest, note) {
-      if (type) types.forEach(function (r) { r.checked = r.dataset.slug === type; });
+      type = ALIASES[type] || type;
+      if (type) types.forEach(function (r) { r.checked = r.value === type; });
       updateType();
       if (interest) interests.forEach(function (r) { if (!r.closest(".chip").hidden) r.checked = r.dataset.slug === interest; });
-      if (note && (!msg.value || msg.dataset.prefilled === msg.value)) { msg.value = note; msg.dataset.prefilled = note; }
+      if (note && (!notes.value || notes.dataset.prefilled === notes.value)) { notes.value = note; notes.dataset.prefilled = note; }
       if (tried) rules.forEach(check);
     }
     document.addEventListener("click", function (e) {
@@ -1032,13 +1035,12 @@ const CONFIG = {
           (wa ? " Please message us on WhatsApp at " + wa + "." : CONFIG.email ? " Please email " + CONFIG.email + " instead." : ""));
         return;
       }
-      // Only filled fields, in form order: First name, Last name, email, Phone, Type, Company, Interested in, Message
+      // Only filled fields, in form order: Type, name, email, Phone or WhatsApp, Company, Interested in, Project notes
       var data = {};
       new FormData(form).forEach(function (v, k) { if (k !== "botcheck" && String(v).trim() !== "") data[k] = String(v).trim(); });
-      var t = picked(types), i = picked(interests), fullName = data["First name"] + " " + data["Last name"];
+      var t = picked(types), i = picked(interests), label = (audiences[t.value] || {}).label || t.value;
       data.access_key = CONFIG.web3formsKey;
-      data.name = fullName;
-      data.subject = "Overyard: " + t.value + (i ? " · " + i.value : "") + " (" + fullName + (data.Company ? ", " + data.Company : "") + ")";
+      data.subject = "Overyard: " + label + (i ? " · " + i.value : "") + " (" + data.name + (data.Company ? ", " + data.Company : "") + ")";
       data.from_name = "Overyard website";
 
       button.disabled = true;
@@ -1056,7 +1058,7 @@ const CONFIG = {
           rules.forEach(function (rule) { rule.touched = false; show(rule.el, ""); });
           updateType();
           setStatus("success", "Thanks. Alejandro has your message" + (CONFIG.replyHours ? " and will reply within " + CONFIG.replyHours + " hours." : " and will reply soon."));
-          track("generate_lead", { type: t.dataset.slug, interest: i ? i.dataset.slug : "" });
+          track("generate_lead", { type: t.value, interest: i ? i.dataset.slug : "" });
         })
         .catch(function () {
           setStatus("error", "Something went wrong sending the form. Your details are still here, so you can try again" +
@@ -1154,7 +1156,7 @@ const CONFIG = {
   function rest() {
     var hasProjects = $("#work-grid") || $("#portfolio-grid") || $("#featured-slider");
     inSteps([
-      fillConfig, renderDeliverables, renderProcess, addSchema, addAnalytics,
+      fillConfig, renderDeliverables, wireCompare, addSchema, addAnalytics,
       initBand, initReveal, initLightbox, initVideo, initMobileCta,
       function () {
         if (!hasProjects) return;

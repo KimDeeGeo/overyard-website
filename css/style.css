@@ -165,6 +165,11 @@ a:hover { color: var(--fern-hover); }
   color: var(--fern);
 }
 .sheet-label::before { content: ""; width: 22px; height: 1px; background: currentColor; }
+/* Section eyebrows: a small inline plan-symbol SVG instead of the rule, then plain words.
+   (Inline SVG, not CSS masks: twelve mask images cost ~25 ms of style work at startup.) */
+.sheet-label.with-glyph::before { display: none; }
+.eyebrow-glyph { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.eyebrow-glyph .fill { fill: currentColor; stroke: none; }
 
 /* ==========================================================================
    Buttons
@@ -268,7 +273,7 @@ a:hover { color: var(--fern-hover); }
   .site-nav li a { padding: 0; border: 0; font-size: .95rem; }
   .site-nav li a:hover { color: var(--fern); }
   .site-nav .btn { width: auto; }
-  .site-nav .btn + .btn { margin: 0 0 0 -18px; }   /* Portal login sits close to the main CTA */
+  .site-nav .btn + .btn { margin: 0 0 0 -18px; }   /* Client portal sits close to the main CTA */
   .logo-svg { width: 144px; }
 }
 
@@ -535,37 +540,39 @@ a:hover { color: var(--fern-hover); }
 }
 
 /* ==========================================================================
-   6. How it works: tall image cards on a stepping-stone path
+   6. How it works: a day-by-day timeline on a stepping-stone path
+      (vertical on phones, horizontal from 960px), then the before/after
    ========================================================================== */
-.process { list-style: none; margin: 0; padding: 0; display: grid; gap: 44px; }
-.process-card { position: relative; container-type: inline-size; max-width: none; }
-.process-media {
-  position: relative; aspect-ratio: 4 / 5;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius);
-  background: var(--bg);
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.tl-step { position: relative; max-width: none; padding: 0 0 28px 34px; }
+.tl-step::before {   /* stepping stone */
+  content: ""; position: absolute; left: 0; top: 3px;
+  width: 18px; height: 12px; border-radius: 50%;
+  border: 1.5px solid var(--fern); background: var(--paper);
 }
-.process-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.process-ph { width: 55%; height: auto; fill: none; stroke: var(--sage); stroke-width: 1.2; }
-.process-num {
-  position: relative; z-index: 2; display: block;
-  margin: -.62em 0 0 14px;
-  font: 800 clamp(4.2rem, 9vw, 5.6rem)/1 var(--font-display);
-  letter-spacing: -0.04em; color: var(--gold);
-  text-shadow: 0 2px 14px rgba(0, 0, 0, .35);
+.tl-step::after {    /* dashed path to the next stone */
+  content: ""; position: absolute; left: 8px; top: 20px; bottom: 2px;
+  border-left: 2px dashed var(--line);
 }
-.process-label { margin: 10px 0 8px; font-family: var(--font-mono); font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
-.process-card p { color: var(--muted); }
-@media (min-width: 640px) { .process { grid-template-columns: 1fr 1fr; gap: 44px 24px; } }
-@media (min-width: 1000px) {
-  .process { grid-template-columns: repeat(4, 1fr); gap: 32px; }
-  /* dashed stepping-stone path linking the step numbers */
-  .process-card:not(:last-child)::after {
-    content: ""; position: absolute;
-    top: calc(125cqw + 2px); left: 92px; right: -30px;
-    border-top: 2px dashed var(--line);
-  }
+.tl-step:last-child { padding-bottom: 0; }
+.tl-step:last-child::after { display: none; }
+.tl-step:last-child::before { background: var(--fern); }
+.tl-day { margin-bottom: 4px; font-weight: 600; color: var(--fern); }
+.tl-step h3 { margin-bottom: 6px; font-size: 1.25rem; }
+.tl-step p:not(.tl-day) { color: var(--muted); font-size: .98rem; }
+@media (min-width: 960px) {
+  .timeline { grid-template-columns: repeat(5, 1fr); gap: 26px; }
+  .tl-step { padding: 34px 0 0; }
+  .tl-step::before { top: 0; }
+  .tl-step::after { left: 28px; right: -16px; top: 5px; bottom: auto; border-left: 0; border-top: 2px dashed var(--line); }
 }
+.timeline-note { max-width: none; margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line); }
+.process-visuals { display: grid; gap: 24px; margin-top: clamp(36px, 5vw, 56px); }
+.compare-fig { margin: 0; }
+.compare-fig .ba { border: 1px solid var(--line); border-radius: var(--radius); }
+.compare-fig figcaption, .process-plan figcaption { margin-top: 8px; }
+.process-plan .media { --ratio: 928 / 1152; }
+@media (min-width: 900px) { .process-visuals { grid-template-columns: 2fr 1fr; align-items: start; } }
 
 /* ==========================================================================
    7. Night band (one full-width section, always dark)
@@ -819,36 +826,45 @@ a:hover { color: var(--fern-hover); }
 .team-cta { margin-top: clamp(32px, 4vw, 44px); }
 
 /* ==========================================================================
-   12. Contact: a drawing sheet with a title-block header row
+   12. Contact: a drawing transmittal strip over the form, Alejandro's card
+      beside it (left on desktop, after the form on phones)
    ========================================================================== */
-.contact-sheet { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: 2px; }
-.contact-sheet > .cm { border-color: var(--ink); width: 18px; height: 18px; }
-.contact-head { display: grid; border-bottom: 1px solid var(--line); }
-.contact-head-main { padding: 26px 20px 22px; }
-.contact-kicker { color: var(--fern); margin-bottom: 10px; }
-.contact-head h2 { font-size: clamp(2rem, 4.6vw, 3.2rem); }
-.contact-head-sheet { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-top: 1px solid var(--line); }
-.contact-head-sheet .north { color: var(--fern); width: 26px; height: 26px; }
-.contact-head-sheet .sheet-label { margin: 0; }
-@media (min-width: 760px) {
-  .contact-head { grid-template-columns: 1fr auto; }
-  .contact-head-main { padding: 34px 36px 30px; }
-  .contact-head-sheet { flex-direction: column; justify-content: center; padding: 20px 32px; border-top: 0; border-left: 1px solid var(--line); }
+.contact-grid { display: grid; gap: 24px; }
+.contact-main { min-width: 0; }
+.transmittal {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line); border-bottom: 0;
+  background: var(--paper);
+  font: 500 .7rem/1.35 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink);
 }
+.tr-cell { padding: 9px 14px; border-bottom: 1px solid var(--line); }
+.tr-cell:nth-child(odd) { border-right: 1px solid var(--line); }
+.tr-title { font-weight: 600; color: var(--fern); }
+.tr-key { color: var(--muted); }
+@media (min-width: 700px) {
+  .transmittal { grid-template-columns: auto auto auto 1fr; }
+  .tr-cell { border-right: 1px solid var(--line); }
+  .tr-cell:last-child { border-right: 0; }
+}
+.contact-form { border: 1px solid var(--line); border-top: 0; background: var(--paper); }
 
-.contact-grid { display: grid; }
-.contact-intro { padding: 24px 20px; border-bottom: 1px solid var(--line); }
-.contact-intro > p { color: var(--muted); font-size: 1.05rem; }
-.contact-intro > p + p { margin-top: 12px; }
-.contact-intro .reply { color: var(--ink); }
-.contact-intro .contact-email { font-family: var(--font-mono); font-size: .9rem; color: var(--ink); margin-top: 18px; }
+.contact-card { display: grid; gap: 10px; align-content: start; justify-items: start; padding: 22px; border: 1px solid var(--line); background: var(--paper); }
+.contact-card-photo { width: 96px; height: 96px; object-fit: cover; border: 1px solid var(--line); border-radius: var(--radius); padding: 3px; background: var(--bg); }
+.contact-card-name { margin-top: 4px; }
+.contact-card-name strong { display: block; font-family: var(--font-display); font-size: 1.12rem; }
+.contact-card-role { color: var(--muted); }
+.contact-card-reply { font-weight: 600; color: var(--fern); }
+.contact-card .whatsapp { margin-top: 4px; }
+.contact-card .contact-email { font-family: var(--font-mono); font-size: .86rem; }
+.contact-card .btn { margin-top: 6px; }
 @media (min-width: 960px) {
-  .contact-grid { grid-template-columns: 1fr 1.5fr; }
-  .contact-intro { padding: 36px; border-bottom: 0; border-right: 1px solid var(--line); }
+  .contact-grid { grid-template-columns: 280px minmax(0, 1fr); gap: 32px; align-items: start; }
+  .contact-card { grid-column: 1; grid-row: 1; position: sticky; top: calc(var(--header-h) + 24px); }
+  .contact-main { grid-column: 2; grid-row: 1; }
 }
 
-/* The form: underline inputs, mono field labels like a title block */
-.contact-form { display: grid; gap: 22px; padding: 26px 20px 28px; }
+/* The form: underline inputs, mono field labels */
+.contact-form { display: grid; gap: 22px; padding: 24px 20px 28px; }
 @media (min-width: 960px) { .contact-form { padding: 36px 40px 40px; } }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .field { display: grid; gap: 4px; align-content: start; }
@@ -874,27 +890,41 @@ a:hover { color: var(--fern-hover); }
 .field ::placeholder { color: var(--muted); opacity: .75; }
 .field input:focus, .field textarea:focus { outline: none; border-bottom-color: var(--fern); box-shadow: 0 1.5px 0 var(--fern); }
 .field input.is-invalid, .field textarea.is-invalid { border-bottom-color: var(--clay); }
-.field-hint { font-size: .85rem; color: var(--muted); }
 .field-error { font-size: .88rem; font-weight: 600; color: var(--clay); }
 .field-error:empty { display: none; }
 
-/* "You are a": radio buttons styled as toggle buttons; "Interested in": radio chips */
-.toggle-field, .chip-field { margin: 0; padding: 0; border: 0; min-width: 0; }
-.toggles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
-.toggle, .chip { position: relative; }
-.toggle input, .chip input { position: absolute; top: 50%; left: 50%; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }   /* still focusable; the visible button takes the click */
-.toggle span {
-  display: flex; align-items: center; justify-content: center;
-  min-height: 48px; padding: 0 6px;
+/* "I'm a": radio inputs as large cards; "Interested in": radio chips.
+   The inputs stay focusable (keyboard, arrow keys); the visible card takes the click. */
+.type-field, .chip-field { margin: 0; padding: 0; border: 0; min-width: 0; }
+.type-cards { display: grid; gap: 10px; margin-top: 10px; }
+.type-card, .chip { position: relative; display: block; }
+.type-card input, .chip input { position: absolute; top: 50%; left: 50%; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+.type-card-body {
+  position: relative; height: 100%;
+  display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; align-items: center;
+  padding: 14px 40px 14px 16px;
   border: 1.5px solid var(--field-line); border-radius: var(--radius);
-  background: var(--paper); color: var(--ink);
-  font-weight: 600; font-size: .95rem; text-align: center; line-height: 1.15;
-  cursor: pointer; transition: border-color .2s, background-color .2s, color .2s;
+  background: var(--paper); cursor: pointer;
+  transition: border-color .2s, background-color .2s;
 }
-@media (max-width: 400px) { .toggle span { font-size: .88rem; } }
-.toggle span:hover { border-color: var(--fern); }
-.toggle input:checked + span { background: var(--fern); border-color: var(--fern); color: var(--on-fern); }
-#f-type.is-invalid .toggle span { border-color: var(--clay); }
+.type-card-body .glyph { grid-row: span 2; width: 34px; height: 34px; color: var(--fern); }
+.type-card-title { font: 700 1.06rem/1.25 var(--font-display); letter-spacing: -0.01em; color: var(--ink); }
+.type-card-line { font-size: .93rem; line-height: 1.4; color: var(--muted); }
+.type-card-body::after {   /* selected tick */
+  content: "\2713"; position: absolute; top: 12px; right: 12px;
+  width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--fern); color: var(--on-fern); font-size: .72rem; font-weight: 700;
+  opacity: 0; transition: opacity .2s;
+}
+.type-card-body:hover { border-color: var(--fern); }
+.type-card input:checked + .type-card-body { border-color: var(--fern); background: var(--fern-soft); box-shadow: inset 0 0 0 1px var(--fern); }
+.type-card input:checked + .type-card-body::after { opacity: 1; }
+#f-type.is-invalid .type-card-body { border-color: var(--clay); }
+@media (min-width: 700px) {
+  .type-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .type-card-body { grid-template-columns: 1fr; align-content: start; gap: 6px; padding: 16px 16px 18px; }
+  .type-card-body .glyph { grid-row: auto; margin-bottom: 4px; }
+}
 .chips-pick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .chip span {
   display: inline-flex; align-items: center; gap: 8px;
@@ -908,11 +938,9 @@ a:hover { color: var(--fern-hover); }
 .chip span:hover { border-color: var(--fern); }
 .chip input:checked + span { border-color: var(--fern); background: var(--fern-soft); }
 .chip input:checked + span::before { background: var(--fern); border-color: var(--fern); }
-.toggle input:focus-visible + span, .chip input:focus-visible + span { outline: 2px solid var(--fern); outline-offset: 2px; }
+.type-card input:focus-visible + .type-card-body, .chip input:focus-visible + span { outline: 2px solid var(--fern); outline-offset: 2px; }
 
 .btn-submit { width: 100%; min-height: 54px; font-size: 1.05rem; }
-.btn-submit .arrow { transition: transform .2s; }
-.btn-submit:hover .arrow { transform: translateX(4px); }
 .form-status { font-size: .95rem; font-weight: 600; }
 .form-status:empty { display: none; }
 .form-status.is-success { color: var(--fern); }
@@ -932,6 +960,7 @@ a:hover { color: var(--fern-hover); }
 .tb-cell { padding: 18px; border-bottom: 1px solid var(--line); }
 .tb-cell:last-child { border-bottom: 0; }
 .tb-logo .logo-svg { width: 128px; margin-bottom: 10px; }
+.tb-tagline { margin-bottom: 8px; font: 700 1.02rem/1.3 var(--font-display); color: var(--ink); max-width: 26ch; }
 .tb-key { margin-bottom: 8px; color: var(--fern); }
 .tb-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: .95rem; }
 .tb-list a { color: var(--ink); text-decoration: none; }

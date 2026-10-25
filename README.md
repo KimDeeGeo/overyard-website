@@ -110,7 +110,7 @@ Set `"cleared": false` to hide a project everywhere, or `true` to publish it. Fo
 - **"What you receive":** `receive`.
 
 ### How it works images and team photos
-- **Process images:** originals go in `_source/process/`, and `processImages` in `js/main.js` lists the outputs.
+- **How it works images:** written straight into `index.html` (`#process`): the before/after uses `images/process/site-photo-wide.webp` (the site photo cropped to 16:9 to line up with the render) and `night-render.webp`, beside `plan-sheet.webp`. Originals are in `_source/process/`.
 - **Team photos:** square originals go in `_source/team/` (e.g. `axl.jpg`); `node scripts/images.mjs` makes `images/team/axl.webp`. The team cards themselves are written in `index.html` (search `11. WHO YOU'LL WORK WITH`):
   - **Axl:** photo is `images/team/axl.webp` (source `_source/team/axl.jpg`).
 
@@ -142,13 +142,13 @@ Everything is in `js/main.js`:
 
 The page HTML also contains the founding-tier numbers as default text (for link previews and search engines). If you change the **founding** prices, update the same numbers in `index.html` too. Search for the old number.
 
-Other settings: `email`, `bookingUrl`, `web3formsKey`, `replyHours`, `callMinutes` (reference only), `whatsapp`, `portalUrl`, `audiences` (Contractor, Homeowner, Designer and the form chips each one sees), `offerNotes`, `planSet`, `deliverables`, the five social URLs, `ga4Id`, `clarityId`, `edmondTools`, `samplePackagePdf`, `walkthroughVideo`. Leave any of them `""` to hide what depends on it.
+Other settings: `email`, `bookingUrl`, `web3formsKey`, `replyHours`, `callMinutes` (reference only), `whatsapp`, `portalUrl`, `audiences` (contractor, homeowner, studio: full name, short label and the form chips each one sees), `offerNotes`, `planSet`, `deliverables`, the five social URLs, `ga4Id`, `clarityId`, `edmondTools`, `samplePackagePdf`, `walkthroughVideo`. Leave any of them `""` to hide what depends on it.
 
-## 4. WhatsApp, social links and portal login
+## 4. WhatsApp, social links and client portal
 
 - **WhatsApp** shows in Contact and the footer: `whatsapp.display` and `whatsapp.url` (`https://wa.me/` + digits only).
 - **Social icons** (Facebook, Instagram, TikTok, YouTube, LinkedIn) always show. Empty URLs are muted "Coming soon" icons; paste a link to make one live.
-- **Portal login**: the header button opens `portal.html` (a placeholder with a "Lost your link? Message us" button). Set `portalUrl` and it goes to the real portal instead.
+- **Client portal**: the header button opens `portal.html` (a placeholder with a "Lost your link? Message us" button). Set `portalUrl` and it goes to the real portal instead.
 
 ## 5. Connect the contact form (Web3Forms, free)
 
@@ -158,7 +158,7 @@ Other settings: `email`, `bookingUrl`, `web3formsKey`, `replyHours`, `callMinute
 
 Until a key is set, the form says it isn't connected and points people to WhatsApp.
 
-The form asks for first and last name, email, phone (optional), "You are a" (Contractor, Homeowner, Designer), company (not for homeowners), "Interested in" and a message. Buttons pre-select the type and interest with `data-type` / `data-interest` (and an optional `data-note`); links from other pages use the URL, e.g. `index.html?type=homeowner&interest=yard-design#contact`. The email subject reads like "Overyard: Homeowner · Yard design (Jane Doe)".
+The form asks "I'm a" (Landscape contractor, Homeowner, Design studio; values contractor, homeowner, studio), then name, email, phone or WhatsApp (optional), company (not for homeowners), "Interested in" and project notes. A transmittal strip with today's date sits on top. Buttons pre-select the type and interest with `data-type` / `data-interest` (and an optional `data-note`); links from other pages use the URL, e.g. `index.html?type=homeowner&interest=yard-design#contact` (old `?type=designer` links still open Design studio). The email subject reads like "Overyard: Homeowner · Yard design (Jane Doe)".
 
 ## 6. Connect booking (Cal.com or Calendly, free)
 
