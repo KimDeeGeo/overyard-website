@@ -6,7 +6,7 @@
 
   <!-- ==== PAGE TITLE + SEARCH/SHARE TEXT (edit freely) ==== -->
   <title>Overyard | White-label landscape design for contractors</title>
-  <meta name="description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors in the US and Australia. Start with a $199 Seed Project.">
+  <meta name="description" content="2D plans, photoreal 3D renders and material takeoffs for landscape contractors, homeowners and design firms in the US and Australia. White-label for contractors. Start with a $199 Seed Project.">
   <link rel="canonical" href="https://overyarddesign.com/">
   <meta name="theme-color" content="#121512">
 
@@ -27,7 +27,7 @@
   <meta property="og:site_name" content="Overyard">
   <meta property="og:url" content="https://overyarddesign.com/">
   <meta property="og:title" content="Overyard | Show them the yard. Win the job.">
-  <meta property="og:description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors. Start with a $199 Seed Project.">
+  <meta property="og:description" content="2D plans, photoreal 3D renders and material takeoffs for landscape contractors, homeowners and design firms. Start with a $199 Seed Project.">
   <meta property="og:image" content="https://overyarddesign.com/assets/og-image.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
@@ -35,7 +35,7 @@
   <meta property="og:image:alt" content="3D render of a modern pool courtyard with a pergola fire lounge">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Overyard | Show them the yard. Win the job.">
-  <meta name="twitter:description" content="White-label 2D plans, 3D renders and material takeoffs for landscape, pool and outdoor-living contractors.">
+  <meta name="twitter:description" content="2D plans, photoreal 3D renders and material takeoffs for landscape contractors, homeowners and design firms.">
   <meta name="twitter:image" content="https://overyarddesign.com/assets/og-image.jpg">
 
   <!-- Favicons -->
@@ -84,8 +84,6 @@
       </a>
 
       <div class="header-actions">
-        <!-- Client login: set portalUrl in js/main.js (hidden until then) -->
-        <a class="portal-link" data-portal hidden>Client login</a>
         <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light mode">
           <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
           <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
@@ -104,7 +102,9 @@
           <li><a href="#process">How it works</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
-        <a href="#contact" class="btn btn-primary btn-small" data-topic="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+        <!-- Portal login: portal.html until CONFIG.portalUrl is set -->
+        <a href="portal.html" class="btn btn-outline btn-small nav-portal" data-portal>Portal login</a>
+        <a href="#contact" class="btn btn-primary btn-small" data-type="contractor" data-interest="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
       </nav>
     </div>
   </header>
@@ -131,7 +131,7 @@
         <div>
           <p class="hero-lead">White-label 2D plans and 3D renders for landscape, pool and outdoor-living contractors. Designed by a landscape designer with 1,000+ residential projects, with material takeoffs from the approved design.</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary" data-topic="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+            <a href="#contact" class="btn btn-primary" data-type="contractor" data-interest="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
             <!-- Shows once samplePackagePdf is set in js/main.js -->
             <a class="btn btn-outline" data-sample-pdf hidden>See a sample package</a>
           </div>
@@ -186,6 +186,59 @@
     </section>
 
     <!-- =========================================================
+         3b. WHO WE WORK WITH (light paper band; stays light in dark mode)
+         Labels match CONFIG.audiences. Buttons pre-select the contact form.
+         ========================================================= -->
+    <section class="section section-tight paper-section" id="audiences">
+      <div class="container">
+        <p class="sheet-label">G-01 · Who we work with</p>
+        <header class="section-head reveal">
+          <h2>Who we work with</h2>
+          <p>Built for contractors, and open to homeowners and design firms.</p>
+        </header>
+        <div class="audiences">
+          <article class="audience">
+            <i class="cm cm-tl"></i><i class="cm cm-tr"></i><i class="cm cm-bl"></i><i class="cm cm-br"></i>
+            <div class="audience-head">
+              <h3>Contractor</h3>
+              <svg class="glyph is-fern" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="22" height="18" rx="1"/><path d="M5 13 H27 M5 19 H27 M12 7 V13 M20 13 V19 M12 19 V25"/></svg>
+            </div>
+            <dl class="audience-lines">
+              <dt class="label">Who</dt><dd>Landscape, hardscape, pool and outdoor-living contractors.</dd>
+              <dt class="label">You get</dt><dd>White-label plans, renders and takeoffs that help you close the job.</dd>
+            </dl>
+            <a href="#contact" class="btn btn-primary" data-type="contractor" data-interest="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+          </article>
+          <article class="audience">
+            <i class="cm cm-tl"></i><i class="cm cm-tr"></i><i class="cm cm-bl"></i><i class="cm cm-br"></i>
+            <div class="audience-head">
+              <h3>Homeowner</h3>
+              <svg class="glyph is-fern" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="6" width="22" height="20" rx="1"/><path d="M12 26 V20"/><path d="M12 20 A6 6 0 0 1 18 26"/><path d="M5 15 H15 V6"/></svg>
+            </div>
+            <dl class="audience-lines">
+              <dt class="label">Who</dt><dd>People planning their own yard or outdoor area.</dd>
+              <dt class="label">You get</dt><dd>A design with your name and property on it, to plan, budget or hand to a builder.</dd>
+            </dl>
+            <a href="#contact" class="btn btn-outline" data-type="homeowner" data-interest="yard-design">Get a design for my yard</a>
+          </article>
+          <article class="audience">
+            <i class="cm cm-tl"></i><i class="cm cm-tr"></i><i class="cm cm-bl"></i><i class="cm cm-br"></i>
+            <div class="audience-head">
+              <h3>Designer</h3>
+              <svg class="glyph is-fern" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 26 V6 L26 26 Z"/><path d="M10.5 21.5 V16 L16 21.5 Z"/></svg>
+            </div>
+            <dl class="audience-lines">
+              <dt class="label">Who</dt><dd>Landscape design studios and design-build firms.</dd>
+              <dt class="label">You get</dt><dd>Extra hands for plans, renders and revisions, delivered under your brand.</dd>
+            </dl>
+            <a href="#contact" class="btn btn-outline" data-type="designer" data-interest="not-sure" data-note="We'd like help with overflow work.">Talk to us about overflow work</a>
+          </article>
+        </div>
+        <p class="audience-note">Design packages are open to all three at the same prices. The Seed Project and Evergreen memberships are for contractors and design firms.</p>
+      </div>
+    </section>
+
+    <!-- =========================================================
          4. WORK
          Featured slider: CONFIG.featured. Cards: up to 5 projects whose
          images/projects/<slug>/project.json has "featured": true and
@@ -199,7 +252,7 @@
           <p>Pools, outdoor living, hillside terracing and planting. Open a project to see its day and night renders.</p>
         </header>
 
-        <div class="featured reveal" id="featured-slider">
+        <div class="featured" id="featured-slider">
           <div class="featured-head">
             <p class="label">From overhead · <span class="featured-name">Pool courtyard and citrus fire pit</span></p>
             <h3>Drag from overhead to eye level.</h3>
@@ -211,22 +264,20 @@
 
         <div class="bento" id="work-grid"></div>
 
-        <p class="see-all reveal"><a href="portfolio.html" class="link-arrow">See the full portfolio</a></p>
-
         <!-- Optional walkthrough video: set walkthroughVideo in js/main.js -->
-        <figure class="walkthrough reveal" data-walkthrough hidden>
+        <figure class="walkthrough" data-walkthrough hidden>
           <video muted loop playsinline preload="none" aria-label="Walkthrough video of a landscape design"></video>
           <figcaption class="label">Walkthrough video · included in Canopy</figcaption>
         </figure>
 
         <div class="portfolio-cta reveal">
           <div>
-            <h3>Want to see more?</h3>
-            <p>Book a call and we'll walk you through more of our work, or request the full portfolio and we'll send it privately.</p>
+            <h3>Like what you see?</h3>
+            <p>Book a call and we'll show you how we'd approach your project.</p>
           </div>
           <div class="portfolio-cta-actions">
             <a class="btn btn-primary" data-booking hidden>Book a call</a>
-            <a href="#contact" class="btn btn-outline" data-topic="portfolio">Request the full portfolio</a>
+            <a href="portfolio.html" class="link-arrow">See the full portfolio</a>
           </div>
         </div>
       </div>
@@ -240,15 +291,17 @@
         <p class="sheet-label">L-03 · Deliverables</p>
         <header class="section-head reveal">
           <h2>What you receive</h2>
-          <p>A drawing set you can put in front of a homeowner the same day, under your logo.</p>
+          <p>A drawing set with your own title block, ready to present the same day.</p>
         </header>
         <div class="deliverables">
           <div class="deliverables-media" id="deliverables-media"></div>
-          <ul class="files reveal" aria-label="Files you receive">
-            <li><span class="file-type">PDF</span><span>Scaled 2D plan with planting schedule</span></li>
-            <li><span class="file-type">JPG</span><span>High-resolution 3D renders</span></li>
-            <li><span class="file-type">MP4</span><span>Walkthrough video (Canopy)</span></li>
-            <li><span class="file-type">XLSX</span><span>Material takeoff spreadsheet</span></li>
+          <!-- Default text = CONFIG.deliverables (keep in sync) -->
+          <ul class="files reveal" id="deliverables-list" aria-label="What every client receives">
+            <li><span class="file-type">PDF</span><span>Plan set with a custom title block: your company name and logo (or, for homeowners, your name and property), project name, sheet numbers and date, laid out to your needs.</span></li>
+            <li><span class="file-type">PDF</span><span>2D site and planting plan</span></li>
+            <li><span class="file-type">JPG</span><span>Photoreal 3D renders, day and night (Sprout 10, Grove 15, Canopy 20; 5 extra renders $49)</span></li>
+            <li><span class="file-type">XLSX</span><span>Material takeoff as a spreadsheet and PDF (included in Canopy; add-on for the others)</span></li>
+            <li><span class="file-type">MP4</span><span>Video walkthrough (included in Canopy)</span></li>
           </ul>
         </div>
       </div>
@@ -298,15 +351,15 @@
           <p>Four steps. One point of contact the whole way.</p>
         </header>
         <ol class="process">
-          <li class="process-card reveal">
+          <li class="process-card">
             <div class="process-media" data-alt="Site photo of a bare backyard with a tape measure on the ground">
               <svg class="process-ph" viewBox="0 0 120 150" aria-hidden="true"><rect x="10" y="10" width="100" height="130" rx="4"/><path d="M10 105 L45 80 L70 98 L110 70"/><circle cx="82" cy="40" r="10"/></svg>
             </div>
             <span class="process-num" aria-hidden="true">1</span>
             <h3 class="process-label">01 · Send site info</h3>
-            <p>Photos, measurements or a survey, plus your client's wish list and budget.</p>
+            <p>Photos, measurements or a survey, plus the wish list and budget.</p>
           </li>
-          <li class="process-card reveal">
+          <li class="process-card">
             <div class="process-media" data-alt="Clay 3D model of the house, pool, pergola and fire pit before materials are applied">
               <svg class="process-ph" viewBox="0 0 120 150" aria-hidden="true"><circle cx="60" cy="75" r="40"/><circle cx="60" cy="75" r="24" stroke-dasharray="5 4"/><circle cx="60" cy="75" r="3"/></svg>
             </div>
@@ -314,7 +367,7 @@
             <h3 class="process-label">02 · We design</h3>
             <p>A scaled 2D plan and photoreal 3D renders<span data-cfg-block>, back in <span data-cfg="computed.turnaroundRange">3 to 10 business days</span> depending on the package</span>.</p>
           </li>
-          <li class="process-card reveal">
+          <li class="process-card">
             <div class="process-media" data-alt="Finished night render of the pool, spa and pergola with landscape lighting">
               <svg class="process-ph" viewBox="0 0 120 150" aria-hidden="true"><circle cx="42" cy="85" r="20"/><circle cx="78" cy="85" r="20"/><circle cx="60" cy="58" r="20"/></svg>
             </div>
@@ -322,7 +375,7 @@
             <h3 class="process-label">03 · You revise</h3>
             <p>Send one list of changes per round<span data-cfg-block>. <span data-cfg="computed.revisionRange">1 to 3 revision rounds</span> included</span>.</p>
           </li>
-          <li class="process-card reveal">
+          <li class="process-card">
             <div class="process-media" data-alt="2D landscape plan sheet with title block and north arrow">
               <svg class="process-ph" viewBox="0 0 120 150" aria-hidden="true"><rect x="10" y="10" width="100" height="130" rx="2"/><rect x="28" y="40" width="50" height="30"/><path d="M10 112 H110 M78 112 V140"/><path d="M96 20 L100 32 L96 29 L92 32 Z"/></svg>
             </div>
@@ -346,7 +399,7 @@
         <h2 id="band-title">Run your next lead through a Seed Project.</h2>
         <p class="band-line">Your first <span data-cfg="seed.scope">Grove</span> design at <span data-cfg-money="seed.price">$199</span>. Full refund if it misses the brief.</p>
         <div class="band-actions">
-          <a href="#contact" class="btn btn-primary" data-topic="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+          <a href="#contact" class="btn btn-primary" data-type="contractor" data-interest="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
           <a class="btn btn-ghost" data-booking hidden>Book a call</a>
         </div>
       </div>
@@ -361,7 +414,7 @@
         <p class="sheet-label">L-06 · Pricing</p>
         <header class="section-head reveal">
           <h2>Start with a Seed. Grow from there.</h2>
-          <p>Pick a single project, or see Evergreen memberships below. Prices rise as our member count grows, so early members pay least.</p>
+          <p>Design packages are open to contractors, homeowners and design firms at the same prices. Businesses can start with a Seed Project or join an Evergreen membership. Prices rise as our member count grows, so early members pay least.</p>
         </header>
 
         <!-- Founding offer: deadline, spots left and next price all come from the price ladder in js/main.js -->
@@ -379,14 +432,16 @@
             <p class="seed-desc">Your first design at <span data-cfg="seed.scope">Grove</span> scope. One per company. See watermarked previews first, then pay to unlock the full files.</p>
             <p class="price"><span class="price-now" data-cfg-money="seed.price">$199</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="seed.regular">$325</s></span></p>
             <ul class="ticks">
-              <li data-cfg="packages.grove.plan">2D plan + planting schedule</li>
-              <li data-cfg-count="packages.grove.renders" data-one="photoreal 3D render" data-many="photoreal 3D renders">15 photoreal 3D renders</li>
+              <li data-cfg="planSet">Plan set with your own title block</li>
+              <li data-cfg="packages.grove.plan">2D site and planting plan</li>
+              <li data-cfg-count="packages.grove.renders" data-one="photoreal 3D render, day and night" data-many="photoreal 3D renders, day and night">15 photoreal 3D renders, day and night</li>
               <li data-cfg-count="packages.grove.rounds" data-one="revision round" data-many="revision rounds">2 revision rounds</li>
               <li data-cfg-block>Material takeoff add-on: <span data-cfg-money="addons.takeoff">$75</span></li>
               <li data-cfg="packages.grove.days">5 business days</li>
             </ul>
             <p class="note-clay" data-cfg-block><strong>Guarantee.</strong> <span data-cfg="seed.guarantee">If the design misses the brief after the included revisions, you get a full refund.</span></p>
-            <a href="#contact" class="btn btn-primary" data-topic="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+            <a href="#contact" class="btn btn-primary" data-type="contractor" data-interest="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+            <p class="for-note label" data-cfg="offerNotes.seed">For businesses only: contractors and design firms.</p>
           </article>
 
           <div class="seed-side">
@@ -405,6 +460,7 @@
         </div>
 
         <h3 class="sub-head">Single projects</h3>
+        <p class="for-note label sub-note" data-cfg="offerNotes.packages">Open to contractors, homeowners and design firms at the same prices.</p>
         <div class="cards-3">
           <!-- Sprout -->
           <article class="card package">
@@ -415,14 +471,15 @@
             <p class="price"><span class="price-now" data-cfg-money="packages.sprout.price">$199</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.sprout.regular">$349</s></span></p>
             <p class="label credits"><span data-cfg-count="packages.sprout.credits" data-one="credit" data-many="credits">1 credit</span> on Evergreen</p>
             <ul class="ticks">
+              <li data-cfg="planSet">Plan set with your own title block</li>
               <li data-cfg="packages.sprout.plan">2D site and planting plan</li>
-              <li data-cfg-count="packages.sprout.renders" data-one="photoreal 3D render" data-many="photoreal 3D renders">10 photoreal 3D renders</li>
+              <li data-cfg-count="packages.sprout.renders" data-one="photoreal 3D render, day and night" data-many="photoreal 3D renders, day and night">10 photoreal 3D renders, day and night</li>
               <li data-cfg="packages.sprout.walkthrough" hidden></li>
               <li data-cfg-count="packages.sprout.rounds" data-one="revision round" data-many="revision rounds">1 revision round</li>
               <li data-cfg-unless="packages.sprout.takeoff"><span data-cfg-block>Material takeoff add-on: <span data-cfg-money="addons.takeoff">$75</span></span></li>
               <li data-cfg="packages.sprout.days">3 business days</li>
             </ul>
-            <a href="#contact" class="btn btn-outline" data-topic="quote" data-package="Sprout">Start with Sprout</a>
+            <a href="#contact" class="btn btn-outline" data-interest="single" data-note="I'd like to start with Sprout.">Start with Sprout</a>
           </article>
 
           <!-- Grove (featured) -->
@@ -435,14 +492,15 @@
             <p class="price"><span class="price-now" data-cfg-money="packages.grove.price">$399</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.grove.regular">$649</s></span></p>
             <p class="label credits"><span data-cfg-count="packages.grove.credits" data-one="credit" data-many="credits">2 credits</span> on Evergreen</p>
             <ul class="ticks">
-              <li data-cfg="packages.grove.plan">2D plan + planting schedule</li>
-              <li data-cfg-count="packages.grove.renders" data-one="photoreal 3D render" data-many="photoreal 3D renders">15 photoreal 3D renders</li>
+              <li data-cfg="planSet">Plan set with your own title block</li>
+              <li data-cfg="packages.grove.plan">2D site and planting plan</li>
+              <li data-cfg-count="packages.grove.renders" data-one="photoreal 3D render, day and night" data-many="photoreal 3D renders, day and night">15 photoreal 3D renders, day and night</li>
               <li data-cfg="packages.grove.walkthrough" hidden></li>
               <li data-cfg-count="packages.grove.rounds" data-one="revision round" data-many="revision rounds">2 revision rounds</li>
               <li data-cfg-unless="packages.grove.takeoff"><span data-cfg-block>Material takeoff add-on: <span data-cfg-money="addons.takeoff">$75</span></span></li>
               <li data-cfg="packages.grove.days">5 business days</li>
             </ul>
-            <a href="#contact" class="btn btn-primary" data-topic="quote" data-package="Grove">Start with Grove</a>
+            <a href="#contact" class="btn btn-primary" data-interest="single" data-note="I'd like to start with Grove.">Start with Grove</a>
           </article>
 
           <!-- Canopy -->
@@ -454,14 +512,15 @@
             <p class="price"><span class="price-now" data-cfg-money="packages.canopy.price">$799</span><span class="price-was" data-cfg-block><span class="visually-hidden">Regular price </span><s data-cfg-money="packages.canopy.regular">$1,249</s></span></p>
             <p class="label credits"><span data-cfg-count="packages.canopy.credits" data-one="credit" data-many="credits">4 credits</span> on Evergreen</p>
             <ul class="ticks">
-              <li data-cfg="packages.canopy.plan">Full plan set</li>
-              <li data-cfg-count="packages.canopy.renders" data-one="photoreal 3D render" data-many="photoreal 3D renders">20 photoreal 3D renders</li>
-              <li data-cfg="packages.canopy.walkthrough">60–90 sec walkthrough video</li>
+              <li data-cfg="planSet">Plan set with your own title block</li>
+              <li data-cfg="packages.canopy.plan">2D site and planting plan</li>
+              <li data-cfg-count="packages.canopy.renders" data-one="photoreal 3D render, day and night" data-many="photoreal 3D renders, day and night">20 photoreal 3D renders, day and night</li>
+              <li data-cfg="packages.canopy.walkthrough">60–90 sec video walkthrough</li>
               <li data-cfg-count="packages.canopy.rounds" data-one="revision round" data-many="revision rounds">3 revision rounds</li>
               <li data-cfg-if="packages.canopy.takeoff">Material takeoff included</li>
               <li data-cfg="packages.canopy.days">7–10 business days</li>
             </ul>
-            <a href="#contact" class="btn btn-outline" data-topic="quote" data-package="Canopy">Start with Canopy</a>
+            <a href="#contact" class="btn btn-outline" data-interest="single" data-note="I'd like to start with Canopy.">Start with Canopy</a>
           </article>
         </div>
 
@@ -499,6 +558,7 @@
         <header class="section-head reveal">
           <h2>Evergreen: design every month.</h2>
           <p>Credits let you mix small and large jobs in the same month: <span data-cfg="computed.creditMix">Sprout 1, Grove 2, Canopy 4</span>.</p>
+          <p class="for-note label" data-cfg="offerNotes.memberships">For businesses only: contractors and design firms.</p>
         </header>
         <div class="cards-3">
           <!-- Orchard -->
@@ -512,7 +572,7 @@
             <ul class="ticks">
               <li>Takeoffs at <span data-cfg-money="addons.takeoffMembers">$49</span></li>
             </ul>
-            <a href="#contact" class="btn btn-outline" data-topic="membership" data-package="Orchard">Join Orchard</a>
+            <a href="#contact" class="btn btn-outline" data-interest="membership" data-note="I'm interested in Orchard.">Join Orchard</a>
           </article>
 
           <!-- Forest (featured) -->
@@ -528,7 +588,7 @@
               <li>2 free takeoffs a month</li>
               <li>Monthly 30-min design review call</li>
             </ul>
-            <a href="#contact" class="btn btn-primary" data-topic="membership" data-package="Forest">Join Forest</a>
+            <a href="#contact" class="btn btn-primary" data-interest="membership" data-note="I'm interested in Forest.">Join Forest</a>
           </article>
 
           <!-- Old Growth (waitlist) -->
@@ -544,7 +604,7 @@
               <li>Priority turnaround</li>
               <li>Unlimited takeoffs</li>
             </ul>
-            <a href="#contact" class="btn btn-clay" data-topic="waitlist" data-package="Old Growth">Join the waitlist</a>
+            <a href="#contact" class="btn btn-clay" data-interest="membership" data-note="Please add me to the Old Growth waitlist.">Join the waitlist</a>
           </article>
         </div>
         <p class="rules fair-use" data-cfg="computed.fairUse">Active projects at a time: Orchard 1 · Forest 2 · Old Growth 4. Credits cover Sprout to Canopy; Canopy Plus uses extra credits. Unused credits roll over one month.</p>
@@ -634,7 +694,7 @@
         <p class="sheet-label">L-09 · Team</p>
         <header class="section-head reveal">
           <h2>Who you'll work with</h2>
-          <p>A small senior team. Edmond leads design and reviews every project before it reaches you.</p>
+          <p>A small team. Edmond leads design and reviews every project before it reaches you.</p>
         </header>
 
         <div class="founders">
@@ -646,7 +706,7 @@
             <div class="founder-text">
               <h3>Edmond De Claro</h3>
               <p class="role">Co-founder · Design Lead</p>
-              <p>Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist. His work covers 2D plans, 3D models and walkthroughs, lighting and irrigation layouts, and hardscape and softscape estimating. He leads design and reviews every Overyard project.</p>
+              <p>Edmond has designed and revised 1,000+ residential landscape projects over 6+ years as a landscape designer and revisionist, from 2D plans and planting to 3D models, walkthroughs and lighting layouts. He leads design and reviews every Overyard project before it reaches you.</p>
               <p class="tools label" data-cfg-block>Tools: <span data-cfg-list="edmondTools" data-join=" · ">Realtime Landscaping Architect · SketchUp · Lumion · D5 Render</span></p>
             </div>
           </article>
@@ -659,19 +719,19 @@
             <div class="founder-text">
               <h3>Alejandro Bernardo Jr.</h3>
               <p class="role">Co-founder · Head of Sales</p>
-              <p>Your first call and your account manager: discovery calls, proposals, onboarding, and keeping every project on track. 9+ years in sales, account management and operations, from looking after key client accounts to running a 200+ agent operation, and most recently leading discovery calls and client onboarding for a US company's CEO.</p>
+              <p>Your first call and your account manager. Alejandro runs discovery calls, proposals and onboarding, and keeps every project on track. He brings 9+ years in sales, account management and operations, from managing key client accounts to leading a 200-person team.</p>
             </div>
           </article>
 
           <article class="founder reveal">
             <figure class="founder-photo">
               <img src="images/team/kim.webp" alt="Portrait of Kim Daryl Geolagon" width="640" height="640" loading="lazy" decoding="async">
-              <figcaption class="label">Kim Daryl · Operations</figcaption>
+              <figcaption class="label">Kim · Business</figcaption>
             </figure>
             <div class="founder-text">
               <h3>Kim Daryl Geolagon</h3>
               <p class="role">Co-founder · CEO</p>
-              <p>Licensed civil engineer by background, now running the business side of Overyard: the offer, pricing, marketing, website, client portal and systems. He set up the Seed Project and the founding-member price ladder so contractors can test us on one real job before committing. An early adopter of AI tools, he uses them to build and run our systems, so the designers' hours go into design. His goal: make professional design an easy, predictable cost for contractors, with clear prices, fast turnaround and one point of contact.</p>
+              <p>A licensed civil engineer with 5+ years in construction, from site engineering to estimating for a US general contractor. He runs the business side of Overyard (pricing, website, client portal and systems), so you get clear prices, fast turnaround and one point of contact.</p>
             </div>
           </article>
 
@@ -683,10 +743,14 @@
             <div class="founder-text">
               <h3>Axl Jhon Olaso</h3>
               <p class="role">Designer · Revisionist</p>
+              <!-- TODO: Axl's bio from his CV -->
               <p>Designs and revises plans and renders with Edmond, and prepares material takeoffs.</p>
             </div>
           </article>
         </div>
+
+        <!-- Shows once CONFIG.bookingUrl is set; opens in a new tab -->
+        <a class="btn btn-primary team-cta" data-booking hidden>Book a call with Alejandro</a>
 
         <div class="mission reveal">
           <div>
@@ -722,11 +786,19 @@
           </details>
           <details>
             <summary>Can I see a design before paying?</summary>
-            <p>Yes, after a discovery call. We design your Seed Project and show you watermarked previews. Pay <span data-cfg-money="seed.price">$199</span> to unlock the full-resolution files. One preview project per company.</p>
+            <p>Yes, for contractors and design firms, after a discovery call. We design your Seed Project and show you watermarked previews. Pay <span data-cfg-money="seed.price">$199</span> to unlock the full-resolution files. One preview project per company.</p>
           </details>
           <details>
             <summary>Is the work white-label?</summary>
-            <p>Yes. We deliver under your logo, or co-branded if you prefer. We never contact your clients unless you ask us to.</p>
+            <p>For contractors and design firms, yes. We deliver under your logo, or co-branded if you prefer. We never contact your clients unless you ask us to. Homeowners' plans carry their own name and property.</p>
+          </details>
+          <details>
+            <summary>Do you work with homeowners?</summary>
+            <p>Yes. Homeowners can order any design package directly. We never contact or market to our contractors' clients; homeowners come to us on their own.</p>
+          </details>
+          <details>
+            <summary>Do you work with other design firms?</summary>
+            <p>Yes. We take overflow plans, renders and revisions for design studios, delivered under your brand.</p>
           </details>
           <details>
             <summary>Who owns the designs?</summary>
@@ -742,7 +814,7 @@
           </details>
           <details>
             <summary>What do you need from me?</summary>
-            <p>Site photos, rough measurements or a survey, your client's wish list, and a budget range. More detail means fewer revisions.</p>
+            <p>Site photos, rough measurements or a survey, a wish list and a budget range. We collect these after the first call. More detail means fewer revisions.</p>
           </details>
           <details>
             <summary>Can you work from photos only?</summary>
@@ -754,7 +826,7 @@
           </details>
           <details>
             <summary>Will the plants suit my region?</summary>
-            <p>We build the plant palette from your climate zone and your client's brief. You confirm nursery availability in your area before ordering.</p>
+            <p>We build the plant palette from your climate zone and the brief. You confirm nursery availability in your area before ordering.</p>
           </details>
           <details>
             <summary>Do you cover grading, drainage, irrigation or structural work?</summary>
@@ -778,106 +850,129 @@
           </details>
           <details>
             <summary>How big is your team?</summary>
-            <p>Edmond De Claro leads design and reviews every project, working with Axl Jhon Olaso as designer and revisionist. Alejandro leads sales and looks after your account, and Kim runs operations and systems. We add designers as Overyard membership grows, and only when quality holds.</p>
+            <p>Edmond De Claro leads design and reviews every project, working with Axl Jhon Olaso as designer and revisionist. Alejandro runs discovery calls, proposals and onboarding and looks after your account. Kim runs the business side: pricing, the website, the client portal and systems. We add designers as Overyard membership grows, and only when quality holds.</p>
           </details>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         13. CONTACT / INTAKE
-         Form: Web3Forms (web3formsKey). WhatsApp + socials: js/main.js.
+         13. CONTACT (light paper band; stays light in dark mode)
+         Laid out as a drawing sheet: title-block header row, then contact
+         details and the form. Form: Web3Forms (web3formsKey). The "You are a"
+         and "Interested in" options match CONFIG.audiences (slugs in data-slug).
+         Buttons elsewhere pre-select them with data-type / data-interest, or
+         other pages link to index.html?type=…&interest=…#contact.
          ========================================================= -->
-    <section class="section section-alt" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-intro">
-          <p class="sheet-label">L-11 · Intake</p>
-          <h2>Send a project. Start with a Seed.</h2>
-          <p>Tell us about the job and pick what you need. One consolidated brief gets you the best first draft.</p>
-          <p class="reply" data-cfg-block>Alejandro replies within <strong><span data-cfg="replyHours">12</span> hours</strong>.</p>
-          <div class="contact-links">
-            <a class="whatsapp" href="https://wa.me/639763730461" target="_blank" rel="noopener" data-whatsapp>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="wa-bubble" d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5z"/><path class="wa-phone" d="M9 8.6c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.6l-.5.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.5c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.4.8-.6.4-1.5.5-2.4.2-2.4-.9-4.3-2.8-5.2-5.2-.3-.9-.2-1.8.2-2.4z"/></svg>
-              <span><span class="label">WhatsApp</span><span class="wa-number">+63 976 373 0461</span></span>
-            </a>
-            <a class="btn btn-outline" data-booking hidden><span>Book a <span data-cfg="callMinutes">30</span>-minute call</span></a>
+    <section class="section paper-section" id="contact">
+      <div class="container">
+        <div class="contact-sheet">
+          <i class="cm cm-tl"></i><i class="cm cm-tr"></i><i class="cm cm-bl"></i><i class="cm cm-br"></i>
+          <header class="contact-head">
+            <div class="contact-head-main">
+              <p class="label contact-kicker">Get in touch</p>
+              <h2>Let's talk about your project</h2>
+            </div>
+            <div class="contact-head-sheet">
+              <svg class="north" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><path d="M12 4.5 L15.5 16 L12 13.5 L8.5 16 Z"/></svg>
+              <p class="sheet-label">L-11 · Contact</p>
+            </div>
+          </header>
+
+          <div class="contact-grid">
+            <div class="contact-intro">
+              <p>Tell us who you are and what you're planning. We'll set up a short call and collect site details after that.</p>
+              <p class="reply" data-cfg-block>Alejandro replies within <strong><span data-cfg="replyHours">12</span> hours</strong>.</p>
+              <div class="contact-links">
+                <a class="whatsapp" href="https://wa.me/639763730461" target="_blank" rel="noopener" data-whatsapp>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path class="wa-bubble" d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5z"/><path class="wa-phone" d="M9 8.6c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.6l-.5.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.5c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.4.8-.6.4-1.5.5-2.4.2-2.4-.9-4.3-2.8-5.2-5.2-.3-.9-.2-1.8.2-2.4z"/></svg>
+                  <span><span class="label">WhatsApp</span><span class="wa-number">+63 976 373 0461</span></span>
+                </a>
+                <a class="btn btn-outline" data-booking hidden>Book a call</a>
+              </div>
+              <p class="contact-email" data-cfg-block>Email: <a class="email-link" data-email-text href="mailto:sales@overyarddesign.com">sales@overyarddesign.com</a></p>
+              <ul class="socials" aria-label="Overyard on social media">
+                <li><span class="social is-soon" data-social="facebook" data-name="Facebook" data-tip="Coming soon" role="img" aria-label="Facebook (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M14 8h2.5V4.5H14c-2.5 0-4 1.6-4 4V11H7.5v3.5H10V21h3.5v-6.5h2.6l.4-3.5h-3V8.7c0-.4.3-.7.5-.7z"/></svg></span></li>
+                <li><span class="social is-soon" data-social="instagram" data-name="Instagram" data-tip="Coming soon" role="img" aria-label="Instagram (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="fill" cx="17.2" cy="6.8" r="1"/></svg></span></li>
+                <li><span class="social is-soon" data-social="tiktok" data-name="TikTok" data-tip="Coming soon" role="img" aria-label="TikTok (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.5v11.2a3.3 3.3 0 1 1-3.3-3.3"/><path d="M14 3.5c.4 2.6 2.2 4.3 5 4.5"/></svg></span></li>
+                <li><span class="social is-soon" data-social="youtube" data-name="YouTube" data-tip="Coming soon" role="img" aria-label="YouTube (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path class="fill" d="M10 9.3v5.4l4.6-2.7z"/></svg></span></li>
+                <li><span class="social is-soon" data-social="linkedin" data-name="LinkedIn" data-tip="Coming soon" role="img" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.6v.1M11.5 16.5v-6m0 3c0-1.7 1-3 2.6-3s2.4 1.2 2.4 3v3"/></svg></span></li>
+              </ul>
+            </div>
+
+            <!-- Works without JS too: posts straight to Web3Forms (key = CONFIG.web3formsKey; keep both in sync).
+                 With JS, main.js validates inline, sends it in the background and shows the result here. -->
+            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="5ad681f6-a7ef-4ddb-870b-76eb54c058eb">
+              <input type="hidden" name="subject" value="Overyard: new enquiry from the website">
+              <input type="hidden" name="from_name" value="Overyard website">
+              <!-- Honeypot: hidden from people, catches spam bots -->
+              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-first">First name <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-first" name="First name" type="text" autocomplete="given-name" required aria-describedby="e-first">
+                  <p class="field-error" id="e-first"></p>
+                </div>
+                <div class="field">
+                  <label for="f-last">Last name <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-last" name="Last name" type="text" autocomplete="family-name" required aria-describedby="e-last">
+                  <p class="field-error" id="e-last"></p>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
+                  <p class="field-error" id="e-email"></p>
+                </div>
+                <div class="field">
+                  <label for="f-phone">Phone <span class="optional">(optional)</span></label>
+                  <input id="f-phone" name="Phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="e-phone h-phone">
+                  <p class="field-hint" id="h-phone">WhatsApp is fine</p>
+                  <p class="field-error" id="e-phone"></p>
+                </div>
+              </div>
+
+              <fieldset class="field toggle-field" id="f-type" aria-describedby="e-type">
+                <legend>You are a <span class="req" aria-hidden="true">*</span></legend>
+                <div class="toggles">
+                  <label class="toggle"><input type="radio" name="Type" value="Contractor" data-slug="contractor" required><span>Contractor</span></label>
+                  <label class="toggle"><input type="radio" name="Type" value="Homeowner" data-slug="homeowner"><span>Homeowner</span></label>
+                  <label class="toggle"><input type="radio" name="Type" value="Designer" data-slug="designer"><span>Designer</span></label>
+                </div>
+                <p class="field-error" id="e-type"></p>
+              </fieldset>
+
+              <div class="field">
+                <label for="f-company">Company name <span class="optional company-hint">(skip if you're a homeowner)</span></label>
+                <input id="f-company" name="Company" type="text" autocomplete="organization" aria-describedby="e-company">
+                <p class="field-error" id="e-company"></p>
+              </div>
+
+              <fieldset class="field chip-field">
+                <legend>Interested in</legend>
+                <div class="chips-pick">
+                  <label class="chip"><input type="radio" name="Interested in" value="Seed Project" data-slug="seed"><span>Seed Project</span></label>
+                  <label class="chip"><input type="radio" name="Interested in" value="Single project" data-slug="single"><span>Single project</span></label>
+                  <label class="chip"><input type="radio" name="Interested in" value="Membership" data-slug="membership"><span>Membership</span></label>
+                  <label class="chip"><input type="radio" name="Interested in" value="Yard design" data-slug="yard-design"><span>Yard design</span></label>
+                  <label class="chip"><input type="radio" name="Interested in" value="Not sure yet" data-slug="not-sure"><span>Not sure yet</span></label>
+                </div>
+              </fieldset>
+
+              <div class="field">
+                <label for="f-message">Anything you want us to know <span class="optional">(optional)</span></label>
+                <textarea id="f-message" name="Message" rows="4" placeholder="Where you're based, what you're planning, and any questions."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">Let's talk <span class="arrow" aria-hidden="true">&rarr;</span></button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <p class="form-note">We reply within one business day. <a href="privacy.html">Your details are only used to answer you.</a></p>
+            </form>
           </div>
-          <p class="contact-email" data-cfg-block>Email: <a class="email-link" data-email-text href="mailto:sales@overyarddesign.com">sales@overyarddesign.com</a></p>
-          <ul class="socials" aria-label="Overyard on social media">
-            <li><span class="social is-soon" data-social="facebook" data-name="Facebook" data-tip="Coming soon" role="img" aria-label="Facebook (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M14 8h2.5V4.5H14c-2.5 0-4 1.6-4 4V11H7.5v3.5H10V21h3.5v-6.5h2.6l.4-3.5h-3V8.7c0-.4.3-.7.5-.7z"/></svg></span></li>
-            <li><span class="social is-soon" data-social="instagram" data-name="Instagram" data-tip="Coming soon" role="img" aria-label="Instagram (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="fill" cx="17.2" cy="6.8" r="1"/></svg></span></li>
-            <li><span class="social is-soon" data-social="tiktok" data-name="TikTok" data-tip="Coming soon" role="img" aria-label="TikTok (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.5v11.2a3.3 3.3 0 1 1-3.3-3.3"/><path d="M14 3.5c.4 2.6 2.2 4.3 5 4.5"/></svg></span></li>
-            <li><span class="social is-soon" data-social="youtube" data-name="YouTube" data-tip="Coming soon" role="img" aria-label="YouTube (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path class="fill" d="M10 9.3v5.4l4.6-2.7z"/></svg></span></li>
-            <li><span class="social is-soon" data-social="linkedin" data-name="LinkedIn" data-tip="Coming soon" role="img" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.6v.1M11.5 16.5v-6m0 3c0-1.7 1-3 2.6-3s2.4 1.2 2.4 3v3"/></svg></span></li>
-          </ul>
         </div>
-
-        <!-- Works without JS too: posts straight to Web3Forms (key = CONFIG.web3formsKey; keep both in sync).
-             With JS, main.js sends it in the background and shows the result here. -->
-        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="5ad681f6-a7ef-4ddb-870b-76eb54c058eb">
-          <input type="hidden" name="subject" value="Overyard: new enquiry from the website">
-          <input type="hidden" name="from_name" value="Overyard website">
-          <!-- Honeypot: hidden from people, catches spam bots -->
-          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-          <div class="field">
-            <label for="f-topic">What do you need?</label>
-            <select id="f-topic" name="topic">
-              <option value="seed">Start a $199 Seed Project</option>
-              <option value="membership">Join a membership</option>
-              <option value="waitlist">Old Growth waitlist</option>
-              <option value="quote">Quote for a project</option>
-              <option value="portfolio">Request the full portfolio</option>
-              <option value="sample">Get the sample package</option>
-              <option value="call">Book a call</option>
-            </select>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-name">Name</label>
-              <input id="f-name" name="name" type="text" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="f-company">Company</label>
-              <input id="f-company" name="company" type="text" autocomplete="organization" required>
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="f-phone">Phone <span class="optional">(optional)</span></label>
-              <input id="f-phone" name="phone" type="tel" autocomplete="tel">
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-website">Website</label>
-              <input id="f-website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourcompany.com" required>
-            </div>
-            <div class="field">
-              <label for="f-area">Service area</label>
-              <input id="f-area" name="service_area" type="text" placeholder="e.g. Austin, TX" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-files">Link to site photos or plans <span class="optional">(needed to start a project)</span></label>
-            <input id="f-files" name="files_link" type="text" inputmode="url" placeholder="Google Drive, Dropbox or similar">
-          </div>
-          <div class="field">
-            <label for="f-brief">Client's wish list and budget <span class="optional">(optional)</span></label>
-            <textarea id="f-brief" name="wish_list_budget" rows="3" placeholder="Pool, fire pit, low-water planting… budget around $60k"></textarea>
-          </div>
-          <div class="field">
-            <label for="f-message">Message <span class="optional">(optional)</span></label>
-            <textarea id="f-message" name="message" rows="3"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
       </div>
     </section>
 
@@ -905,14 +1000,14 @@
               </g>
             </svg>
           </a>
-          <p class="label">Overyard · Landscape design for contractors · Rev 2026</p>
+          <p class="label">Overyard · Landscape design for contractors, homeowners and designers · Rev 2026</p>
         </div>
         <div class="tb-cell">
           <p class="label tb-key">Contact</p>
           <ul class="tb-list">
             <li><a class="whatsapp whatsapp-sm" href="https://wa.me/639763730461" target="_blank" rel="noopener" data-whatsapp><svg viewBox="0 0 24 24" aria-hidden="true"><path class="wa-bubble" d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5z"/><path class="wa-phone" d="M9 8.6c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.6l-.5.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.5c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.4.8-.6.4-1.5.5-2.4.2-2.4-.9-4.3-2.8-5.2-5.2-.3-.9-.2-1.8.2-2.4z"/></svg><span class="wa-number">+63 976 373 0461</span></a></li>
             <li data-cfg-block><a class="email-link" data-email-text href="mailto:sales@overyarddesign.com">sales@overyarddesign.com</a></li>
-            <li><a href="#contact">Send a project</a></li>
+            <li><a href="#contact">Get in touch</a></li>
           </ul>
           <ul class="socials socials-sm" aria-label="Overyard on social media">
             <li><span class="social is-soon" data-social="facebook" data-name="Facebook" data-tip="Coming soon" role="img" aria-label="Facebook (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M14 8h2.5V4.5H14c-2.5 0-4 1.6-4 4V11H7.5v3.5H10V21h3.5v-6.5h2.6l.4-3.5h-3V8.7c0-.4.3-.7.5-.7z"/></svg></span></li>
@@ -942,7 +1037,7 @@
 
   <!-- Sticky call to action on phones -->
   <div class="mobile-cta">
-    <a href="#contact" class="btn btn-primary" data-topic="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
+    <a href="#contact" class="btn btn-primary" data-type="contractor" data-interest="seed">Start a <span data-cfg="computed.seedPrice">$199</span> Seed Project</a>
   </div>
 
   <!-- Project gallery viewer -->

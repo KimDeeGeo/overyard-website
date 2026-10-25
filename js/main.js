@@ -17,12 +17,12 @@ const CONFIG = {
   bookingUrl: "https://calendly.com/overyarddesign-sales/overyard-discovery-call", // Calendly, Alejandro (opens in a new tab; "" = hidden)
   web3formsKey: "5ad681f6-a7ef-4ddb-870b-76eb54c058eb", // Web3Forms access key (public by design; mail goes to sales@). "" = form shows a WhatsApp fallback.
   replyHours: 12,         // "Alejandro replies within 12 hours"
-  callMinutes: 30,        // "Book a 30-minute call" (match the Calendly event length)
+  callMinutes: 30,        // reference only: the Calendly event length (buttons just say "Book a call")
   whatsapp: {
     display: "+63 976 373 0461",            // shown on the page ("" = hidden)
     url: "https://wa.me/639763730461",      // opens WhatsApp in a new tab
   },
-  portalUrl: "",          // "Client login" link in the header (hidden when empty)
+  portalUrl: "",          // real client portal. Empty = the header "Portal login" button opens portal.html
 
   // ---- Social links ----
   // All five icons always show. Empty = muted icon with a "Coming soon" tooltip.
@@ -38,6 +38,23 @@ const CONFIG = {
 
   // ---- Team ----
   edmondTools: ["Realtime Landscaping Architect", "SketchUp", "Lumion", "D5 Render"],
+
+  // ---- Who we serve ----
+  // Use these labels everywhere. The contact form shows the "Interested in" chips
+  // listed for the type the visitor picks (slugs match data-interest in the form).
+  audiences: {
+    contractor: { label: "Contractor", interests: ["seed", "single", "membership", "not-sure"] },
+    homeowner:  { label: "Homeowner",  interests: ["yard-design", "not-sure"] },
+    designer:   { label: "Designer",   interests: ["seed", "single", "membership", "not-sure"] },
+  },
+  // Offer rules: packages are open to all three at the same prices; the Seed
+  // Project and Evergreen memberships are for businesses (Contractor, Designer).
+  // Homeowners get no white-label wording: their plans carry their own name and property.
+  offerNotes: {
+    packages: "Open to contractors, homeowners and design firms at the same prices.",
+    seed: "For businesses only: contractors and design firms.",
+    memberships: "For businesses only: contractors and design firms.",
+  },
 
   // ---- Price ladder ----
   // New clients pay the price of the tier they join in, by member count.
@@ -64,14 +81,25 @@ const CONFIG = {
   seedCreditDays: 7,      // join a membership within X days and the Seed price is credited
   currencyNote: "All prices in USD.",
 
+  // ---- What every client receives ----
+  // "What you receive" list. {path} inserts a value from this block, {$path} as money.
+  planSet: "Plan set with your own title block",   // first line on every package card
+  deliverables: [
+    { type: "PDF", text: "Plan set with a custom title block: your company name and logo (or, for homeowners, your name and property), project name, sheet numbers and date, laid out to your needs." },
+    { type: "PDF", text: "2D site and planting plan" },
+    { type: "JPG", text: "Photoreal 3D renders, day and night (Sprout {packages.sprout.renders}, Grove {packages.grove.renders}, Canopy {packages.canopy.renders}; 5 extra renders {$addons.extraRenders})" },
+    { type: "XLSX", text: "Material takeoff as a spreadsheet and PDF (included in Canopy; add-on for the others)" },
+    { type: "MP4", text: "Video walkthrough (included in Canopy)" },
+  ],
+
   // ---- Single projects (prices come from the ladder) ----
   packages: {
     sprout: { name: "Sprout", credits: 1, plan: "2D site and planting plan",
       renders: 10, walkthrough: "", rounds: 1, takeoff: false, days: "3 business days" },
-    grove:  { name: "Grove", credits: 2, plan: "2D plan + planting schedule",
+    grove:  { name: "Grove", credits: 2, plan: "2D site and planting plan",
       renders: 15, walkthrough: "", rounds: 2, takeoff: false, days: "5 business days" },
-    canopy: { name: "Canopy", credits: 4, plan: "Full plan set",
-      renders: 20, walkthrough: "60–90 sec walkthrough video", rounds: 3, takeoff: true, days: "7–10 business days" },
+    canopy: { name: "Canopy", credits: 4, plan: "2D site and planting plan",
+      renders: 20, walkthrough: "60–90 sec video walkthrough", rounds: 3, takeoff: true, days: "7–10 business days" },
   },
   // Project size guide (whichever is higher, budget or area, sets the tier)
   sizeGuide: [
@@ -371,7 +399,8 @@ const CONFIG = {
     }
     showLink("[data-booking]", CONFIG.bookingUrl);
     showLink("[data-sample-pdf]", CONFIG.samplePackagePdf);
-    showLink("[data-portal]", CONFIG.portalUrl);
+    // "Portal login" opens portal.html until a real portal URL is set
+    if (CONFIG.portalUrl) $$("[data-portal]").forEach(function (el) { el.href = CONFIG.portalUrl; el.target = "_blank"; el.rel = "noopener"; });
 
     $$("[data-whatsapp]").forEach(function (el) {
       var w = CONFIG.whatsapp || {};
@@ -402,9 +431,6 @@ const CONFIG = {
         return '<tr><th scope="row">' + esc(r.tier) + "</th><td>" + esc(r.budget) + "</td><td>" + esc(r.area) + "</td><td>" + esc(price) + "</td></tr>";
       }).join("");
     }
-
-    var seedOpt = $('#f-topic option[value="seed"]');
-    if (seedOpt) seedOpt.textContent = "Start a " + money(CONFIG.seed.price) + " Seed Project";
 
     var year = $("#year");
     if (year) year.textContent = new Date().getFullYear();
@@ -596,7 +622,7 @@ const CONFIG = {
           '<button type="button" class="dn-btn" data-src="' + esc(day) + '" aria-pressed="true">Day</button>' +
           '<button type="button" class="dn-btn" data-src="' + esc(night) + '" aria-pressed="false">Night</button></div>'
       : "";
-    return '<article class="work-card' + (large ? " is-large" : "") + ' wipe" data-category="' + esc((p.category || []).join(" ") + (p.hasNight ? " night" : "")) + '">' +
+    return '<article class="work-card' + (large ? " is-large" : "") + '" data-category="' + esc((p.category || []).join(" ") + (p.hasNight ? " night" : "")) + '">' +
       '<div class="work-media">' + CROPS +
         '<div class="media"><img data-near-src="' + esc(day) + '" alt="' + esc(p.coverImg.alt || p.coverImg.caption || p.title) + '" width="900" height="563" decoding="async"></div>' +
         toggle +
@@ -636,7 +662,6 @@ const CONFIG = {
       img.removeAttribute("data-near-src");
       $$(".dn-btn", card).forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
     });
-    if (window.__overyardObserveWipes) window.__overyardObserveWipes(grid);
   }
 
   // Home page: up to CONFIG.homeProjectCount featured projects
@@ -693,7 +718,21 @@ const CONFIG = {
     loadWhenNear(holder);
   }
 
+  // "{path}" → value from CONFIG, "{$path}" → as money (used by CONFIG.deliverables)
+  function fillText(text) {
+    return String(text).replace(/\{(\$?)([\w.]+)\}/g, function (m, isMoney, path) {
+      var v = get(path);
+      return isEmpty(v) ? "" : isMoney ? money(v) : v;
+    });
+  }
+
   function renderDeliverables() {
+    var list = $("#deliverables-list");
+    if (list && CONFIG.deliverables && CONFIG.deliverables.length) {
+      list.innerHTML = CONFIG.deliverables.map(function (d) {
+        return '<li><span class="file-type">' + esc(d.type) + "</span><span>" + esc(fillText(d.text)) + "</span></li>";
+      }).join("");
+    }
     var wrap = $("#deliverables-media");
     var r = CONFIG.receive;
     if (!wrap || !r) return;
@@ -848,8 +887,9 @@ const CONFIG = {
     }
   }
 
-  // Content is always visible. Elements that START below the fold get a short
-  // rise-in (.reveal) or clip-path wipe (.wipe) the first time they enter view.
+  // Content is always visible. Text blocks that START below the fold get a short
+  // rise-in (.reveal) the first time they enter view. Renders and project images
+  // never animate in: they are simply there.
   function initReveal() {
     if (!("IntersectionObserver" in window) || reduceMotion) return;
     var io = new IntersectionObserver(function (entries) {
@@ -859,15 +899,10 @@ const CONFIG = {
         io.unobserve(entry.target);
       });
     }, { rootMargin: "0px 0px -6% 0px" });
-    function observe(root) {
-      $$(".reveal, .wipe", root).forEach(function (el) {
-        if (el.dataset.below) return;
-        el.dataset.below = el.getBoundingClientRect().top > window.innerHeight ? "1" : "0";
-        io.observe(el);
-      });
-    }
-    window.__overyardObserveWipes = observe;
-    observe(document);
+    $$(".reveal").forEach(function (el) {
+      el.dataset.below = el.getBoundingClientRect().top > window.innerHeight ? "1" : "0";
+      io.observe(el);
+    });
   }
 
   function initVideo() {
@@ -900,40 +935,96 @@ const CONFIG = {
      ====================================================================== */
   function initForm() {
     var form = $("#contact-form");
-    document.addEventListener("click", function (e) {
-      var link = e.target.closest("[data-topic]");
-      if (!link || !form) return;
-      var topic = $("#f-topic");
-      topic.value = link.dataset.topic;
-      var pkg = link.dataset.package, msg = $("#f-message");
-      var note = link.dataset.note || (pkg ? (link.dataset.topic === "quote" ? "I'd like to start with " + pkg + "." : "I'm interested in " + pkg + ".") : "");
-      if (note && msg && (!msg.value || msg.dataset.prefilled === msg.value)) {
-        msg.value = note;
-        msg.dataset.prefilled = note;
-      }
-    });
     if (!form) return;
     form.noValidate = true;   // JS validates with its own messages; without JS the browser checks required fields
     var keyInput = $("[name=access_key]", form);
     if (keyInput) keyInput.value = CONFIG.web3formsKey || "";
 
-    var status = $(".form-status", form), topicSel = $("#f-topic"), button = $("button[type=submit]", form);
-    // ?topic=portfolio (from other pages) pre-selects "What do you need?"
-    var qTopic = new URLSearchParams(location.search).get("topic");
-    if (qTopic && $('option[value="' + qTopic.replace(/[^a-z-]/g, "") + '"]', topicSel)) topicSel.value = qTopic;
+    var status = $(".form-status", form), button = $("button[type=submit]", form);
+    var first = $("#f-first"), last = $("#f-last"), email = $("#f-email"), phone = $("#f-phone");
+    var company = $("#f-company"), companyField = company.closest(".field"), msg = $("#f-message");
+    var typeGroup = $("#f-type"), types = $$("[name=Type]", form), interests = $$('[name="Interested in"]', form);
+    var tried = false;
     function setStatus(kind, text) { status.className = "form-status is-" + kind; status.textContent = text; }
     var wa = CONFIG.whatsapp && CONFIG.whatsapp.display ? CONFIG.whatsapp.display : "";
+    function picked(list) { return list.filter(function (x) { return x.checked; })[0] || null; }
+
+    // "You are a" decides the company field and which "Interested in" chips show
+    function updateType() {
+      var t = picked(types), slug = t ? t.dataset.slug : "";
+      var homeowner = slug === "homeowner";
+      companyField.hidden = homeowner;
+      company.disabled = homeowner;          // disabled = not sent
+      company.required = !!slug && !homeowner;
+      $$(".company-hint", form).forEach(function (h) { h.hidden = true; });
+      var allowed = ((CONFIG.audiences || {})[slug || "contractor"] || {}).interests || [];
+      interests.forEach(function (r) {
+        var show = allowed.indexOf(r.dataset.slug) > -1;
+        r.closest(".chip").hidden = !show;
+        if (!show) r.checked = false;
+      });
+    }
+
+    // Inline messages: shown after a submit attempt or once the visitor leaves the field
+    var rules = [
+      { el: first, test: function (v) { return v ? "" : "Needs your first name."; } },
+      { el: last, test: function (v) { return v ? "" : "Needs your last name."; } },
+      { el: email, test: function (v) { return !v ? "Needs your email." : /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? "" : "Needs a working email."; } },
+      // US, Australian and international numbers: digits, spaces, + ( ) . -, at least 7 digits
+      { el: phone, test: function (v) { return !v || (/^[+()\d\s.\-]+$/.test(v) && v.replace(/\D/g, "").length >= 7) ? "" : "Check the number, or leave it blank."; } },
+      { el: typeGroup, test: function () { return picked(types) ? "" : "Pick one so we know who we're talking to."; } },
+      { el: company, test: function (v) { return !company.required || v ? "" : "Needs your company name."; } },
+    ];
+    function show(el, text) {
+      var err = document.getElementById(el.getAttribute("aria-describedby").split(" ")[0]);
+      err.textContent = text;
+      el.setAttribute("aria-invalid", String(!!text));
+      el.classList.toggle("is-invalid", !!text);
+    }
+    function check(rule) {
+      var text = rule.el.disabled ? "" : rule.test(rule.el === typeGroup ? "" : rule.el.value.trim());
+      show(rule.el, text);
+      return !text;
+    }
+    rules.forEach(function (rule) {
+      rule.touched = false;
+      rule.el.addEventListener("focusout", function (e) {
+        if (rule.el === typeGroup && typeGroup.contains(e.relatedTarget)) return;   // still inside the toggle group
+        rule.touched = true; check(rule);
+      });
+      rule.el.addEventListener(rule.el === typeGroup ? "change" : "input", function () { if (tried || rule.touched) check(rule); });
+    });
+    types.forEach(function (r) {
+      r.addEventListener("change", function () {
+        updateType();
+        if (tried || rules[5].touched) check(rules[5]);   // company may have become optional or required
+      });
+    });
+
+    // Pre-select from buttons (data-type / data-interest / data-note) or the URL
+    // (?type=homeowner&interest=yard-design#contact). Slugs match CONFIG.audiences.
+    var NOTES = { "portal-link": "I need the link to my client portal folder." };
+    function preselect(type, interest, note) {
+      if (type) types.forEach(function (r) { r.checked = r.dataset.slug === type; });
+      updateType();
+      if (interest) interests.forEach(function (r) { if (!r.closest(".chip").hidden) r.checked = r.dataset.slug === interest; });
+      if (note && (!msg.value || msg.dataset.prefilled === msg.value)) { msg.value = note; msg.dataset.prefilled = note; }
+      if (tried) rules.forEach(check);
+    }
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest("[data-type], [data-interest], [data-note]");
+      if (link && !form.contains(link)) preselect(link.dataset.type, link.dataset.interest, link.dataset.note);
+    });
+    var q = new URLSearchParams(location.search);
+    var slug = function (s) { return (s || "").replace(/[^a-z-]/g, ""); };
+    preselect(slug(q.get("type")), slug(q.get("interest")), NOTES[slug(q.get("note"))]);
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      tried = true;
       var firstBad = null;
-      $$("input[required], textarea[required], input[type=email]", form).forEach(function (input) {
-        var ok = input.checkValidity() && (!input.required || input.value.trim() !== "");
-        input.classList.toggle("is-invalid", !ok);
-        input.setAttribute("aria-invalid", String(!ok));
-        if (!ok && !firstBad) firstBad = input;
-      });
-      if (firstBad) { setStatus("error", "Please fill in the highlighted fields."); firstBad.focus(); return; }
+      rules.forEach(function (rule) { if (!check(rule) && !firstBad) firstBad = rule.el === typeGroup ? types[0] : rule.el; });
+      if (firstBad) { setStatus("error", ""); firstBad.focus(); return; }
       if ($("[name=botcheck]", form).checked) return; // honeypot
 
       if (!CONFIG.web3formsKey) {
@@ -941,11 +1032,14 @@ const CONFIG = {
           (wa ? " Please message us on WhatsApp at " + wa + "." : CONFIG.email ? " Please email " + CONFIG.email + " instead." : ""));
         return;
       }
-      var data = Object.fromEntries(new FormData(form).entries());
+      // Only filled fields, in form order: First name, Last name, email, Phone, Type, Company, Interested in, Message
+      var data = {};
+      new FormData(form).forEach(function (v, k) { if (k !== "botcheck" && String(v).trim() !== "") data[k] = String(v).trim(); });
+      var t = picked(types), i = picked(interests), fullName = data["First name"] + " " + data["Last name"];
       data.access_key = CONFIG.web3formsKey;
-      data.subject = "Overyard: " + topicSel.options[topicSel.selectedIndex].text + " (" + (data.company || data.name) + ")";
+      data.name = fullName;
+      data.subject = "Overyard: " + t.value + (i ? " · " + i.value : "") + " (" + fullName + (data.Company ? ", " + data.Company : "") + ")";
       data.from_name = "Overyard website";
-      delete data.botcheck;
 
       button.disabled = true;
       setStatus("pending", "Sending…");
@@ -958,8 +1052,11 @@ const CONFIG = {
         .then(function (r) {
           if (!r.ok) throw new Error(r.j && r.j.message);
           form.reset();
-          setStatus("success", "Thanks. Alejandro has your project" + (CONFIG.replyHours ? " and will reply within " + CONFIG.replyHours + " hours." : " and will reply soon."));
-          track("generate_lead", { topic: data.topic });
+          tried = false;
+          rules.forEach(function (rule) { rule.touched = false; show(rule.el, ""); });
+          updateType();
+          setStatus("success", "Thanks. Alejandro has your message" + (CONFIG.replyHours ? " and will reply within " + CONFIG.replyHours + " hours." : " and will reply soon."));
+          track("generate_lead", { type: t.dataset.slug, interest: i ? i.dataset.slug : "" });
         })
         .catch(function () {
           setStatus("error", "Something went wrong sending the form. Your details are still here, so you can try again" +

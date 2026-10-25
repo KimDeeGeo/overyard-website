@@ -142,13 +142,13 @@ Everything is in `js/main.js`:
 
 The page HTML also contains the founding-tier numbers as default text (for link previews and search engines). If you change the **founding** prices, update the same numbers in `index.html` too. Search for the old number.
 
-Other settings: `email`, `bookingUrl`, `web3formsKey`, `replyHours`, `callMinutes`, `whatsapp`, `portalUrl`, the five social URLs, `ga4Id`, `clarityId`, `edmondTools`, `samplePackagePdf`, `walkthroughVideo`. Leave any of them `""` to hide what depends on it.
+Other settings: `email`, `bookingUrl`, `web3formsKey`, `replyHours`, `callMinutes` (reference only), `whatsapp`, `portalUrl`, `audiences` (Contractor, Homeowner, Designer and the form chips each one sees), `offerNotes`, `planSet`, `deliverables`, the five social URLs, `ga4Id`, `clarityId`, `edmondTools`, `samplePackagePdf`, `walkthroughVideo`. Leave any of them `""` to hide what depends on it.
 
-## 4. WhatsApp, social links and client login
+## 4. WhatsApp, social links and portal login
 
 - **WhatsApp** shows in Contact and the footer: `whatsapp.display` and `whatsapp.url` (`https://wa.me/` + digits only).
 - **Social icons** (Facebook, Instagram, TikTok, YouTube, LinkedIn) always show. Empty URLs are muted "Coming soon" icons; paste a link to make one live.
-- **Client login**: set `portalUrl` and the header link appears on every page.
+- **Portal login**: the header button opens `portal.html` (a placeholder with a "Lost your link? Message us" button). Set `portalUrl` and it goes to the real portal instead.
 
 ## 5. Connect the contact form (Web3Forms, free)
 
@@ -156,11 +156,13 @@ Other settings: `email`, `bookingUrl`, `web3formsKey`, `replyHours`, `callMinute
 2. Paste it into `web3formsKey` in `js/main.js` **and** into the hidden `access_key` input of `#contact-form` in `index.html` (that copy makes the form work without JavaScript). The key is public by design.
 3. Push, then send a test from the live site in a normal browser (check spam the first time). Web3Forms rejects requests from servers, `curl` and automated browsers on the free plan, so those tests always fail.
 
-Until a key is set, the form says it isn't connected and points people to WhatsApp. Buttons on other pages pre-select the form option through the link, e.g. `index.html?topic=portfolio#contact`.
+Until a key is set, the form says it isn't connected and points people to WhatsApp.
+
+The form asks for first and last name, email, phone (optional), "You are a" (Contractor, Homeowner, Designer), company (not for homeowners), "Interested in" and a message. Buttons pre-select the type and interest with `data-type` / `data-interest` (and an optional `data-note`); links from other pages use the URL, e.g. `index.html?type=homeowner&interest=yard-design#contact`. The email subject reads like "Overyard: Homeowner · Yard design (Jane Doe)".
 
 ## 6. Connect booking (Cal.com or Calendly, free)
 
-Create a 30-minute event (keep `callMinutes` and the "Book a 30-minute call" default text in `index.html` the same length) and paste its public link into `bookingUrl`. "Book a call" buttons appear and open it in a new tab.
+Create the event (currently 30 minutes; `callMinutes` records the length for reference) and paste its public link into `bookingUrl`. "Book a call" buttons (including "Book a call with Alejandro" under the team) appear and open it in a new tab.
 
 ## 7. Theme, colors and fonts
 
