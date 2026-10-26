@@ -142,7 +142,7 @@ Everything is in `js/main.js`:
 
 The page HTML also contains the founding-tier numbers as default text (for link previews and search engines). If you change the **founding** prices, update the same numbers in `index.html` too. Search for the old number.
 
-Other settings: `email`, `bookingUrl`, `web3formsKey`, `replyHours`, `callMinutes` (reference only), `whatsapp`, `portalUrl`, `audiences` (contractor, homeowner, studio: full name, short label and the form chips each one sees), `offerNotes`, `planSet`, `deliverables`, the five social URLs, `ga4Id`, `clarityId`, `edmondTools`, `samplePackagePdf`, `walkthroughVideo`. Leave any of them `""` to hide what depends on it.
+Other settings: `email`, `bookingUrl`, `web3formsKey`, `hubspot` (portal ID and form GUID; see the comment in CONFIG), `replyTime`, `callMinutes` (reference only), `whatsapp`, `portalUrl`, `audiences` (contractor, homeowner, studio: full name, short label and the form chips each one sees), `offerNotes`, `planSet`, `deliverables`, the five social URLs, `ga4Id`, `clarityId`, `leadTools`, `samplePackagePdf`, `walkthroughVideo`. Leave any of them `""` to hide what depends on it.
 
 ## 4. WhatsApp, social links and client portal
 
@@ -159,6 +159,10 @@ Other settings: `email`, `bookingUrl`, `web3formsKey`, `replyHours`, `callMinute
 Until a key is set, the form says it isn't connected and points people to WhatsApp.
 
 The form asks "I'm a" (Landscape contractor, Homeowner, Design studio; values contractor, homeowner, studio), then name, email, phone or WhatsApp (optional), company (not for homeowners), "Interested in" and project notes. A transmittal strip with today's date sits on top. Buttons pre-select the type and interest with `data-type` / `data-interest` (and an optional `data-note`); links from other pages use the URL, e.g. `index.html?type=homeowner&interest=yard-design#contact` (old `?type=designer` links still open Design studio). The email subject reads like "Overyard: Homeowner · Yard design (Jane Doe)".
+
+After a successful send the visitor lands on `thanks.html` ("Got it, Jane. Your message is with Alejandro.", the next three steps, Book a call now, WhatsApp). The first name and type are passed in sessionStorage, never in the URL. That page sends the GA4 `generate_lead` event once. Without JavaScript the form posts to Web3Forms directly and shows Web3Forms' own success page.
+
+**HubSpot CRM (optional, free):** fill in `hubspot.portalId` and `hubspot.formGuid` in `js/main.js` (the comment there says where to find them) and every inquiry is also sent to that HubSpot form. Create the custom contact properties `client_type` and `interested_in` first. If HubSpot fails, the visitor still sees the thanks page; the error goes to the browser console.
 
 ## 6. Connect booking (Cal.com or Calendly, free)
 

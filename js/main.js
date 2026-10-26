@@ -16,13 +16,23 @@ const CONFIG = {
   email: "sales@overyarddesign.com", // shown as a mailto link in Contact, the footer and the legal pages ("" = hidden)
   bookingUrl: "https://calendly.com/overyarddesign-sales/overyard-discovery-call", // Calendly, Alejandro (opens in a new tab; "" = hidden)
   web3formsKey: "5ad681f6-a7ef-4ddb-870b-76eb54c058eb", // Web3Forms access key (public by design; mail goes to sales@). "" = form shows a WhatsApp fallback.
-  replyHours: 12,         // "Alejandro replies within 12 hours"
+  replyTime: "within one business day",   // reply promise: form note, contact card, FAQ, thanks page
   callMinutes: 30,        // reference only: the Calendly event length (buttons just say "Book a call")
   whatsapp: {
     display: "+63 976 373 0461",            // shown on the page ("" = hidden)
     url: "https://wa.me/639763730461",      // opens WhatsApp in a new tab
   },
   portalUrl: "",          // real client portal. Empty = the header "Client portal" button opens portal.html
+
+  // ---- CRM (HubSpot free) ----
+  // After Web3Forms succeeds, each inquiry is also sent to a HubSpot form (no API key needed).
+  // portalId: HubSpot > Settings (gear) > Account Management > Account Defaults > "Hub ID" (also in the URL: app.hubspot.com/.../<portalId>/...).
+  // formGuid: create a form under Marketing > Forms, open it, and copy the long ID from the editor URL
+  //   (app.hubspot.com/forms/<portalId>/editor/<formGuid>/...), or from Share > Embed code ("formId").
+  // The form needs these contact properties: firstname, lastname, email, phone, company, message,
+  // plus two custom ones you create: client_type and interested_in (single-line text).
+  // Both empty = skipped.
+  hubspot: { portalId: "", formGuid: "" },
 
   // ---- Social links ----
   // All five icons always show. Empty = muted icon with a "Coming soon" tooltip.
@@ -37,7 +47,7 @@ const CONFIG = {
   clarityId: "z2yr7rdrmx",  // Microsoft Clarity Project ID
 
   // ---- Team ----
-  edmondTools: ["Realtime Landscaping Architect", "SketchUp", "Lumion", "D5 Render"],
+  leadTools: ["Realtime Landscaping Architect", "SketchUp", "Lumion", "D5 Render"],
 
   // ---- Who we serve ----
   // name = plural (headings), label = short label (form, email subject). Never "Designer".
@@ -1053,19 +1063,74 @@ const CONFIG = {
         .then(function (res) { return res.json().then(function (j) { return { ok: res.ok && j.success, j: j }; }); })
         .then(function (r) {
           if (!r.ok) throw new Error(r.j && r.j.message);
-          form.reset();
-          tried = false;
-          rules.forEach(function (rule) { rule.touched = false; show(rule.el, ""); });
-          updateType();
-          setStatus("success", "Thanks. Alejandro has your message" + (CONFIG.replyHours ? " and will reply within " + CONFIG.replyHours + " hours." : " and will reply soon."));
-          track("generate_lead", { type: t.value, interest: i ? i.dataset.slug : "" });
+          // thanks.html reads the first name and type from here (never the URL) and sends generate_lead once
+          try {
+            sessionStorage.setItem(LEAD_KEY, JSON.stringify({
+              firstName: data.name.split(/\s+/)[0], type: t.value, interest: i ? i.dataset.slug : "", tracked: false,
+            }));
+          } catch (err) { /* storage blocked: the thanks page just says "Got it" */ }
+          // Give HubSpot up to 3 s; its result never changes what the visitor sees
+          return Promise.race([sendToHubSpot(data, t.value), new Promise(function (r) { setTimeout(r, 3000); })])
+            .then(function () { location.href = "thanks.html"; });
         })
         .catch(function () {
+          button.disabled = false;
           setStatus("error", "Something went wrong sending the form. Your details are still here, so you can try again" +
             (wa ? ", or message us on WhatsApp at " + wa + "." : CONFIG.email ? ", or email " + CONFIG.email + "." : "."));
-        })
-        .finally(function () { button.disabled = false; });
+        });
     });
+  }
+
+  // Copy of the inquiry for the HubSpot CRM (CONFIG.hubspot). Skipped while either ID is empty;
+  // failures are only logged, the visitor never sees them.
+  function sendToHubSpot(data, type) {
+    var hs = CONFIG.hubspot || {};
+    if (!hs.portalId || !hs.formGuid) return Promise.resolve();
+    var names = data.name.split(/\s+/);
+    var values = {
+      firstname: names[0], lastname: names.slice(1).join(" "), email: data.email,
+      phone: data["Phone or WhatsApp"], company: data.Company, client_type: type,
+      interested_in: data["Interested in"], message: data["Project notes"],
+    };
+    var fields = Object.keys(values).filter(function (k) { return values[k]; })
+      .map(function (k) { return { objectTypeId: "0-1", name: k, value: values[k] }; });
+    var url = "https://api.hsforms.com/submissions/v3/integration/submit/" +
+      encodeURIComponent(hs.portalId) + "/" + encodeURIComponent(hs.formGuid);
+    return fetch(url, {
+      method: "POST",
+      keepalive: true,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fields: fields, context: { pageUri: location.href, pageName: document.title } }),
+    })
+      .then(function (res) {
+        if (!res.ok) return res.text().then(function (t) { console.error("HubSpot submission failed (" + res.status + "):", t); });
+      })
+      .catch(function (err) { console.error("HubSpot submission failed:", err); });
+  }
+
+  /* ======================================================================
+     THANK-YOU PAGE (thanks.html)
+     ====================================================================== */
+  var LEAD_KEY = "overyard-lead";
+  function readLead() {
+    if (!$("[data-thanks]")) return null;
+    try { return JSON.parse(sessionStorage.getItem(LEAD_KEY) || "null"); } catch (err) { return null; }
+  }
+  // Runs with the header (before first paint), so the name never shifts the layout later
+  function initThanks() {
+    var lead = readLead();
+    if (!lead) return;
+    if (lead.firstName) $("[data-thanks-name]").textContent = ", " + lead.firstName;
+    if (lead.type === "homeowner") $("[data-thanks-step3]").textContent = "After the call, we send your design quote.";
+  }
+  // Runs after addAnalytics. One generate_lead per real submission (a reload doesn't count again)
+  function trackLead() {
+    var lead = readLead();
+    if (lead && !lead.tracked) {
+      track("generate_lead", { type: lead.type, interest: lead.interest || "" });
+      lead.tracked = true;
+      try { sessionStorage.setItem(LEAD_KEY, JSON.stringify(lead)); } catch (err) { /* ignore */ }
+    }
   }
 
   /* ======================================================================
@@ -1087,7 +1152,8 @@ const CONFIG = {
       if (CONFIG.clarityId) addScript("https://www.clarity.ms/tag/" + encodeURIComponent(CONFIG.clarityId));
     }
     events.forEach(function (ev) { window.addEventListener(ev, start, { capture: true, passive: true }); });
-    setTimeout(start, ANALYTICS_DELAY);
+    // The thanks page loads them at once, so its generate_lead is sent even on a quick exit
+    setTimeout(start, $("[data-thanks]") ? 0 : ANALYTICS_DELAY);
 
     if (CONFIG.ga4Id) {
       window.dataLayer = window.dataLayer || [];
@@ -1149,6 +1215,7 @@ const CONFIG = {
     initHeader();
     initCameraRoll();
     initForm();   // cheap; attach now so a submit never falls through to the plain HTML post
+    initThanks();
     if ($("#portfolio-grid")) { loadProjects(); afterPaint(rest); return; }   // the grid is the portfolio page's main content
     if (document.readyState === "complete") afterPaint(rest);
     else window.addEventListener("load", function () { afterPaint(rest); });
@@ -1156,7 +1223,7 @@ const CONFIG = {
   function rest() {
     var hasProjects = $("#work-grid") || $("#portfolio-grid") || $("#featured-slider");
     inSteps([
-      fillConfig, renderDeliverables, wireCompare, addSchema, addAnalytics,
+      fillConfig, renderDeliverables, wireCompare, addSchema, addAnalytics, trackLead,
       initBand, initReveal, initLightbox, initVideo, initMobileCta,
       function () {
         if (!hasProjects) return;

@@ -694,10 +694,6 @@ a:hover { color: var(--fern-hover); }
 .membership.tone-gold { border-top: 3px solid var(--gold); }
 .membership.tone-gold .credits { color: var(--gold); }
 .membership.tone-fern .credits { color: var(--fern); }
-.membership.is-waitlist { border: 1.5px dashed var(--clay); }
-.membership.is-waitlist .credits { color: var(--clay); }
-.membership.is-waitlist .ticks li::before { border-color: var(--clay); }
-.membership.is-featured.is-waitlist .badge { left: auto; right: 22px; }
 .rules { margin-top: 24px; font-size: .93rem; color: var(--muted); max-width: 80ch; }
 
 /* ==========================================================================
@@ -951,6 +947,13 @@ a:hover { color: var(--fern-hover); }
 /* Client portal page */
 .portal-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 28px; }
 .portal-note { margin-top: 18px; }
+
+/* Thank-you page: three numbered steps on stepping stones */
+.legal .thanks-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.legal .thanks-steps li { display: flex; align-items: flex-start; gap: 14px; margin: 0; }
+.thanks-num { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border: 1.5px solid var(--fern); border-radius: 50%; color: var(--fern); }
+.thanks-steps p { margin: 4px 0 0; color: var(--ink); }
+.thanks-links { margin-top: 28px; }
 
 /* ==========================================================================
    13. Footer: drawing title block
