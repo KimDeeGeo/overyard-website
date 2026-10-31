@@ -22,7 +22,7 @@ const CONFIG = {
     display: "+63 976 373 0461",            // shown on the page ("" = hidden)
     url: "https://wa.me/639763730461",      // opens WhatsApp in a new tab
   },
-  portalUrl: "",          // real client portal. Empty = the header "Client portal" button opens portal.html
+  portalUrl: "https://portal.overyarddesign.com",          // real client portal. Empty = the header "Client portal" button opens portal.html
 
   // ---- CRM (HubSpot free) ----
   // After Web3Forms succeeds, each inquiry is also sent to a HubSpot form (no API key needed).
