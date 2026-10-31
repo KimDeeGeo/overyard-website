@@ -18,7 +18,7 @@ Free tools only: Web3Forms (form), Cal.com or Calendly free (booking link), GitH
 - `portfolio.html`: every cleared project, filter chips, bento grid, lightbox.
 - `privacy.html`, `terms.html`: legal pages.
 - `404.html`: not-found page (GitHub Pages serves it for any missing address, at any depth, so all its paths start with `/`). `noindex`.
-- `portal.html`: client portal placeholder (heading, "Lost your link? Message us" → `index.html?note=portal-link#contact`, "Online accounts are coming soon."). `noindex`, not in the sitemap. The header "Client portal" button opens it until `CONFIG.portalUrl` is set.
+- `portal.html`: redirects old links to the real portal, https://portal.overyarddesign.com (meta refresh, with an "Open the client portal" button as fallback). `noindex`, not in the sitemap. The header "Client portal" button goes straight to the portal via `CONFIG.portalUrl`.
 - `thanks.html`: thank-you page after a successful form submission (see Contact form). `noindex`, not in the sitemap.
 - The header and footer are duplicated in all seven pages (including `404.html`, `portal.html` and `thanks.html`), so update them together.
 - `css/style.css`: all styling. `@font-face` and both theme blocks are at the top.
